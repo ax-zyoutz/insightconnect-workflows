@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.78.4-0-gc91b3",
+    "komandVersion": "1.88.4-0-gfb3be",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2021-03-09T22:18:11.114856839Z",
+    "exportedAt": "2021-07-30T20:51:43.028244735Z",
     "workflowVersions": [
       {
         "name": "Block Host with Palo Alto Firewall from Slack",
@@ -346,6 +346,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -388,8 +394,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "commit",
             "continueOnFailure": false,
@@ -535,6 +541,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -559,8 +571,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "remove_address_object_from_group",
             "continueOnFailure": false,
@@ -604,10 +616,10 @@
                 }
               },
               "required": [
-                "address_object",
                 "group",
                 "device_name",
-                "virtual_system"
+                "virtual_system",
+                "address_object"
               ],
               "title": "Variables",
               "type": "object"
@@ -644,7 +656,7 @@
                 "type": "any"
               }
             },
-            "triggerId": "e04dba56-7017-4821-86fe-7dcd7b78c6ae",
+            "triggerId": "e8eca0f7-a9b0-466e-9f91-e05433960439",
             "defaultInputJSONSchema": {
               "properties": {
                 "matchChannel": {
@@ -957,6 +969,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1033,8 +1051,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "add_address_object_to_group",
             "continueOnFailure": false,
@@ -1110,8 +1128,8 @@
                 }
               },
               "required": [
-                "success",
-                "address_objects"
+                "address_objects",
+                "success"
               ],
               "title": "Variables",
               "type": "object"
@@ -1128,8 +1146,8 @@
               "name": "Type Converter",
               "slugVendor": "rapid7",
               "slugName": "type_converter",
-              "slugVersion": "1.8.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.8.0/icon.png"
+              "slugVersion": "1.8.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.8.1/icon.png"
             },
             "identifier": "combine_arrays",
             "continueOnFailure": false,
@@ -1297,6 +1315,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1389,6 +1413,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1463,6 +1493,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1487,8 +1523,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "check_if_address_object_in_group",
             "continueOnFailure": true,
@@ -1585,8 +1621,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "set_address_object",
             "continueOnFailure": true,
@@ -1750,7 +1786,7 @@
     ],
     "triggers": [
       {
-        "id": "e04dba56-7017-4821-86fe-7dcd7b78c6ae",
+        "id": "e8eca0f7-a9b0-466e-9f91-e05433960439",
         "name": "Slack Trigger",
         "description": "",
         "input": {

@@ -63,8 +63,8 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Palo Alto Firewall|6.1.0|5|
-|Type Converter|1.8.0|1|
+|Palo Alto Firewall|6.1.1|5|
+|Type Converter|1.8.1|1|
 
 ## Troubleshooting
 
@@ -72,6 +72,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.1 - Update Palo Alto Firewall plugin | Update Type Converter plugin | Update `keywords`
 * 2.0.0 - Leverage Parameters Feature | Update Palo Alto Firewall to latest version | Update Type Converter to latest version
 * 1.2.0 - Add automatic indicator extraction, allow for multiple hosts
 * 1.1.1 - Pass channel name from trigger to all subsequent steps so user only has to configure channel once

@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.78.4-0-gc91b3",
+    "komandVersion": "1.88.4-0-gfb3be",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2021-03-09T22:46:57.762602083Z",
+    "exportedAt": "2021-07-30T21:43:44.085180354Z",
     "workflowVersions": [
       {
         "name": "Block Host with Palo Alto Firewall from Microsoft Teams",
@@ -314,8 +314,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+              "slugVersion": "3.1.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -463,8 +463,8 @@
                     }
                   },
                   "required": [
-                    "first_word",
-                    "words"
+                    "words",
+                    "first_word"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -511,8 +511,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+              "slugVersion": "3.1.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -660,8 +660,8 @@
                     }
                   },
                   "required": [
-                    "first_word",
-                    "words"
+                    "words",
+                    "first_word"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -708,8 +708,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "commit",
             "continueOnFailure": false,
@@ -805,8 +805,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "remove_address_object_from_group",
             "continueOnFailure": false,
@@ -850,10 +850,10 @@
                 }
               },
               "required": [
-                "address_object",
                 "group",
                 "device_name",
-                "virtual_system"
+                "virtual_system",
+                "address_object"
               ],
               "title": "Variables",
               "type": "object"
@@ -885,8 +885,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+              "slugVersion": "3.1.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1034,8 +1034,8 @@
                     }
                   },
                   "required": [
-                    "first_word",
-                    "words"
+                    "words",
+                    "first_word"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1082,8 +1082,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+              "slugVersion": "3.1.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
             },
             "identifier": "new_message_received",
             "continueOnFailure": false,
@@ -1095,7 +1095,7 @@
                 "team_name": "{{$workflow.[Teams Team]}}"
               }
             },
-            "triggerId": "32b513e6-3dc2-4c76-a159-4a4db9908e4b",
+            "triggerId": "887eb61e-ed3b-4630-a6c6-99a6c613834d",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -1470,8 +1470,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "add_address_object_to_group",
             "continueOnFailure": false,
@@ -1547,8 +1547,8 @@
                 }
               },
               "required": [
-                "success",
-                "address_objects"
+                "address_objects",
+                "success"
               ],
               "title": "Variables",
               "type": "object"
@@ -1565,8 +1565,8 @@
               "name": "Type Converter",
               "slugVendor": "rapid7",
               "slugName": "type_converter",
-              "slugVersion": "1.8.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.8.0/icon.png"
+              "slugVersion": "1.8.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.8.1/icon.png"
             },
             "identifier": "combine_arrays",
             "continueOnFailure": false,
@@ -1666,8 +1666,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+              "slugVersion": "3.1.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1815,8 +1815,8 @@
                     }
                   },
                   "required": [
-                    "first_word",
-                    "words"
+                    "words",
+                    "first_word"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1863,8 +1863,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+              "slugVersion": "3.1.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -2012,8 +2012,8 @@
                     }
                   },
                   "required": [
-                    "first_word",
-                    "words"
+                    "words",
+                    "first_word"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2060,8 +2060,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "check_if_address_object_in_group",
             "continueOnFailure": true,
@@ -2158,8 +2158,8 @@
               "name": "Palo Alto Firewall",
               "slugVendor": "rapid7",
               "slugName": "palo_alto_pan_os",
-              "slugVersion": "6.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.0/icon.png"
+              "slugVersion": "6.1.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/palo_alto_pan_os/6.1.1/icon.png"
             },
             "identifier": "set_address_object",
             "continueOnFailure": true,
@@ -2342,8 +2342,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+              "slugVersion": "3.1.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -2491,8 +2491,8 @@
                     }
                   },
                   "required": [
-                    "first_word",
-                    "words"
+                    "words",
+                    "first_word"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2560,7 +2560,7 @@
     ],
     "triggers": [
       {
-        "id": "32b513e6-3dc2-4c76-a159-4a4db9908e4b",
+        "id": "887eb61e-ed3b-4630-a6c6-99a6c613834d",
         "identifier": "new_message_received",
         "name": "Block Host Trigger",
         "description": "",
@@ -2885,8 +2885,8 @@
           "name": "Microsoft Teams",
           "slugVendor": "rapid7",
           "slugName": "microsoft_teams",
-          "slugVersion": "3.1.1",
-          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.1/icon.png"
+          "slugVersion": "3.1.2",
+          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.2/icon.png"
         }
       }
     ]

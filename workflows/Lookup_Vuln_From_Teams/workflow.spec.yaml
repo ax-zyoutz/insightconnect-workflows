@@ -19,5 +19,5 @@ resources:
     title: Vulnerability Details in Teams
   - name: Teams_MultipleResults.png
     title: Vulnerability Details in Teams (Multiple Results)
-  - name: Workflow.png
+  - name: WorkflowBuilder.png
     title: Workflow View

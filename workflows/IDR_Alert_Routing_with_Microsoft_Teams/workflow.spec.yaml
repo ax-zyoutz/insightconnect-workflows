@@ -18,7 +18,7 @@ resources:
   - name: TeamsOutput_critical.png
     title: IDR Alert in Microsoft Teams for Critical User
   - name: TeamsOutput_non-critical.png
-    title: IDR Alert in Microsoft Teams for non-Critical User
+    title: IDR Alert in Microsoft Teams for Non-Critical User
   - name: artifact.png
     title: Artifact View
   - name: job.png

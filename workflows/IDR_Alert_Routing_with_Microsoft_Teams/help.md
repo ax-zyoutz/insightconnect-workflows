@@ -5,6 +5,7 @@ This workflow delivers InsightIDR alerts to the appropriate Microsoft Teams chan
 # Key Features
 
 * Deliver InsightIDR alerts to the appropriate Microsoft Teams channel based on the user involved in the alert
+* Sort between critical and non-critical events based on the users involved
 
 # Requirements
 
@@ -22,11 +23,11 @@ This workflow leverages InsightConnect's Parameters feature. This feature allows
 
 There are five parameters you will need to configure in order to complete setup of your workflow:
 
-* Team Name: The Microsoft Teams team name in your environment where the workflow should be triggered and respond
-* Channel Name - Normal Severity: The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team) for normal severity alerts
-* Channel Name - Critical Severity: The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team) for critical severity alerts
-* Search Base: The search base for group membership query e.g. DC=example,DC=com
-* Group Name: The Active Directory group name
+* **Team Name**: The Microsoft Teams team name in your environment where the workflow should be triggered and respond
+* **Channel Name - Normal Severity**: The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team) for normal severity alerts
+* **Channel Name - Critical Severity**: The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team) for critical severity alerts
+* **Search Base**: The search base for group membership query. For example, `DC=example,DC=com`
+* **Group Name**: The Active Directory group name. For example, `Domain Admins`.
 
 To begin, select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
 

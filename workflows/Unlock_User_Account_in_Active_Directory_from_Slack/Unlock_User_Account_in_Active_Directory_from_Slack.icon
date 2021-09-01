@@ -387,7 +387,7 @@
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[6c7fb9bb-05c0-4ffe-aeec-ce59f0707155].[$success]}} = true"
+                  "expressionText": "{{[6c7fb9bb-05c0-4ffe-aeec-ce59f0707155].[$success]}} = true AND {{[6c7fb9bb-05c0-4ffe-aeec-ce59f0707155].[success]}} = true"
                 },
                 {
                   "edgeId": "0c293aa0-3fa7-4a5a-9bb6-055cc64bd62c",

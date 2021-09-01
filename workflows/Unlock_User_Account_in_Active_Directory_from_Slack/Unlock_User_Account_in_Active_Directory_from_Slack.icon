@@ -522,7 +522,7 @@
           "75879fd2-9868-44b2-ba50-151bd1ca9097": {
             "nodeId": "75879fd2-9868-44b2-ba50-151bd1ca9097",
             "name": "Unlock Trigger",
-            "description": "Trigger for ",
+            "description": "Trigger for Slack message received",
             "type": "trigger",
             "continueOnFailure": false,
             "isDisabled": false,

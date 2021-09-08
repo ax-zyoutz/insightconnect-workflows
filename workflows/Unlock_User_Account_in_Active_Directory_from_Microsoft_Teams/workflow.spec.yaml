@@ -1,0 +1,27 @@
+extension: workflow
+products: ["insightconnect"]
+name: Unlock_User_Account_in_Active_Directory_from_Microsoft_Teams
+title: "Unlock User Account in Active Directory from Microsoft Teams"
+description:  Unlock an AD/LDAP user with a message in Microsoft Teams.
+version: 1.0.1
+vendor: rapid7
+support: rapid7
+status: []
+hub_tags:
+  use_cases: [remediation_management, user_management]
+  keywords: [microsoft_teams, active_directory, ldap, parameters]
+  features: []
+resources:
+  source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Unlock_User_Account_in_Active_Directory_from_Microsoft_Teams
+  license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
+  screenshots:
+  - name: job1.png
+    title: Workflow Job with Valid Input
+  - name: job2.png
+    title: Workflow Job with Valid Input but Nonexistent User
+  - name: job3.png
+    title: Workflow Job with Invalid Usage
+  - name: workflow1.png
+    title: Workflow View
+  - name: teams1.png
+    title: Completed Job in Microsoft Teams with Valid Input

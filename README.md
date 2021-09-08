@@ -21,7 +21,7 @@ To learn more about contributing to the [Rapid7 Extension Library], see our [Con
 At a high level, contributing a workflow involves:
 1. [Building and testing your workflow](https://share.vidyard.com/watch/dYmjsCD9XmuyjXvQcr1dZ6) - Click link for video!
 2. [Preparing your workflow package](https://share.vidyard.com/watch/3qVR4yDEoiAEXRsAz4NYqV) - Click link for video!
-3. Submitting a pull request
+3. [Submitting a pull request](https://github.com/rapid7/insightconnect-workflows/compare)
 
 
 [Rapid7 Extension Library]:https://extensions.rapid7.com

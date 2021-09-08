@@ -16,6 +16,20 @@ jobs:
     - name: Validate Workflow(s)
       run: |
         python -m pip install --upgrade pip setuptools
-        curl -s https://${{ secrets.ci_packagecloud_token }}@packagecloud.io/install/repositories/rapid7/insightconnect_internal_python_tooling/script.python.sh | bash
-        python -m pip install --user icon-integrations-ci --no-warn-script-location
-        /home/runner/.local/bin/icon-ci pr -w
+        python -m pip install --user insightconnect-integrations-validators --no-warn-script-location
+
+        # Get changed directories. Diff between current branch head and master. 
+        # Then split diff output with awk first to get directories, then again to get the changed workflow directories themselves (cutting off the workflows/ part). 
+        # Finally, run output through uniq to remove duplicates.
+        CHANGED_DIRS=($(git diff --dirstat=files,0 HEAD..origin/master workflows | awk '{print $2}' | awk -F "/" '{print $2}' | uniq))
+
+        if ! [[ "${#CHANGED_DIRS[*]}" == 0 ]]
+        then
+          for d in "${CHANGED_DIRS[@]}"
+            do
+              echo "Running validation on: ${d}"
+              /home/runner/.local/bin/icon-validate workflows/${d}
+            done
+        else
+          echo "No workflows were changed, skipping validation!"
+        fi

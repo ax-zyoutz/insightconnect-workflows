@@ -4,7 +4,7 @@ This workflow enriches an IDR alert by performing a lookup on all hashes in the 
 
 # Key Features
 
-* Perform a has lookup automatically from any IDR alert
+* Perform a has lookup automatically from any IDR alert 
 
 # Requirements
 

@@ -1,5 +1,5 @@
 extension: workflow
-products: ["insightconnect"]
+products: ["insightconnect", "insightidr"]
 name: Enrich_Malicious_IP_Address_Alerts_from_InsightIDR_with_OSINT
 title: "Enrich Malicious IP Address Alerts from InsightIDR with OSINT"
 description: Enrich a potentially malicious IP address with threat intelligence provided by Threat Crowd and information from Dig and Whois.

@@ -1,5 +1,5 @@
 extension: workflow
-products: ["insightconnect"]
+products: ["insightconnect", "insightidr"]
 name: Forward_Alerts_from_InsightIDR_to_Slack
 title: "Forward Alerts from InsightIDR to Slack"
 description: This workflow forwards IDR alerts to a Slack channel.

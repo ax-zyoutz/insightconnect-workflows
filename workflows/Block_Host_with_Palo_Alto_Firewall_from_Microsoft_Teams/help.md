@@ -66,9 +66,9 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Palo Alto Firewall|6.1.0|5|
-|Type Converter|1.8.0|1|
-|Microsoft Teams|3.1.1|7|
+|Palo Alto Firewall|6.1.1|5|
+|Type Converter|1.8.1|1|
+|Microsoft Teams|3.1.2|7|
 
 ## Troubleshooting
 
@@ -76,6 +76,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.1 - Update Palo Alto Firewall plugin | Update Type Converter plugin | Update Microsoft Teams plugin | Update `keywords`
 * 2.0.0 - Leverage Parameters Feature | Update Palo Alto Firewall to latest version | Update Type Converter to latest version | Update Microsoft Teams to latest version
 * 1.2.1 - Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.2.0 - Add automatic indicator extraction, allow for multiple hosts

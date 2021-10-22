@@ -5,7 +5,7 @@
     "exportedAt": "2021-10-20T19:05:38.742291208Z",
     "workflowVersions": [
       {
-        "name": "Email IDR Alert",
+        "name": "Alert on InsightIDR Multi-Country Authentication",
         "type": "runnable",
         "version": "",
         "description": "Multi-Country Authentications for staff members",
@@ -413,7 +413,7 @@
             "parameters": {
               "input": {
                 "body": "Username:  {{[eb00b0a6-8c47-4ca5-9905-a3f465b6e808].[actors].[users].[0].[name]}}\nIP Addresses: {{[eb00b0a6-8c47-4ca5-9905-a3f465b6e808].[contents].[ipAddresses]}}\nCountries: {{[0b6791d2-a121-4e88-a9f6-46296f28d9f2].[Countries]}}",
-                "email_recipients": "{{$workflow.[Email Recipient]}}",
+                "email_recipients": ["{{$workflow.[Email Recipient]}}"],
                 "subject": "New Multi-country Alert"
               }
             },

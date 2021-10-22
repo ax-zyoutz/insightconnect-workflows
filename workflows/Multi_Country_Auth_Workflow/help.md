@@ -1,6 +1,6 @@
 # Description
 
-This workflow accepts an Insight IDR User Behavior Analytics Alert (UBA) when a member of a certain user group is logged in from two or more countries. It uses a human decision step to send a templated email to a secure mailbox with the report.
+This workflow accepts an InsightIDR User Behavior Analytics Alert (UBA) when a member of a certain user group is logged in from two or more countries. It uses a human decision step to send a templated email to a secure mailbox with the report.
 Indicators supported in this workflow are IP addresses.
 
 # Key Features

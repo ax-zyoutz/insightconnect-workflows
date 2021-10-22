@@ -10,7 +10,7 @@ Indicators supported in this workflow are IP addresses.
 # Requirements
 
 * [InsightIDR User Behavior Analytics Alert](https://docs.rapid7.com/insightidr/alerts)
-* User group and search base configured
+* Access to InsightIDR
 
 # Documentation
 

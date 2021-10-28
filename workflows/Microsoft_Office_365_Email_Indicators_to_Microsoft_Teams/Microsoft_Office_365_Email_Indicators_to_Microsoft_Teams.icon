@@ -867,7 +867,7 @@
                   "type": "integer"
                 },
                 "mailbox_id": {
-                  "description": "The mailbox to monitor for incoming email",
+                  "description": "The mailbox to monitor for incoming email.",
                   "order": 1,
                   "title": "Mailbox ID",
                   "type": "string"

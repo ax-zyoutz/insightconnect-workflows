@@ -1,14 +1,14 @@
 {
   "kom": {
-    "komandVersion": "1.72.0-0-ge9d34",
+    "komandVersion": "1.89.5-0-g6408f",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-12-15T16:50:51.904364528Z",
+    "exportedAt": "2021-08-27T19:57:00.985940838Z",
     "workflowVersions": [
       {
         "name": "Quarantine Endpoint with Rapid7 Insight Agent from Microsoft Teams",
         "type": "runnable",
         "version": "",
-        "description": "This workflow uses a Microsoft Teams command to quarantine or unquarantine an endpoint monitored by the Insight Agent.",
+        "description": "# Description\n\nThis workflow allows for fast quarantine and unquarantine from Microsoft Teams of an asset that has the [Insight Agent](https://docs.rapid7.com/insight-agent/) installed. \n\nSample Microsoft Teams Trigger Commands:\n\n`!quarantine-endpoint 198.51.100.100\"`\n\n`!unquarantine-endpoint 198.51.100.100\"`\n\nFor batches of assets, more than one IP can be specified\n\n`!unquarantine-endpoint 198.51.100.100 198.51.100.101 198.51.100.102`\n\n# Key Features\n\n* Quickly respond to threats by quarantining endpoints from Microsoft Teams\n* Reduce the time it takes to contain an endpoint\n\n# Requirements\n\n* [Insight Platform API Key](https://docs.rapid7.com/insight/managing-platform-api-keys/)\n* [Microsoft Teams](https://docs.rapid7.com/insightconnect/microsoft-teams/)\n\n# Documentation\n\n## Setup\n\nImport the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.\n\nOnce the workflow has been imported, **the first Microsoft Teams step will need the channel and team name updated to suit your Microsoft Teams environment!** Edit the input with the preset text of `change_me` in the first Microsoft Teams step in the workflow.\n\nAfter configuring the Microsoft Teams step, activate the workflow in order to trigger it with a Microsoft Teams command.\n\n## Technical Details\n\nPlugins utilized by workflow:\n\n|Plugin|Version|Count|\n|----|----|--------|\n|Microsoft Teams|3.1.0|6|\n|Rapid7 Insight Agent|1.0.0|3|\n\n## Troubleshooting\n\n_There is no troubleshooting information at this time_\n\n# Version History\n\n* 1.0.1 - Update Microsoft Teams to version 3.1.0 | Update documentation\n* 1.0.0 - Initial workflow\n\n# Links\n\n## References\n\n* [Microsoft Teams](https://docs.rapid7.com/insightconnect/microsoft-teams/)\n* [Insight Agent](https://docs.rapid7.com/insight-agent/)\n* [Insight Platform API Key](https://docs.rapid7.com/insight/managing-platform-api-keys/)\n",
         "graph": {
           "edges": {
             "0d94961d-52c8-4312-ad01-05c7b922df33": {
@@ -236,20 +236,20 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "new_message_received",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "channel_name": "change_me",
+                "channel_name": "{{$workflow.[Channel Name]}}",
                 "message_content": "^(!quarantine-endpoint|!unquarantine-endpoint)",
-                "team_name": "change_me"
+                "team_name": "{{$workflow.[Team Name]}}"
               }
             },
-            "triggerId": "d84002a9-590e-480c-8e3a-458b2affb15b",
+            "triggerId": "e74a80f6-b8ac-4806-8afb-8e164f125001",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -506,8 +506,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -642,8 +642,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -791,8 +791,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -839,8 +839,8 @@
               "name": "Rapid7 Insight Agent",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insight_agent",
-              "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insight_agent/1.0.0/icon.png"
+              "slugVersion": "1.0.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insight_agent/1.0.3/icon.png"
             },
             "identifier": "quarantine",
             "continueOnFailure": true,
@@ -987,11 +987,11 @@
                     "op": "==",
                     "right": {
                       "type": "literal",
-                      "value": "unquarantine-endpoint"
+                      "value": "!unquarantine-endpoint"
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[25d61945-587e-45f0-aa08-8c7c1f829a5b].[message].[first_word]}} == \"unquarantine-endpoint\""
+                  "expressionText": "{{[25d61945-587e-45f0-aa08-8c7c1f829a5b].[message].[first_word]}} == \"!unquarantine-endpoint\""
                 }
               ]
             },
@@ -1031,8 +1031,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1180,8 +1180,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1228,8 +1228,8 @@
               "name": "Rapid7 Insight Agent",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insight_agent",
-              "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insight_agent/1.0.0/icon.png"
+              "slugVersion": "1.0.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insight_agent/1.0.3/icon.png"
             },
             "identifier": "get_agent_details",
             "continueOnFailure": true,
@@ -1473,8 +1473,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1622,8 +1622,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1670,8 +1670,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1819,8 +1819,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1867,8 +1867,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -2016,8 +2016,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2064,8 +2064,8 @@
               "name": "Rapid7 Insight Agent",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insight_agent",
-              "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insight_agent/1.0.0/icon.png"
+              "slugVersion": "1.0.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insight_agent/1.0.3/icon.png"
             },
             "identifier": "quarantine",
             "continueOnFailure": true,
@@ -2131,19 +2131,37 @@
         },
         "tags": null,
         "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "humanCostDisplayUnit": "hours",
+        "parameters": {
+          "definitionSchema": {
+            "type": "object",
+            "required": [],
+            "properties": {
+              "Team Name": {
+                "type": "string",
+                "description": "The Microsoft Teams team name in your environment where the workflow should be triggered and respond"
+              },
+              "Channel Name": {
+                "type": "string",
+                "description": "The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team)"
+              }
+            },
+            "definitions": {}
+          }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "d84002a9-590e-480c-8e3a-458b2affb15b",
+        "id": "e74a80f6-b8ac-4806-8afb-8e164f125001",
         "identifier": "new_message_received",
         "name": "Microsoft Teams Quarantine Trigger",
         "description": "",
         "input": {
-          "channel_name": "change_me",
+          "channel_name": "{{$workflow.[Channel Name]}}",
           "message_content": "^(!quarantine-endpoint|!unquarantine-endpoint)",
-          "team_name": "change_me"
+          "team_name": "{{$workflow.[Team Name]}}"
         },
         "inputJsonSchema": {
           "properties": {
@@ -2401,8 +2419,8 @@
                 }
               },
               "required": [
-                "words",
-                "first_word"
+                "first_word",
+                "words"
               ],
               "title": "Message",
               "type": "object"
@@ -2461,8 +2479,8 @@
           "name": "Microsoft Teams",
           "slugVendor": "rapid7",
           "slugName": "microsoft_teams",
-          "slugVersion": "3.1.0",
-          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+          "slugVersion": "3.1.3",
+          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
         }
       }
     ]

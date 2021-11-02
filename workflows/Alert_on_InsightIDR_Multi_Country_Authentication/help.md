@@ -6,7 +6,9 @@ Indicators supported in this workflow are IP addresses.
 
 # Key Features
 
-* The ability to determine if a member of a certain user group is logged in from two or more countries
+* InsightIDR User Behavior Analytics Alert (UBA) that triggers if a member of a certain user group is logged in from two or more countries
+* Matching IP addresses to countries with IPStack
+* If logged-in locations are two or more, a human decision step can be made to process the user and send a templated email report
 
 # Requirements
 

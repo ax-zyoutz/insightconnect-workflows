@@ -14,6 +14,7 @@ Indicators supported in this workflow are IP addresses.
 
 * [InsightIDR User Behavior Analytics Alert](https://docs.rapid7.com/insightidr/alerts)
 * Access to InsightIDR
+* IPStack API key
 
 # Documentation
 

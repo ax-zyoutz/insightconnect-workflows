@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.73.0-0-g930f9",
+    "komandVersion": "1.93.0-0-g213de",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-12-17T11:59:41.286248644Z",
+    "exportedAt": "2021-09-30T22:37:36.474556646Z",
     "workflowVersions": [
       {
         "name": "Scan Asset with InsightVM from Microsoft Teams",
@@ -562,8 +562,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": true,
@@ -711,8 +711,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -759,8 +759,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_message",
             "continueOnFailure": false,
@@ -908,8 +908,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -956,8 +956,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": true,
@@ -1105,8 +1105,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1150,11 +1150,11 @@
             "name": "Get Scan Status",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "get_scan",
             "continueOnFailure": true,
@@ -1373,8 +1373,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": true,
@@ -1522,8 +1522,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1570,8 +1570,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_message",
             "continueOnFailure": false,
@@ -1719,8 +1719,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1804,11 +1804,11 @@
             "name": "Resume Scan",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "update_scan_status",
             "continueOnFailure": true,
@@ -1898,8 +1898,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": true,
@@ -2047,8 +2047,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2095,8 +2095,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -2244,8 +2244,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2350,8 +2350,8 @@
               "name": "Type Converter",
               "slugVendor": "rapid7",
               "slugName": "type_converter",
-              "slugVersion": "1.5.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.5.1/icon.png"
+              "slugVersion": "1.8.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.8.0/icon.png"
             },
             "identifier": "string_to_integer",
             "continueOnFailure": true,
@@ -2411,8 +2411,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "Job-URL": "{{[$job].[URL]}}",
-                "Successful": true
+                "value": "{{[fd8ecd2a-59d3-4ad0-87e4-354bd22d8dab]}}"
               }
             },
             "defaultInputJSONSchema": null,
@@ -2425,23 +2424,11 @@
               "name": "VM Scans",
               "id": "3d16d975-1a38-4a72-82fe-f7802cb242d2",
               "schema": {
-                "definitions": {
-                  "_ROOT_": {
-                    "properties": {
-                      "Job-URL": {
-                        "type": "string"
-                      },
-                      "Successful": {
-                        "type": "boolean"
-                      }
-                    },
-                    "type": "object"
-                  }
-                },
+                "definitions": {},
                 "properties": {
                   "_ROOT_": {
                     "items": {
-                      "$ref": "#/definitions/_ROOT_"
+                      "type": "string"
                     },
                     "type": "array"
                   }
@@ -2461,12 +2448,12 @@
               "expression": {
                 "left": {
                   "type": "literal",
-                  "value": "Job-URL"
+                  "value": "value"
                 },
-                "op": "=",
+                "op": "like",
                 "right": {
-                  "name": "$job.URL",
-                  "type": "variable"
+                  "type": "literal",
+                  "value": "test"
                 },
                 "type": "binary"
               },
@@ -2482,23 +2469,11 @@
               "name": "VM Scans",
               "id": "3d16d975-1a38-4a72-82fe-f7802cb242d2",
               "schema": {
-                "definitions": {
-                  "_ROOT_": {
-                    "properties": {
-                      "Job-URL": {
-                        "type": "string"
-                      },
-                      "Successful": {
-                        "type": "boolean"
-                      }
-                    },
-                    "type": "object"
-                  }
-                },
+                "definitions": {},
                 "properties": {
                   "_ROOT_": {
                     "items": {
-                      "$ref": "#/definitions/_ROOT_"
+                      "type": "string"
                     },
                     "type": "array"
                   }
@@ -2518,7 +2493,7 @@
               "defaultEdgeId": "fe6cf796-759b-46c8-b48d-177d2bc6d456",
               "stepControlParams": [
                 {
-                  "edgeId": "55c2b95c-e801-43e1-9be7-3a41de44c7ec",
+                  "edgeId": "2f0ce356-bc58-4b9e-bce5-db335d487b4a",
                   "expression": {
                     "left": {
                       "name": "27c9932d-2e58-42ed-b0da-f28550418c95.status",
@@ -2526,12 +2501,12 @@
                     },
                     "op": "=~",
                     "right": {
-                      "regexp": "running|integrating|dispatched",
+                      "regexp": "aborted|error",
                       "type": "regexp"
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[27c9932d-2e58-42ed-b0da-f28550418c95].[status]}} =~ /running|integrating|dispatched/"
+                  "expressionText": "{{[27c9932d-2e58-42ed-b0da-f28550418c95].[status]}} =~ /aborted|error/"
                 },
                 {
                   "edgeId": "52312b82-5ae4-46a1-99ca-0c95b3fed196",
@@ -2550,7 +2525,7 @@
                   "expressionText": "{{[27c9932d-2e58-42ed-b0da-f28550418c95].[status]}} =~ /stopped|paused/"
                 },
                 {
-                  "edgeId": "2f0ce356-bc58-4b9e-bce5-db335d487b4a",
+                  "edgeId": "55c2b95c-e801-43e1-9be7-3a41de44c7ec",
                   "expression": {
                     "left": {
                       "name": "27c9932d-2e58-42ed-b0da-f28550418c95.status",
@@ -2558,12 +2533,12 @@
                     },
                     "op": "=~",
                     "right": {
-                      "regexp": "aborted|error",
+                      "regexp": "running|integrating|dispatched",
                       "type": "regexp"
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[27c9932d-2e58-42ed-b0da-f28550418c95].[status]}} =~ /aborted|error/"
+                  "expressionText": "{{[27c9932d-2e58-42ed-b0da-f28550418c95].[status]}} =~ /running|integrating|dispatched/"
                 },
                 {
                   "edgeId": "fe6cf796-759b-46c8-b48d-177d2bc6d456",
@@ -2616,20 +2591,20 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "new_message_received",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "channel_name": "change_me",
+                "channel_name": "{{$workflow.[Channel Name]}}",
                 "message_content": "!scan-asset\\s\\S",
-                "team_name": "change_me"
+                "team_name": "{{$workflow.[Team Name]}}"
               }
             },
-            "triggerId": "6d21894f-a8dc-4e79-b1f7-85029be1a9ae",
+            "triggerId": "839b6236-63e9-4536-8bf6-c006a9457640",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -2886,8 +2861,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2949,11 +2924,11 @@
             "name": "Get New Risk Score",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "asset_search",
             "continueOnFailure": true,
@@ -2970,7 +2945,9 @@
                     }
                   ],
                   "match": "all"
-                }
+                },
+                "size": 0,
+                "sort_criteria": {}
               }
             },
             "defaultInputJSONSchema": {
@@ -2979,6 +2956,19 @@
                   "description": "Tag search criteria - options documentation: https://help.rapid7.com/insightvm/en-us/api/#section/Responses/SearchCriteria",
                   "order": 1,
                   "title": "Search Criteria",
+                  "type": "object"
+                },
+                "size": {
+                  "default": 0,
+                  "description": "The number of records to retrieve. If blank or '0' all assets that match the search will be returned",
+                  "order": 2,
+                  "title": "Size",
+                  "type": "number"
+                },
+                "sort_criteria": {
+                  "description": "JSON object for sorting by criteria. Multiple criteria can be specified with an order of 'asc' (ascending) or 'desc' (descending)",
+                  "order": 3,
+                  "title": "Sort Criteria",
                   "type": "object"
                 }
               },
@@ -3871,22 +3861,22 @@
             "name": "Scan Asset",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "scan",
-            "continueOnFailure": true,
+            "continueOnFailure": false,
             "isDisabled": false,
             "isCloud": false,
             "parameters": {
               "input": {
                 "hosts": [
-                  "{{[5c6d3567-4385-4be8-b143-f66de30ba196].[$item].[ip]}}"
+                  "{{[5c6d3567-4385-4be8-b143-f66de30ba196].[$item].[hostName]}}"
                 ],
-                "site_id": "change_me"
+                "site_id": "{{$workflow.[Site ID]}}"
               }
             },
             "defaultInputJSONSchema": {
@@ -3966,8 +3956,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": true,
@@ -4115,8 +4105,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -4163,8 +4153,8 @@
               "name": "Timers",
               "slugVendor": "rapid7",
               "slugName": "timers",
-              "slugVersion": "2.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.4/icon.png"
+              "slugVersion": "2.0.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.5/icon.png"
             },
             "identifier": "delay",
             "continueOnFailure": true,
@@ -4256,11 +4246,11 @@
             "name": "Find Asset ID",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "asset_search",
             "continueOnFailure": true,
@@ -4271,13 +4261,22 @@
                 "searchCriteria": {
                   "filters": [
                     {
+                      "field": "site-id",
+                      "operator": "in",
+                      "values": [
+                        "{{$workflow.[Site ID]}}"
+                      ]
+                    },
+                    {
                       "field": "host-name",
                       "operator": "contains",
                       "value": "{{[7fbd956f-e239-40fd-801e-4b4411dfe334].[argument]}}"
                     }
                   ],
                   "match": "all"
-                }
+                },
+                "size": 0,
+                "sort_criteria": {}
               }
             },
             "defaultInputJSONSchema": {
@@ -4286,6 +4285,19 @@
                   "description": "Tag search criteria - options documentation: https://help.rapid7.com/insightvm/en-us/api/#section/Responses/SearchCriteria",
                   "order": 1,
                   "title": "Search Criteria",
+                  "type": "object"
+                },
+                "size": {
+                  "default": 0,
+                  "description": "The number of records to retrieve. If blank or '0' all assets that match the search will be returned",
+                  "order": 2,
+                  "title": "Size",
+                  "type": "number"
+                },
+                "sort_criteria": {
+                  "description": "JSON object for sorting by criteria. Multiple criteria can be specified with an order of 'asc' (ascending) or 'desc' (descending)",
+                  "order": 3,
+                  "title": "Sort Criteria",
                   "type": "object"
                 }
               },
@@ -5205,8 +5217,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": true,
@@ -5354,8 +5366,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -5402,8 +5414,8 @@
               "name": "Timers",
               "slugVendor": "rapid7",
               "slugName": "timers",
-              "slugVersion": "2.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.4/icon.png"
+              "slugVersion": "2.0.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.5/icon.png"
             },
             "identifier": "delay",
             "continueOnFailure": true,
@@ -5497,8 +5509,8 @@
               "name": "Timers",
               "slugVendor": "rapid7",
               "slugName": "timers",
-              "slugVersion": "2.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.4/icon.png"
+              "slugVersion": "2.0.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.5/icon.png"
             },
             "identifier": "delay",
             "continueOnFailure": true,
@@ -5540,8 +5552,8 @@
               "name": "HTML",
               "slugVendor": "rapid7",
               "slugName": "html",
-              "slugVersion": "1.2.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/html/1.2.1/icon.png"
+              "slugVersion": "1.2.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/html/1.2.2/icon.png"
             },
             "identifier": "text",
             "continueOnFailure": false,
@@ -5662,8 +5674,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": true,
@@ -5811,8 +5823,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -5853,20 +5865,42 @@
           }
         },
         "tags": null,
-        "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "humanCostSeconds": 300,
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": {
+            "type": "object",
+            "required": [],
+            "properties": {
+              "Site ID": {
+                "type": "integer",
+                "description": "The ID of the InsightVM (or Nexpose) site that should be used for scanning. See workflow setup instructions for details."
+              },
+              "Team Name": {
+                "type": "string",
+                "description": "The name of the Microsoft Teams Team where scans may be started from."
+              },
+              "Channel Name": {
+                "type": "string",
+                "description": "The name of the Microsoft Teams Channel where scans may be started from."
+              }
+            },
+            "definitions": {}
+          }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "6d21894f-a8dc-4e79-b1f7-85029be1a9ae",
+        "id": "839b6236-63e9-4536-8bf6-c006a9457640",
         "identifier": "new_message_received",
         "name": "scan-asset Trigger",
         "description": "",
         "input": {
-          "channel_name": "change_me",
+          "channel_name": "{{$workflow.[Channel Name]}}",
           "message_content": "!scan-asset\\s\\S",
-          "team_name": "change_me"
+          "team_name": "{{$workflow.[Team Name]}}"
         },
         "inputJsonSchema": {
           "properties": {
@@ -6124,8 +6158,8 @@
                 }
               },
               "required": [
-                "words",
-                "first_word"
+                "first_word",
+                "words"
               ],
               "title": "Message",
               "type": "object"
@@ -6184,8 +6218,8 @@
           "name": "Microsoft Teams",
           "slugVendor": "rapid7",
           "slugName": "microsoft_teams",
-          "slugVersion": "3.1.0",
-          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+          "slugVersion": "3.1.3",
+          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.3/icon.png"
         }
       }
     ]

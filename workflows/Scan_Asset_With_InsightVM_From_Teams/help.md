@@ -53,12 +53,17 @@ Once you have found the site ID, move on to configure the InsightConnect workflo
 
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-Once the workflow has been imported, the following steps will need to be edited to reflect your Microsoft Teams and InsightVM configurations:
 
-1. The `scan-asset Trigger` step will need the Team Name and Channel Name inputs updated to reflect your Microsoft Teams environment. Edit the inputs with the preset text of `change_me`.
-2. In the `Remediations Loop`, the `Scan Asset` step will need the `Site ID` input updated to reflect your newly created InsightVM (or Nexpose) site. Edit the input with the preset text of `change_me`.
+This workflow leverages InsightConnect's Parameters feature. This feature allows variables used multiple times throughout a workflow to be entered once and then referenced throughout the workflow.
+Select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
+There are three parameters you will need to configure in order to complete setup of your workflow:
 
-After updating the Microsoft Teams Trigger and the InsightVM scan steps, activate the workflow in order to trigger it.
+1. `Channel Name` Parameter needs to be provided with your Teams Channel Name.
+2. `Team Name` Parameter needs to be provided with your Teams Name.
+3. `Site ID` Parameter needs to be provided with your Site ID.
+
+After configuring the parameters, activate the workflow in order to trigger it.
+To trigger workflow use command in your Teams environment.
 
 ## Technical Details
 
@@ -66,11 +71,11 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Microsoft Teams|3.1.0|11|
-|HTML|1.2.1|1|
-|Rapid7 InsightVM|4.0.1|5|
-|Type Converter|1.5.1|1|
-|Timers|2.0.4|3|
+|Microsoft Teams|3.1.3|11|
+|HTML|1.2.2|1|
+|Rapid7 InsightVM Console|4.9.1|5|
+|Type Converter|1.8.0|1|
+|Timers|2.0.5|3|
 
 ## Troubleshooting
 
@@ -78,6 +83,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.2.0 - Add workflow parameters | Update Microsoft Teams to version 3.1.3 | Update HTML to version 1.2.2 | Update Rapid7 InsightVM Console to version 4.9.1 | Update Type Converter to version 1.8.0 | Update Timers to version 2.0.5 | Update documentation
 * 1.1.0 - Replace the Settings step with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.0.0 - Initial workflow
 

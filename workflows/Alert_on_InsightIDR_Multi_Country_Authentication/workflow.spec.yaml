@@ -1,5 +1,5 @@
 extension: workflow
-products: ["insightconnect"]
+products: ["insightconnect", "insightidr"]
 name: Alert_on_InsightIDR_Multi_Country_Authentication
 title: Alert on InsightIDR Multi Country Authentication
 description: Send email alerts when multi-country authentications are detected for user group members.

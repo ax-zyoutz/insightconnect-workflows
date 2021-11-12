@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.72.0-0-ge9d34",
+    "komandVersion": "1.95.0-0-gf6a5e",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-12-15T17:16:44.165242088Z",
+    "exportedAt": "2021-11-01T00:28:48.071168053Z",
     "workflowVersions": [
       {
         "name": "Quarantine Endpoint with SentinelOne from Microsoft Teams",
@@ -59,13 +59,21 @@
               "fromNodeId": "1c26b26e-efe6-4096-a8bb-190937e30569",
               "toNodeId": "f7372f97-78ff-4942-a52c-777fc6948f82"
             },
+            "379e1b13-b89c-46fd-8abe-0163baaad09f": {
+              "id": "379e1b13-b89c-46fd-8abe-0163baaad09f",
+              "name": "",
+              "description": "",
+              "parentNodeId": "",
+              "fromNodeId": "fde1d43a-c638-4303-87bd-216026539160",
+              "toNodeId": "0daf7cf6-a18e-40d3-8716-8fbfd7a52cf9"
+            },
             "3ce0e394-7771-40fa-abfa-a1a358b38003": {
               "id": "3ce0e394-7771-40fa-abfa-a1a358b38003",
               "name": "",
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "cc100c7c-e460-408e-94ef-015f40828417",
-              "toNodeId": "0daf7cf6-a18e-40d3-8716-8fbfd7a52cf9"
+              "toNodeId": "fde1d43a-c638-4303-87bd-216026539160"
             },
             "50d572c8-a271-43dc-8f79-54f8306ec2a1": {
               "id": "50d572c8-a271-43dc-8f79-54f8306ec2a1",
@@ -269,6 +277,10 @@
               "id": "f7372f97-78ff-4942-a52c-777fc6948f82",
               "parentNodeId": ""
             },
+            "fde1d43a-c638-4303-87bd-216026539160": {
+              "id": "fde1d43a-c638-4303-87bd-216026539160",
+              "parentNodeId": ""
+            },
             "ff676d2a-cc5e-4380-b70d-8d8d3bb6cf4a": {
               "id": "ff676d2a-cc5e-4380-b70d-8d8d3bb6cf4a",
               "parentNodeId": ""
@@ -284,8 +296,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -327,9 +339,9 @@
                 }
               },
               "required": [
-                "team_name",
                 "channel_name",
-                "message_content"
+                "message_content",
+                "team_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -433,8 +445,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -481,8 +493,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -524,9 +536,9 @@
                 }
               },
               "required": [
-                "team_name",
                 "channel_name",
-                "message_content"
+                "message_content",
+                "team_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -630,8 +642,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -696,7 +708,7 @@
                 }
               ],
               "ignoreCase": false,
-              "input": "{{[4b8da5e7-5581-4b1b-83de-1c3df275a29d].[message].[body].[content]}}"
+              "input": "{{[fde1d43a-c638-4303-87bd-216026539160].[text]}}"
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
@@ -712,8 +724,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -755,9 +767,9 @@
                 }
               },
               "required": [
-                "team_name",
                 "channel_name",
-                "message_content"
+                "message_content",
+                "team_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -861,8 +873,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -983,20 +995,20 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
             },
             "identifier": "new_message_received",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "channel_name": "change_me",
+                "channel_name": "{{$workflow.[Channel Name]}}",
                 "message_content": "^(!quarantine-endpoint|!unquarantine-endpoint)",
-                "team_name": "change_me"
+                "team_name": "{{$workflow.[Team Name]}}"
               }
             },
-            "triggerId": "c82aa141-43b8-4f4d-b408-e6683f0990a2",
+            "triggerId": "9e394d00-7060-4de1-815f-ceaeb4a7bb66",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -1253,8 +1265,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1375,16 +1387,17 @@
               "name": "SentinelOne",
               "slugVendor": "rapid7",
               "slugName": "sentinelone",
-              "slugVersion": "1.4.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sentinelone/1.4.0/icon.png"
+              "slugVersion": "6.2.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sentinelone/6.2.0/icon.png"
             },
             "identifier": "quarantine",
-            "continueOnFailure": true,
+            "continueOnFailure": false,
             "isDisabled": false,
             "isCloud": false,
             "parameters": {
               "input": {
                 "agent": "{{[0daf7cf6-a18e-40d3-8716-8fbfd7a52cf9].[agent]}}",
+                "case_sensitive": true,
                 "quarantine_state": false,
                 "whitelist": []
               }
@@ -1396,6 +1409,13 @@
                   "order": 1,
                   "title": "Agent",
                   "type": "string"
+                },
+                "case_sensitive": {
+                  "default": true,
+                  "description": "Looks up the specified Agent in a case-sensitive manner. Setting this value to false may result in longer run times and unintended results",
+                  "order": 4,
+                  "title": "Case Sensitive",
+                  "type": "boolean"
                 },
                 "quarantine_state": {
                   "description": "True to quarantine host, false to unquarantine host",
@@ -1415,7 +1435,8 @@
               },
               "required": [
                 "agent",
-                "quarantine_state"
+                "quarantine_state",
+                "case_sensitive"
               ],
               "title": "Variables",
               "type": "object"
@@ -1467,8 +1488,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1510,9 +1531,9 @@
                 }
               },
               "required": [
-                "team_name",
                 "channel_name",
-                "message_content"
+                "message_content",
+                "team_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -1616,8 +1637,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1740,8 +1761,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1783,9 +1804,9 @@
                 }
               },
               "required": [
-                "team_name",
                 "channel_name",
-                "message_content"
+                "message_content",
+                "team_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -1889,8 +1910,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1937,8 +1958,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1980,9 +2001,9 @@
                 }
               },
               "required": [
-                "team_name",
                 "channel_name",
-                "message_content"
+                "message_content",
+                "team_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -2086,8 +2107,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2162,6 +2183,64 @@
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
+          "fde1d43a-c638-4303-87bd-216026539160": {
+            "nodeId": "fde1d43a-c638-4303-87bd-216026539160",
+            "name": "Strip HTML",
+            "type": "action",
+            "plugin": {
+              "name": "HTML",
+              "slugVendor": "rapid7",
+              "slugName": "html",
+              "slugVersion": "1.2.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/html/1.2.2/icon.png"
+            },
+            "identifier": "text",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "doc": "{{[4b8da5e7-5581-4b1b-83de-1c3df275a29d].[message].[body].[content]}}",
+                "remove_scripts": false
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "doc": {
+                  "description": "Document to transform",
+                  "order": 1,
+                  "title": "Document",
+                  "type": "string"
+                },
+                "remove_scripts": {
+                  "description": "Remove non-HTML scripts from the document",
+                  "order": 2,
+                  "title": "Remove Scripts",
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "doc"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "text": {
+                  "description": "String without HTML tags",
+                  "order": 1,
+                  "title": "Text",
+                  "type": "string"
+                }
+              },
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
+          },
           "ff676d2a-cc5e-4380-b70d-8d8d3bb6cf4a": {
             "nodeId": "ff676d2a-cc5e-4380-b70d-8d8d3bb6cf4a",
             "name": "Quarantine Endpoint",
@@ -2170,16 +2249,17 @@
               "name": "SentinelOne",
               "slugVendor": "rapid7",
               "slugName": "sentinelone",
-              "slugVersion": "1.4.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sentinelone/1.4.0/icon.png"
+              "slugVersion": "6.2.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sentinelone/6.2.0/icon.png"
             },
             "identifier": "quarantine",
-            "continueOnFailure": true,
+            "continueOnFailure": false,
             "isDisabled": false,
             "isCloud": false,
             "parameters": {
               "input": {
                 "agent": "{{[0daf7cf6-a18e-40d3-8716-8fbfd7a52cf9].[agent]}}",
+                "case_sensitive": true,
                 "quarantine_state": true,
                 "whitelist": []
               }
@@ -2191,6 +2271,13 @@
                   "order": 1,
                   "title": "Agent",
                   "type": "string"
+                },
+                "case_sensitive": {
+                  "default": true,
+                  "description": "Looks up the specified Agent in a case-sensitive manner. Setting this value to false may result in longer run times and unintended results",
+                  "order": 4,
+                  "title": "Case Sensitive",
+                  "type": "boolean"
                 },
                 "quarantine_state": {
                   "description": "True to quarantine host, false to unquarantine host",
@@ -2210,7 +2297,8 @@
               },
               "required": [
                 "agent",
-                "quarantine_state"
+                "quarantine_state",
+                "case_sensitive"
               ],
               "title": "Variables",
               "type": "object"
@@ -2255,21 +2343,39 @@
             "connectionType": "CONNECTION"
           }
         },
-        "tags": null,
-        "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "tags": [],
+        "humanCostSeconds": 5700,
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": {
+            "type": "object",
+            "required": [],
+            "properties": {
+              "Team Name": {
+                "type": "string",
+                "description": "Name of the team to which the channel is assigned to"
+              },
+              "Channel Name": {
+                "type": "string",
+                "description": "Name of the channel where the message was posted"
+              }
+            },
+            "definitions": {}
+          }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "c82aa141-43b8-4f4d-b408-e6683f0990a2",
+        "id": "9e394d00-7060-4de1-815f-ceaeb4a7bb66",
         "identifier": "new_message_received",
         "name": "Quarantine Request",
         "description": "",
         "input": {
-          "channel_name": "change_me",
+          "channel_name": "{{$workflow.[Channel Name]}}",
           "message_content": "^(!quarantine-endpoint|!unquarantine-endpoint)",
-          "team_name": "change_me"
+          "team_name": "{{$workflow.[Team Name]}}"
         },
         "inputJsonSchema": {
           "properties": {
@@ -2527,8 +2633,8 @@
                 }
               },
               "required": [
-                "words",
-                "first_word"
+                "first_word",
+                "words"
               ],
               "title": "Message",
               "type": "object"
@@ -2587,8 +2693,8 @@
           "name": "Microsoft Teams",
           "slugVendor": "rapid7",
           "slugName": "microsoft_teams",
-          "slugVersion": "3.1.0",
-          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+          "slugVersion": "3.1.4",
+          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
         }
       }
     ]

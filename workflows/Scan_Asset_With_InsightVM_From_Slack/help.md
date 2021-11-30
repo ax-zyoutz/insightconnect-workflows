@@ -54,11 +54,17 @@ Once you have found the site ID, move on to configure the InsightConnect workflo
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
 Once the workflow has been imported, the following steps will need to be edited to reflect your Slack and InsightVM configurations:
+This workflow leverages InsightConnect's Parameters feature. This feature allows variables used multiple times throughout a workflow to be entered once and then referenced throughout the workflow.
 
-1. Update the `scan-asset Trigger` step to reflect your Slack environment. Edit the preset text of `change_me` in the `Match Channel` input, replacing it with a channel name from your Slack instance. The InsightConnect Slack chatbot will need to be added to this channel. This workflow is configured by default so scans may only be started from this channel.
-2. In the `Remediations Loop`, the `Scan Asset` step will need the `Site ID` input updated to reflect your newly created InsightVM (or Nexpose) site. Edit the input with the preset text of `change_me`.
+Select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
+There are two parameters you will need to configure in order to complete setup of your workflow:
 
-After updating the Slack scan-asset Trigger and the InsightVM scan step, activate the workflow in order to trigger it from the channel specified in the trigger.
+1. `Channel Name` Parameter needs to be provided with your Channel Name.
+2. `Site ID` Parameter needs to be provided with your Site ID.
+
+After configuring the parameters, activate the workflow in order to trigger it.
+To trigger workflow use command in your Slack environment. 
+
 
 ## Technical Details
 
@@ -66,9 +72,9 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Rapid7 InsightVM|4.0.1|5|
-|Type Converter|1.5.1|1|
-|Timers|2.0.4|3|
+|Rapid7 InsightVM Console|4.9.1|5|
+|Type Converter|1.8.0|1|
+|Timers|2.0.5|3|
 
 ## Troubleshooting
 
@@ -76,6 +82,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.0 - Add workflow parameters | Update Rapid7 InsightVM Console to version 4.9.1 | Update Type Converter to version 1.8.0 | Update Timers to version 2.0.5 | Update documentation 
 * 1.0.0 - Initial workflow
 
 # Links

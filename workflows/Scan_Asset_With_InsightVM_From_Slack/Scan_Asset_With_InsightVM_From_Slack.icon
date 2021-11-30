@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.53.1-0-ga278c",
+    "komandVersion": "1.93.0-0-g213de",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-06-12T19:32:46.011067327Z",
+    "exportedAt": "2021-09-30T23:12:45.614138511Z",
     "workflowVersions": [
       {
         "name": "Scan Asset with InsightVM from Slack",
@@ -600,6 +600,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -672,6 +678,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -748,6 +760,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -769,15 +787,16 @@
             "name": "Get Scan Status",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "get_scan",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "scan_id": "{{[a725b949-51bf-409f-9ff6-244a857553ae].[id]}}"
@@ -1041,6 +1060,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1115,6 +1140,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1176,15 +1207,16 @@
             "name": "Resume Scan",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "update_scan_status",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "id": "{{[a725b949-51bf-409f-9ff6-244a857553ae].[id]}}",
@@ -1319,6 +1351,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1391,6 +1429,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -1475,12 +1519,13 @@
               "name": "Type Converter",
               "slugVendor": "rapid7",
               "slugName": "type_converter",
-              "slugVersion": "1.5.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.5.1/icon.png"
+              "slugVersion": "1.8.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/type_converter/1.8.0/icon.png"
             },
             "identifier": "string_to_integer",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "input": "{{[8b3765cf-023a-4a24-bc20-27f0e09c7b9d].[riskScore]}}",
@@ -1535,8 +1580,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "Job-URL": "{{[$job].[URL]}}",
-                "Successful": true
+                "value": "{{[5c6d3567-4385-4be8-b143-f66de30ba196].[$item]}}"
               }
             },
             "defaultInputJSONSchema": null,
@@ -1549,23 +1593,11 @@
               "name": "VM Scans",
               "id": "332650c6-8cfe-452d-beb3-6431280827d9",
               "schema": {
-                "definitions": {
-                  "_ROOT_": {
-                    "properties": {
-                      "Job-URL": {
-                        "type": "string"
-                      },
-                      "Successful": {
-                        "type": "boolean"
-                      }
-                    },
-                    "type": "object"
-                  }
-                },
+                "definitions": {},
                 "properties": {
                   "_ROOT_": {
                     "items": {
-                      "$ref": "#/definitions/_ROOT_"
+                      "type": "string"
                     },
                     "type": "array"
                   }
@@ -1585,16 +1617,17 @@
               "expression": {
                 "left": {
                   "type": "literal",
-                  "value": "Job-URL"
+                  "value": "value"
                 },
-                "op": "=",
+                "op": "like",
                 "right": {
-                  "name": "$job.URL",
+                  "name": "8b3765cf-023a-4a24-bc20-27f0e09c7b9d.riskScore",
                   "type": "variable"
                 },
                 "type": "binary"
               },
-              "expressionText": "'Job-URL' = {{[$job].[URL]}}"
+              "expressionText": "'value' like {{[8b3765cf-023a-4a24-bc20-27f0e09c7b9d].[riskScore]}}",
+              "ignoreCase": false
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
@@ -1606,23 +1639,11 @@
               "name": "VM Scans",
               "id": "332650c6-8cfe-452d-beb3-6431280827d9",
               "schema": {
-                "definitions": {
-                  "_ROOT_": {
-                    "properties": {
-                      "Job-URL": {
-                        "type": "string"
-                      },
-                      "Successful": {
-                        "type": "boolean"
-                      }
-                    },
-                    "type": "object"
-                  }
-                },
+                "definitions": {},
                 "properties": {
                   "_ROOT_": {
                     "items": {
-                      "$ref": "#/definitions/_ROOT_"
+                      "type": "string"
                     },
                     "type": "array"
                   }
@@ -1740,12 +1761,12 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "matchChannel": "change_me",
+                "matchChannel": "{{$workflow.[Channel Name]}}",
                 "matchText": "scan-asset\\s\\S",
-                "type": "group"
+                "type": "any"
               }
             },
-            "triggerId": "9aecef81-ac9b-40bb-9403-f7cb4057b45c",
+            "triggerId": "08650d45-1c27-4fb0-b9c2-133ca1b19a49",
             "defaultInputJSONSchema": {
               "properties": {
                 "matchChannel": {
@@ -1781,6 +1802,126 @@
             },
             "defaultOutputJSONSchema": {
               "definitions": {
+                "hashes": {
+                  "properties": {
+                    "md5_hashes": {
+                      "description": "MD5 hashes found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 1,
+                      "title": "MD5 Hashes",
+                      "type": "array"
+                    },
+                    "sha1_hashes": {
+                      "description": "SHA1 hashes found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 2,
+                      "title": "SHA1 Hashes",
+                      "type": "array"
+                    },
+                    "sha256_hashes": {
+                      "description": "SHA256 hashes found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 3,
+                      "title": "SHA256 Hashes",
+                      "type": "array"
+                    }
+                  },
+                  "title": "Hashes",
+                  "type": "object"
+                },
+                "indicators": {
+                  "properties": {
+                    "domains": {
+                      "description": "Domains found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 1,
+                      "title": "Domains",
+                      "type": "array"
+                    },
+                    "email_addresses": {
+                      "description": "Email addresses found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 4,
+                      "title": "Email Addresses",
+                      "type": "array"
+                    },
+                    "hashes": {
+                      "$ref": "#/definitions/hashes",
+                      "description": "Hashes found within the message",
+                      "order": 5,
+                      "title": "Hashes"
+                    },
+                    "ip_addresses": {
+                      "$ref": "#/definitions/ip_addresses",
+                      "description": "IP addresses found within the message",
+                      "order": 7,
+                      "title": "IP Addresses"
+                    },
+                    "mac_addresses": {
+                      "description": "MAC addresses found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 6,
+                      "title": "MAC Addresses",
+                      "type": "array"
+                    },
+                    "parent_domains": {
+                      "description": "Parent domains found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 2,
+                      "title": "Parent Domains",
+                      "type": "array"
+                    },
+                    "urls": {
+                      "description": "URLs found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 3,
+                      "title": "URLs",
+                      "type": "array"
+                    }
+                  },
+                  "title": "Indicators",
+                  "type": "object"
+                },
+                "ip_addresses": {
+                  "properties": {
+                    "ipv4_addresses": {
+                      "description": "IPv4 addresses found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 1,
+                      "title": "IPv4 Addresses",
+                      "type": "array"
+                    },
+                    "ipv6_addresses": {
+                      "description": "IPv6 addresses found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 2,
+                      "title": "IPv6 Addresses",
+                      "type": "array"
+                    }
+                  },
+                  "title": "IP Addresses",
+                  "type": "object"
+                },
                 "message": {
                   "properties": {
                     "channel": {
@@ -1794,6 +1935,18 @@
                       "order": 4,
                       "title": "Channel ID",
                       "type": "string"
+                    },
+                    "first_word": {
+                      "description": "First word of the message, for example a chat command (ignoring mentions)",
+                      "order": 5,
+                      "title": "First Word",
+                      "type": "string"
+                    },
+                    "indicators": {
+                      "$ref": "#/definitions/indicators",
+                      "description": "Potential threat indicators found within the message",
+                      "order": 7,
+                      "title": "Indicators"
                     },
                     "text": {
                       "description": "Text",
@@ -1818,6 +1971,15 @@
                       "order": 2,
                       "title": "User ID",
                       "type": "string"
+                    },
+                    "words": {
+                      "description": "The message split by spaces into a list of words. This list makes finding and using parameters in chat commands easier",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 6,
+                      "title": "Words",
+                      "type": "array"
                     }
                   },
                   "title": "Message",
@@ -1864,15 +2026,16 @@
             "name": "Get New Risk Score",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "asset_search",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "searchCriteria": {
@@ -1884,7 +2047,9 @@
                     }
                   ],
                   "match": "all"
-                }
+                },
+                "size": 0,
+                "sort_criteria": {}
               }
             },
             "defaultInputJSONSchema": {
@@ -1893,6 +2058,19 @@
                   "description": "Tag search criteria - options documentation: https://help.rapid7.com/insightvm/en-us/api/#section/Responses/SearchCriteria",
                   "order": 1,
                   "title": "Search Criteria",
+                  "type": "object"
+                },
+                "size": {
+                  "default": 0,
+                  "description": "The number of records to retrieve. If blank or '0' all assets that match the search will be returned",
+                  "order": 2,
+                  "title": "Size",
+                  "type": "number"
+                },
+                "sort_criteria": {
+                  "description": "JSON object for sorting by criteria. Multiple criteria can be specified with an order of 'asc' (ascending) or 'desc' (descending)",
+                  "order": 3,
+                  "title": "Sort Criteria",
                   "type": "object"
                 }
               },
@@ -2785,21 +2963,22 @@
             "name": "Scan Asset",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "scan",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "hosts": [
                   "{{[5c6d3567-4385-4be8-b143-f66de30ba196].[$item].[ip]}}"
                 ],
-                "site_id": "3"
+                "site_id": "{{$workflow.[Site ID]}}"
               }
             },
             "defaultInputJSONSchema": {
@@ -2929,6 +3108,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -2953,12 +3138,13 @@
               "name": "Timers",
               "slugVendor": "rapid7",
               "slugName": "timers",
-              "slugVersion": "2.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.4/icon.png"
+              "slugVersion": "2.0.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.5/icon.png"
             },
             "identifier": "delay",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "delay": 180
@@ -3045,19 +3231,27 @@
             "name": "Find Asset ID",
             "type": "action",
             "plugin": {
-              "name": "Rapid7 InsightVM",
+              "name": "Rapid7 InsightVM Console",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightvm",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.0.1/icon.png"
+              "slugVersion": "4.9.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightvm/4.9.1/icon.png"
             },
             "identifier": "asset_search",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "searchCriteria": {
                   "filters": [
+                    {
+                      "field": "site-id",
+                      "operator": "in",
+                      "values": [
+                        "{{$workflow.[Site ID]}}"
+                      ]
+                    },
                     {
                       "field": "host-name",
                       "operator": "contains",
@@ -3065,7 +3259,9 @@
                     }
                   ],
                   "match": "all"
-                }
+                },
+                "size": 0,
+                "sort_criteria": {}
               }
             },
             "defaultInputJSONSchema": {
@@ -3074,6 +3270,19 @@
                   "description": "Tag search criteria - options documentation: https://help.rapid7.com/insightvm/en-us/api/#section/Responses/SearchCriteria",
                   "order": 1,
                   "title": "Search Criteria",
+                  "type": "object"
+                },
+                "size": {
+                  "default": 0,
+                  "description": "The number of records to retrieve. If blank or '0' all assets that match the search will be returned",
+                  "order": 2,
+                  "title": "Size",
+                  "type": "number"
+                },
+                "sort_criteria": {
+                  "description": "JSON object for sorting by criteria. Multiple criteria can be specified with an order of 'asc' (ascending) or 'desc' (descending)",
+                  "order": 3,
+                  "title": "Sort Criteria",
                   "type": "object"
                 }
               },
@@ -4043,6 +4252,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -4067,12 +4282,13 @@
               "name": "Timers",
               "slugVendor": "rapid7",
               "slugName": "timers",
-              "slugVersion": "2.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.4/icon.png"
+              "slugVersion": "2.0.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.5/icon.png"
             },
             "identifier": "delay",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "delay": 300
@@ -4161,12 +4377,13 @@
               "name": "Timers",
               "slugVendor": "rapid7",
               "slugName": "timers",
-              "slugVersion": "2.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.4/icon.png"
+              "slugVersion": "2.0.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/timers/2.0.5/icon.png"
             },
             "identifier": "delay",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "delay": 180
@@ -4205,11 +4422,6 @@
               "defaultEdgeId": "2b28c7b1-3956-4535-8b16-1b945b0701da",
               "stepControlParams": [
                 {
-                  "edgeId": "2b28c7b1-3956-4535-8b16-1b945b0701da",
-                  "expression": {},
-                  "expressionText": ""
-                },
-                {
                   "edgeId": "0abf8ef1-4ce1-4dfe-aa23-966ae32335af",
                   "expression": {
                     "expr": {
@@ -4220,6 +4432,11 @@
                     "type": "unary"
                   },
                   "expressionText": "NOT {{[91192672-ea19-476b-9bf7-a606c71a9951].[found]}}"
+                },
+                {
+                  "edgeId": "2b28c7b1-3956-4535-8b16-1b945b0701da",
+                  "expression": {},
+                  "expressionText": ""
                 }
               ]
             },
@@ -4317,6 +4534,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -4335,19 +4558,37 @@
           }
         },
         "tags": null,
-        "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "humanCostSeconds": 300,
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": {
+            "type": "object",
+            "required": [],
+            "properties": {
+              "Site ID": {
+                "type": "integer",
+                "description": "The ID of the InsightVM (or Nexpose) site that should be used for scanning. See workflow setup instructions for details."
+              },
+              "Channel Name": {
+                "type": "string",
+                "description": "The name of the Slack Channel where scans may be started from."
+              }
+            },
+            "definitions": {}
+          }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "9aecef81-ac9b-40bb-9403-f7cb4057b45c",
+        "id": "08650d45-1c27-4fb0-b9c2-133ca1b19a49",
         "name": "scan-asset Trigger",
         "description": "Slack message received trigger",
         "input": {
-          "matchChannel": "change_me",
+          "matchChannel": "{{$workflow.[Channel Name]}}",
           "matchText": "scan-asset\\s\\S",
-          "type": "group"
+          "type": "any"
         },
         "inputJsonSchema": {
           "properties": {
@@ -4384,6 +4625,126 @@
         },
         "outputJsonSchema": {
           "definitions": {
+            "hashes": {
+              "properties": {
+                "md5_hashes": {
+                  "description": "MD5 hashes found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 1,
+                  "title": "MD5 Hashes",
+                  "type": "array"
+                },
+                "sha1_hashes": {
+                  "description": "SHA1 hashes found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 2,
+                  "title": "SHA1 Hashes",
+                  "type": "array"
+                },
+                "sha256_hashes": {
+                  "description": "SHA256 hashes found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 3,
+                  "title": "SHA256 Hashes",
+                  "type": "array"
+                }
+              },
+              "title": "Hashes",
+              "type": "object"
+            },
+            "indicators": {
+              "properties": {
+                "domains": {
+                  "description": "Domains found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 1,
+                  "title": "Domains",
+                  "type": "array"
+                },
+                "email_addresses": {
+                  "description": "Email addresses found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 4,
+                  "title": "Email Addresses",
+                  "type": "array"
+                },
+                "hashes": {
+                  "$ref": "#/definitions/hashes",
+                  "description": "Hashes found within the message",
+                  "order": 5,
+                  "title": "Hashes"
+                },
+                "ip_addresses": {
+                  "$ref": "#/definitions/ip_addresses",
+                  "description": "IP addresses found within the message",
+                  "order": 7,
+                  "title": "IP Addresses"
+                },
+                "mac_addresses": {
+                  "description": "MAC addresses found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 6,
+                  "title": "MAC Addresses",
+                  "type": "array"
+                },
+                "parent_domains": {
+                  "description": "Parent domains found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 2,
+                  "title": "Parent Domains",
+                  "type": "array"
+                },
+                "urls": {
+                  "description": "URLs found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 3,
+                  "title": "URLs",
+                  "type": "array"
+                }
+              },
+              "title": "Indicators",
+              "type": "object"
+            },
+            "ip_addresses": {
+              "properties": {
+                "ipv4_addresses": {
+                  "description": "IPv4 addresses found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 1,
+                  "title": "IPv4 Addresses",
+                  "type": "array"
+                },
+                "ipv6_addresses": {
+                  "description": "IPv6 addresses found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 2,
+                  "title": "IPv6 Addresses",
+                  "type": "array"
+                }
+              },
+              "title": "IP Addresses",
+              "type": "object"
+            },
             "message": {
               "properties": {
                 "channel": {
@@ -4397,6 +4758,18 @@
                   "order": 4,
                   "title": "Channel ID",
                   "type": "string"
+                },
+                "first_word": {
+                  "description": "First word of the message, for example a chat command (ignoring mentions)",
+                  "order": 5,
+                  "title": "First Word",
+                  "type": "string"
+                },
+                "indicators": {
+                  "$ref": "#/definitions/indicators",
+                  "description": "Potential threat indicators found within the message",
+                  "order": 7,
+                  "title": "Indicators"
                 },
                 "text": {
                   "description": "Text",
@@ -4421,6 +4794,15 @@
                   "order": 2,
                   "title": "User ID",
                   "type": "string"
+                },
+                "words": {
+                  "description": "The message split by spaces into a list of words. This list makes finding and using parameters in chat commands easier",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 6,
+                  "title": "Words",
+                  "type": "array"
                 }
               },
               "title": "Message",

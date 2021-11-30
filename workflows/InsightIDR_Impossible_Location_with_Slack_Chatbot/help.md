@@ -41,7 +41,7 @@ Plugins utilized by workflow:
 |IPStack|1.0.1|1|
 |WHOIS|1.0.7|1|
 |Type Converter|1.5.1|2|
-|VirusTotal|6.0.0|1|
+|VirusTotal|7.0.0|1|
 |NASA|1.0.2|1|
 |Palo Alto PAN-OS|1.5.6|2|
 
@@ -51,6 +51,7 @@ _There is no troubleshooting information at this time._
 
 # Version History
 
+* 1.1.0 - Update VirusTotal plugin | Use workflow parameters
 * 1.0.1 - Updated documentation
 * 1.0.0 - Initial workflow
 

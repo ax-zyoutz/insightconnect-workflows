@@ -47,7 +47,8 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|VirusTotal|6.0.1|1|
+|VirusTotal|7.0.0|1|
+|Math|1.2.1|1|
 
 ## Troubleshooting
 
@@ -55,6 +56,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.0 - Updated VirusTotal plugin | Added Math plugin to support the same artifact outputs
 * 1.0.5 - Updated documentation
 * 1.0.4 - Updated trigger syntax and documentation
 * 1.0.3 - Updated documentation

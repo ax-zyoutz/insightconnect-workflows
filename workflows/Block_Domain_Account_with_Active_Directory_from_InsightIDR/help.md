@@ -28,8 +28,8 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Active Directory LDAP|3.2.9|2|
-|InsightIDR|2.0.4|2|
+|Active Directory LDAP|5.2.2|2|
+|Rapid7 InsightIDR|3.1.3|2|
 
 ## Troubleshooting
 
@@ -37,6 +37,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.0.1 - Update Active Directory LDAP plugin to version 5.2.2 | Update Rapid7 InsightIDR plugin to version 3.1.3
 * 1.0.0 - Initial workflow
 
 # Links

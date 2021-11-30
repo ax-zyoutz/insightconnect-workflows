@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.77.1-0-ge005f",
+    "komandVersion": "1.89.5-0-g6408f",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2021-02-16T23:31:26.870604862Z",
+    "exportedAt": "2021-08-30T13:49:00.625971014Z",
     "workflowVersions": [
       {
         "name": "Automated Indicator Enrichment",
@@ -177,7 +177,7 @@
               "description": "",
               "parentNodeId": "364ef08d-d955-478c-860f-272d74eb5c81",
               "fromNodeId": "e5e0df29-405c-46a0-bc37-2c5096d7b68c",
-              "toNodeId": "b8535a75-a3cd-46f7-9a68-5d947e3c5741"
+              "toNodeId": "aa8976a0-b3e1-4aca-a04a-f653fa890c17"
             },
             "b4f81df7-5c84-423f-8e0e-14a33531d0e3": {
               "id": "b4f81df7-5c84-423f-8e0e-14a33531d0e3",
@@ -211,6 +211,14 @@
               "fromNodeId": "fbe690e0-1341-41f1-aef7-5ff47f3ccfac",
               "toNodeId": "41f603ca-047a-482b-9eab-a9bb3f0b1734"
             },
+            "cf297028-f847-488c-bb26-78fcc4606484": {
+              "id": "cf297028-f847-488c-bb26-78fcc4606484",
+              "name": "",
+              "description": "",
+              "parentNodeId": "364ef08d-d955-478c-860f-272d74eb5c81",
+              "fromNodeId": "7faffc5a-fa6a-4214-9857-139ef43a893e",
+              "toNodeId": "b8535a75-a3cd-46f7-9a68-5d947e3c5741"
+            },
             "de4c002d-015c-469d-9d7e-118e91e62450": {
               "id": "de4c002d-015c-469d-9d7e-118e91e62450",
               "name": "",
@@ -226,6 +234,14 @@
               "parentNodeId": "364ef08d-d955-478c-860f-272d74eb5c81",
               "fromNodeId": "b23bf334-fa50-49cc-9c31-5fda1b8ae4f8",
               "toNodeId": "09ab9304-c3e6-4e31-b660-65d0f017fe9e"
+            },
+            "ede99632-af00-45b2-8e63-5aa8c7251fe6": {
+              "id": "ede99632-af00-45b2-8e63-5aa8c7251fe6",
+              "name": "",
+              "description": "",
+              "parentNodeId": "364ef08d-d955-478c-860f-272d74eb5c81",
+              "fromNodeId": "aa8976a0-b3e1-4aca-a04a-f653fa890c17",
+              "toNodeId": "7faffc5a-fa6a-4214-9857-139ef43a893e"
             },
             "fe44fea8-741b-4164-bf43-3b47ae456076": {
               "id": "fe44fea8-741b-4164-bf43-3b47ae456076",
@@ -265,6 +281,10 @@
               "id": "66a5247a-6dd7-4afa-8bec-5e10410a2af9",
               "parentNodeId": "af308e8e-ba3b-48e8-9863-7703017a1fc6"
             },
+            "7faffc5a-fa6a-4214-9857-139ef43a893e": {
+              "id": "7faffc5a-fa6a-4214-9857-139ef43a893e",
+              "parentNodeId": "364ef08d-d955-478c-860f-272d74eb5c81"
+            },
             "8616c858-7096-4f47-af10-b395ab25e937": {
               "id": "8616c858-7096-4f47-af10-b395ab25e937",
               "parentNodeId": "af308e8e-ba3b-48e8-9863-7703017a1fc6"
@@ -280,6 +300,10 @@
             "9f017013-ca2c-41ab-98b2-cf17fca386dc": {
               "id": "9f017013-ca2c-41ab-98b2-cf17fca386dc",
               "parentNodeId": "af308e8e-ba3b-48e8-9863-7703017a1fc6"
+            },
+            "aa8976a0-b3e1-4aca-a04a-f653fa890c17": {
+              "id": "aa8976a0-b3e1-4aca-a04a-f653fa890c17",
+              "parentNodeId": "364ef08d-d955-478c-860f-272d74eb5c81"
             },
             "af308e8e-ba3b-48e8-9863-7703017a1fc6": {
               "id": "af308e8e-ba3b-48e8-9863-7703017a1fc6",
@@ -337,7 +361,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": ":warning: A lookup for `{{[364ef08d-d955-478c-860f-272d74eb5c81].[$item]}}` has failed :warning:\n\nSee the job for more info: {{[$job].[URL]}}",
+                "message": ":warning: A lookup for `{{[364ef08d-d955-478c-860f-272d74eb5c81].[$item]}}` has failed :warning:\n\nThis is likely because no VirusTotal results were found for this URL.\n\nSee the job for more info: {{[$job].[URL]}}",
                 "recipient": "{{$workflow.[Slack Channel]}}",
                 "thread_ts": "{{[d4b99849-7404-4271-83a0-2301855e4098].[timestamp]}}"
               }
@@ -384,6 +408,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -522,9 +552,9 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "{{[b8535a75-a3cd-46f7-9a68-5d947e3c5741].[content]}}",
+                "message": "*Malicious URL Found!*\n`{{[364ef08d-d955-478c-860f-272d74eb5c81].[$item]}}`\n_________________________\n\nLast Analysis Results:\n- Harmless: \n- Malicious: {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[malicious]}}\n- Suspicious: {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[suspicious]}}\n- Undetected: {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[undetected]}}\n\nMalicious Hits: {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[malicious]}} / {{[aa8976a0-b3e1-4aca-a04a-f653fa890c17].[result]}}\n\n_Report Link:_\n[https://www.virustotal.com/gui/url/{{[7faffc5a-fa6a-4214-9857-139ef43a893e].[sha256]}}/detection](https://www.virustotal.com/gui/url/{{[7faffc5a-fa6a-4214-9857-139ef43a893e].[sha256]}}/detection)",
                 "recipient": "{{$workflow.[Slack Channel]}}",
-                "thread_ts": "{{[fbe690e0-1341-41f1-aef7-5ff47f3ccfac].[timestamp]}}"
+                "thread_ts": "{{[d4b99849-7404-4271-83a0-2301855e4098].[timestamp]}}"
               }
             },
             "defaultInputJSONSchema": {
@@ -569,6 +599,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -768,6 +804,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -946,6 +988,75 @@
             "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
+          "7faffc5a-fa6a-4214-9857-139ef43a893e": {
+            "nodeId": "7faffc5a-fa6a-4214-9857-139ef43a893e",
+            "name": "Hash the URL",
+            "type": "action",
+            "plugin": {
+              "name": "HashIt",
+              "slugVendor": "rapid7",
+              "slugName": "hashit",
+              "slugVersion": "2.0.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/hashit/2.0.4/icon.png"
+            },
+            "identifier": "string",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "string": "{{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[url]}}"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "string": {
+                  "description": "String of text to hash",
+                  "order": 1,
+                  "title": "String",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "string"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "md5": {
+                  "description": "MD5 hash",
+                  "order": 1,
+                  "title": "MD5 Hash",
+                  "type": "string"
+                },
+                "sha1": {
+                  "description": "SHA1 hash",
+                  "order": 2,
+                  "title": "SHA1 Hash",
+                  "type": "string"
+                },
+                "sha256": {
+                  "description": "SHA256 hash",
+                  "order": 3,
+                  "title": "SHA256 Hash",
+                  "type": "string"
+                },
+                "sha512": {
+                  "description": "SHA512 hash",
+                  "order": 4,
+                  "title": "SHA512 Hash",
+                  "type": "string"
+                }
+              },
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
+          },
           "8616c858-7096-4f47-af10-b395ab25e937": {
             "nodeId": "8616c858-7096-4f47-af10-b395ab25e937",
             "name": "Post IP Results",
@@ -1002,6 +1113,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -1144,6 +1261,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1218,6 +1341,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1233,6 +1362,60 @@
             "connectionType": "NONE",
             "chatOpsAppName": "slack",
             "chatOpsIdentifier": "post_message"
+          },
+          "aa8976a0-b3e1-4aca-a04a-f653fa890c17": {
+            "nodeId": "aa8976a0-b3e1-4aca-a04a-f653fa890c17",
+            "name": "Calculate Total Reports",
+            "type": "action",
+            "plugin": {
+              "name": "Math",
+              "slugVendor": "rapid7",
+              "slugName": "math",
+              "slugVersion": "1.2.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/math/1.2.1/icon.png"
+            },
+            "identifier": "calculate",
+            "continueOnFailure": true,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "equation": "{{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[harmless]}} + {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[malicious]}} + {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[suspicious]}} + {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[undetected]}}"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "equation": {
+                  "description": "Equation to calculate. Uses Python arithmetic operators (+, -, /, *, **, %)",
+                  "order": 1,
+                  "title": "Equation",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "equation"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "result": {
+                  "description": "Result of the arithmetic operation",
+                  "order": 1,
+                  "title": "Result",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
           },
           "af308e8e-ba3b-48e8-9863-7703017a1fc6": {
             "nodeId": "af308e8e-ba3b-48e8-9863-7703017a1fc6",
@@ -1265,7 +1448,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "No VirusTotal results found for `{{[364ef08d-d955-478c-860f-272d74eb5c81].[$item]}}`",
+                "message": "The VirusTotal report indicated that the URL `{{[364ef08d-d955-478c-860f-272d74eb5c81].[$item]}}` was not malicious.",
                 "recipient": "{{$workflow.[Slack Channel]}}",
                 "thread_ts": "{{[d4b99849-7404-4271-83a0-2301855e4098].[timestamp]}}"
               }
@@ -1312,6 +1495,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -1376,7 +1565,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "*Malicious URL Found!*\n`{{[364ef08d-d955-478c-860f-272d74eb5c81].[$item]}}`\n_________________________\n\nPositive Hits: {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[positives]}}\nTotal AV Scans: {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[total]}}\n\n_AV Scans:_\n{{#each [d240e754-3a8c-4857-bb52-c9ee101b7cc2].[scans]}}\n{{#if detected}}\n{{@key}}: {{detected}}\n{{/if}}\n{{/each}}\n\n_Report Link:_\n{{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[permalink]}}"
+                "content": "*Malicious URL Found!*\n`{{[364ef08d-d955-478c-860f-272d74eb5c81].[$item]}}`\n_________________________\n\nPositive Hits: {{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_stats].[malicious]}}\nTotal AV Scans: {{[aa8976a0-b3e1-4aca-a04a-f653fa890c17].[result]}}\n\n_AV Scans:_\n{{#each [d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[last_analysis_results]}}\n{{#if result}}\n{{engine_name}}: {{result}}\n{{/if}}\n{{/each}}\n\n_Report Link:_\n[https://www.virustotal.com/gui/url/{{[7faffc5a-fa6a-4214-9857-139ef43a893e].[sha256]}}/detection](https://www.virustotal.com/gui/url/{{[7faffc5a-fa6a-4214-9857-139ef43a893e].[sha256]}}/detection)"
               },
               "type": "markdown"
             },
@@ -1482,8 +1671,8 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "6.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/6.0.4/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "scan_url_report",
             "continueOnFailure": true,
@@ -1507,72 +1696,292 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
-              "properties": {
-                "malicious": {
-                  "description": "True if one or more positives",
-                  "order": 1,
-                  "title": "Malicious",
-                  "type": "boolean"
-                },
-                "permalink": {
-                  "description": "Permalink",
-                  "order": 8,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "positives": {
-                  "description": "Positives",
-                  "order": 9,
-                  "title": "Positives",
-                  "type": "integer"
-                },
-                "resource": {
-                  "description": "Resource",
-                  "order": 4,
-                  "title": "Resource",
-                  "type": "string"
-                },
-                "response_code": {
-                  "description": "Response code",
-                  "order": 2,
-                  "title": "Response Code",
-                  "type": "integer"
-                },
-                "scan_date": {
-                  "description": "Scan date",
-                  "order": 7,
-                  "title": "Scan Date",
-                  "type": "string"
-                },
-                "scan_id": {
-                  "description": "Scan ID",
-                  "order": 6,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "scans": {
-                  "description": "Scans",
-                  "order": 11,
-                  "title": "Scans",
+              "definitions": {
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
+                      "type": "string"
+                    },
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
                   "type": "object"
                 },
-                "total": {
-                  "description": "Total",
-                  "order": 10,
-                  "title": "Total",
-                  "type": "integer"
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
+                      "order": 3,
+                      "title": "Engine Update",
+                      "type": "string"
+                    },
+                    "engine_version": {
+                      "description": "Engine's version",
+                      "order": 4,
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
                 },
-                "url": {
-                  "description": "URL",
-                  "order": 5,
-                  "title": "URL",
-                  "type": "string"
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
                 },
-                "verbose_msg": {
-                  "description": "Verbose message",
-                  "order": 3,
-                  "title": "Verbose Message",
-                  "type": "string"
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                },
+                "url_report": {
+                  "properties": {
+                    "categories": {
+                      "description": "Object, with the key as the partner who categorized the URL and the value as the URL's category according to that partner",
+                      "order": 1,
+                      "title": "Categories",
+                      "type": "object"
+                    },
+                    "favicon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the URL's favicon",
+                      "order": 2,
+                      "title": "Favicon"
+                    },
+                    "first_submission_date": {
+                      "description": "UTC timestamp of the date when the URL was first submitted to VirusTotal",
+                      "order": 3,
+                      "title": "First Submission Date",
+                      "type": "integer"
+                    },
+                    "html_meta": {
+                      "description": "Contains all meta tags (only for URLs downloading a HTML). Keys are meta tag names and values are lists containing all values of that meta tag",
+                      "order": 4,
+                      "title": "HTML Meta",
+                      "type": "object"
+                    },
+                    "last_analysis_date": {
+                      "description": "UTC timestamp representing last time the URL was scanned",
+                      "order": 5,
+                      "title": "Last Analysis Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_results": {
+                      "description": "Result from URL scanners. Object with scanner name as key and an object with notes/result from that scanner as value",
+                      "items": {
+                        "$ref": "#/definitions/last_analysis_result"
+                      },
+                      "order": 6,
+                      "title": "Last Analysis Results",
+                      "type": "array"
+                    },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "Number of different results from this scan",
+                      "order": 7,
+                      "title": "Last Analysis Stats"
+                    },
+                    "last_final_url": {
+                      "description": "Final URL in URL redirections",
+                      "order": 8,
+                      "title": "Last Final URL",
+                      "type": "string"
+                    },
+                    "last_http_response_code": {
+                      "description": "HTTP response code of the last response",
+                      "order": 9,
+                      "title": "Last HTTP Response Code",
+                      "type": "integer"
+                    },
+                    "last_http_response_content_length": {
+                      "description": "Length in bytes of the content received",
+                      "order": 10,
+                      "title": "Last HTTP Response Content Length",
+                      "type": "integer"
+                    },
+                    "last_http_response_content_sha256": {
+                      "description": "URL response body's SHA256 hash",
+                      "order": 11,
+                      "title": "Last HTTP Response Content SHA256",
+                      "type": "string"
+                    },
+                    "last_http_response_cookies": {
+                      "description": "Dictionary containing the website's cookies",
+                      "order": 12,
+                      "title": "Last HTTP Response Cookies",
+                      "type": "object"
+                    },
+                    "last_http_response_headers": {
+                      "description": "Dictionary containing headers and values of last HTTP response",
+                      "order": 13,
+                      "title": "Last HTTP Response Headers",
+                      "type": "object"
+                    },
+                    "last_modification_date": {
+                      "description": "UTC timestamp representing last modification date",
+                      "order": 14,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_submission_date": {
+                      "description": "UTC timestamp representing last time it was sent to be analyzed",
+                      "order": 15,
+                      "title": "Last Submission Date",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "order": 25,
+                      "title": "Malicious",
+                      "type": "boolean"
+                    },
+                    "outgoing_links": {
+                      "description": "List of links to outgoing domains",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 16,
+                      "title": "Outgoing Links",
+                      "type": "array"
+                    },
+                    "reputation": {
+                      "description": "Value of votes from VirusTotal community",
+                      "order": 17,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "Tags",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 18,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "targeted_brand": {
+                      "description": "Targeted brand info extracted from phishing engines",
+                      "order": 19,
+                      "title": "Targeted Brand",
+                      "type": "object"
+                    },
+                    "times_submitted": {
+                      "description": "Number of times that URL has been checked",
+                      "order": 20,
+                      "title": "Times Submitted",
+                      "type": "integer"
+                    },
+                    "title": {
+                      "description": "Webpage title",
+                      "order": 21,
+                      "title": "Title",
+                      "type": "string"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Containing the number of positive (harmless) and negative (malicious) votes received from VirusTotal community",
+                      "order": 22,
+                      "title": "Total Votes"
+                    },
+                    "trackers": {
+                      "description": "Object containing all found trackers in that URL in a historical manner",
+                      "order": 23,
+                      "title": "Trackers",
+                      "type": "object"
+                    },
+                    "url": {
+                      "description": "Original URL to be scanned",
+                      "order": 24,
+                      "title": "URL",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Url Report",
+                  "type": "object"
+                }
+              },
+              "properties": {
+                "report": {
+                  "$ref": "#/definitions/url_report",
+                  "description": "URL report",
+                  "order": 1,
+                  "title": "Report"
                 }
               },
               "title": "Variables",
@@ -1595,7 +2004,7 @@
                 "type": "any"
               }
             },
-            "triggerId": "b2a587d1-dce3-4635-81f3-5ffb53bb4488",
+            "triggerId": "c24cb128-d318-471b-b040-619bb6c03af3",
             "defaultInputJSONSchema": {
               "properties": {
                 "matchChannel": {
@@ -1867,10 +2276,10 @@
                 {
                   "edgeId": "b32dc7de-ae38-4711-b25a-d395e2a6f538",
                   "expression": {
-                    "name": "d240e754-3a8c-4857-bb52-c9ee101b7cc2.malicious",
+                    "name": "d240e754-3a8c-4857-bb52-c9ee101b7cc2.report.malicious",
                     "type": "variable"
                   },
-                  "expressionText": "{{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[malicious]}}"
+                  "expressionText": "{{[d240e754-3a8c-4857-bb52-c9ee101b7cc2].[report].[malicious]}}"
                 }
               ]
             },
@@ -1936,6 +2345,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": " The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -2173,12 +2588,13 @@
             },
             "definitions": {}
           }
-        }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "b2a587d1-dce3-4635-81f3-5ffb53bb4488",
+        "id": "c24cb128-d318-471b-b040-619bb6c03af3",
         "name": "Slack Investigate Trigger",
         "description": "",
         "input": {

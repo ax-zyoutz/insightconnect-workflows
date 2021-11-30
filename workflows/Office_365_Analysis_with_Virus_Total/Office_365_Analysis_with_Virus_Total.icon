@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.39.1-0-g39b69",
+    "komandVersion": "1.89.1-0-ge1671",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2019-10-14T14:54:17.954410748Z",
+    "exportedAt": "2021-08-15T18:16:23.135863341Z",
     "workflowVersions": [
       {
         "name": "Office 365 Analysis Virus Total",
@@ -621,11 +621,12 @@
               "slugVendor": "rapid7",
               "slugName": "storage",
               "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/storage/1.0.0/icon.png"
             },
             "identifier": "store",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "variable_name": "{{[20c2237a-ec86-4eeb-987e-d6e222c6d7e0].[content]}}",
@@ -669,7 +670,8 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "outputJSONSchema": null,
+            "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
           "0d009b62-123a-4cbc-b741-2eea71fddc28": {
@@ -680,12 +682,13 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/5.0.0/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "scan_file",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "content": "{{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[content]}}",
@@ -695,11 +698,11 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "content": {
-                  "description": "Base64 content of files",
+                  "description": "Base64 content of file",
                   "displayType": "bytes",
                   "format": "bytes",
                   "order": 2,
-                  "title": "Content",
+                  "title": "File Contents",
                   "type": "string"
                 },
                 "filename": {
@@ -716,59 +719,38 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
+              "definitions": {
+                "submission_response": {
+                  "properties": {
+                    "id": {
+                      "description": "Submission ID",
+                      "order": 2,
+                      "title": "ID",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "Submission type",
+                      "order": 1,
+                      "title": "Type",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Submission Response",
+                  "type": "object"
+                }
+              },
               "properties": {
-                "md5": {
-                  "description": "MD5",
-                  "order": 8,
-                  "title": "MD5",
-                  "type": "string"
-                },
-                "permalink": {
-                  "description": "Permalink",
-                  "order": 4,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "resource": {
-                  "description": "Resource",
-                  "order": 7,
-                  "title": "Resource",
-                  "type": "string"
-                },
-                "response_code": {
-                  "description": "Response code",
-                  "order": 3,
-                  "title": "Response Code",
-                  "type": "integer"
-                },
-                "scan_id": {
-                  "description": "ID of the report",
+                "submission_response": {
+                  "$ref": "#/definitions/submission_response",
+                  "description": "File submission response",
                   "order": 1,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "sha1": {
-                  "description": "SHA1 hash",
-                  "order": 6,
-                  "title": "SHA1",
-                  "type": "string"
-                },
-                "sha256": {
-                  "description": "SHA256 hash",
-                  "order": 5,
-                  "title": "SHA256",
-                  "type": "string"
-                },
-                "verbose_msg": {
-                  "description": "Message returned from the submission",
-                  "order": 2,
-                  "title": "Verbose Message",
-                  "type": "string"
+                  "title": "Submission Response"
                 }
               },
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -798,6 +780,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
@@ -814,6 +797,11 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": {
+              "properties": {},
+              "title": "Variables",
+              "type": "object"
+            },
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
@@ -840,7 +828,7 @@
                 "subject_query": ""
               }
             },
-            "triggerId": "614d7ac8-9719-4a7d-b894-6678797a84e8",
+            "triggerId": "1f6a01f0-8a69-43ef-b654-68659e6625b1",
             "defaultInputJSONSchema": {
               "properties": {
                 "flatten_attachments": {
@@ -1262,6 +1250,7 @@
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
             "connectionType": "CONNECTION"
           },
@@ -1273,12 +1262,13 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "# Malicious File Found: \nFile Name: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[file_name]}}\nFile Type: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[content_type]}}\n\n---\n\n{{[bb5fca5c-2d71-4432-be47-8c5ee4d9ad6a].[permalink]}}\n"
+                "content": "# Malicious File Found: \nFile Name: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[file_name]}}\nFile Type: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[content_type]}}\n\n---\n\nVirus Total Report Link: https://www.virustotal.com/gui/file/{{[bb5fca5c-2d71-4432-be47-8c5ee4d9ad6a].[report].[sha256]}}/detection\n"
               },
               "type": "markdown"
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1290,12 +1280,13 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/5.0.0/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "scan_url_report",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "url": "{{[f70e0bf7-cac7-4467-be3e-5fa3735ee28f].[$item]}}"
@@ -1314,77 +1305,298 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
-              "properties": {
-                "malicious": {
-                  "description": "True if one or more positives",
-                  "order": 1,
-                  "title": "Malicious",
-                  "type": "boolean"
-                },
-                "permalink": {
-                  "description": "Permalink",
-                  "order": 8,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "positives": {
-                  "description": "Positives",
-                  "order": 9,
-                  "title": "Positives",
-                  "type": "integer"
-                },
-                "resource": {
-                  "description": "Resource",
-                  "order": 4,
-                  "title": "Resource",
-                  "type": "string"
-                },
-                "response_code": {
-                  "description": "Response code",
-                  "order": 2,
-                  "title": "Response Code",
-                  "type": "integer"
-                },
-                "scan_date": {
-                  "description": "Scan date",
-                  "order": 7,
-                  "title": "Scan Date",
-                  "type": "string"
-                },
-                "scan_id": {
-                  "description": "Scan ID",
-                  "order": 6,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "scans": {
-                  "description": "Scans",
-                  "order": 11,
-                  "title": "Scans",
+              "definitions": {
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
+                      "type": "string"
+                    },
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
                   "type": "object"
                 },
-                "total": {
-                  "description": "Total",
-                  "order": 10,
-                  "title": "Total",
-                  "type": "integer"
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
+                      "order": 3,
+                      "title": "Engine Update",
+                      "type": "string"
+                    },
+                    "engine_version": {
+                      "description": "Engine's version",
+                      "order": 4,
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
                 },
-                "url": {
-                  "description": "URL",
-                  "order": 5,
-                  "title": "URL",
-                  "type": "string"
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
                 },
-                "verbose_msg": {
-                  "description": "Verbose message",
-                  "order": 3,
-                  "title": "Verbose Message",
-                  "type": "string"
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                },
+                "url_report": {
+                  "properties": {
+                    "categories": {
+                      "description": "Object, with the key as the partner who categorized the URL and the value as the URL's category according to that partner",
+                      "order": 1,
+                      "title": "Categories",
+                      "type": "object"
+                    },
+                    "favicon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the URL's favicon",
+                      "order": 2,
+                      "title": "Favicon"
+                    },
+                    "first_submission_date": {
+                      "description": "UTC timestamp of the date when the URL was first submitted to VirusTotal",
+                      "order": 3,
+                      "title": "First Submission Date",
+                      "type": "integer"
+                    },
+                    "html_meta": {
+                      "description": "Contains all meta tags (only for URLs downloading a HTML). Keys are meta tag names and values are lists containing all values of that meta tag",
+                      "order": 4,
+                      "title": "HTML Meta",
+                      "type": "object"
+                    },
+                    "last_analysis_date": {
+                      "description": "UTC timestamp representing last time the URL was scanned",
+                      "order": 5,
+                      "title": "Last Analysis Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_results": {
+                      "description": "Result from URL scanners. Object with scanner name as key and an object with notes/result from that scanner as value",
+                      "items": {
+                        "$ref": "#/definitions/last_analysis_result"
+                      },
+                      "order": 6,
+                      "title": "Last Analysis Results",
+                      "type": "array"
+                    },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "Number of different results from this scan",
+                      "order": 7,
+                      "title": "Last Analysis Stats"
+                    },
+                    "last_final_url": {
+                      "description": "Final URL in URL redirections",
+                      "order": 8,
+                      "title": "Last Final URL",
+                      "type": "string"
+                    },
+                    "last_http_response_code": {
+                      "description": "HTTP response code of the last response",
+                      "order": 9,
+                      "title": "Last HTTP Response Code",
+                      "type": "integer"
+                    },
+                    "last_http_response_content_length": {
+                      "description": "Length in bytes of the content received",
+                      "order": 10,
+                      "title": "Last HTTP Response Content Length",
+                      "type": "integer"
+                    },
+                    "last_http_response_content_sha256": {
+                      "description": "URL response body's SHA256 hash",
+                      "order": 11,
+                      "title": "Last HTTP Response Content SHA256",
+                      "type": "string"
+                    },
+                    "last_http_response_cookies": {
+                      "description": "Dictionary containing the website's cookies",
+                      "order": 12,
+                      "title": "Last HTTP Response Cookies",
+                      "type": "object"
+                    },
+                    "last_http_response_headers": {
+                      "description": "Dictionary containing headers and values of last HTTP response",
+                      "order": 13,
+                      "title": "Last HTTP Response Headers",
+                      "type": "object"
+                    },
+                    "last_modification_date": {
+                      "description": "UTC timestamp representing last modification date",
+                      "order": 14,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_submission_date": {
+                      "description": "UTC timestamp representing last time it was sent to be analyzed",
+                      "order": 15,
+                      "title": "Last Submission Date",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "order": 25,
+                      "title": "Malicious",
+                      "type": "boolean"
+                    },
+                    "outgoing_links": {
+                      "description": "List of links to outgoing domains",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 16,
+                      "title": "Outgoing Links",
+                      "type": "array"
+                    },
+                    "reputation": {
+                      "description": "Value of votes from VirusTotal community",
+                      "order": 17,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "Tags",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 18,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "targeted_brand": {
+                      "description": "Targeted brand info extracted from phishing engines",
+                      "order": 19,
+                      "title": "Targeted Brand",
+                      "type": "object"
+                    },
+                    "times_submitted": {
+                      "description": "Number of times that URL has been checked",
+                      "order": 20,
+                      "title": "Times Submitted",
+                      "type": "integer"
+                    },
+                    "title": {
+                      "description": "Webpage title",
+                      "order": 21,
+                      "title": "Title",
+                      "type": "string"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Containing the number of positive (harmless) and negative (malicious) votes received from VirusTotal community",
+                      "order": 22,
+                      "title": "Total Votes"
+                    },
+                    "trackers": {
+                      "description": "Object containing all found trackers in that URL in a historical manner",
+                      "order": 23,
+                      "title": "Trackers",
+                      "type": "object"
+                    },
+                    "url": {
+                      "description": "Original URL to be scanned",
+                      "order": 24,
+                      "title": "URL",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Url Report",
+                  "type": "object"
+                }
+              },
+              "properties": {
+                "report": {
+                  "$ref": "#/definitions/url_report",
+                  "description": "URL report",
+                  "order": 1,
+                  "title": "Report"
                 }
               },
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -1402,6 +1614,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1423,6 +1636,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
             "connectionType": "NONE"
           },
@@ -1440,6 +1654,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1457,6 +1672,7 @@
             "identifier": "basename",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "path": "{{[$job].[URL]}}"
@@ -1489,6 +1705,7 @@
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
@@ -1500,12 +1717,13 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "# Malicious File Found: \nFile Name: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[file_name]}}\nFile Type: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[content_type]}}\n\n---\n\nLink: {{[3747b60f-4236-4393-a4da-bc760bbf86d6].[permalink]}}\n"
+                "content": "# Malicious File Found: \nFile Name: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[file_name]}}\nFile Type: {{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[content_type]}}\n\n---\n\nVirus Total Report Link: https://www.virustotal.com/gui/file/{{[3747b60f-4236-4393-a4da-bc760bbf86d6].[report].[sha256]}}/detection\n"
               },
               "type": "markdown"
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1523,6 +1741,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1540,6 +1759,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1551,15 +1771,16 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/5.0.0/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "lookup_hash",
             "continueOnFailure": true,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
-                "hash": ""
+                "hash": "{{[b56a1357-8ddb-43b5-af81-6592c15e30e4].[md5]}}"
               }
             },
             "defaultInputJSONSchema": {
@@ -1575,83 +1796,551 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
-              "properties": {
-                "malicious": {
-                  "description": "True if one or more positives",
-                  "order": 1,
-                  "title": "Malicious",
-                  "type": "boolean"
-                },
-                "md5": {
-                  "description": "MD5 hash",
-                  "order": 11,
-                  "title": "MD5",
-                  "type": "string"
-                },
-                "permalink": {
-                  "description": "Link to report (if found)",
-                  "order": 3,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "positives": {
-                  "description": "Number of positives (if found)",
-                  "order": 2,
-                  "title": "Positives",
-                  "type": "integer"
-                },
-                "resource": {
-                  "description": "Resource",
-                  "order": 4,
-                  "title": "Resources",
-                  "type": "string"
-                },
-                "scan_date": {
-                  "description": "Scan Date",
-                  "order": 6,
-                  "title": "Scan Date",
-                  "type": "string"
-                },
-                "scan_id": {
-                  "description": "Scan ID",
-                  "order": 5,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "scans": {
-                  "description": "Scans",
-                  "order": 7,
-                  "title": "Scans",
+              "definitions": {
+                "alert_context": {
+                  "properties": {
+                    "dest_ip": {
+                      "description": "Destination IP",
+                      "order": 1,
+                      "title": "Destination IP",
+                      "type": "string"
+                    },
+                    "dest_port": {
+                      "description": "Destination port",
+                      "order": 2,
+                      "title": "Destination Port",
+                      "type": "integer"
+                    },
+                    "hostname": {
+                      "description": "In case the alert is related to an HTTP event, destination hostname",
+                      "order": 3,
+                      "title": "Hostname",
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "description": "Communication protocol",
+                      "order": 4,
+                      "title": "Protocol",
+                      "type": "string"
+                    },
+                    "src_ip": {
+                      "description": "Source IP",
+                      "order": 5,
+                      "title": "Source IP",
+                      "type": "string"
+                    },
+                    "src_port": {
+                      "description": "Source port",
+                      "order": 6,
+                      "title": "Source Port",
+                      "type": "integer"
+                    },
+                    "url": {
+                      "description": "In case the alert is related to an HTTP event, destination URL",
+                      "order": 7,
+                      "title": "URL",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Alert Context",
                   "type": "object"
                 },
-                "sha1": {
-                  "description": "SHA1 hash",
-                  "order": 10,
-                  "title": "SHA1",
-                  "type": "string"
+                "crowdsourced_ids_results": {
+                  "properties": {
+                    "alert_context": {
+                      "description": "Context for every match of that alert",
+                      "items": {
+                        "$ref": "#/definitions/alert_context"
+                      },
+                      "order": 1,
+                      "title": "Alert Context",
+                      "type": "array"
+                    },
+                    "alert_severity": {
+                      "description": "Alert severity",
+                      "order": 2,
+                      "title": "Alert Severity",
+                      "type": "string"
+                    },
+                    "rule_category": {
+                      "description": "Alert category description",
+                      "order": 3,
+                      "title": "Rule Category",
+                      "type": "string"
+                    },
+                    "rule_id": {
+                      "description": "Suricata/Snort rule SID",
+                      "order": 4,
+                      "title": "Rule ID",
+                      "type": "string"
+                    },
+                    "rule_msg": {
+                      "description": "Alert description",
+                      "order": 5,
+                      "title": "Rule Message",
+                      "type": "string"
+                    },
+                    "rule_source": {
+                      "description": "Rule source, determined by SID range",
+                      "order": 6,
+                      "title": "Rule Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Results",
+                  "type": "object"
                 },
-                "sha256": {
-                  "description": "SHA256 hash",
-                  "order": 9,
-                  "title": "SHA256",
-                  "type": "string"
+                "crowdsourced_ids_stats": {
+                  "properties": {
+                    "high": {
+                      "description": "Number of matched rules having a high severity",
+                      "order": 1,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "info": {
+                      "description": "Number of matched rules having an info severity",
+                      "order": 2,
+                      "title": "Info",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched rules having a low severity",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched rules having a medium severity",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Stats",
+                  "type": "object"
                 },
-                "total": {
-                  "description": "Total Scans",
-                  "order": 8,
-                  "title": "Total",
-                  "type": "integer"
+                "crowdsourced_yara_results": {
+                  "properties": {
+                    "author": {
+                      "description": "Rule author",
+                      "order": 1,
+                      "title": "Author",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Matched rule description",
+                      "order": 2,
+                      "title": "Description",
+                      "type": "string"
+                    },
+                    "match_in_subfile": {
+                      "description": "Whether the match was in a subfile or not",
+                      "order": 3,
+                      "title": "Match in Subfile",
+                      "type": "boolean"
+                    },
+                    "rule_name": {
+                      "description": "Matched rule name",
+                      "order": 4,
+                      "title": "Rule Name",
+                      "type": "string"
+                    },
+                    "ruleset_id": {
+                      "description": "VirusTotal's ruleset ID",
+                      "order": 5,
+                      "title": "Ruleset ID",
+                      "type": "string"
+                    },
+                    "ruleset_name": {
+                      "description": "Matched rule's ruleset name",
+                      "order": 6,
+                      "title": "Ruleset Name",
+                      "type": "string"
+                    },
+                    "source": {
+                      "description": "Ruleset source",
+                      "order": 7,
+                      "title": "Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Yara Results",
+                  "type": "object"
                 },
-                "verbose_msg": {
-                  "description": "Message returned from the submission",
-                  "order": 12,
-                  "title": "Verbose Message",
-                  "type": "string"
+                "file_report": {
+                  "properties": {
+                    "capabilities_tags": {
+                      "description": "List of representative tags related to the file's capabilities",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 1,
+                      "title": "Capabilities Tags",
+                      "type": "array"
+                    },
+                    "creation_date": {
+                      "description": "Extracted when possible from the file's metadata. Indicates when it was built or compiled. It can also be faked by malware creators. UTC timestamp",
+                      "order": 2,
+                      "title": "Creation Date",
+                      "type": "integer"
+                    },
+                    "crowdsourced_ids_results": {
+                      "description": "IDS (Snort and Suricata) matches for the file. If the file is not a PCAP, the matches are taken from a PCAP generated after running the file in a sandbox",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_ids_results"
+                      },
+                      "order": 3,
+                      "title": "Crowdsourced IDS Results",
+                      "type": "array"
+                    },
+                    "crowdsourced_ids_stats": {
+                      "$ref": "#/definitions/crowdsourced_ids_stats",
+                      "description": "IDS results stats",
+                      "order": 4,
+                      "title": "Crowdsourced IDS Stats"
+                    },
+                    "crowdsourced_yara_results": {
+                      "description": "YARA matches for the file",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_yara_results"
+                      },
+                      "order": 5,
+                      "title": "Crowdsourced YARA Results",
+                      "type": "array"
+                    },
+                    "downloadable": {
+                      "description": "True if the file can be downloaded, false otherwise",
+                      "order": 6,
+                      "title": "Downloadable",
+                      "type": "boolean"
+                    },
+                    "first_submission_date": {
+                      "description": "Date when the file was first seen in VirusTotal (UTC timestamp)",
+                      "order": 7,
+                      "title": "First Submission Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_date": {
+                      "description": "Most recent scan date (UTC timestamp)",
+                      "order": 8,
+                      "title": "Last Analysis Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_results": {
+                      "description": "Latest scan results. For more information about its format, check the Analysis object results attribute",
+                      "items": {
+                        "$ref": "#/definitions/last_analysis_result"
+                      },
+                      "order": 9,
+                      "title": "Last Analysis Results",
+                      "type": "array"
+                    },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "A summary of the latest scan results",
+                      "order": 10,
+                      "title": "Last Analysis Stats"
+                    },
+                    "last_modification_date": {
+                      "description": "Date when the object itself was last modified (UTC timestamp)",
+                      "order": 11,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_submission_date": {
+                      "description": "Most recent date the file was posted to VirusTotal (UTC timestamp)",
+                      "order": 12,
+                      "title": "Last Submission Date",
+                      "type": "integer"
+                    },
+                    "main_icon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the main icon",
+                      "order": 13,
+                      "title": "Main Icon"
+                    },
+                    "malicious": {
+                      "description": "True if there are one or more votes indicating that the file is malicious",
+                      "order": 32,
+                      "title": "Malicious",
+                      "type": "boolean"
+                    },
+                    "md5": {
+                      "description": "File's MD5 hash",
+                      "order": 14,
+                      "title": "MD5",
+                      "type": "string"
+                    },
+                    "meaningful_name": {
+                      "description": "The most interesting name out of all file's names",
+                      "order": 15,
+                      "title": "Meaningful Name",
+                      "type": "string"
+                    },
+                    "names": {
+                      "description": "All file names associated with the file",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 16,
+                      "title": "Names",
+                      "type": "array"
+                    },
+                    "reputation": {
+                      "description": "File's score calculated from all votes posted by the VirusTotal community",
+                      "order": 17,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "sandbox_verdicts": {
+                      "description": "A summary of all sandbox verdicts for a given file",
+                      "order": 18,
+                      "title": "Sandbox Verdicts",
+                      "type": "object"
+                    },
+                    "sha1": {
+                      "description": "File's SHA1 hash",
+                      "order": 19,
+                      "title": "SHA1",
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "description": "File's SHA256 hash",
+                      "order": 20,
+                      "title": "SHA256",
+                      "type": "string"
+                    },
+                    "sigma_analysis_stats": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules, grouped by its severity",
+                      "order": 21,
+                      "title": "Sigma Analysis Stats"
+                    },
+                    "sigma_analysis_summary": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules group by its severity",
+                      "order": 22,
+                      "title": "Sigma Analysis Summary"
+                    },
+                    "size": {
+                      "description": "File size in bytes",
+                      "order": 23,
+                      "title": "Size",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "List of representative attributes",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 24,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "times_submitted": {
+                      "description": "Number of times the file has been posted to VirusTotal",
+                      "order": 25,
+                      "title": "Times Submitted",
+                      "type": "integer"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Unweighted number of total votes from the community, divided by harmless and malicious",
+                      "order": 26,
+                      "title": "Total Votes"
+                    },
+                    "type_description": {
+                      "description": "Describes the file type",
+                      "order": 27,
+                      "title": "Type Description",
+                      "type": "string"
+                    },
+                    "type_extension": {
+                      "description": "Specifies file extension",
+                      "order": 28,
+                      "title": "Type Extension",
+                      "type": "string"
+                    },
+                    "type_tag": {
+                      "description": "Tag representing the file type",
+                      "order": 29,
+                      "title": "Type Tag",
+                      "type": "string"
+                    },
+                    "unique_sources": {
+                      "description": "Indicates from how many different sources the file has been posted from",
+                      "order": 30,
+                      "title": "Unique Sources",
+                      "type": "integer"
+                    },
+                    "vhash": {
+                      "description": "In-house similarity clustering algorithm value, based on a simple structural feature hash allowing you to find similar files",
+                      "order": 31,
+                      "title": "VHASH",
+                      "type": "string"
+                    }
+                  },
+                  "title": "File Report",
+                  "type": "object"
+                },
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
+                      "type": "string"
+                    },
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
+                  "type": "object"
+                },
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
+                      "order": 3,
+                      "title": "Engine Update",
+                      "type": "string"
+                    },
+                    "engine_version": {
+                      "description": "Engine's version",
+                      "order": 4,
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
+                },
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
+                },
+                "sigma_analysis": {
+                  "properties": {
+                    "critical": {
+                      "description": "Number of matched critical severity rules/rulesets",
+                      "order": 1,
+                      "title": "Critical",
+                      "type": "integer"
+                    },
+                    "high": {
+                      "description": "Number of matched high severity rules/rulesets",
+                      "order": 2,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched low severity rules/rulesets",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched medium severity rules/rulesets",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Sigma Analysis",
+                  "type": "object"
+                },
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                }
+              },
+              "properties": {
+                "report": {
+                  "$ref": "#/definitions/file_report",
+                  "description": "Hash report",
+                  "order": 1,
+                  "title": "Report"
                 }
               },
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -1663,12 +2352,13 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/5.0.0/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "scan_url",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "url": "{{[f70e0bf7-cac7-4467-be3e-5fa3735ee28f].[$item]}}"
@@ -1687,47 +2377,38 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
+              "definitions": {
+                "submission_response": {
+                  "properties": {
+                    "id": {
+                      "description": "Submission ID",
+                      "order": 2,
+                      "title": "ID",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "Submission type",
+                      "order": 1,
+                      "title": "Type",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Submission Response",
+                  "type": "object"
+                }
+              },
               "properties": {
-                "permalink": {
-                  "description": "Permalink",
-                  "order": 6,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "response_code": {
-                  "description": "Response code",
-                  "order": 3,
-                  "title": "Response Code",
-                  "type": "integer"
-                },
-                "scan_date": {
-                  "description": "Scan date",
-                  "order": 4,
-                  "title": "Scan Date",
-                  "type": "string"
-                },
-                "scan_id": {
-                  "description": "ID of the report",
+                "submission_response": {
+                  "$ref": "#/definitions/submission_response",
+                  "description": "URL submission response",
                   "order": 1,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "url": {
-                  "description": "URL",
-                  "order": 5,
-                  "title": "URL",
-                  "type": "string"
-                },
-                "verbose_msg": {
-                  "description": "Message returned from the submission",
-                  "order": 2,
-                  "title": "Verbose Message",
-                  "type": "string"
+                  "title": "Submission Response"
                 }
               },
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -1745,6 +2426,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1762,6 +2444,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1778,6 +2461,11 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": {
+              "properties": {},
+              "title": "Variables",
+              "type": "object"
+            },
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
@@ -1795,6 +2483,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -1812,6 +2501,7 @@
             "identifier": "url_extractor",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "file": "",
@@ -1853,6 +2543,7 @@
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
@@ -1866,22 +2557,23 @@
               "defaultEdgeId": "9748c50c-303f-4b5b-8f9e-bf50286ad86b",
               "stepControlParams": [
                 {
+                  "edgeId": "0b8549a1-a6cf-44bf-ba2a-ff380cd23e76",
+                  "expression": {
+                    "name": "1a618ebf-8d61-4472-b2ee-53ac0cf3112f.report.malicious",
+                    "type": "variable"
+                  },
+                  "expressionText": "{{[1a618ebf-8d61-4472-b2ee-53ac0cf3112f].[report].[malicious]}}"
+                },
+                {
                   "edgeId": "9748c50c-303f-4b5b-8f9e-bf50286ad86b",
                   "expression": {},
                   "expressionText": ""
-                },
-                {
-                  "edgeId": "0b8549a1-a6cf-44bf-ba2a-ff380cd23e76",
-                  "expression": {
-                    "name": "1a618ebf-8d61-4472-b2ee-53ac0cf3112f.malicious",
-                    "type": "variable"
-                  },
-                  "expressionText": "{{[1a618ebf-8d61-4472-b2ee-53ac0cf3112f].[malicious]}}"
                 }
               ]
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
@@ -1899,6 +2591,7 @@
             "identifier": "mass_search_and_purge",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "compliance_search_name": "Search for {{[17edb1e0-ffca-4ff7-ad48-adbd19429a29].[icon_email].[flattened_attached_emails].[0].[subject]}}",
@@ -1958,6 +2651,7 @@
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -1995,6 +2689,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
@@ -2010,10 +2705,10 @@
                 {
                   "edgeId": "1271a174-3543-4407-91ce-df80e79c04a6",
                   "expression": {
-                    "name": "bb5fca5c-2d71-4432-be47-8c5ee4d9ad6a.malicious",
+                    "name": "bb5fca5c-2d71-4432-be47-8c5ee4d9ad6a.report.malicious",
                     "type": "variable"
                   },
-                  "expressionText": "{{[bb5fca5c-2d71-4432-be47-8c5ee4d9ad6a].[malicious]}}"
+                  "expressionText": "{{[bb5fca5c-2d71-4432-be47-8c5ee4d9ad6a].[report].[malicious]}}"
                 },
                 {
                   "edgeId": "795a059f-1749-4ed1-8ce3-6cb1a6ada15f",
@@ -2024,6 +2719,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
@@ -2041,6 +2737,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -2062,6 +2759,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
             "connectionType": "NONE"
           },
@@ -2083,17 +2781,12 @@
                     },
                     "op": "AND",
                     "right": {
-                      "name": "3747b60f-4236-4393-a4da-bc760bbf86d6.malicious",
+                      "name": "3747b60f-4236-4393-a4da-bc760bbf86d6.report.malicious",
                       "type": "variable"
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[3747b60f-4236-4393-a4da-bc760bbf86d6].[$success]}} AND {{[3747b60f-4236-4393-a4da-bc760bbf86d6].[malicious]}}"
-                },
-                {
-                  "edgeId": "c7ef1193-da58-4139-8281-1103bd076d0c",
-                  "expression": {},
-                  "expressionText": ""
+                  "expressionText": "{{[3747b60f-4236-4393-a4da-bc760bbf86d6].[$success]}} AND {{[3747b60f-4236-4393-a4da-bc760bbf86d6].[report].[malicious]}}"
                 },
                 {
                   "edgeId": "ab7059a9-41b2-4e0f-a965-f1921253f17c",
@@ -2105,7 +2798,7 @@
                     "op": "AND",
                     "right": {
                       "expr": {
-                        "name": "3747b60f-4236-4393-a4da-bc760bbf86d6.malicious",
+                        "name": "3747b60f-4236-4393-a4da-bc760bbf86d6.report.malicious",
                         "type": "variable"
                       },
                       "op": "NOT",
@@ -2113,12 +2806,18 @@
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[3747b60f-4236-4393-a4da-bc760bbf86d6].[$success]}} AND NOT {{[3747b60f-4236-4393-a4da-bc760bbf86d6].[malicious]}}"
+                  "expressionText": "{{[3747b60f-4236-4393-a4da-bc760bbf86d6].[$success]}} AND NOT {{[3747b60f-4236-4393-a4da-bc760bbf86d6].[report].[malicious]}}"
+                },
+                {
+                  "edgeId": "c7ef1193-da58-4139-8281-1103bd076d0c",
+                  "expression": {},
+                  "expressionText": ""
                 }
               ]
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
@@ -2136,6 +2835,7 @@
             "identifier": "send_email",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "attachment": {
@@ -2253,6 +2953,7 @@
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -2270,6 +2971,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -2299,6 +3001,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
             "connectionType": "NONE"
           },
@@ -2311,11 +3014,12 @@
               "slugVendor": "rapid7",
               "slugName": "storage",
               "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/storage/1.0.0/icon.png"
             },
             "identifier": "store",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "variable_name": "{{[20c2237a-ec86-4eeb-987e-d6e222c6d7e0].[content]}}",
@@ -2331,7 +3035,7 @@
                   "type": "string"
                 },
                 "variable_value": {
-                  "description": "Name of the variable to store",
+                  "description": "Value of the variable to store",
                   "order": 2,
                   "title": "Variable Value",
                   "type": "string"
@@ -2359,7 +3063,8 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "outputJSONSchema": null,
+            "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
           "a1a97629-e864-453e-a675-1fc6774842cf": {
@@ -2371,11 +3076,12 @@
               "slugVendor": "rapid7",
               "slugName": "storage",
               "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/storage/1.0.0/icon.png"
             },
             "identifier": "store",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "variable_name": "{{[20c2237a-ec86-4eeb-987e-d6e222c6d7e0].[content]}}",
@@ -2419,7 +3125,8 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "outputJSONSchema": null,
+            "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
           "a7f3eab4-43e2-4a42-bf19-9bc95004bba3": {
@@ -2431,11 +3138,12 @@
               "slugVendor": "rapid7",
               "slugName": "storage",
               "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/storage/1.0.0/icon.png"
             },
             "identifier": "retrieve",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "variable_name": "{{[20c2237a-ec86-4eeb-987e-d6e222c6d7e0].[content]}}"
@@ -2471,7 +3179,8 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "outputJSONSchema": null,
+            "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
           "aaebce98-efac-456a-b2a9-2eacbf70858a": {
@@ -2500,6 +3209,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
             "connectionType": "NONE"
           },
@@ -2517,6 +3227,7 @@
             "identifier": "bytes",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "bytes": "{{[5476f0ac-2e67-40c5-a2b9-e26dd2fba99d].[$item].[content]}}"
@@ -2569,6 +3280,7 @@
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
@@ -2580,15 +3292,16 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/5.0.0/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "scan_file_report",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
-                "hash": "{{[0d009b62-123a-4cbc-b741-2eea71fddc28].[sha256]}}"
+                "hash": "{{[b56a1357-8ddb-43b5-af81-6592c15e30e4].[md5]}}"
               }
             },
             "defaultInputJSONSchema": {
@@ -2604,83 +3317,551 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
-              "properties": {
-                "malicious": {
-                  "description": "True if one or more positives",
-                  "order": 1,
-                  "title": "Malicious",
-                  "type": "boolean"
-                },
-                "md5": {
-                  "description": "MD5 hash",
-                  "order": 11,
-                  "title": "MD5",
-                  "type": "string"
-                },
-                "permalink": {
-                  "description": "Link to report (if found)",
-                  "order": 3,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "positives": {
-                  "description": "Number of positives (if found)",
-                  "order": 2,
-                  "title": "Positives",
-                  "type": "integer"
-                },
-                "resource": {
-                  "description": "Resource",
-                  "order": 4,
-                  "title": "Resource",
-                  "type": "string"
-                },
-                "scan_date": {
-                  "description": "Scan Date",
-                  "order": 6,
-                  "title": "Scan Date",
-                  "type": "string"
-                },
-                "scan_id": {
-                  "description": "Scan ID",
-                  "order": 5,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "scans": {
-                  "description": "Scans",
-                  "order": 7,
-                  "title": "Scans",
+              "definitions": {
+                "alert_context": {
+                  "properties": {
+                    "dest_ip": {
+                      "description": "Destination IP",
+                      "order": 1,
+                      "title": "Destination IP",
+                      "type": "string"
+                    },
+                    "dest_port": {
+                      "description": "Destination port",
+                      "order": 2,
+                      "title": "Destination Port",
+                      "type": "integer"
+                    },
+                    "hostname": {
+                      "description": "In case the alert is related to an HTTP event, destination hostname",
+                      "order": 3,
+                      "title": "Hostname",
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "description": "Communication protocol",
+                      "order": 4,
+                      "title": "Protocol",
+                      "type": "string"
+                    },
+                    "src_ip": {
+                      "description": "Source IP",
+                      "order": 5,
+                      "title": "Source IP",
+                      "type": "string"
+                    },
+                    "src_port": {
+                      "description": "Source port",
+                      "order": 6,
+                      "title": "Source Port",
+                      "type": "integer"
+                    },
+                    "url": {
+                      "description": "In case the alert is related to an HTTP event, destination URL",
+                      "order": 7,
+                      "title": "URL",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Alert Context",
                   "type": "object"
                 },
-                "sha1": {
-                  "description": "SHA1 hash",
-                  "order": 10,
-                  "title": "SHA1",
-                  "type": "string"
+                "crowdsourced_ids_results": {
+                  "properties": {
+                    "alert_context": {
+                      "description": "Context for every match of that alert",
+                      "items": {
+                        "$ref": "#/definitions/alert_context"
+                      },
+                      "order": 1,
+                      "title": "Alert Context",
+                      "type": "array"
+                    },
+                    "alert_severity": {
+                      "description": "Alert severity",
+                      "order": 2,
+                      "title": "Alert Severity",
+                      "type": "string"
+                    },
+                    "rule_category": {
+                      "description": "Alert category description",
+                      "order": 3,
+                      "title": "Rule Category",
+                      "type": "string"
+                    },
+                    "rule_id": {
+                      "description": "Suricata/Snort rule SID",
+                      "order": 4,
+                      "title": "Rule ID",
+                      "type": "string"
+                    },
+                    "rule_msg": {
+                      "description": "Alert description",
+                      "order": 5,
+                      "title": "Rule Message",
+                      "type": "string"
+                    },
+                    "rule_source": {
+                      "description": "Rule source, determined by SID range",
+                      "order": 6,
+                      "title": "Rule Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Results",
+                  "type": "object"
                 },
-                "sha256": {
-                  "description": "SHA256 hash",
-                  "order": 9,
-                  "title": "SHA256",
-                  "type": "string"
+                "crowdsourced_ids_stats": {
+                  "properties": {
+                    "high": {
+                      "description": "Number of matched rules having a high severity",
+                      "order": 1,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "info": {
+                      "description": "Number of matched rules having an info severity",
+                      "order": 2,
+                      "title": "Info",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched rules having a low severity",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched rules having a medium severity",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Stats",
+                  "type": "object"
                 },
-                "total": {
-                  "description": "Total Scans",
-                  "order": 8,
-                  "title": "Total",
-                  "type": "integer"
+                "crowdsourced_yara_results": {
+                  "properties": {
+                    "author": {
+                      "description": "Rule author",
+                      "order": 1,
+                      "title": "Author",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Matched rule description",
+                      "order": 2,
+                      "title": "Description",
+                      "type": "string"
+                    },
+                    "match_in_subfile": {
+                      "description": "Whether the match was in a subfile or not",
+                      "order": 3,
+                      "title": "Match in Subfile",
+                      "type": "boolean"
+                    },
+                    "rule_name": {
+                      "description": "Matched rule name",
+                      "order": 4,
+                      "title": "Rule Name",
+                      "type": "string"
+                    },
+                    "ruleset_id": {
+                      "description": "VirusTotal's ruleset ID",
+                      "order": 5,
+                      "title": "Ruleset ID",
+                      "type": "string"
+                    },
+                    "ruleset_name": {
+                      "description": "Matched rule's ruleset name",
+                      "order": 6,
+                      "title": "Ruleset Name",
+                      "type": "string"
+                    },
+                    "source": {
+                      "description": "Ruleset source",
+                      "order": 7,
+                      "title": "Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Yara Results",
+                  "type": "object"
                 },
-                "verbose_msg": {
-                  "description": "Message returned from the submission",
-                  "order": 12,
-                  "title": "Verbose Message",
-                  "type": "string"
+                "file_report": {
+                  "properties": {
+                    "capabilities_tags": {
+                      "description": "List of representative tags related to the file's capabilities",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 1,
+                      "title": "Capabilities Tags",
+                      "type": "array"
+                    },
+                    "creation_date": {
+                      "description": "Extracted when possible from the file's metadata. Indicates when it was built or compiled. It can also be faked by malware creators. UTC timestamp",
+                      "order": 2,
+                      "title": "Creation Date",
+                      "type": "integer"
+                    },
+                    "crowdsourced_ids_results": {
+                      "description": "IDS (Snort and Suricata) matches for the file. If the file is not a PCAP, the matches are taken from a PCAP generated after running the file in a sandbox",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_ids_results"
+                      },
+                      "order": 3,
+                      "title": "Crowdsourced IDS Results",
+                      "type": "array"
+                    },
+                    "crowdsourced_ids_stats": {
+                      "$ref": "#/definitions/crowdsourced_ids_stats",
+                      "description": "IDS results stats",
+                      "order": 4,
+                      "title": "Crowdsourced IDS Stats"
+                    },
+                    "crowdsourced_yara_results": {
+                      "description": "YARA matches for the file",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_yara_results"
+                      },
+                      "order": 5,
+                      "title": "Crowdsourced YARA Results",
+                      "type": "array"
+                    },
+                    "downloadable": {
+                      "description": "True if the file can be downloaded, false otherwise",
+                      "order": 6,
+                      "title": "Downloadable",
+                      "type": "boolean"
+                    },
+                    "first_submission_date": {
+                      "description": "Date when the file was first seen in VirusTotal (UTC timestamp)",
+                      "order": 7,
+                      "title": "First Submission Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_date": {
+                      "description": "Most recent scan date (UTC timestamp)",
+                      "order": 8,
+                      "title": "Last Analysis Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_results": {
+                      "description": "Latest scan results. For more information about its format, check the Analysis object results attribute",
+                      "items": {
+                        "$ref": "#/definitions/last_analysis_result"
+                      },
+                      "order": 9,
+                      "title": "Last Analysis Results",
+                      "type": "array"
+                    },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "A summary of the latest scan results",
+                      "order": 10,
+                      "title": "Last Analysis Stats"
+                    },
+                    "last_modification_date": {
+                      "description": "Date when the object itself was last modified (UTC timestamp)",
+                      "order": 11,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_submission_date": {
+                      "description": "Most recent date the file was posted to VirusTotal (UTC timestamp)",
+                      "order": 12,
+                      "title": "Last Submission Date",
+                      "type": "integer"
+                    },
+                    "main_icon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the main icon",
+                      "order": 13,
+                      "title": "Main Icon"
+                    },
+                    "malicious": {
+                      "description": "True if there are one or more votes indicating that the file is malicious",
+                      "order": 32,
+                      "title": "Malicious",
+                      "type": "boolean"
+                    },
+                    "md5": {
+                      "description": "File's MD5 hash",
+                      "order": 14,
+                      "title": "MD5",
+                      "type": "string"
+                    },
+                    "meaningful_name": {
+                      "description": "The most interesting name out of all file's names",
+                      "order": 15,
+                      "title": "Meaningful Name",
+                      "type": "string"
+                    },
+                    "names": {
+                      "description": "All file names associated with the file",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 16,
+                      "title": "Names",
+                      "type": "array"
+                    },
+                    "reputation": {
+                      "description": "File's score calculated from all votes posted by the VirusTotal community",
+                      "order": 17,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "sandbox_verdicts": {
+                      "description": "A summary of all sandbox verdicts for a given file",
+                      "order": 18,
+                      "title": "Sandbox Verdicts",
+                      "type": "object"
+                    },
+                    "sha1": {
+                      "description": "File's SHA1 hash",
+                      "order": 19,
+                      "title": "SHA1",
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "description": "File's SHA256 hash",
+                      "order": 20,
+                      "title": "SHA256",
+                      "type": "string"
+                    },
+                    "sigma_analysis_stats": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules, grouped by its severity",
+                      "order": 21,
+                      "title": "Sigma Analysis Stats"
+                    },
+                    "sigma_analysis_summary": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules group by its severity",
+                      "order": 22,
+                      "title": "Sigma Analysis Summary"
+                    },
+                    "size": {
+                      "description": "File size in bytes",
+                      "order": 23,
+                      "title": "Size",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "List of representative attributes",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 24,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "times_submitted": {
+                      "description": "Number of times the file has been posted to VirusTotal",
+                      "order": 25,
+                      "title": "Times Submitted",
+                      "type": "integer"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Unweighted number of total votes from the community, divided by harmless and malicious",
+                      "order": 26,
+                      "title": "Total Votes"
+                    },
+                    "type_description": {
+                      "description": "Describes the file type",
+                      "order": 27,
+                      "title": "Type Description",
+                      "type": "string"
+                    },
+                    "type_extension": {
+                      "description": "Specifies file extension",
+                      "order": 28,
+                      "title": "Type Extension",
+                      "type": "string"
+                    },
+                    "type_tag": {
+                      "description": "Tag representing the file type",
+                      "order": 29,
+                      "title": "Type Tag",
+                      "type": "string"
+                    },
+                    "unique_sources": {
+                      "description": "Indicates from how many different sources the file has been posted from",
+                      "order": 30,
+                      "title": "Unique Sources",
+                      "type": "integer"
+                    },
+                    "vhash": {
+                      "description": "In-house similarity clustering algorithm value, based on a simple structural feature hash allowing you to find similar files",
+                      "order": 31,
+                      "title": "VHASH",
+                      "type": "string"
+                    }
+                  },
+                  "title": "File Report",
+                  "type": "object"
+                },
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
+                      "type": "string"
+                    },
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
+                  "type": "object"
+                },
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
+                      "order": 3,
+                      "title": "Engine Update",
+                      "type": "string"
+                    },
+                    "engine_version": {
+                      "description": "Engine's version",
+                      "order": 4,
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
+                },
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
+                },
+                "sigma_analysis": {
+                  "properties": {
+                    "critical": {
+                      "description": "Number of matched critical severity rules/rulesets",
+                      "order": 1,
+                      "title": "Critical",
+                      "type": "integer"
+                    },
+                    "high": {
+                      "description": "Number of matched high severity rules/rulesets",
+                      "order": 2,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched low severity rules/rulesets",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched medium severity rules/rulesets",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Sigma Analysis",
+                  "type": "object"
+                },
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                }
+              },
+              "properties": {
+                "report": {
+                  "$ref": "#/definitions/file_report",
+                  "description": "Hash report",
+                  "order": 1,
+                  "title": "Report"
                 }
               },
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -2693,11 +3874,12 @@
               "slugVendor": "rapid7",
               "slugName": "storage",
               "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/storage/1.0.0/icon.png"
             },
             "identifier": "retrieve",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "variable_name": "{{[20c2237a-ec86-4eeb-987e-d6e222c6d7e0].[content]}}"
@@ -2733,7 +3915,8 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "outputJSONSchema": null,
+            "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
           "d8e82411-e4c9-4c41-89f7-e43af5bb5fd9": {
@@ -2745,11 +3928,12 @@
               "slugVendor": "rapid7",
               "slugName": "storage",
               "slugVersion": "1.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/storage/1.0.0/icon.png"
             },
             "identifier": "store",
             "continueOnFailure": false,
             "isDisabled": false,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "variable_name": "{{[20c2237a-ec86-4eeb-987e-d6e222c6d7e0].[content]}}",
@@ -2793,7 +3977,8 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "outputJSONSchema": null,
+            "defaultImageData": "",
             "connectionType": "ORCHESTRATOR"
           },
           "e44548ff-3920-4b39-a193-c8edb4f6c117": {
@@ -2810,6 +3995,7 @@
             "identifier": "block_sender_transport_rule",
             "continueOnFailure": false,
             "isDisabled": true,
+            "isCloud": false,
             "parameters": {
               "input": {
                 "domain_or_email_to_block": "{{[17edb1e0-ffca-4ff7-ad48-adbd19429a29].[icon_email].[sender]}}",
@@ -2854,6 +4040,7 @@
               "title": "Variables",
               "type": "object"
             },
+            "outputJSONSchema": null,
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
@@ -2891,6 +4078,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
@@ -2908,6 +4096,7 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
@@ -2924,18 +4113,26 @@
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
+            "outputJSONSchema": {
+              "properties": {},
+              "title": "Variables",
+              "type": "object"
+            },
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           }
         },
         "tags": null,
         "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": null
+        }
       }
     ],
     "triggers": [
       {
-        "id": "614d7ac8-9719-4a7d-b894-6678797a84e8",
+        "id": "1f6a01f0-8a69-43ef-b654-68659e6625b1",
         "identifier": "email_received",
         "name": "Office 365 New Email Trigger",
         "description": "",

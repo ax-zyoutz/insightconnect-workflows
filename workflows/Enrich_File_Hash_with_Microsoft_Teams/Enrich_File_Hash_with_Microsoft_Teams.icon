@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.72.0-0-ge9d34",
+    "komandVersion": "1.89.5-0-g6408f",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-12-11T17:56:58.189960524Z",
+    "exportedAt": "2021-08-30T11:32:47.166257904Z",
     "workflowVersions": [
       {
         "name": "Enrich File Hash with Microsoft Teams",
@@ -11,13 +11,21 @@
         "description": "Lookup a potentially malicious file hash in VirusTotal with a Microsoft Teams command.",
         "graph": {
           "edges": {
+            "03ee9ede-acc5-496e-88ab-ec3a7e3b664b": {
+              "id": "03ee9ede-acc5-496e-88ab-ec3a7e3b664b",
+              "name": "",
+              "description": "",
+              "parentNodeId": "",
+              "fromNodeId": "1c2e1ff1-e76a-465e-beeb-c830f7f1f22a",
+              "toNodeId": "f5ba7553-3f10-4539-9908-110f0abef46f"
+            },
             "247676e2-82d6-40fc-bd01-2343905d1c2e": {
               "id": "247676e2-82d6-40fc-bd01-2343905d1c2e",
               "name": "Yes",
               "description": "Hash was found in VirusTotal database",
               "parentNodeId": "",
               "fromNodeId": "1955283a-c9fc-4599-acb2-d0bc0b345327",
-              "toNodeId": "f5ba7553-3f10-4539-9908-110f0abef46f"
+              "toNodeId": "1c2e1ff1-e76a-465e-beeb-c830f7f1f22a"
             },
             "3bae4469-03e4-4066-9e39-fb56d4dbfd49": {
               "id": "3bae4469-03e4-4066-9e39-fb56d4dbfd49",
@@ -117,6 +125,10 @@
               "id": "1955283a-c9fc-4599-acb2-d0bc0b345327",
               "parentNodeId": ""
             },
+            "1c2e1ff1-e76a-465e-beeb-c830f7f1f22a": {
+              "id": "1c2e1ff1-e76a-465e-beeb-c830f7f1f22a",
+              "parentNodeId": ""
+            },
             "25f565b8-6767-4692-bf87-5023cf5fc702": {
               "id": "25f565b8-6767-4692-bf87-5023cf5fc702",
               "parentNodeId": ""
@@ -192,17 +204,17 @@
                   "edgeId": "985c2936-8bec-4307-9e49-225085414545",
                   "expression": {
                     "left": {
-                      "name": "e86d1fc3-c46b-4b7e-afdb-33d624c03f12.response_code",
+                      "name": "e86d1fc3-c46b-4b7e-afdb-33d624c03f12.$success",
                       "type": "variable"
                     },
-                    "op": "!=",
+                    "op": "==",
                     "right": {
                       "type": "literal",
-                      "value": 1
+                      "value": false
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[response_code]}} != 1"
+                  "expressionText": "{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[$success]}} == false"
                 }
               ]
             },
@@ -211,6 +223,60 @@
             "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
+          },
+          "1c2e1ff1-e76a-465e-beeb-c830f7f1f22a": {
+            "nodeId": "1c2e1ff1-e76a-465e-beeb-c830f7f1f22a",
+            "name": "Calculate Total Reports",
+            "type": "action",
+            "plugin": {
+              "name": "Math",
+              "slugVendor": "rapid7",
+              "slugName": "math",
+              "slugVersion": "1.2.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/math/1.2.1/icon.png"
+            },
+            "identifier": "calculate",
+            "continueOnFailure": true,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "equation": "{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[last_analysis_stats].[harmless]}} + {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[last_analysis_stats].[malicious]}} + {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[last_analysis_stats].[suspicious]}} + {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[last_analysis_stats].[undetected]}}"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "equation": {
+                  "description": "Equation to calculate. Uses Python arithmetic operators (+, -, /, *, **, %)",
+                  "order": 1,
+                  "title": "Equation",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "equation"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "result": {
+                  "description": "Result of the arithmetic operation",
+                  "order": 1,
+                  "title": "Result",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
           },
           "25f565b8-6767-4692-bf87-5023cf5fc702": {
             "nodeId": "25f565b8-6767-4692-bf87-5023cf5fc702",
@@ -506,7 +572,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "**Hash Scan Report for {{[25f565b8-6767-4692-bf87-5023cf5fc702].[hash]}}**\n\n**Malicious:** {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[malicious]}}\n**Positives:** {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[positives]}} / {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[total]}}\n**Results permalink:** {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[permalink]}}"
+                "content": "**Hash Scan Report for {{[25f565b8-6767-4692-bf87-5023cf5fc702].[hash]}}**\n\n**Malicious:** {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[malicious]}}\n**Positives:** {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[last_analysis_stats].[malicious]}} / {{[1c2e1ff1-e76a-465e-beeb-c830f7f1f22a].[result]}}\n**Results permalink:** [https://www.virustotal.com/gui/file/{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[sha256]}}/detection](https://www.virustotal.com/gui/file/{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[sha256]}}/detection)"
               },
               "type": "markdown"
             },
@@ -739,11 +805,11 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "6.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/6.0.1/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "lookup_hash",
-            "continueOnFailure": false,
+            "continueOnFailure": true,
             "isDisabled": false,
             "isCloud": false,
             "parameters": {
@@ -764,84 +830,545 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
-              "properties": {
-                "malicious": {
-                  "description": "True if one or more positives",
-                  "order": 2,
-                  "title": "Malicious",
-                  "type": "boolean"
-                },
-                "md5": {
-                  "description": "MD5 hash",
-                  "order": 12,
-                  "title": "MD5",
-                  "type": "string"
-                },
-                "permalink": {
-                  "description": "Link to report (if found)",
-                  "order": 4,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "positives": {
-                  "description": "Number of positives (if found)",
-                  "order": 3,
-                  "title": "Positives",
-                  "type": "integer"
-                },
-                "resource": {
-                  "description": "Resource",
-                  "order": 5,
-                  "title": "Resources",
-                  "type": "string"
-                },
-                "response_code": {
-                  "description": "Response code from the request",
-                  "order": 1,
-                  "title": "Response Code",
-                  "type": "integer"
-                },
-                "scan_date": {
-                  "description": "Scan Date",
-                  "order": 7,
-                  "title": "Scan Date",
-                  "type": "string"
-                },
-                "scan_id": {
-                  "description": "Scan ID",
-                  "order": 6,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "scans": {
-                  "description": "Scans",
-                  "order": 8,
-                  "title": "Scans",
+              "definitions": {
+                "alert_context": {
+                  "properties": {
+                    "dest_ip": {
+                      "description": "Destination IP",
+                      "order": 1,
+                      "title": "Destination IP",
+                      "type": "string"
+                    },
+                    "dest_port": {
+                      "description": "Destination port",
+                      "order": 2,
+                      "title": "Destination Port",
+                      "type": "integer"
+                    },
+                    "hostname": {
+                      "description": "In case the alert is related to an HTTP event, destination hostname",
+                      "order": 3,
+                      "title": "Hostname",
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "description": "Communication protocol",
+                      "order": 4,
+                      "title": "Protocol",
+                      "type": "string"
+                    },
+                    "src_ip": {
+                      "description": "Source IP",
+                      "order": 5,
+                      "title": "Source IP",
+                      "type": "string"
+                    },
+                    "src_port": {
+                      "description": "Source port",
+                      "order": 6,
+                      "title": "Source Port",
+                      "type": "integer"
+                    },
+                    "url": {
+                      "description": "In case the alert is related to an HTTP event, destination URL",
+                      "order": 7,
+                      "title": "URL",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Alert Context",
                   "type": "object"
                 },
-                "sha1": {
-                  "description": "SHA1 hash",
-                  "order": 11,
-                  "title": "SHA1",
-                  "type": "string"
+                "crowdsourced_ids_results": {
+                  "properties": {
+                    "alert_context": {
+                      "description": "Context for every match of that alert",
+                      "items": {
+                        "$ref": "#/definitions/alert_context"
+                      },
+                      "order": 1,
+                      "title": "Alert Context",
+                      "type": "array"
+                    },
+                    "alert_severity": {
+                      "description": "Alert severity",
+                      "order": 2,
+                      "title": "Alert Severity",
+                      "type": "string"
+                    },
+                    "rule_category": {
+                      "description": "Alert category description",
+                      "order": 3,
+                      "title": "Rule Category",
+                      "type": "string"
+                    },
+                    "rule_id": {
+                      "description": "Suricata/Snort rule SID",
+                      "order": 4,
+                      "title": "Rule ID",
+                      "type": "string"
+                    },
+                    "rule_msg": {
+                      "description": "Alert description",
+                      "order": 5,
+                      "title": "Rule Message",
+                      "type": "string"
+                    },
+                    "rule_source": {
+                      "description": "Rule source, determined by SID range",
+                      "order": 6,
+                      "title": "Rule Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Results",
+                  "type": "object"
                 },
-                "sha256": {
-                  "description": "SHA256 hash",
-                  "order": 10,
-                  "title": "SHA256",
-                  "type": "string"
+                "crowdsourced_ids_stats": {
+                  "properties": {
+                    "high": {
+                      "description": "Number of matched rules having a high severity",
+                      "order": 1,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "info": {
+                      "description": "Number of matched rules having an info severity",
+                      "order": 2,
+                      "title": "Info",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched rules having a low severity",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched rules having a medium severity",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Stats",
+                  "type": "object"
                 },
-                "total": {
-                  "description": "Total Scans",
-                  "order": 9,
-                  "title": "Total",
-                  "type": "integer"
+                "crowdsourced_yara_results": {
+                  "properties": {
+                    "author": {
+                      "description": "Rule author",
+                      "order": 1,
+                      "title": "Author",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Matched rule description",
+                      "order": 2,
+                      "title": "Description",
+                      "type": "string"
+                    },
+                    "match_in_subfile": {
+                      "description": "Whether the match was in a subfile or not",
+                      "order": 3,
+                      "title": "Match in Subfile",
+                      "type": "boolean"
+                    },
+                    "rule_name": {
+                      "description": "Matched rule name",
+                      "order": 4,
+                      "title": "Rule Name",
+                      "type": "string"
+                    },
+                    "ruleset_id": {
+                      "description": "VirusTotal's ruleset ID",
+                      "order": 5,
+                      "title": "Ruleset ID",
+                      "type": "string"
+                    },
+                    "ruleset_name": {
+                      "description": "Matched rule's ruleset name",
+                      "order": 6,
+                      "title": "Ruleset Name",
+                      "type": "string"
+                    },
+                    "source": {
+                      "description": "Ruleset source",
+                      "order": 7,
+                      "title": "Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Yara Results",
+                  "type": "object"
                 },
-                "verbose_msg": {
-                  "description": "Message returned from the submission",
-                  "order": 13,
-                  "title": "Verbose Message",
-                  "type": "string"
+                "file_report": {
+                  "properties": {
+                    "capabilities_tags": {
+                      "description": "List of representative tags related to the file's capabilities",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 1,
+                      "title": "Capabilities Tags",
+                      "type": "array"
+                    },
+                    "creation_date": {
+                      "description": "Extracted when possible from the file's metadata. Indicates when it was built or compiled. It can also be faked by malware creators. UTC timestamp",
+                      "order": 2,
+                      "title": "Creation Date",
+                      "type": "integer"
+                    },
+                    "crowdsourced_ids_results": {
+                      "description": "IDS (Snort and Suricata) matches for the file. If the file is not a PCAP, the matches are taken from a PCAP generated after running the file in a sandbox",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_ids_results"
+                      },
+                      "order": 3,
+                      "title": "Crowdsourced IDS Results",
+                      "type": "array"
+                    },
+                    "crowdsourced_ids_stats": {
+                      "$ref": "#/definitions/crowdsourced_ids_stats",
+                      "description": "IDS results stats",
+                      "order": 4,
+                      "title": "Crowdsourced IDS Stats"
+                    },
+                    "crowdsourced_yara_results": {
+                      "description": "YARA matches for the file",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_yara_results"
+                      },
+                      "order": 5,
+                      "title": "Crowdsourced YARA Results",
+                      "type": "array"
+                    },
+                    "downloadable": {
+                      "description": "True if the file can be downloaded, false otherwise",
+                      "order": 6,
+                      "title": "Downloadable",
+                      "type": "boolean"
+                    },
+                    "first_submission_date": {
+                      "description": "Date when the file was first seen in VirusTotal (UTC timestamp)",
+                      "order": 7,
+                      "title": "First Submission Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_date": {
+                      "description": "Most recent scan date (UTC timestamp)",
+                      "order": 8,
+                      "title": "Last Analysis Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_results": {
+                      "description": "Latest scan results. For more information about its format, check the Analysis object results attribute",
+                      "items": {
+                        "$ref": "#/definitions/last_analysis_result"
+                      },
+                      "order": 9,
+                      "title": "Last Analysis Results",
+                      "type": "array"
+                    },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "A summary of the latest scan results",
+                      "order": 10,
+                      "title": "Last Analysis Stats"
+                    },
+                    "last_modification_date": {
+                      "description": "Date when the object itself was last modified (UTC timestamp)",
+                      "order": 11,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_submission_date": {
+                      "description": "Most recent date the file was posted to VirusTotal (UTC timestamp)",
+                      "order": 12,
+                      "title": "Last Submission Date",
+                      "type": "integer"
+                    },
+                    "main_icon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the main icon",
+                      "order": 13,
+                      "title": "Main Icon"
+                    },
+                    "malicious": {
+                      "description": "True if there are one or more votes indicating that the file is malicious",
+                      "order": 32,
+                      "title": "Malicious",
+                      "type": "boolean"
+                    },
+                    "md5": {
+                      "description": "File's MD5 hash",
+                      "order": 14,
+                      "title": "MD5",
+                      "type": "string"
+                    },
+                    "meaningful_name": {
+                      "description": "The most interesting name out of all file's names",
+                      "order": 15,
+                      "title": "Meaningful Name",
+                      "type": "string"
+                    },
+                    "names": {
+                      "description": "All file names associated with the file",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 16,
+                      "title": "Names",
+                      "type": "array"
+                    },
+                    "reputation": {
+                      "description": "File's score calculated from all votes posted by the VirusTotal community",
+                      "order": 17,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "sandbox_verdicts": {
+                      "description": "A summary of all sandbox verdicts for a given file",
+                      "order": 18,
+                      "title": "Sandbox Verdicts",
+                      "type": "object"
+                    },
+                    "sha1": {
+                      "description": "File's SHA1 hash",
+                      "order": 19,
+                      "title": "SHA1",
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "description": "File's SHA256 hash",
+                      "order": 20,
+                      "title": "SHA256",
+                      "type": "string"
+                    },
+                    "sigma_analysis_stats": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules, grouped by its severity",
+                      "order": 21,
+                      "title": "Sigma Analysis Stats"
+                    },
+                    "sigma_analysis_summary": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules group by its severity",
+                      "order": 22,
+                      "title": "Sigma Analysis Summary"
+                    },
+                    "size": {
+                      "description": "File size in bytes",
+                      "order": 23,
+                      "title": "Size",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "List of representative attributes",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 24,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "times_submitted": {
+                      "description": "Number of times the file has been posted to VirusTotal",
+                      "order": 25,
+                      "title": "Times Submitted",
+                      "type": "integer"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Unweighted number of total votes from the community, divided by harmless and malicious",
+                      "order": 26,
+                      "title": "Total Votes"
+                    },
+                    "type_description": {
+                      "description": "Describes the file type",
+                      "order": 27,
+                      "title": "Type Description",
+                      "type": "string"
+                    },
+                    "type_extension": {
+                      "description": "Specifies file extension",
+                      "order": 28,
+                      "title": "Type Extension",
+                      "type": "string"
+                    },
+                    "type_tag": {
+                      "description": "Tag representing the file type",
+                      "order": 29,
+                      "title": "Type Tag",
+                      "type": "string"
+                    },
+                    "unique_sources": {
+                      "description": "Indicates from how many different sources the file has been posted from",
+                      "order": 30,
+                      "title": "Unique Sources",
+                      "type": "integer"
+                    },
+                    "vhash": {
+                      "description": "In-house similarity clustering algorithm value, based on a simple structural feature hash allowing you to find similar files",
+                      "order": 31,
+                      "title": "VHASH",
+                      "type": "string"
+                    }
+                  },
+                  "title": "File Report",
+                  "type": "object"
+                },
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
+                      "type": "string"
+                    },
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
+                  "type": "object"
+                },
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
+                      "order": 3,
+                      "title": "Engine Update",
+                      "type": "string"
+                    },
+                    "engine_version": {
+                      "description": "Engine's version",
+                      "order": 4,
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
+                },
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
+                },
+                "sigma_analysis": {
+                  "properties": {
+                    "critical": {
+                      "description": "Number of matched critical severity rules/rulesets",
+                      "order": 1,
+                      "title": "Critical",
+                      "type": "integer"
+                    },
+                    "high": {
+                      "description": "Number of matched high severity rules/rulesets",
+                      "order": 2,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched low severity rules/rulesets",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched medium severity rules/rulesets",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Sigma Analysis",
+                  "type": "object"
+                },
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                }
+              },
+              "properties": {
+                "report": {
+                  "$ref": "#/definitions/file_report",
+                  "description": "Hash report",
+                  "order": 1,
+                  "title": "Report"
                 }
               },
               "title": "Variables",
@@ -873,7 +1400,7 @@
                 "team_name": "change_me"
               }
             },
-            "triggerId": "ff9c85b8-ce66-4107-9064-efbc66b1aeda",
+            "triggerId": "adcc15ea-25fc-4a8e-b2dd-0ab713176075",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -1206,7 +1733,7 @@
             "parameters": {
               "input": {
                 "channel_name": "{{[edd82ea1-b0b1-46e3-80ca-cdc3857b9905].[channel_name]}}",
-                "message_content": "📔 Hash Scan Report for {{[25f565b8-6767-4692-bf87-5023cf5fc702].[hash]}} 📔<br>\n📌 Summary:<br>\n<b>VirusTotal</b><br>\n<i>Malicious: {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[malicious]}}</i><br>\n<i>Positives: {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[positives]}} / {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[total]}}</i><br>\n<i>Results permalink: <a href=\"{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[permalink]}}\">{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[permalink]}}</a></i><br>",
+                "message_content": "📔 Hash Scan Report for {{[25f565b8-6767-4692-bf87-5023cf5fc702].[hash]}} 📔<br>\n📌 Summary:<br>\n<b>VirusTotal</b><br>\n<i>Malicious: {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[malicious]}}</i><br>\n<i>Positives: {{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[last_analysis_stats].[malicious]}} / {{[1c2e1ff1-e76a-465e-beeb-c830f7f1f22a].[result]}}</i><br>\n<i>Results permalink: <a href=\"https://www.virustotal.com/gui/file/{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[sha256]}}/detection\">https://www.virustotal.com/gui/file/{{[e86d1fc3-c46b-4b7e-afdb-33d624c03f12].[report].[sha256]}}/detection</a></i><br>",
                 "team_name": "{{[edd82ea1-b0b1-46e3-80ca-cdc3857b9905].[team_name]}}",
                 "thread_id": "{{[edd82ea1-b0b1-46e3-80ca-cdc3857b9905].[message].[id]}}"
               }
@@ -1388,12 +1915,16 @@
         },
         "tags": null,
         "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "humanCostDisplayUnit": "hours",
+        "parameters": {
+          "definitionSchema": null
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "ff9c85b8-ce66-4107-9064-efbc66b1aeda",
+        "id": "adcc15ea-25fc-4a8e-b2dd-0ab713176075",
         "identifier": "new_message_received",
         "name": "!enrich-hash",
         "description": "Receive a !enrich-hash command from Microsoft Teams",

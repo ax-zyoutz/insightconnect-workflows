@@ -44,7 +44,8 @@ Plugins utilized by workflow:
 |----|----|--------|
 |Microsoft Teams|3.1.0|4|
 |HTML|1.2.1|1|
-|VirusTotal|6.0.1|1|
+|VirusTotal|7.0.0|1|
+|Math|1.2.1|1|
 
 ## Troubleshooting
 
@@ -52,6 +53,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.2.0 - Updated VirusTotal plugin | Added Math plugin to support the same artifact outputs
 * 1.1.0 - Replace the preset text of "change_me" with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.0.3 - Update to make Microsoft Teams plugin the latest version
 * 1.0.2 - Changed title from Slack to Microsoft Teams

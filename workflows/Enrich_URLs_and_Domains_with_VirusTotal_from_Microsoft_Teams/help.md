@@ -53,7 +53,9 @@ Plugins utilized by workflow:
 |Plugin|Version|Count|
 |----|----|--------|
 |Microsoft Teams|3.1.0|6|
-|VirusTotal|6.0.3|1|
+|VirusTotal|7.0.0|1|
+|HashIt|2.0.4|1|
+|Math|1.2.1|1|
 
 ## Troubleshooting
 
@@ -61,6 +63,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.2.0 - Updated VirusTotal plugin | Added Math and ExtractIt plugins to support the same artifact outputs
 * 1.1.1 - Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.1.0 - Add automatic indicator extraction
 * 1.0.4 - Update to make Microsoft Teams plugin the latest version

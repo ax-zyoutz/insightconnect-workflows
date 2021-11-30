@@ -1,14 +1,14 @@
 {
   "kom": {
-    "komandVersion": "1.61.0-0-g0bf41",
+    "komandVersion": "1.88.3-0-gfc918",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-09-03T13:57:33.322079546Z",
+    "exportedAt": "2021-07-29T14:08:28.652972929Z",
     "workflowVersions": [
       {
         "name": "Disable Domain User with Active Directory from InsightIDR UBA Alert",
         "type": "runnable",
         "version": "",
-        "description": "Disable a Domain User with Active Directory from an InsightIDR UBA Alert",
+        "description": "# Description\n\nDisabling a compromised user account can limit the scope of an attack and buy valuable time to investigate and contain the threat. This workflow triggers on an InsightIDR UBA alert to disable a domain user with Active Directory.\n\nThis workflow can be used with the following types of UBA alerts:\n\n`Harvested Credentials`\n\n`Multi-Country Authentication Alerts`\n\n`Ingress From Community Threat`\n\n`Account Leaked`\n\n`Brute Force - Domain Account`\n\n# Key Features\n\n* **Break the Kill Chain** - Disabling a user account can quickly and effectively interrupt an attacker’s kill chain.\n* **Buy Time to Investigate and Remediate** - In a pinch, disabling a user account can limit your threat exposure and buy your team valuable time to investigate and contain a threat. \n\n# Requirements\n\n* InsightIDR\n* Active Directory\n\n# Documentation\n\n## Setup\n\nImport the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.\n\nOnce the workflow has been imported, **it is recommended that you add the appropriate email addresses to the `Block Domain Account Decision` step so that the appropriate users are alerted that action needs to be taken**\n\nActivate the workflow in order to trigger it.\n\nLog into InsightIDR and go to the Automation tab, then Alert Triggers. Click on Create Alert Trigger.\nSelect Custom InsightConnect Workflows, then `Disable Domain User with Active Directory from InsightIDR UBA Alert`,\nthen choose the type of alert you would like to trigger on. For example: Brute Force - Domain Account.\nThis will set up the workflow to run any time the selected alert is triggered.\n\n# Usage\n\nThe workflow will run automatically when the selected InsightIDR UBA alert is created.\n\n## Technical Details\n\nPlugins utilized by workflow:\n\n|Plugin|Version|Count|\n|----|----|--------|\n|Rapid7 InsightIDR|1.2.0|1|\n|Active Directory LDAP|4.0.1|1|\n\n## Troubleshooting\n\n_There is no troubleshooting information at this time_\n\n# Version History\n\n* 1.0.1 - Update Active Directory LDAP to version 4.0.1\n* 1.0.0 - Initial workflow\n\n# Links\n\n## References\n\n* [InsightIDR](https://www.rapid7.com/products/insightidr/)\n",
         "graph": {
           "edges": {
             "12a1c9e3-a11e-4968-ad92-7d582909c27d": {
@@ -219,8 +219,8 @@
               "name": "Rapid7 InsightIDR",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightidr",
-              "slugVersion": "1.2.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightidr/1.2.0/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightidr/3.1.3/icon.png"
             },
             "identifier": "set_status_of_investigation_action",
             "continueOnFailure": false,
@@ -379,7 +379,7 @@
             "type": "trigger",
             "continueOnFailure": false,
             "isDisabled": false,
-            "triggerId": "f8a1c972-cbb3-4a6e-a8a1-78bfb33b21c7",
+            "triggerId": "8452146d-4ee5-48b7-b99b-871d5d0720ae",
             "defaultInputJSONSchema": {
               "definitions": {
                 "actor": {
@@ -1022,8 +1022,8 @@
               "name": "Active Directory LDAP",
               "slugVendor": "rapid7",
               "slugName": "active_directory_ldap",
-              "slugVersion": "4.0.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/active_directory_ldap/4.0.1/icon.png"
+              "slugVersion": "5.2.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/active_directory_ldap/5.2.2/icon.png"
             },
             "identifier": "disable_user",
             "continueOnFailure": false,
@@ -1068,12 +1068,15 @@
         },
         "tags": null,
         "humanCostSeconds": 300,
-        "humanCostDisplayUnit": "minutes"
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": null
+        }
       }
     ],
     "triggers": [
       {
-        "id": "f8a1c972-cbb3-4a6e-a8a1-78bfb33b21c7",
+        "id": "8452146d-4ee5-48b7-b99b-871d5d0720ae",
         "name": "User Alert",
         "description": "",
         "input": null,

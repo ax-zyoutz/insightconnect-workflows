@@ -21,7 +21,9 @@ API and account credentials for
 
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-Once the workflow has been imported, on the workflow overview page, provide values for workflow parameters. Please notice that the **Malicious Email Notification Recipient** parameter accepts a list of email addresses in _JSON format_, for example:
+Once the workflow has been imported, on the workflow overview page, provide values for the workflow parameters. 
+
+Additionally, you need to update the `["change_me"]` value in **Send Notification Email** step (within the Remediate Malicious Emails loop), it accepts a list of email addresses in _JSON format_, for example:
 
 ```json
 ["user1@example.com", "user2@example.com", "user3@example.com"]

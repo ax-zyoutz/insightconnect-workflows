@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.95.3-0-g7d2f1",
+    "komandVersion": "1.95.4-0-gb1a57",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2021-11-27T19:06:12.42829145Z",
+    "exportedAt": "2021-11-30T23:08:10.69271863Z",
     "workflowVersions": [
       {
         "name": "Office 365 Analysis Palo Alto Wildfire",
@@ -523,7 +523,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
             "connectionType": "NONE"
           },
           "13b918db-b65a-42cb-97f4-832498591da1": {
@@ -621,7 +621,7 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
           "17edb1e0-ffca-4ff7-ad48-adbd19429a29": {
@@ -633,7 +633,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_office365_email",
               "slugVersion": "4.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email/4.0.0/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email/4.0.0/icon.png"
             },
             "identifier": "email_received",
             "continueOnFailure": false,
@@ -647,7 +647,7 @@
                 "subject_query": "{{$workflow.[Subject Query]}}"
               }
             },
-            "triggerId": "da22801d-6a37-4a3d-aaba-f5749fc2c6c9",
+            "triggerId": "4a71f88a-4fcb-45b5-b990-21f92689df81",
             "defaultInputJSONSchema": {
               "properties": {
                 "flatten_attachments": {
@@ -685,8 +685,8 @@
                 }
               },
               "required": [
-                "flatten_attachments",
-                "mailbox_id"
+                "mailbox_id",
+                "flatten_attachments"
               ],
               "title": "Variables",
               "type": "object"
@@ -1070,7 +1070,7 @@
               "type": "object"
             },
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
             "connectionType": "CONNECTION"
           },
           "19279ef7-3ff3-4228-ae2f-91eb49656fed": {
@@ -1096,34 +1096,7 @@
                           "name": "is_defined",
                           "type": "function"
                         },
-                        "op": "OR",
-                        "right": {
-                          "args": [
-                            {
-                              "name": "fc433fdb-db55-4383-9db6-6e249cc2a995.path",
-                              "type": "variable"
-                            }
-                          ],
-                          "name": "is_defined",
-                          "type": "function"
-                        },
-                        "type": "binary"
-                      },
-                      "op": "AND",
-                      "right": {
-                        "left": {
-                          "left": {
-                            "name": "2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33.verdict",
-                            "type": "variable"
-                          },
-                          "op": "==",
-                          "right": {
-                            "type": "literal",
-                            "value": "malware"
-                          },
-                          "type": "binary"
-                        },
-                        "op": "OR",
+                        "op": "AND",
                         "right": {
                           "left": {
                             "left": {
@@ -1133,7 +1106,7 @@
                             "op": "==",
                             "right": {
                               "type": "literal",
-                              "value": "grayware"
+                              "value": "malware"
                             },
                             "type": "binary"
                           },
@@ -1147,20 +1120,20 @@
                               "op": "==",
                               "right": {
                                 "type": "literal",
-                                "value": "phishing"
+                                "value": "grayware"
                               },
                               "type": "binary"
                             },
                             "op": "OR",
                             "right": {
                               "left": {
-                                "name": "fc433fdb-db55-4383-9db6-6e249cc2a995.path",
+                                "name": "2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33.verdict",
                                 "type": "variable"
                               },
                               "op": "==",
                               "right": {
                                 "type": "literal",
-                                "value": "Malicious File"
+                                "value": "phishing"
                               },
                               "type": "binary"
                             },
@@ -1170,9 +1143,20 @@
                         },
                         "type": "binary"
                       },
+                      "op": "OR",
+                      "right": {
+                        "args": [
+                          {
+                            "name": "45c210c6-7951-417d-a12d-207a28e9a39c.content",
+                            "type": "variable"
+                          }
+                        ],
+                        "name": "is_defined",
+                        "type": "function"
+                      },
                       "type": "binary"
                     },
-                    "expressionText": "(is_defined({{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}}) || is_defined({{[fc433fdb-db55-4383-9db6-6e249cc2a995].[path]}})) && ({{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}} == \"malware\" || {{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}} == \"grayware\" ||  \n{{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}} == \"phishing\" || {{[fc433fdb-db55-4383-9db6-6e249cc2a995].[path]}} == \"Malicious File\")"
+                    "expressionText": "(is_defined({{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}}) && ({{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}} == \"malware\" || {{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}} == \"grayware\" || {{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}} == \"phishing\")) || is_defined({{[45c210c6-7951-417d-a12d-207a28e9a39c].[content]}})"
                   },
                   "name": "is_malicious",
                   "outputType": "boolean"
@@ -1195,7 +1179,7 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
           "1b82897d-95a2-4799-87d8-881d201d8fa8": {
@@ -1213,7 +1197,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "2418a918-0a59-4429-ab4e-522b48851486": {
@@ -1225,7 +1209,7 @@
               "slugVendor": "rapid7",
               "slugName": "extractit",
               "slugVersion": "2.2.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/extractit/2.2.1/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/extractit/2.2.1/icon.png"
             },
             "identifier": "url_extractor",
             "continueOnFailure": false,
@@ -1303,7 +1287,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
             "connectionType": "NONE"
           },
           "2a72a629-1bcc-4910-9adf-efb271f43a15": {
@@ -1398,7 +1382,7 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
           "2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33": {
@@ -1410,7 +1394,7 @@
               "slugVendor": "rapid7",
               "slugName": "paloalto_wildfire",
               "slugVersion": "1.2.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
             },
             "identifier": "get_verdict",
             "continueOnFailure": false,
@@ -1472,7 +1456,7 @@
               "slugVendor": "rapid7",
               "slugName": "paloalto_wildfire",
               "slugVersion": "1.2.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
             },
             "identifier": "submit_file",
             "continueOnFailure": false,
@@ -1481,7 +1465,7 @@
             "parameters": {
               "input": {
                 "file": "{{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[content]}}",
-                "filename": "{{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[file_name]}}"
+                "filename": "{{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[name]}}"
               }
             },
             "defaultInputJSONSchema": {
@@ -1640,7 +1624,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
           "39730100-c4f1-49b7-acf9-7cfa6f53f6c8": {
@@ -1658,7 +1642,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "45c210c6-7951-417d-a12d-207a28e9a39c": {
@@ -1669,14 +1653,14 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "# Malicious File Found\n\n_Admin marked this file as malicious manually_\n\nFile Name: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[file_name]}}\nFile type: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[content_type]}}"
+                "content": "# Malicious File Found\n\n_Admin marked this file as malicious manually_\n\nFile Name: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[name]}}\nFile type: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[content_type]}}"
               },
               "type": "markdown"
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "57940a7a-4779-42cb-a785-a0d37a73ef90": {
@@ -1694,7 +1678,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "645a1281-c0d0-4c79-88cf-19ee3e621c3e": {
@@ -1705,14 +1689,14 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "# Unsupported File\n\nFile Name: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[file_name]}} \nFile Type: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[content_type]}}"
+                "content": "# Unsupported File\n\nFile Name: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[name]}} \nFile Type: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[content_type]}}"
               },
               "type": "markdown"
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "7174a8e1-0143-4113-a016-99c5d6acff0d": {
@@ -1724,7 +1708,7 @@
               "slugVendor": "rapid7",
               "slugName": "sleep",
               "slugVersion": "1.0.2",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sleep/1.0.2/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sleep/1.0.2/icon.png"
             },
             "identifier": "sleep",
             "continueOnFailure": false,
@@ -1778,7 +1762,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "8030f309-b134-4a90-aab3-577dc9213cf7": {
@@ -1796,7 +1780,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "a562607a-8f03-46c3-81c2-d253eb99070b": {
@@ -1807,14 +1791,14 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "# Malicious File Found: \n\nName: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[file_name]}}\nType: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[content_type]}}\n\nVerdict: {{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}}"
+                "content": "# Malicious File Found: \n\nName: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[name]}}\nType: {{[19279ef7-3ff3-4228-ae2f-91eb49656fed].[$item].[content_type]}}\n\nVerdict: {{[2c4692b5-10bc-4c8a-95ff-6b2f78fb3d33].[verdict]}}"
               },
               "type": "markdown"
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "ac163fce-57b1-4973-85de-3190e8c7f5df": {
@@ -1832,7 +1816,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "b594fc33-74ac-49cc-a837-cbdac1a173b1": {
@@ -1844,7 +1828,7 @@
               "slugVendor": "rapid7",
               "slugName": "paloalto_wildfire",
               "slugVersion": "1.2.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
             },
             "identifier": "get_verdict",
             "continueOnFailure": false,
@@ -1912,7 +1896,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "bbcebfec-b733-4106-a9d7-995b0c37ba44": {
@@ -1924,7 +1908,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_office365_email_security",
               "slugVersion": "2.3.5",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email_security/2.3.5/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email_security/2.3.5/icon.png"
             },
             "identifier": "block_sender_transport_rule",
             "continueOnFailure": false,
@@ -2045,7 +2029,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
           "c179d3b1-bc28-42e0-80e1-c562d0761cef": {
@@ -2057,7 +2041,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_office365_email",
               "slugVersion": "5.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email/5.1.0/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email/5.1.0/icon.png"
             },
             "identifier": "send_email",
             "continueOnFailure": false,
@@ -2069,7 +2053,7 @@
                 "bcc": [],
                 "body": "The following attached email was found to be malicious. \n\nEmail From:\n{{[e32ea6c8-9365-4283-a863-9a354d56dceb].[$item].[sender]}}\n\nEmail Subject:\n{{[e32ea6c8-9365-4283-a863-9a354d56dceb].[$item].[subject]}}\n\nJob URL:\n{{[$job].[URL]}}",
                 "cc": [],
-                "email_from": "change_me",
+                "email_from": "{{$workflow.[Malicious Email Notification Sender]}}",
                 "email_to": [
                   "change_me"
                 ],
@@ -2224,7 +2208,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
           "c34206e6-bd3c-4b35-b45d-ceb6281f373d": {
@@ -2242,7 +2226,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "d63b1949-abe6-4050-a7e8-577c385672dc": {
@@ -2254,7 +2238,7 @@
               "slugVendor": "rapid7",
               "slugName": "paloalto_wildfire",
               "slugVersion": "1.2.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/paloalto_wildfire/1.2.0/icon.png"
             },
             "identifier": "submit_url",
             "continueOnFailure": false,
@@ -2343,7 +2327,7 @@
               "title": "Variables",
               "type": "object"
             },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
           "e423f975-9e30-4d03-aef0-de6dc5e77d98": {
@@ -2373,7 +2357,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/break.svg",
             "connectionType": "NONE"
           },
           "e970ce0c-5976-4b41-866b-34fa0c65a527": {
@@ -2385,7 +2369,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_office365_email_security",
               "slugVersion": "2.3.5",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email_security/2.3.5/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email_security/2.3.5/icon.png"
             },
             "identifier": "mass_search_and_purge",
             "continueOnFailure": false,
@@ -2429,8 +2413,8 @@
                 }
               },
               "required": [
-                "compliance_search_name",
-                "content_match_query"
+                "content_match_query",
+                "compliance_search_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -2503,7 +2487,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
           "f9204b15-d3d0-45d2-820e-713e97a9d81e": {
@@ -2515,7 +2499,7 @@
               "slugVendor": "rapid7",
               "slugName": "sleep",
               "slugVersion": "1.0.2",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sleep/1.0.2/icon.png"
+              "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/sleep/1.0.2/icon.png"
             },
             "identifier": "sleep",
             "continueOnFailure": false,
@@ -2588,7 +2572,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/human-decision.svg",
+            "defaultImageData": "https://eu.cdn-assets.connect.insight.rapid7.com/step-type-icons/human-decision.svg",
             "connectionType": "NONE"
           }
         },
@@ -2611,10 +2595,6 @@
               "Malicious Email Notification Sender": {
                 "type": "string",
                 "description": "Email address that you would like to send a malicious email notification from."
-              },
-              "Malicious Email Notification Recipient": {
-                "type": "string",
-                "description": "List of email addresses that you would like to notify when a malicious email is found."
               }
             },
             "definitions": {}
@@ -2625,7 +2605,7 @@
     ],
     "triggers": [
       {
-        "id": "da22801d-6a37-4a3d-aaba-f5749fc2c6c9",
+        "id": "4a71f88a-4fcb-45b5-b990-21f92689df81",
         "identifier": "email_received",
         "name": "Office 365 New Email Trigger",
         "description": "",
@@ -2673,8 +2653,8 @@
             }
           },
           "required": [
-            "flatten_attachments",
-            "mailbox_id"
+            "mailbox_id",
+            "flatten_attachments"
           ],
           "title": "Variables",
           "type": "object"
@@ -3064,7 +3044,7 @@
           "slugVendor": "rapid7",
           "slugName": "microsoft_office365_email",
           "slugVersion": "4.0.0",
-          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email/4.0.0/icon.png"
+          "imageData": "https://eu.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_office365_email/4.0.0/icon.png"
         }
       }
     ]

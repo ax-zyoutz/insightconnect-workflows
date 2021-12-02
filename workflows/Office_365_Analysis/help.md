@@ -42,7 +42,7 @@ Plugins utilized by workflow:
 |Microsoft Office 365 Email|5.0.0|1|
 |Microsoft Office365 Email Security|2.2.3|2|
 |WHOIS|3.0.0|1|
-|VirusTotal|6.0.4|3|
+|VirusTotal|7.0.0|3|
 
 ## Troubleshooting
 
@@ -50,6 +50,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.2.0 - Update VirusTotal plugin
 * 1.1.0 - Workflow improvements | Support for nested EML attachments | Domain headers analysis
 * 1.0.1 - Update workflow title to enrichment
 * 1.0.0 - Initial workflow

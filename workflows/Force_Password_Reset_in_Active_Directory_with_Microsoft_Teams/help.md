@@ -23,11 +23,17 @@ Sample Microsoft Teams command:
 
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-Once the workflow has been imported, **the first Microsoft Teams step will need the team name and channel name updated to suit your Microsoft Teams environment!** Edit the input with the preset text of `change_me` in the first Microsoft Teams step in the workflow.
+This workflow leverages InsightConnect's Parameters feature. This feature allows variables used multiple times throughout a workflow to be entered once and then referenced throughout the workflow.
 
-In addition to updating the Teams step, the `Find DN` step will need the Search Base field to be defined. Edit the workflow, open the `Find DN` step, and provide the appropriate Search Base for your domain. For example, if your domain is `acme.com` then the Search Base would be `DC=acme,DC=com`.
+There are three parameters you will need to configure in order to complete setup of your workflow:
 
-After configuring the Teams step and the `Find DN` step, activate the workflow in order to trigger it.
+* Team Name: The Microsoft Teams team name in your environment where the workflow should be triggered and respond
+* Channel Name: The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team)
+* Search Base: The base of the Active Directory user search request, eg. DC=example,DC=com
+
+To begin, select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
+
+After configuring the parameters, activate the workflow in order to trigger it.
 
 ### Usage
 
@@ -44,8 +50,8 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Microsoft Teams|3.1.0|5|
-|Active Directory LDAP|4.0.3|2|
+|Microsoft Teams|3.1.2|5|
+|Active Directory LDAP|5.2.2|2|
 
 ## Troubleshooting
 
@@ -53,6 +59,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.0 - Leverage Parameters Feature | Update Active Directory LDAP plugin to version 5.2.2 | Update Microsoft Teams to version 3.1.2
 * 1.1.1 - Update documentation
 * 1.1.0 - Use the automatic extraction functionality instead of 'Pattern Match' to extract a username | Update Microsoft Teams to version 3.1.0 | Update Active Directory LDAP to version 4.0.3 | Improve workflow messaging | Add link to AD LDAP connection configuration in Requirements | Update screenshots
 * 1.0.3 - Update Active Directory LDAP to version 4.0.1

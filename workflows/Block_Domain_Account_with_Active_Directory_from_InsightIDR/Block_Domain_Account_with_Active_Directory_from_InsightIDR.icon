@@ -1,14 +1,14 @@
 {
   "kom": {
-    "komandVersion": "1.59.1-0-gf525c",
+    "komandVersion": "1.88.3-0-gfc918",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-08-10T21:18:30.007897371Z",
+    "exportedAt": "2021-07-29T14:04:13.518729007Z",
     "workflowVersions": [
       {
         "name": "Block Domain Account with Active Directory from InsightIDR",
         "type": "runnable",
         "version": "",
-        "description": "Disable an Active Directory user from an InsightIDR Brute Force - Domain Account UBA alert",
+        "description": "# Description\n\nDisabling a compromised account can limit the scope of an attack and buy valuable time to investigate and contain the threat. This workflow disables a domain user account from an InsightIDR Brute Force - Domain Account UBA alert.\n\n# Key Features\n\n* **Break the Kill Chain** - Credentials provide attackers with easy access to numerous targets. Disabling a compromised account or forcing a password reset can quickly and effectively interrupt an attacker’s kill chain.\n* **Buy Time to Investigate and Remediate** - In a pinch, disabling a user account can limit your threat exposure and buy your team valuable time to investigate and contain a threat. \n\n# Requirements\n\n* InsightIDR\n* Active Directory connection\n\n# Documentation\n\n## Setup\n\nImport the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.\n\nOnce the workflow has been imported, **It is recommended that you add you add the appropriate emails to the `Block Domain Account Decision` step so that the appropriate people are alerted that action needs to be taken**\n\nAfter activation, this workflow is triggered when an InsightIDR Brute Force - Domain Account UBA alert occurs.\n\n## Technical Details\n\nPlugins utilized by workflow:\n\n|Plugin|Version|Count|\n|----|----|--------|\n|Active Directory LDAP|3.2.9|2|\n|InsightIDR|2.0.4|2|\n\n## Troubleshooting\n\n_There is no troubleshooting information at this time_\n\n# Version History\n\n* 1.0.0 - Initial workflow\n\n# Links\n\n## References\n\n* [Active Directory LDAP](https://extensions.rapid7.com/extension/active_directory_ldap)\n* [InsightIDR](https://www.rapid7.com/products/insightidr/)\n",
         "graph": {
           "edges": {
             "08053379-f426-47ef-8d97-d8f2444a6bec": {
@@ -262,7 +262,7 @@
             "type": "trigger",
             "continueOnFailure": false,
             "isDisabled": false,
-            "triggerId": "ac3f38fc-e96b-430f-b374-f4aa57b08d26",
+            "triggerId": "f9cf8677-f314-4560-a4cc-b76374cfb811",
             "defaultInputJSONSchema": {
               "definitions": {
                 "actor": {
@@ -975,8 +975,8 @@
               "name": "Active Directory LDAP",
               "slugVendor": "rapid7",
               "slugName": "active_directory_ldap",
-              "slugVersion": "3.2.9",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/active_directory_ldap/3.2.9/icon.png"
+              "slugVersion": "5.2.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/active_directory_ldap/5.2.2/icon.png"
             },
             "identifier": "disable_user",
             "continueOnFailure": false,
@@ -1044,8 +1044,8 @@
               "name": "Rapid7 InsightIDR",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightidr",
-              "slugVersion": "1.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightidr/1.1.1/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightidr/3.1.3/icon.png"
             },
             "identifier": "set_status_of_investigation_action",
             "continueOnFailure": false,
@@ -1242,8 +1242,8 @@
               "name": "Rapid7 InsightIDR",
               "slugVendor": "rapid7",
               "slugName": "rapid7_insightidr",
-              "slugVersion": "1.1.1",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightidr/1.1.1/icon.png"
+              "slugVersion": "3.1.3",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/rapid7_insightidr/3.1.3/icon.png"
             },
             "identifier": "set_status_of_investigation_action",
             "continueOnFailure": false,
@@ -1426,8 +1426,8 @@
               "name": "Active Directory LDAP",
               "slugVendor": "rapid7",
               "slugName": "active_directory_ldap",
-              "slugVersion": "3.2.9",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/active_directory_ldap/3.2.9/icon.png"
+              "slugVersion": "5.2.2",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/active_directory_ldap/5.2.2/icon.png"
             },
             "identifier": "disable_user",
             "continueOnFailure": false,
@@ -1528,12 +1528,15 @@
         },
         "tags": null,
         "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": null
+        }
       }
     ],
     "triggers": [
       {
-        "id": "ac3f38fc-e96b-430f-b374-f4aa57b08d26",
+        "id": "f9cf8677-f314-4560-a4cc-b76374cfb811",
         "name": "Brute Force - Domain Account",
         "description": "",
         "input": null,

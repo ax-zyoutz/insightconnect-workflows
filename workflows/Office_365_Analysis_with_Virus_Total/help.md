@@ -32,10 +32,10 @@ Plugins utilized by workflow:
 |Basename|1.0.0|1|
 |ExtractIt|1.1.6|1|
 |HashIt|2.0.1|1|
-|Microsoft Office 365 Email|4.0.0|3|
-|Microsoft Office 365 Email Security|2.1.0|2|
+|Microsoft Office 365 Email|4.0.0|2|
+|Microsoft Office365 Email Security|2.1.0|2|
 |Storage|1.0.0|6|
-|VirusTotal|5.0.0|3|
+|VirusTotal|7.0.0|5|
 
 ## Troubleshooting
 
@@ -43,6 +43,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.0 - Update VirusTotal plugin
 * 1.0.1 - Update workflow title to enrichment
 * 1.0.0 - Initial workflow
 

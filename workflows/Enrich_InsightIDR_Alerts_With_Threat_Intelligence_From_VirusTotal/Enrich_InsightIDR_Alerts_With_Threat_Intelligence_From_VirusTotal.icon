@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.67.0-0-gbd094",
+    "komandVersion": "1.89.5-0-g6408f",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-11-07T20:02:51.963263761Z",
+    "exportedAt": "2021-08-29T21:44:47.84719606Z",
     "workflowVersions": [
       {
         "name": "Enrich InsightIDR Alerts with Threat Intelligence from VirusTotal",
@@ -17,15 +17,23 @@
               "description": "",
               "parentNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
               "fromNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
-              "toNodeId": "3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0"
+              "toNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04"
             },
-            "05495807-0c17-41f1-be6d-6b978f30700b": {
-              "id": "05495807-0c17-41f1-be6d-6b978f30700b",
+            "0532b323-d6b5-42ff-9308-c13e8ed752dd": {
+              "id": "0532b323-d6b5-42ff-9308-c13e8ed752dd",
+              "name": "Not Found",
+              "description": "",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "fromNodeId": "4f742eea-25ad-428c-b202-87330edba458",
+              "toNodeId": "47562f5a-3a11-4eaf-800f-bb14be0f197e"
+            },
+            "1a4f3af2-798f-4bac-8036-0ba0bb78b423": {
+              "id": "1a4f3af2-798f-4bac-8036-0ba0bb78b423",
               "name": "",
               "description": "",
-              "parentNodeId": "a9583cae-3265-458e-9dca-04e551c6646e",
-              "fromNodeId": "1dca489b-fb00-4aa2-aca9-996d51e656e7",
-              "toNodeId": ""
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "fromNodeId": "20282e3f-62fd-4a22-aa06-335c7f881b20",
+              "toNodeId": "0482c427-acb5-4f40-82e5-3823679b82f5"
             },
             "1ae7447a-757f-4f4d-8c81-cfb28e2b81cc": {
               "id": "1ae7447a-757f-4f4d-8c81-cfb28e2b81cc",
@@ -34,6 +42,14 @@
               "parentNodeId": "",
               "fromNodeId": "cf276e84-d2d1-4bc2-b490-d455202cd77e",
               "toNodeId": "958a3303-e1a1-4414-ad6e-98d01a6a694d"
+            },
+            "1f48d232-25b3-4237-ae3d-c5ad15f5d1e1": {
+              "id": "1f48d232-25b3-4237-ae3d-c5ad15f5d1e1",
+              "name": "",
+              "description": "",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "fromNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "toNodeId": "502fbc5a-56df-430a-b716-87c962aac651"
             },
             "2fcc1c0f-3648-4f40-8502-3e7da42b19f4": {
               "id": "2fcc1c0f-3648-4f40-8502-3e7da42b19f4",
@@ -59,13 +75,21 @@
               "fromNodeId": "012f25e4-d69c-47ed-9041-3f00f9008177",
               "toNodeId": "3d2b3a90-26d9-4aca-9e4c-401499ca62bc"
             },
+            "3468a338-7f3b-41a0-a5ad-1afbbfba4680": {
+              "id": "3468a338-7f3b-41a0-a5ad-1afbbfba4680",
+              "name": "",
+              "description": "",
+              "parentNodeId": "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a",
+              "fromNodeId": "fbeff396-2b7c-4e40-ac13-7d298e088eeb",
+              "toNodeId": "f70411be-06b4-4c73-b16d-7b045486c7cb"
+            },
             "37b238bc-29f5-442a-9cab-4a49bfc6445c": {
               "id": "37b238bc-29f5-442a-9cab-4a49bfc6445c",
               "name": "",
               "description": "",
               "parentNodeId": "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a",
               "fromNodeId": "c82f587a-72fa-4f5a-81a2-edd15173ca7b",
-              "toNodeId": "f70411be-06b4-4c73-b16d-7b045486c7cb"
+              "toNodeId": "fbeff396-2b7c-4e40-ac13-7d298e088eeb"
             },
             "4633d77a-19d6-4df5-85ff-086ad74aae9b": {
               "id": "4633d77a-19d6-4df5-85ff-086ad74aae9b",
@@ -115,12 +139,28 @@
               "fromNodeId": "958a3303-e1a1-4414-ad6e-98d01a6a694d",
               "toNodeId": ""
             },
+            "74fbb7fd-3ee5-4bae-bddd-e79a84e10f9f": {
+              "id": "74fbb7fd-3ee5-4bae-bddd-e79a84e10f9f",
+              "name": "",
+              "description": "",
+              "parentNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
+              "fromNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "toNodeId": ""
+            },
             "79c2f7ae-a215-472a-b4e4-ae74f1d9e35d": {
               "id": "79c2f7ae-a215-472a-b4e4-ae74f1d9e35d",
               "name": "",
               "description": "",
               "parentNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c",
               "fromNodeId": "9886268a-51fd-46aa-bda0-14236e23de5e",
+              "toNodeId": ""
+            },
+            "7b37b00e-bae4-4d46-aa78-3a38dc541781": {
+              "id": "7b37b00e-bae4-4d46-aa78-3a38dc541781",
+              "name": "",
+              "description": "",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "fromNodeId": "0482c427-acb5-4f40-82e5-3823679b82f5",
               "toNodeId": ""
             },
             "80fc5707-3ac3-4f69-bd6c-28ce1a990333": {
@@ -163,13 +203,13 @@
               "fromNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c",
               "toNodeId": "71e2da52-8f0c-4366-8ed4-6f13a23bb533"
             },
-            "a1e86ef7-abe2-4006-8e88-95576fb3befe": {
-              "id": "a1e86ef7-abe2-4006-8e88-95576fb3befe",
+            "a1cee48b-dd43-4c00-a7e5-a2a8a2fbbd5f": {
+              "id": "a1cee48b-dd43-4c00-a7e5-a2a8a2fbbd5f",
               "name": "",
               "description": "",
-              "parentNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
-              "fromNodeId": "3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0",
-              "toNodeId": "a9583cae-3265-458e-9dca-04e551c6646e"
+              "parentNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c",
+              "fromNodeId": "4c0aa87f-ae17-44a5-83aa-2fa8605000f1",
+              "toNodeId": "9886268a-51fd-46aa-bda0-14236e23de5e"
             },
             "b9e3c829-7459-41eb-8dd8-cd4678e37017": {
               "id": "b9e3c829-7459-41eb-8dd8-cd4678e37017",
@@ -179,21 +219,21 @@
               "fromNodeId": "f70411be-06b4-4c73-b16d-7b045486c7cb",
               "toNodeId": ""
             },
-            "c28c0a2a-210e-41e7-b6d0-09ea5e0d4a7b": {
-              "id": "c28c0a2a-210e-41e7-b6d0-09ea5e0d4a7b",
-              "name": "",
-              "description": "",
-              "parentNodeId": "a9583cae-3265-458e-9dca-04e551c6646e",
-              "fromNodeId": "a9583cae-3265-458e-9dca-04e551c6646e",
-              "toNodeId": "1dca489b-fb00-4aa2-aca9-996d51e656e7"
-            },
             "c98f7378-515e-4afe-8592-4603c31bd8a5": {
               "id": "c98f7378-515e-4afe-8592-4603c31bd8a5",
               "name": "",
               "description": "",
               "parentNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c",
               "fromNodeId": "71e2da52-8f0c-4366-8ed4-6f13a23bb533",
-              "toNodeId": "9886268a-51fd-46aa-bda0-14236e23de5e"
+              "toNodeId": "3f9f61fe-eecb-44da-8013-fefe861f188a"
+            },
+            "d4b6d431-4d0f-4310-817e-16b303a3d764": {
+              "id": "d4b6d431-4d0f-4310-817e-16b303a3d764",
+              "name": "",
+              "description": "",
+              "parentNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c",
+              "fromNodeId": "3f9f61fe-eecb-44da-8013-fefe861f188a",
+              "toNodeId": "4c0aa87f-ae17-44a5-83aa-2fa8605000f1"
             },
             "db28582e-b6cb-42e4-98e8-fb01ca04eda8": {
               "id": "db28582e-b6cb-42e4-98e8-fb01ca04eda8",
@@ -211,12 +251,28 @@
               "fromNodeId": "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a",
               "toNodeId": "3d2b3a90-26d9-4aca-9e4c-401499ca62bc"
             },
-            "fa2722d8-f7ab-4385-bbe2-5a79102fd35f": {
-              "id": "fa2722d8-f7ab-4385-bbe2-5a79102fd35f",
+            "e978a27c-933f-4881-a648-b50f3bb49a8b": {
+              "id": "e978a27c-933f-4881-a648-b50f3bb49a8b",
               "name": "",
               "description": "",
-              "parentNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
-              "fromNodeId": "a9583cae-3265-458e-9dca-04e551c6646e",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "fromNodeId": "502fbc5a-56df-430a-b716-87c962aac651",
+              "toNodeId": "4f742eea-25ad-428c-b202-87330edba458"
+            },
+            "f789eb26-a3cb-43ff-8a8d-4cf2e5760c0f": {
+              "id": "f789eb26-a3cb-43ff-8a8d-4cf2e5760c0f",
+              "name": "Found",
+              "description": "",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "fromNodeId": "4f742eea-25ad-428c-b202-87330edba458",
+              "toNodeId": "20282e3f-62fd-4a22-aa06-335c7f881b20"
+            },
+            "f8d48679-93d5-427e-ab29-c76a827948c7": {
+              "id": "f8d48679-93d5-427e-ab29-c76a827948c7",
+              "name": "",
+              "description": "",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "fromNodeId": "47562f5a-3a11-4eaf-800f-bb14be0f197e",
               "toNodeId": ""
             },
             "fc7436d3-a760-4e11-b520-e9aceca03037": {
@@ -233,17 +289,21 @@
               "id": "012f25e4-d69c-47ed-9041-3f00f9008177",
               "parentNodeId": ""
             },
+            "0482c427-acb5-4f40-82e5-3823679b82f5": {
+              "id": "0482c427-acb5-4f40-82e5-3823679b82f5",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04"
+            },
+            "08e64698-3fcd-4b6e-a244-d8fd180e1a04": {
+              "id": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
+              "parentNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6"
+            },
             "0cd18853-cc3d-46a5-80cf-fd5d4ba85f02": {
               "id": "0cd18853-cc3d-46a5-80cf-fd5d4ba85f02",
               "parentNodeId": "012f25e4-d69c-47ed-9041-3f00f9008177"
             },
-            "1dca489b-fb00-4aa2-aca9-996d51e656e7": {
-              "id": "1dca489b-fb00-4aa2-aca9-996d51e656e7",
-              "parentNodeId": "a9583cae-3265-458e-9dca-04e551c6646e"
-            },
-            "3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0": {
-              "id": "3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0",
-              "parentNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6"
+            "20282e3f-62fd-4a22-aa06-335c7f881b20": {
+              "id": "20282e3f-62fd-4a22-aa06-335c7f881b20",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04"
             },
             "39db1de6-6f97-45df-80c9-e27e05cbfbd6": {
               "id": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
@@ -253,9 +313,29 @@
               "id": "3d2b3a90-26d9-4aca-9e4c-401499ca62bc",
               "parentNodeId": ""
             },
+            "3f9f61fe-eecb-44da-8013-fefe861f188a": {
+              "id": "3f9f61fe-eecb-44da-8013-fefe861f188a",
+              "parentNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c"
+            },
+            "47562f5a-3a11-4eaf-800f-bb14be0f197e": {
+              "id": "47562f5a-3a11-4eaf-800f-bb14be0f197e",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04"
+            },
             "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a": {
               "id": "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a",
               "parentNodeId": ""
+            },
+            "4c0aa87f-ae17-44a5-83aa-2fa8605000f1": {
+              "id": "4c0aa87f-ae17-44a5-83aa-2fa8605000f1",
+              "parentNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c"
+            },
+            "4f742eea-25ad-428c-b202-87330edba458": {
+              "id": "4f742eea-25ad-428c-b202-87330edba458",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04"
+            },
+            "502fbc5a-56df-430a-b716-87c962aac651": {
+              "id": "502fbc5a-56df-430a-b716-87c962aac651",
+              "parentNodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04"
             },
             "71e2da52-8f0c-4366-8ed4-6f13a23bb533": {
               "id": "71e2da52-8f0c-4366-8ed4-6f13a23bb533",
@@ -268,10 +348,6 @@
             "9886268a-51fd-46aa-bda0-14236e23de5e": {
               "id": "9886268a-51fd-46aa-bda0-14236e23de5e",
               "parentNodeId": "df6d7d6e-ac6f-4941-b7db-9cbdaba3125c"
-            },
-            "a9583cae-3265-458e-9dca-04e551c6646e": {
-              "id": "a9583cae-3265-458e-9dca-04e551c6646e",
-              "parentNodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6"
             },
             "ba8bae4b-ae24-47c9-b635-3ebb9b6a934a": {
               "id": "ba8bae4b-ae24-47c9-b635-3ebb9b6a934a",
@@ -299,6 +375,10 @@
             },
             "f70411be-06b4-4c73-b16d-7b045486c7cb": {
               "id": "f70411be-06b4-4c73-b16d-7b045486c7cb",
+              "parentNodeId": "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a"
+            },
+            "fbeff396-2b7c-4e40-ac13-7d298e088eeb": {
+              "id": "fbeff396-2b7c-4e40-ac13-7d298e088eeb",
               "parentNodeId": "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a"
             }
           }
@@ -346,33 +426,15 @@
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
-          "0cd18853-cc3d-46a5-80cf-fd5d4ba85f02": {
-            "nodeId": "0cd18853-cc3d-46a5-80cf-fd5d4ba85f02",
-            "name": "Domain Report",
-            "type": "artifact",
-            "continueOnFailure": false,
-            "isDisabled": false,
-            "parameters": {
-              "input": {
-                "content": "## Domain Report\n\n*Report for {{[012f25e4-d69c-47ed-9041-3f00f9008177].[$item]}}*\n* Alexa domain info: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[Alexa domain info]}}\n* Webutation Safety Score: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[Webutation domain info].[Safety score]}}\n* Webutation Verdict: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[Webutation domain info].[Verdict]}}\n* Categories: {{#each [c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[categories]}} {{this}} {{/each}}\n* BitDefender Domain Info: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[BitDefender domain info]}}\n* Forcepoint ThreatSeeker Category: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[Forcepoint ThreatSeeker category]}}\n* Full VirusTotal Report: [https://www.virustotal.com/gui/domain/{{[012f25e4-d69c-47ed-9041-3f00f9008177].[$item]}}/detection](https://www.virustotal.com/gui/domain/{{[012f25e4-d69c-47ed-9041-3f00f9008177].[$item]}}/detection)\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
-              },
-              "type": "markdown"
-            },
-            "defaultInputJSONSchema": null,
-            "defaultOutputJSONSchema": null,
-            "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
-            "connectionType": "NONE"
-          },
-          "1dca489b-fb00-4aa2-aca9-996d51e656e7": {
-            "nodeId": "1dca489b-fb00-4aa2-aca9-996d51e656e7",
+          "0482c427-acb5-4f40-82e5-3823679b82f5": {
+            "nodeId": "0482c427-acb5-4f40-82e5-3823679b82f5",
             "name": "Hashes Artifact",
             "type": "artifact",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "## Hashes Report\n\n*Hash report for {{[39db1de6-6f97-45df-80c9-e27e05cbfbd6].[$item]}}*\n* Scan Date: {{[a9583cae-3265-458e-9dca-04e551c6646e].[$item].[scan_date]}}\n* Malicious: {{[a9583cae-3265-458e-9dca-04e551c6646e].[$item].[malicious]}}\n* Number of malicious reports: {{[a9583cae-3265-458e-9dca-04e551c6646e].[$item].[positives]}}\n* Total reports: {{[a9583cae-3265-458e-9dca-04e551c6646e].[$item].[total]}}\n* Complete VirusTotal Report: [{{[a9583cae-3265-458e-9dca-04e551c6646e].[$item].[permalink]}}]({{[a9583cae-3265-458e-9dca-04e551c6646e].[$item].[permalink]}})\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
+                "content": "## Hashes Report\n\n*Hash report for {{[08e64698-3fcd-4b6e-a244-d8fd180e1a04].[$item].[hash]}}*\n* Scan Date (timestamp): {{[502fbc5a-56df-430a-b716-87c962aac651].[report].[last_analysis_date]}}\n* Malicious: {{[502fbc5a-56df-430a-b716-87c962aac651].[report].[malicious]}}\n* Number of malicious reports: {{[502fbc5a-56df-430a-b716-87c962aac651].[report].[last_analysis_stats].[malicious]}}\n* Total reports: {{[20282e3f-62fd-4a22-aa06-335c7f881b20].[result]}}\n* Complete VirusTotal Report: [https://www.virustotal.com/gui/file/{{[502fbc5a-56df-430a-b716-87c962aac651].[report].[sha256]}}/detection](https://www.virustotal.com/gui/file/{{[502fbc5a-56df-430a-b716-87c962aac651].[report].[sha256]}}/detection)\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
               },
               "type": "markdown"
             },
@@ -382,154 +444,8 @@
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
-          "3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0": {
-            "nodeId": "3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0",
-            "name": "Lookup Hashes",
-            "type": "action",
-            "plugin": {
-              "name": "VirusTotal",
-              "slugVendor": "rapid7",
-              "slugName": "virustotal",
-              "slugVersion": "6.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/6.0.4/icon.png"
-            },
-            "identifier": "lookup_hashes",
-            "continueOnFailure": false,
-            "isDisabled": false,
-            "isCloud": false,
-            "parameters": {
-              "input": {
-                "hashes": "{{[ba8bae4b-ae24-47c9-b635-3ebb9b6a934a].[contents].[processes]}}"
-              }
-            },
-            "defaultInputJSONSchema": {
-              "properties": {
-                "hashes": {
-                  "description": "Array of MD5/SHA1/SHA256 hashes to lookup",
-                  "items": {
-                    "type": "string"
-                  },
-                  "order": 1,
-                  "title": "Hashes",
-                  "type": "array"
-                }
-              },
-              "required": [
-                "hashes"
-              ],
-              "title": "Variables",
-              "type": "object"
-            },
-            "defaultOutputJSONSchema": {
-              "definitions": {
-                "report": {
-                  "properties": {
-                    "malicious": {
-                      "description": "True if one or more positives",
-                      "order": 1,
-                      "title": "Malicious",
-                      "type": "boolean"
-                    },
-                    "md5": {
-                      "description": "MD5 hash",
-                      "order": 11,
-                      "title": "MD5",
-                      "type": "string"
-                    },
-                    "permalink": {
-                      "description": "Link to report (if found)",
-                      "order": 3,
-                      "title": "Permalink",
-                      "type": "string"
-                    },
-                    "positives": {
-                      "description": "Number of positives (if found)",
-                      "order": 2,
-                      "title": "Positives",
-                      "type": "integer"
-                    },
-                    "resource": {
-                      "description": "Resource",
-                      "order": 4,
-                      "title": "Resource",
-                      "type": "string"
-                    },
-                    "scan_date": {
-                      "description": "Scan Date",
-                      "order": 6,
-                      "title": "Scan Date",
-                      "type": "string"
-                    },
-                    "scan_id": {
-                      "description": "Scan ID",
-                      "order": 5,
-                      "title": "Scan Id",
-                      "type": "string"
-                    },
-                    "scans": {
-                      "description": "Scans",
-                      "order": 7,
-                      "title": "Scans",
-                      "type": "object"
-                    },
-                    "sha1": {
-                      "description": "SHA1 hash",
-                      "order": 10,
-                      "title": "SHA1",
-                      "type": "string"
-                    },
-                    "sha256": {
-                      "description": "SHA256 hash",
-                      "order": 9,
-                      "title": "SHA256",
-                      "type": "string"
-                    },
-                    "total": {
-                      "description": "Total Scans",
-                      "order": 8,
-                      "title": "Total",
-                      "type": "integer"
-                    },
-                    "verbose_msg": {
-                      "description": "Message returned from the submission",
-                      "order": 12,
-                      "title": "Verbose Message",
-                      "type": "string"
-                    }
-                  },
-                  "title": "Report",
-                  "type": "object"
-                }
-              },
-              "properties": {
-                "hashes_found": {
-                  "description": "Hashes found, if any",
-                  "items": {
-                    "type": "string"
-                  },
-                  "order": 1,
-                  "title": "Hashes Found",
-                  "type": "array"
-                },
-                "reports_found": {
-                  "description": "Reports found, if any",
-                  "items": {
-                    "$ref": "#/definitions/report"
-                  },
-                  "order": 2,
-                  "title": "Reports Found",
-                  "type": "array"
-                }
-              },
-              "title": "Variables",
-              "type": "object"
-            },
-            "outputJSONSchema": null,
-            "defaultImageData": "",
-            "connectionType": "CONNECTION"
-          },
-          "39db1de6-6f97-45df-80c9-e27e05cbfbd6": {
-            "nodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
+          "08e64698-3fcd-4b6e-a244-d8fd180e1a04": {
+            "nodeId": "08e64698-3fcd-4b6e-a244-d8fd180e1a04",
             "name": "Hashes",
             "type": "loop",
             "continueOnFailure": false,
@@ -538,9 +454,126 @@
               "customOutput": [
                 {
                   "input": {
+                    "expression": {
+                      "name": "502fbc5a-56df-430a-b716-87c962aac651.$success",
+                      "type": "variable"
+                    },
+                    "expressionText": "{{[502fbc5a-56df-430a-b716-87c962aac651].[$success]}}",
+                    "value": "{{[502fbc5a-56df-430a-b716-87c962aac651].[report]}}",
+                    "valueType": "object"
+                  },
+                  "name": "Hash Reports",
+                  "outputType": "array"
+                }
+              ],
+              "innerEdgeId": "1f48d232-25b3-4237-ae3d-c5ad15f5d1e1",
+              "nextEdgeId": "74fbb7fd-3ee5-4bae-bddd-e79a84e10f9f",
+              "repeatVariable": "{{[39db1de6-6f97-45df-80c9-e27e05cbfbd6].[$item].[hashes]}}"
+            },
+            "defaultInputJSONSchema": null,
+            "defaultOutputJSONSchema": null,
+            "outputJSONSchema": {
+              "properties": {
+                "Hash Reports": {
+                  "description": "Custom output: \"Hash Reports\"",
+                  "items": {
+                    "properties": {},
+                    "type": "object"
+                  },
+                  "title": "Hash Reports",
+                  "type": "array"
+                }
+              },
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
+            "connectionType": "NONE"
+          },
+          "0cd18853-cc3d-46a5-80cf-fd5d4ba85f02": {
+            "nodeId": "0cd18853-cc3d-46a5-80cf-fd5d4ba85f02",
+            "name": "Domain Report",
+            "type": "artifact",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "parameters": {
+              "input": {
+                "content": "## Domain Report\n\n*Report for {{[012f25e4-d69c-47ed-9041-3f00f9008177].[$item]}}*\n* Last analysis results:\n    Harmless: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[last_analysis_stats].[harmless]}}\n    Malicious: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[last_analysis_stats].[malicious]}}\n    Suspicious: {{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[last_analysis_stats].[suspicious]}}\n* Categories: {{#each [c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[categories]}}\n    * {{this}}\n{{/each}}\n* WHOIS Information:\n{{[c329f098-3fbd-495e-9652-16a2d72efcbd].[report].[whois]}}\n* Full VirusTotal Report: [https://www.virustotal.com/gui/domain/{{[012f25e4-d69c-47ed-9041-3f00f9008177].[$item]}}/detection](https://www.virustotal.com/gui/domain/{{[012f25e4-d69c-47ed-9041-3f00f9008177].[$item]}}/detection)\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
+              },
+              "type": "markdown"
+            },
+            "defaultInputJSONSchema": null,
+            "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "connectionType": "NONE"
+          },
+          "20282e3f-62fd-4a22-aa06-335c7f881b20": {
+            "nodeId": "20282e3f-62fd-4a22-aa06-335c7f881b20",
+            "name": "Calculate Total Reports",
+            "type": "action",
+            "plugin": {
+              "name": "Math",
+              "slugVendor": "rapid7",
+              "slugName": "math",
+              "slugVersion": "1.2.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/math/1.2.1/icon.png"
+            },
+            "identifier": "calculate",
+            "continueOnFailure": true,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "equation": "{{[502fbc5a-56df-430a-b716-87c962aac651].[report].[last_analysis_stats].[harmless]}} + {{[502fbc5a-56df-430a-b716-87c962aac651].[report].[last_analysis_stats].[malicious]}} + {{[502fbc5a-56df-430a-b716-87c962aac651].[report].[last_analysis_stats].[suspicious]}} + {{[502fbc5a-56df-430a-b716-87c962aac651].[report].[last_analysis_stats].[undetected]}}"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "equation": {
+                  "description": "Equation to calculate. Uses Python arithmetic operators (+, -, /, *, **, %)",
+                  "order": 1,
+                  "title": "Equation",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "equation"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "result": {
+                  "description": "Result of the arithmetic operation",
+                  "order": 1,
+                  "title": "Result",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
+          },
+          "39db1de6-6f97-45df-80c9-e27e05cbfbd6": {
+            "nodeId": "39db1de6-6f97-45df-80c9-e27e05cbfbd6",
+            "name": "Processes",
+            "type": "loop",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "parameters": {
+              "customOutput": [
+                {
+                  "input": {
                     "expression": null,
-                    "expressionText": "",
-                    "value": "{{[3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0].[reports_found]}}",
+                    "value": "{{[08e64698-3fcd-4b6e-a244-d8fd180e1a04].[Hash Reports]}}",
                     "valueType": "array"
                   },
                   "name": "Hash Reports",
@@ -632,6 +665,93 @@
             "defaultImageData": "",
             "connectionType": "NONE"
           },
+          "3f9f61fe-eecb-44da-8013-fefe861f188a": {
+            "nodeId": "3f9f61fe-eecb-44da-8013-fefe861f188a",
+            "name": "Hash URL",
+            "type": "action",
+            "plugin": {
+              "name": "HashIt",
+              "slugVendor": "rapid7",
+              "slugName": "hashit",
+              "slugVersion": "2.0.4",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/hashit/2.0.4/icon.png"
+            },
+            "identifier": "string",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "string": "{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[url]}}"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "string": {
+                  "description": "String of text to hash",
+                  "order": 1,
+                  "title": "String",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "string"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "md5": {
+                  "description": "MD5 hash",
+                  "order": 1,
+                  "title": "MD5 Hash",
+                  "type": "string"
+                },
+                "sha1": {
+                  "description": "SHA1 hash",
+                  "order": 2,
+                  "title": "SHA1 Hash",
+                  "type": "string"
+                },
+                "sha256": {
+                  "description": "SHA256 hash",
+                  "order": 3,
+                  "title": "SHA256 Hash",
+                  "type": "string"
+                },
+                "sha512": {
+                  "description": "SHA512 hash",
+                  "order": 4,
+                  "title": "SHA512 Hash",
+                  "type": "string"
+                }
+              },
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
+          },
+          "47562f5a-3a11-4eaf-800f-bb14be0f197e": {
+            "nodeId": "47562f5a-3a11-4eaf-800f-bb14be0f197e",
+            "name": "No Reports Found",
+            "type": "artifact",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "parameters": {
+              "input": {
+                "content": "## Hashes Report\n\n*No reports found for {{[08e64698-3fcd-4b6e-a244-d8fd180e1a04].[$item].[hash]}}*\n"
+              },
+              "type": "markdown"
+            },
+            "defaultInputJSONSchema": null,
+            "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "connectionType": "NONE"
+          },
           "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a": {
             "nodeId": "476a46e4-4928-46e0-8ee3-0aeb20e2bf1a",
             "name": "IP Addresses",
@@ -674,6 +794,671 @@
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
             "connectionType": "NONE"
           },
+          "4c0aa87f-ae17-44a5-83aa-2fa8605000f1": {
+            "nodeId": "4c0aa87f-ae17-44a5-83aa-2fa8605000f1",
+            "name": "Calculate Total Scans",
+            "type": "action",
+            "plugin": {
+              "name": "Math",
+              "slugVendor": "rapid7",
+              "slugName": "math",
+              "slugVersion": "1.2.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/math/1.2.1/icon.png"
+            },
+            "identifier": "calculate",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "equation": "{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[last_analysis_stats].[harmless]}} + {{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[last_analysis_stats].[malicious]}} + {{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[last_analysis_stats].[suspicious]}} + {{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[last_analysis_stats].[undetected]}}\n"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "equation": {
+                  "description": "Equation to calculate. Uses Python arithmetic operators (+, -, /, *, **, %)",
+                  "order": 1,
+                  "title": "Equation",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "equation"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "result": {
+                  "description": "Result of the arithmetic operation",
+                  "order": 1,
+                  "title": "Result",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
+          },
+          "4f742eea-25ad-428c-b202-87330edba458": {
+            "nodeId": "4f742eea-25ad-428c-b202-87330edba458",
+            "name": "Report Found?",
+            "type": "automated_decision",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "parameters": {
+              "defaultEdgeId": "0532b323-d6b5-42ff-9308-c13e8ed752dd",
+              "stepControlParams": [
+                {
+                  "edgeId": "f789eb26-a3cb-43ff-8a8d-4cf2e5760c0f",
+                  "expression": {
+                    "name": "502fbc5a-56df-430a-b716-87c962aac651.$success",
+                    "type": "variable"
+                  },
+                  "expressionText": "{{[502fbc5a-56df-430a-b716-87c962aac651].[$success]}}"
+                },
+                {
+                  "edgeId": "0532b323-d6b5-42ff-9308-c13e8ed752dd",
+                  "expression": {},
+                  "expressionText": ""
+                }
+              ]
+            },
+            "defaultInputJSONSchema": null,
+            "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "connectionType": "NONE"
+          },
+          "502fbc5a-56df-430a-b716-87c962aac651": {
+            "nodeId": "502fbc5a-56df-430a-b716-87c962aac651",
+            "name": "Lookup Hash",
+            "type": "action",
+            "plugin": {
+              "name": "VirusTotal",
+              "slugVendor": "rapid7",
+              "slugName": "virustotal",
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
+            },
+            "identifier": "lookup_hash",
+            "continueOnFailure": true,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "hash": "{{[08e64698-3fcd-4b6e-a244-d8fd180e1a04].[$item].[hash]}}"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "hash": {
+                  "description": "MD5/SHA1/SHA256 hash to lookup",
+                  "order": 1,
+                  "title": "Hash",
+                  "type": "string"
+                }
+              },
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "definitions": {
+                "alert_context": {
+                  "properties": {
+                    "dest_ip": {
+                      "description": "Destination IP",
+                      "order": 1,
+                      "title": "Destination IP",
+                      "type": "string"
+                    },
+                    "dest_port": {
+                      "description": "Destination port",
+                      "order": 2,
+                      "title": "Destination Port",
+                      "type": "integer"
+                    },
+                    "hostname": {
+                      "description": "In case the alert is related to an HTTP event, destination hostname",
+                      "order": 3,
+                      "title": "Hostname",
+                      "type": "string"
+                    },
+                    "protocol": {
+                      "description": "Communication protocol",
+                      "order": 4,
+                      "title": "Protocol",
+                      "type": "string"
+                    },
+                    "src_ip": {
+                      "description": "Source IP",
+                      "order": 5,
+                      "title": "Source IP",
+                      "type": "string"
+                    },
+                    "src_port": {
+                      "description": "Source port",
+                      "order": 6,
+                      "title": "Source Port",
+                      "type": "integer"
+                    },
+                    "url": {
+                      "description": "In case the alert is related to an HTTP event, destination URL",
+                      "order": 7,
+                      "title": "URL",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Alert Context",
+                  "type": "object"
+                },
+                "crowdsourced_ids_results": {
+                  "properties": {
+                    "alert_context": {
+                      "description": "Context for every match of that alert",
+                      "items": {
+                        "$ref": "#/definitions/alert_context"
+                      },
+                      "order": 1,
+                      "title": "Alert Context",
+                      "type": "array"
+                    },
+                    "alert_severity": {
+                      "description": "Alert severity",
+                      "order": 2,
+                      "title": "Alert Severity",
+                      "type": "string"
+                    },
+                    "rule_category": {
+                      "description": "Alert category description",
+                      "order": 3,
+                      "title": "Rule Category",
+                      "type": "string"
+                    },
+                    "rule_id": {
+                      "description": "Suricata/Snort rule SID",
+                      "order": 4,
+                      "title": "Rule ID",
+                      "type": "string"
+                    },
+                    "rule_msg": {
+                      "description": "Alert description",
+                      "order": 5,
+                      "title": "Rule Message",
+                      "type": "string"
+                    },
+                    "rule_source": {
+                      "description": "Rule source, determined by SID range",
+                      "order": 6,
+                      "title": "Rule Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Results",
+                  "type": "object"
+                },
+                "crowdsourced_ids_stats": {
+                  "properties": {
+                    "high": {
+                      "description": "Number of matched rules having a high severity",
+                      "order": 1,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "info": {
+                      "description": "Number of matched rules having an info severity",
+                      "order": 2,
+                      "title": "Info",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched rules having a low severity",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched rules having a medium severity",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Crowdsourced Ids Stats",
+                  "type": "object"
+                },
+                "crowdsourced_yara_results": {
+                  "properties": {
+                    "author": {
+                      "description": "Rule author",
+                      "order": 1,
+                      "title": "Author",
+                      "type": "string"
+                    },
+                    "description": {
+                      "description": "Matched rule description",
+                      "order": 2,
+                      "title": "Description",
+                      "type": "string"
+                    },
+                    "match_in_subfile": {
+                      "description": "Whether the match was in a subfile or not",
+                      "order": 3,
+                      "title": "Match in Subfile",
+                      "type": "boolean"
+                    },
+                    "rule_name": {
+                      "description": "Matched rule name",
+                      "order": 4,
+                      "title": "Rule Name",
+                      "type": "string"
+                    },
+                    "ruleset_id": {
+                      "description": "VirusTotal's ruleset ID",
+                      "order": 5,
+                      "title": "Ruleset ID",
+                      "type": "string"
+                    },
+                    "ruleset_name": {
+                      "description": "Matched rule's ruleset name",
+                      "order": 6,
+                      "title": "Ruleset Name",
+                      "type": "string"
+                    },
+                    "source": {
+                      "description": "Ruleset source",
+                      "order": 7,
+                      "title": "Source",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Crowdsourced Yara Results",
+                  "type": "object"
+                },
+                "file_report": {
+                  "properties": {
+                    "capabilities_tags": {
+                      "description": "List of representative tags related to the file's capabilities",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 1,
+                      "title": "Capabilities Tags",
+                      "type": "array"
+                    },
+                    "creation_date": {
+                      "description": "Extracted when possible from the file's metadata. Indicates when it was built or compiled. It can also be faked by malware creators. UTC timestamp",
+                      "order": 2,
+                      "title": "Creation Date",
+                      "type": "integer"
+                    },
+                    "crowdsourced_ids_results": {
+                      "description": "IDS (Snort and Suricata) matches for the file. If the file is not a PCAP, the matches are taken from a PCAP generated after running the file in a sandbox",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_ids_results"
+                      },
+                      "order": 3,
+                      "title": "Crowdsourced IDS Results",
+                      "type": "array"
+                    },
+                    "crowdsourced_ids_stats": {
+                      "$ref": "#/definitions/crowdsourced_ids_stats",
+                      "description": "IDS results stats",
+                      "order": 4,
+                      "title": "Crowdsourced IDS Stats"
+                    },
+                    "crowdsourced_yara_results": {
+                      "description": "YARA matches for the file",
+                      "items": {
+                        "$ref": "#/definitions/crowdsourced_yara_results"
+                      },
+                      "order": 5,
+                      "title": "Crowdsourced YARA Results",
+                      "type": "array"
+                    },
+                    "downloadable": {
+                      "description": "True if the file can be downloaded, false otherwise",
+                      "order": 6,
+                      "title": "Downloadable",
+                      "type": "boolean"
+                    },
+                    "first_submission_date": {
+                      "description": "Date when the file was first seen in VirusTotal (UTC timestamp)",
+                      "order": 7,
+                      "title": "First Submission Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_date": {
+                      "description": "Most recent scan date (UTC timestamp)",
+                      "order": 8,
+                      "title": "Last Analysis Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_results": {
+                      "description": "Latest scan results. For more information about its format, check the Analysis object results attribute",
+                      "items": {
+                        "$ref": "#/definitions/last_analysis_result"
+                      },
+                      "order": 9,
+                      "title": "Last Analysis Results",
+                      "type": "array"
+                    },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "A summary of the latest scan results",
+                      "order": 10,
+                      "title": "Last Analysis Stats"
+                    },
+                    "last_modification_date": {
+                      "description": "Date when the object itself was last modified (UTC timestamp)",
+                      "order": 11,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_submission_date": {
+                      "description": "Most recent date the file was posted to VirusTotal (UTC timestamp)",
+                      "order": 12,
+                      "title": "Last Submission Date",
+                      "type": "integer"
+                    },
+                    "main_icon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the main icon",
+                      "order": 13,
+                      "title": "Main Icon"
+                    },
+                    "malicious": {
+                      "description": "True if there are one or more votes indicating that the file is malicious",
+                      "order": 32,
+                      "title": "Malicious",
+                      "type": "boolean"
+                    },
+                    "md5": {
+                      "description": "File's MD5 hash",
+                      "order": 14,
+                      "title": "MD5",
+                      "type": "string"
+                    },
+                    "meaningful_name": {
+                      "description": "The most interesting name out of all file's names",
+                      "order": 15,
+                      "title": "Meaningful Name",
+                      "type": "string"
+                    },
+                    "names": {
+                      "description": "All file names associated with the file",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 16,
+                      "title": "Names",
+                      "type": "array"
+                    },
+                    "reputation": {
+                      "description": "File's score calculated from all votes posted by the VirusTotal community",
+                      "order": 17,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "sandbox_verdicts": {
+                      "description": "A summary of all sandbox verdicts for a given file",
+                      "order": 18,
+                      "title": "Sandbox Verdicts",
+                      "type": "object"
+                    },
+                    "sha1": {
+                      "description": "File's SHA1 hash",
+                      "order": 19,
+                      "title": "SHA1",
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "description": "File's SHA256 hash",
+                      "order": 20,
+                      "title": "SHA256",
+                      "type": "string"
+                    },
+                    "sigma_analysis_stats": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules, grouped by its severity",
+                      "order": 21,
+                      "title": "Sigma Analysis Stats"
+                    },
+                    "sigma_analysis_summary": {
+                      "$ref": "#/definitions/sigma_analysis",
+                      "description": "Dictionary containing the number of matched sigma rules group by its severity",
+                      "order": 22,
+                      "title": "Sigma Analysis Summary"
+                    },
+                    "size": {
+                      "description": "File size in bytes",
+                      "order": 23,
+                      "title": "Size",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "List of representative attributes",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 24,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "times_submitted": {
+                      "description": "Number of times the file has been posted to VirusTotal",
+                      "order": 25,
+                      "title": "Times Submitted",
+                      "type": "integer"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Unweighted number of total votes from the community, divided by harmless and malicious",
+                      "order": 26,
+                      "title": "Total Votes"
+                    },
+                    "type_description": {
+                      "description": "Describes the file type",
+                      "order": 27,
+                      "title": "Type Description",
+                      "type": "string"
+                    },
+                    "type_extension": {
+                      "description": "Specifies file extension",
+                      "order": 28,
+                      "title": "Type Extension",
+                      "type": "string"
+                    },
+                    "type_tag": {
+                      "description": "Tag representing the file type",
+                      "order": 29,
+                      "title": "Type Tag",
+                      "type": "string"
+                    },
+                    "unique_sources": {
+                      "description": "Indicates from how many different sources the file has been posted from",
+                      "order": 30,
+                      "title": "Unique Sources",
+                      "type": "integer"
+                    },
+                    "vhash": {
+                      "description": "In-house similarity clustering algorithm value, based on a simple structural feature hash allowing you to find similar files",
+                      "order": 31,
+                      "title": "VHASH",
+                      "type": "string"
+                    }
+                  },
+                  "title": "File Report",
+                  "type": "object"
+                },
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
+                      "type": "string"
+                    },
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
+                  "type": "object"
+                },
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
+                      "order": 3,
+                      "title": "Engine Update",
+                      "type": "string"
+                    },
+                    "engine_version": {
+                      "description": "Engine's version",
+                      "order": 4,
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
+                },
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
+                },
+                "sigma_analysis": {
+                  "properties": {
+                    "critical": {
+                      "description": "Number of matched critical severity rules/rulesets",
+                      "order": 1,
+                      "title": "Critical",
+                      "type": "integer"
+                    },
+                    "high": {
+                      "description": "Number of matched high severity rules/rulesets",
+                      "order": 2,
+                      "title": "High",
+                      "type": "integer"
+                    },
+                    "low": {
+                      "description": "Number of matched low severity rules/rulesets",
+                      "order": 3,
+                      "title": "Low",
+                      "type": "integer"
+                    },
+                    "medium": {
+                      "description": "Number of matched medium severity rules/rulesets",
+                      "order": 4,
+                      "title": "Medium",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Sigma Analysis",
+                  "type": "object"
+                },
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                }
+              },
+              "properties": {
+                "report": {
+                  "$ref": "#/definitions/file_report",
+                  "description": "Hash report",
+                  "order": 1,
+                  "title": "Report"
+                }
+              },
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "CONNECTION"
+          },
           "71e2da52-8f0c-4366-8ed4-6f13a23bb533": {
             "nodeId": "71e2da52-8f0c-4366-8ed4-6f13a23bb533",
             "name": "Lookup URL",
@@ -682,8 +1467,8 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "6.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/6.0.4/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "scan_url_report",
             "continueOnFailure": false,
@@ -707,72 +1492,292 @@
               "type": "object"
             },
             "defaultOutputJSONSchema": {
-              "properties": {
-                "malicious": {
-                  "description": "True if one or more positives",
-                  "order": 1,
-                  "title": "Malicious",
-                  "type": "boolean"
-                },
-                "permalink": {
-                  "description": "Permalink",
-                  "order": 8,
-                  "title": "Permalink",
-                  "type": "string"
-                },
-                "positives": {
-                  "description": "Positives",
-                  "order": 9,
-                  "title": "Positives",
-                  "type": "integer"
-                },
-                "resource": {
-                  "description": "Resource",
-                  "order": 4,
-                  "title": "Resource",
-                  "type": "string"
-                },
-                "response_code": {
-                  "description": "Response code",
-                  "order": 2,
-                  "title": "Response Code",
-                  "type": "integer"
-                },
-                "scan_date": {
-                  "description": "Scan date",
-                  "order": 7,
-                  "title": "Scan Date",
-                  "type": "string"
-                },
-                "scan_id": {
-                  "description": "Scan ID",
-                  "order": 6,
-                  "title": "Scan ID",
-                  "type": "string"
-                },
-                "scans": {
-                  "description": "Scans",
-                  "order": 11,
-                  "title": "Scans",
+              "definitions": {
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
+                      "type": "string"
+                    },
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
                   "type": "object"
                 },
-                "total": {
-                  "description": "Total",
-                  "order": 10,
-                  "title": "Total",
-                  "type": "integer"
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
+                      "order": 3,
+                      "title": "Engine Update",
+                      "type": "string"
+                    },
+                    "engine_version": {
+                      "description": "Engine's version",
+                      "order": 4,
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
                 },
-                "url": {
-                  "description": "URL",
-                  "order": 5,
-                  "title": "URL",
-                  "type": "string"
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
                 },
-                "verbose_msg": {
-                  "description": "Verbose message",
-                  "order": 3,
-                  "title": "Verbose Message",
-                  "type": "string"
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                },
+                "url_report": {
+                  "properties": {
+                    "categories": {
+                      "description": "Object, with the key as the partner who categorized the URL and the value as the URL's category according to that partner",
+                      "order": 1,
+                      "title": "Categories",
+                      "type": "object"
+                    },
+                    "favicon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the URL's favicon",
+                      "order": 2,
+                      "title": "Favicon"
+                    },
+                    "first_submission_date": {
+                      "description": "UTC timestamp of the date when the URL was first submitted to VirusTotal",
+                      "order": 3,
+                      "title": "First Submission Date",
+                      "type": "integer"
+                    },
+                    "html_meta": {
+                      "description": "Contains all meta tags (only for URLs downloading a HTML). Keys are meta tag names and values are lists containing all values of that meta tag",
+                      "order": 4,
+                      "title": "HTML Meta",
+                      "type": "object"
+                    },
+                    "last_analysis_date": {
+                      "description": "UTC timestamp representing last time the URL was scanned",
+                      "order": 5,
+                      "title": "Last Analysis Date",
+                      "type": "integer"
+                    },
+                    "last_analysis_results": {
+                      "description": "Result from URL scanners. Object with scanner name as key and an object with notes/result from that scanner as value",
+                      "items": {
+                        "$ref": "#/definitions/last_analysis_result"
+                      },
+                      "order": 6,
+                      "title": "Last Analysis Results",
+                      "type": "array"
+                    },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "Number of different results from this scan",
+                      "order": 7,
+                      "title": "Last Analysis Stats"
+                    },
+                    "last_final_url": {
+                      "description": "Final URL in URL redirections",
+                      "order": 8,
+                      "title": "Last Final URL",
+                      "type": "string"
+                    },
+                    "last_http_response_code": {
+                      "description": "HTTP response code of the last response",
+                      "order": 9,
+                      "title": "Last HTTP Response Code",
+                      "type": "integer"
+                    },
+                    "last_http_response_content_length": {
+                      "description": "Length in bytes of the content received",
+                      "order": 10,
+                      "title": "Last HTTP Response Content Length",
+                      "type": "integer"
+                    },
+                    "last_http_response_content_sha256": {
+                      "description": "URL response body's SHA256 hash",
+                      "order": 11,
+                      "title": "Last HTTP Response Content SHA256",
+                      "type": "string"
+                    },
+                    "last_http_response_cookies": {
+                      "description": "Dictionary containing the website's cookies",
+                      "order": 12,
+                      "title": "Last HTTP Response Cookies",
+                      "type": "object"
+                    },
+                    "last_http_response_headers": {
+                      "description": "Dictionary containing headers and values of last HTTP response",
+                      "order": 13,
+                      "title": "Last HTTP Response Headers",
+                      "type": "object"
+                    },
+                    "last_modification_date": {
+                      "description": "UTC timestamp representing last modification date",
+                      "order": 14,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_submission_date": {
+                      "description": "UTC timestamp representing last time it was sent to be analyzed",
+                      "order": 15,
+                      "title": "Last Submission Date",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "order": 25,
+                      "title": "Malicious",
+                      "type": "boolean"
+                    },
+                    "outgoing_links": {
+                      "description": "List of links to outgoing domains",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 16,
+                      "title": "Outgoing Links",
+                      "type": "array"
+                    },
+                    "reputation": {
+                      "description": "Value of votes from VirusTotal community",
+                      "order": 17,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "Tags",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 18,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "targeted_brand": {
+                      "description": "Targeted brand info extracted from phishing engines",
+                      "order": 19,
+                      "title": "Targeted Brand",
+                      "type": "object"
+                    },
+                    "times_submitted": {
+                      "description": "Number of times that URL has been checked",
+                      "order": 20,
+                      "title": "Times Submitted",
+                      "type": "integer"
+                    },
+                    "title": {
+                      "description": "Webpage title",
+                      "order": 21,
+                      "title": "Title",
+                      "type": "string"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Containing the number of positive (harmless) and negative (malicious) votes received from VirusTotal community",
+                      "order": 22,
+                      "title": "Total Votes"
+                    },
+                    "trackers": {
+                      "description": "Object containing all found trackers in that URL in a historical manner",
+                      "order": 23,
+                      "title": "Trackers",
+                      "type": "object"
+                    },
+                    "url": {
+                      "description": "Original URL to be scanned",
+                      "order": 24,
+                      "title": "URL",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Url Report",
+                  "type": "object"
+                }
+              },
+              "properties": {
+                "report": {
+                  "$ref": "#/definitions/url_report",
+                  "description": "URL report",
+                  "order": 1,
+                  "title": "Report"
                 }
               },
               "title": "Variables",
@@ -808,7 +1813,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "## URLs Report\n\n*Report for {{[df6d7d6e-ac6f-4941-b7db-9cbdaba3125c].[$item]}}*\n* Scan Date: {{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[scan_date]}}\n* Malicious: {{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[malicious]}}\n* Found Malicious by `{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[positives]}}` scans out of `{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[total]}}` total\n* Full VirusTotal Report: [{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[permalink]}}]({{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[permalink]}})\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
+                "content": "## URLs Report\n\n*Report for {{[df6d7d6e-ac6f-4941-b7db-9cbdaba3125c].[$item]}}*\n* Scan Date (timestamp): {{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[last_analysis_date]}}\n* Malicious: {{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[malicious]}}\n* Found Malicious by `{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[last_analysis_stats].[malicious]}}` scans out of `{{[4c0aa87f-ae17-44a5-83aa-2fa8605000f1].[result]}}` total\n* Full VirusTotal Report: [https://www.virustotal.com/gui/url/{{[3f9f61fe-eecb-44da-8013-fefe861f188a].[sha256]}}/details](https://www.virustotal.com/gui/url/{{[3f9f61fe-eecb-44da-8013-fefe861f188a].[sha256]}}/details)\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
               },
               "type": "markdown"
             },
@@ -818,35 +1823,13 @@
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
-          "a9583cae-3265-458e-9dca-04e551c6646e": {
-            "nodeId": "a9583cae-3265-458e-9dca-04e551c6646e",
-            "name": "Hash Reports Loop",
-            "type": "loop",
-            "continueOnFailure": false,
-            "isDisabled": false,
-            "parameters": {
-              "customOutput": [],
-              "innerEdgeId": "c28c0a2a-210e-41e7-b6d0-09ea5e0d4a7b",
-              "nextEdgeId": "fa2722d8-f7ab-4385-bbe2-5a79102fd35f",
-              "repeatVariable": "{{[3779a4ff-1a17-4ae2-8d4c-80e3a95ad7d0].[reports_found]}}"
-            },
-            "defaultInputJSONSchema": null,
-            "defaultOutputJSONSchema": null,
-            "outputJSONSchema": {
-              "properties": {},
-              "title": "Variables",
-              "type": "object"
-            },
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/loop.svg",
-            "connectionType": "NONE"
-          },
           "ba8bae4b-ae24-47c9-b635-3ebb9b6a934a": {
             "nodeId": "ba8bae4b-ae24-47c9-b635-3ebb9b6a934a",
             "name": "IDR Alert",
             "type": "trigger",
             "continueOnFailure": false,
             "isDisabled": false,
-            "triggerId": "59ab0fa1-42b6-43fa-bc64-8b60d95435d4",
+            "triggerId": "bd8fc3e3-cd65-4034-b30e-d0837037595b",
             "defaultInputJSONSchema": {
               "definitions": {
                 "actor": {
@@ -1413,8 +2396,8 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "6.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/6.0.4/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "domain_report",
             "continueOnFailure": false,
@@ -1439,338 +2422,715 @@
             },
             "defaultOutputJSONSchema": {
               "definitions": {
-                "detected_url": {
+                "authority_key_identifier": {
                   "properties": {
-                    "positives": {
-                      "description": "Positives",
-                      "order": 2,
-                      "title": "Positives",
-                      "type": "integer"
-                    },
-                    "scan_date": {
-                      "description": "Date the URL was scanned",
-                      "order": 4,
-                      "title": "Scan Date",
+                    "keyid": {
+                      "description": "Key hexdump",
+                      "order": 1,
+                      "title": "Key ID",
                       "type": "string"
                     },
-                    "total": {
-                      "description": "Total scan engines that found the URL malicious",
-                      "order": 3,
-                      "title": "Total",
-                      "type": "integer"
-                    },
-                    "url": {
-                      "description": "URL",
-                      "order": 1,
-                      "title": "URL",
+                    "serial_number": {
+                      "description": "Serial number hexdump",
+                      "order": 2,
+                      "title": "Serial Number",
                       "type": "string"
                     }
                   },
-                  "title": "Detected Url",
+                  "title": "Authority Key Identifier",
+                  "type": "object"
+                },
+                "cert_signature": {
+                  "properties": {
+                    "signature": {
+                      "description": "Signature hexdump",
+                      "order": 1,
+                      "title": "Signature",
+                      "type": "string"
+                    },
+                    "signature_algorithm": {
+                      "description": "Used algorithm",
+                      "order": 2,
+                      "title": "Signature Algorithm",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Cert Signature",
                   "type": "object"
                 },
                 "domain_report": {
                   "properties": {
-                    "Alexa category": {
-                      "description": "Alexa category",
-                      "order": 16,
-                      "title": "Alexa Category",
-                      "type": "string"
+                    "categories": {
+                      "description": "Mapping that relates categorization services with the assigned domain category. These services are, among others: Alexa, BitDefender, TrendMicro, Websense ThreatSeeker, etc.",
+                      "order": 1,
+                      "title": "Categories",
+                      "type": "object"
                     },
-                    "Alexa domain info": {
-                      "description": "Alexa domain information",
-                      "order": 11,
-                      "title": "Alexa Domain Information",
-                      "type": "string"
-                    },
-                    "Alexa rank": {
-                      "description": "Alexa rank",
-                      "order": 24,
-                      "title": "Alexa Rank",
+                    "creation_date": {
+                      "description": "Creation date extracted from the Domain's WHOIS (UTC timestamp)",
+                      "order": 2,
+                      "title": "Creation Date",
                       "type": "integer"
                     },
-                    "BitDefender category": {
-                      "description": "BitDefender category",
-                      "order": 5,
-                      "title": "BitDefender Category",
-                      "type": "string"
+                    "favicon": {
+                      "$ref": "#/definitions/icon",
+                      "description": "Dictionary including difference hash and MD5 hash of the domain's favicon",
+                      "order": 3,
+                      "title": "Favicon"
                     },
-                    "BitDefender domain info": {
-                      "description": "BitDefender domain information",
-                      "order": 9,
-                      "title": "BitDefender Domain Information",
-                      "type": "string"
-                    },
-                    "Dr.Web category": {
-                      "description": "Dr.Web category",
-                      "order": 26,
-                      "title": "Dr.Web Category",
-                      "type": "string"
-                    },
-                    "Forcepoint ThreatSeeker category": {
-                      "description": "Forcepoint Threat Seeker category",
-                      "order": 15,
-                      "title": "Forcepoint Threat Seeker Category",
-                      "type": "string"
-                    },
-                    "TrendMicro category": {
-                      "description": "TrendMicro category",
-                      "order": 23,
-                      "title": "TrendMicro Category",
-                      "type": "string"
-                    },
-                    "WOT domain info": {
-                      "$ref": "#/definitions/wot_info",
-                      "description": "WOT domain information",
-                      "order": 13,
-                      "title": "WOT Domain Information"
-                    },
-                    "Websense ThreatSeeker category": {
-                      "description": "Websense ThreatSeeker category",
-                      "order": 22,
-                      "title": "Websense ThreatSeeker Category",
-                      "type": "string"
-                    },
-                    "Webutation domain info": {
-                      "$ref": "#/definitions/webutation_info",
-                      "description": "Webutation domain info",
-                      "order": 20,
-                      "title": "Webutation Domain Info"
-                    },
-                    "categories": {
-                      "description": "Categories",
+                    "last_analysis_results": {
+                      "description": "Result from URL scanners. Object with scanner name as key and an object with notes/result from that scanner as value",
                       "items": {
-                        "type": "string"
-                      },
-                      "order": 18,
-                      "title": "Categories",
-                      "type": "array"
-                    },
-                    "detected_communicating_samples": {
-                      "description": "Detected communication samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
-                      "order": 17,
-                      "title": "Detected Communication Samples",
-                      "type": "array"
-                    },
-                    "detected_downloaded_samples": {
-                      "description": "Detected download samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
-                      "order": 7,
-                      "title": "Detected Download Samples",
-                      "type": "array"
-                    },
-                    "detected_referrer_samples": {
-                      "description": "Detected referrer samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
-                      "order": 14,
-                      "title": "Detected Referrer Samples",
-                      "type": "array"
-                    },
-                    "detected_urls": {
-                      "description": "Collection of detected URLs and information about them",
-                      "items": {
-                        "$ref": "#/definitions/detected_url"
+                        "$ref": "#/definitions/last_analysis_result"
                       },
                       "order": 4,
-                      "title": "Detected URLs",
+                      "title": "Last Analysis Results",
                       "type": "array"
                     },
-                    "domain_siblings": {
-                      "description": "Domain siblings",
-                      "items": {
-                        "type": "string"
-                      },
-                      "order": 8,
-                      "title": "Domain Siblings",
-                      "type": "array"
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "Number of different results from this scan",
+                      "order": 5,
+                      "title": "Last Analysis Statistics"
                     },
-                    "pcaps": {
-                      "description": "Packet capture hashes",
+                    "last_dns_records": {
+                      "description": "Domain's DNS records on its last scan",
                       "items": {
-                        "type": "string"
-                      },
-                      "order": 27,
-                      "title": "PCAPS",
-                      "type": "array"
-                    },
-                    "resolutions": {
-                      "description": "Collection of historical IPs resolved to the hostname being reported on",
-                      "items": {
-                        "$ref": "#/definitions/domain_resolution"
-                      },
-                      "order": 3,
-                      "title": "Resolutions",
-                      "type": "array"
-                    },
-                    "response_code": {
-                      "description": "Response code from the request",
-                      "order": 1,
-                      "title": "Response Code",
-                      "type": "integer"
-                    },
-                    "subdomains": {
-                      "description": "Subdomains",
-                      "items": {
-                        "type": "string"
-                      },
-                      "order": 21,
-                      "title": "Subdomains",
-                      "type": "array"
-                    },
-                    "undetected_communicating_samples": {
-                      "description": "Undetected communicating samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
-                      "order": 25,
-                      "title": "Undetected Communicating Samples",
-                      "type": "array"
-                    },
-                    "undetected_downloaded_samples": {
-                      "description": "Undetected downloaded samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
+                        "$ref": "#/definitions/last_dns_records"
                       },
                       "order": 6,
-                      "title": "Undetected Downloaded Samples",
+                      "title": "Last DNS Records",
                       "type": "array"
                     },
-                    "undetected_urls": {
-                      "description": "Undetected URLs",
-                      "items": {},
-                      "order": 19,
-                      "title": "Undetected URLs",
-                      "type": "array"
+                    "last_dns_records_date": {
+                      "description": "Date when the DNS records list was retrieved by VirusTotal (UTC timestamp)",
+                      "order": 7,
+                      "title": "Last DNS Records Date",
+                      "type": "integer"
                     },
-                    "verbose_msg": {
-                      "description": "Verbose message from the request",
-                      "order": 2,
-                      "title": "Verbose Message",
+                    "last_https_certificate": {
+                      "$ref": "#/definitions/ssl_certificate",
+                      "description": "SSL certificate object retrieved last time the domain was analyzed",
+                      "order": 8,
+                      "title": "Last HTTPS Certificate"
+                    },
+                    "last_https_certificate_date": {
+                      "description": "Date when the certificate was retrieved by VirusTotal (UTC timestamp)",
+                      "order": 9,
+                      "title": "Last HTTPS Certificate Date",
+                      "type": "integer"
+                    },
+                    "last_modification_date": {
+                      "description": "Date when any of the domain's information was last updated",
+                      "order": 10,
+                      "title": "Last Modification Date",
+                      "type": "integer"
+                    },
+                    "last_update_date": {
+                      "description": "Updated date extracted from WHOIS (UTC timestamp)",
+                      "order": 11,
+                      "title": "Last Update Date",
+                      "type": "integer"
+                    },
+                    "popularity_ranks": {
+                      "$ref": "#/definitions/popularity_ranks",
+                      "description": "Domain's position in popularity ranks such as Alexa, Quantcast, Statvoo, etc.",
+                      "order": 12,
+                      "title": "Popularity Ranks"
+                    },
+                    "registrar": {
+                      "description": "Company that registered the domain",
+                      "order": 13,
+                      "title": "Registrar",
                       "type": "string"
                     },
+                    "reputation": {
+                      "description": "Domain's score calculated from the votes of the VirusTotal's community",
+                      "order": 14,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "List of representative attributes",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 15,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Unweighted number of total votes from the community, divided in harmless and malicious",
+                      "order": 16,
+                      "title": "Total Votes"
+                    },
                     "whois": {
-                      "description": "WHOIS Inforamtion",
-                      "order": 10,
+                      "description": "WHOIS information as returned from the pertinent WHOIS server",
+                      "order": 17,
                       "title": "WHOIS",
                       "type": "string"
                     },
-                    "whois_timestamp": {
-                      "description": "WHOIS timestamp",
-                      "order": 12,
-                      "title": "WHOIS Timestamp",
+                    "whois_date": {
+                      "description": "Date of the last update of the WHOIS record in VirusTotal",
+                      "order": 18,
+                      "title": "WHOIS Date",
                       "type": "integer"
                     }
                   },
                   "title": "Domain Report",
                   "type": "object"
                 },
-                "domain_resolution": {
+                "dsa": {
                   "properties": {
-                    "ip_address": {
-                      "description": "Hostname of the IP at the time it was resolved",
-                      "order": 2,
-                      "title": "IP Address",
+                    "g": {
+                      "description": "G component hexdump",
+                      "order": 3,
+                      "title": "G",
                       "type": "string"
                     },
-                    "last_resolved": {
-                      "description": "Datetime of when the IP was last resolved",
+                    "p": {
+                      "description": "P component hexdump",
                       "order": 1,
-                      "title": "Last Resolved",
-                      "type": "string"
-                    }
-                  },
-                  "title": "Domain Resolution",
-                  "type": "object"
-                },
-                "samples": {
-                  "properties": {
-                    "date": {
-                      "description": "Date",
-                      "order": 1,
-                      "title": "Date",
+                      "title": "P",
                       "type": "string"
                     },
-                    "positives": {
-                      "description": "Positives",
-                      "order": 2,
-                      "title": "Positives",
-                      "type": "integer"
-                    },
-                    "sha256": {
-                      "description": "SHA256 hash",
+                    "pub": {
+                      "description": "Public key hexdump",
                       "order": 4,
-                      "title": "SHA256",
+                      "title": "Public",
                       "type": "string"
                     },
-                    "total": {
-                      "description": "Total",
-                      "order": 3,
-                      "title": "Total",
-                      "type": "integer"
-                    }
-                  },
-                  "title": "Samples",
-                  "type": "object"
-                },
-                "webutation_info": {
-                  "properties": {
-                    "Adult content": {
-                      "description": "Adult content",
-                      "order": 1,
-                      "title": "Adult Content",
-                      "type": "string"
-                    },
-                    "Safety score": {
-                      "description": "Safety score",
+                    "q": {
+                      "description": "Q component hexdump",
                       "order": 2,
-                      "title": "Safety Score",
-                      "type": "integer"
-                    },
-                    "Verdict": {
-                      "description": "Verdict",
-                      "order": 3,
-                      "title": "Verdict",
+                      "title": "Q",
                       "type": "string"
                     }
                   },
-                  "title": "Webutation Info",
+                  "title": "Dsa",
                   "type": "object"
                 },
-                "wot_info": {
+                "ec": {
                   "properties": {
-                    "Child safety": {
-                      "description": "Child safety",
+                    "oid": {
+                      "description": "Curve name",
                       "order": 1,
-                      "title": "Child Safety",
+                      "title": "OID",
                       "type": "string"
                     },
-                    "Privacy": {
-                      "description": "Privacy",
+                    "pub": {
+                      "description": "Public key hexdump",
                       "order": 2,
-                      "title": "Privacy",
+                      "title": "Public",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ec",
+                  "type": "object"
+                },
+                "icon": {
+                  "properties": {
+                    "dhash": {
+                      "description": "Difference hash",
+                      "order": 1,
+                      "title": "DHASH",
                       "type": "string"
                     },
-                    "Trustworthiness": {
-                      "description": "Trustworthiness",
+                    "raw_md5": {
+                      "description": "Icon's MD5 hash",
+                      "order": 2,
+                      "title": "Raw MD5",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Icon",
+                  "type": "object"
+                },
+                "last_analysis_result": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "engine_name": {
+                      "description": "Engine name",
+                      "order": 1,
+                      "title": "Engine Name",
+                      "type": "string"
+                    },
+                    "engine_update": {
+                      "description": "Engine's last update date",
                       "order": 3,
-                      "title": "Trustworthiness",
+                      "title": "Engine Update",
                       "type": "string"
                     },
-                    "Vendor reliability": {
-                      "description": "Vendor reliability",
+                    "engine_version": {
+                      "description": "Engine's version",
                       "order": 4,
-                      "title": "Vendor Reliability",
+                      "title": "Engine Version",
+                      "type": "string"
+                    },
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
                       "type": "string"
                     }
                   },
-                  "title": "Wot Info",
+                  "title": "Last Analysis Result",
+                  "type": "object"
+                },
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
+                      "order": 3,
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Last Analysis Stats",
+                  "type": "object"
+                },
+                "last_dns_records": {
+                  "properties": {
+                    "expire": {
+                      "description": "Expire",
+                      "order": 1,
+                      "title": "Expire",
+                      "type": "integer"
+                    },
+                    "flag": {
+                      "description": "Flag",
+                      "order": 2,
+                      "title": "Flag",
+                      "type": "integer"
+                    },
+                    "minimum": {
+                      "description": "Minimum",
+                      "order": 3,
+                      "title": "Minimum",
+                      "type": "integer"
+                    },
+                    "priority": {
+                      "description": "Priority",
+                      "order": 4,
+                      "title": "Priority",
+                      "type": "integer"
+                    },
+                    "refresh": {
+                      "description": "Refresh",
+                      "order": 5,
+                      "title": "Refresh",
+                      "type": "integer"
+                    },
+                    "retry": {
+                      "description": "Retry",
+                      "order": 7,
+                      "title": "Retry",
+                      "type": "integer"
+                    },
+                    "rname": {
+                      "description": "RNAME",
+                      "order": 6,
+                      "title": "RNAME",
+                      "type": "string"
+                    },
+                    "serial": {
+                      "description": "Serial",
+                      "order": 8,
+                      "title": "Serial",
+                      "type": "integer"
+                    },
+                    "tag": {
+                      "description": "Tag",
+                      "order": 9,
+                      "title": "Tag",
+                      "type": "string"
+                    },
+                    "ttl": {
+                      "description": "Time to live",
+                      "order": 10,
+                      "title": "TTL",
+                      "type": "integer"
+                    },
+                    "type": {
+                      "description": "Type",
+                      "order": 11,
+                      "title": "Type",
+                      "type": "string"
+                    },
+                    "value": {
+                      "description": "Value",
+                      "order": 12,
+                      "title": "Value",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Dns Records",
+                  "type": "object"
+                },
+                "popularity_ranks": {
+                  "properties": {
+                    "rank": {
+                      "description": "Rank position",
+                      "order": 1,
+                      "title": "Rank",
+                      "type": "integer"
+                    },
+                    "timestamp": {
+                      "description": "UTC timestamp when the rank was ingested",
+                      "order": 2,
+                      "title": "Timestamp",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Popularity Ranks",
+                  "type": "object"
+                },
+                "public_key": {
+                  "properties": {
+                    "algorithm": {
+                      "description": "Indicates the algorithm used to generate the certificate",
+                      "order": 1,
+                      "title": "Algorithm",
+                      "type": "string"
+                    },
+                    "dsa": {
+                      "$ref": "#/definitions/dsa",
+                      "description": "DSA public key information",
+                      "order": 3,
+                      "title": "DSA"
+                    },
+                    "ec": {
+                      "$ref": "#/definitions/ec",
+                      "description": "EC public key information",
+                      "order": 4,
+                      "title": "EC"
+                    },
+                    "rsa": {
+                      "$ref": "#/definitions/rsa",
+                      "description": "RSA public key information",
+                      "order": 2,
+                      "title": "RSA"
+                    }
+                  },
+                  "title": "Public Key",
+                  "type": "object"
+                },
+                "rsa": {
+                  "properties": {
+                    "exponent": {
+                      "description": "Key exponent hexdump",
+                      "order": 3,
+                      "title": "Exponent",
+                      "type": "string"
+                    },
+                    "key_size": {
+                      "description": "Key size",
+                      "order": 1,
+                      "title": "Key Size",
+                      "type": "integer"
+                    },
+                    "modulus": {
+                      "description": "Key modulus hexdump",
+                      "order": 2,
+                      "title": "Modulus",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Rsa",
+                  "type": "object"
+                },
+                "ssl_certificate": {
+                  "properties": {
+                    "cert_signature": {
+                      "$ref": "#/definitions/cert_signature",
+                      "description": "Dictionary containing certificate's signature and algorithm",
+                      "order": 1,
+                      "title": "Certificate Signature"
+                    },
+                    "extensions": {
+                      "$ref": "#/definitions/ssl_extensions",
+                      "description": "Dictionary containing all certificate's extensions",
+                      "order": 2,
+                      "title": "Extensions"
+                    },
+                    "first_seen_date": {
+                      "description": "Date the certificate was first retrieved by VirusTotal",
+                      "order": 3,
+                      "title": "First Seen Date",
+                      "type": "integer"
+                    },
+                    "issuer": {
+                      "$ref": "#/definitions/ssl_data",
+                      "description": "Dictionary containing the certificate's issuer data",
+                      "order": 4,
+                      "title": "Issuer"
+                    },
+                    "public_key": {
+                      "$ref": "#/definitions/public_key",
+                      "description": "Subject public key info",
+                      "order": 5,
+                      "title": "Public Key"
+                    },
+                    "serial_number": {
+                      "description": "Certificate's serial number hexdump",
+                      "order": 6,
+                      "title": "Serial Number",
+                      "type": "string"
+                    },
+                    "signature_algorithm": {
+                      "description": "Algorithm used for the signature",
+                      "order": 7,
+                      "title": "Signature Algorithm",
+                      "type": "string"
+                    },
+                    "size": {
+                      "description": "Certificate content length",
+                      "order": 8,
+                      "title": "Size",
+                      "type": "integer"
+                    },
+                    "subject": {
+                      "$ref": "#/definitions/ssl_data",
+                      "description": "Dictionary containing the certificate's subject data",
+                      "order": 9,
+                      "title": "Subject"
+                    },
+                    "thumbprint": {
+                      "description": "Certificate's content SHA1 hash",
+                      "order": 10,
+                      "title": "Thumbprint",
+                      "type": "string"
+                    },
+                    "thumbprint_sha256": {
+                      "description": "Certificate's content SHA256 hash",
+                      "order": 11,
+                      "title": "Thumbprint SHA256",
+                      "type": "string"
+                    },
+                    "validity": {
+                      "$ref": "#/definitions/validity",
+                      "description": "Defines certificate's validity period",
+                      "order": 12,
+                      "title": "Validity"
+                    },
+                    "version": {
+                      "description": "Certificate version",
+                      "order": 13,
+                      "title": "Version",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ssl Certificate",
+                  "type": "object"
+                },
+                "ssl_data": {
+                  "properties": {
+                    "C": {
+                      "description": "Country name",
+                      "order": 1,
+                      "title": "Country Name",
+                      "type": "string"
+                    },
+                    "CN": {
+                      "description": "Common name",
+                      "order": 2,
+                      "title": "Common Name",
+                      "type": "string"
+                    },
+                    "L": {
+                      "description": "Locality",
+                      "order": 3,
+                      "title": "Locality",
+                      "type": "string"
+                    },
+                    "O": {
+                      "description": "Organization",
+                      "order": 4,
+                      "title": "Organization",
+                      "type": "string"
+                    },
+                    "OU": {
+                      "description": "Organizational unit",
+                      "order": 5,
+                      "title": "Organizational Unit",
+                      "type": "string"
+                    },
+                    "ST": {
+                      "description": "State or province name",
+                      "order": 6,
+                      "title": "State or Province Name",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ssl Data",
+                  "type": "object"
+                },
+                "ssl_extensions": {
+                  "properties": {
+                    "authority_key_identifier": {
+                      "$ref": "#/definitions/authority_key_identifier",
+                      "description": "Identifies the public key to be used to verify the signature on this certificate or CRL",
+                      "order": 3,
+                      "title": "Authority Key Identifier"
+                    },
+                    "ca": {
+                      "description": "Whether the subject acts as a CA or not",
+                      "order": 1,
+                      "title": "CA",
+                      "type": "boolean"
+                    },
+                    "ca_information_access": {
+                      "description": "Authority information access locations are URLs that are added to a certificate in its authority information access extension",
+                      "order": 5,
+                      "title": "CA Information Access",
+                      "type": "object"
+                    },
+                    "cert_template_name_dc": {
+                      "description": "BMP data value DomainController, see MS Q291010",
+                      "order": 10,
+                      "title": "Certificate Template Name DC",
+                      "type": "string"
+                    },
+                    "certificate_policies": {
+                      "description": "Different certificate policies will relate to different applications which may use the certified key",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 8,
+                      "title": "Certificate Policies",
+                      "type": "array"
+                    },
+                    "crl_distribution_points": {
+                      "description": "Identifies the CRL distribution points to which a certificate user should refer to ascertain if the certificate has been revoked",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 6,
+                      "title": "CRL Distribution Points",
+                      "type": "array"
+                    },
+                    "key_usage": {
+                      "description": "Indicates the purpose for which the certified public key is used",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 4,
+                      "title": "Key Usage",
+                      "type": "array"
+                    },
+                    "netscape_cert_comment": {
+                      "description": "Used to include free-form text comments inside certificates",
+                      "order": 9,
+                      "title": "Netscape Certificate Comment",
+                      "type": "string"
+                    },
+                    "netscape_certificate": {
+                      "description": "Identify whether the certificate subject is an SSL client, an SSL server, or a CA",
+                      "order": 11,
+                      "title": "Netscape Certificate",
+                      "type": "boolean"
+                    },
+                    "old_authority_key_identifier": {
+                      "description": "Whether the certificate has an old authority key identifier extension",
+                      "order": 13,
+                      "title": "Old Authority Key Identifier",
+                      "type": "boolean"
+                    },
+                    "pe_logotype": {
+                      "description": "Whether the certificate includes a logotype",
+                      "order": 12,
+                      "title": "PE Logotype",
+                      "type": "boolean"
+                    },
+                    "subject_alternative_name": {
+                      "description": "Contains one or more alternative names, using any of a variety of name forms, for the entity that is bound by the CA to the certified public key",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 7,
+                      "title": "Subject Alternative Name",
+                      "type": "array"
+                    },
+                    "subject_key_identifier": {
+                      "description": "Identifies the public key being certified",
+                      "order": 2,
+                      "title": "Subject Key Identifier",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ssl Extensions",
+                  "type": "object"
+                },
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                },
+                "validity": {
+                  "properties": {
+                    "not_after": {
+                      "description": "Expiry date in %Y-%m-%d %H:%M:%S format",
+                      "order": 1,
+                      "title": "Not After",
+                      "type": "string"
+                    },
+                    "not_before": {
+                      "description": "Issue date in %Y-%m-%d %H:%M:%S format",
+                      "order": 2,
+                      "title": "Not Before",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Validity",
                   "type": "object"
                 }
               },
@@ -1797,8 +3157,8 @@
               "name": "VirusTotal",
               "slugVendor": "rapid7",
               "slugName": "virustotal",
-              "slugVersion": "6.0.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/6.0.4/icon.png"
+              "slugVersion": "7.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/virustotal/7.0.0/icon.png"
             },
             "identifier": "ip_address_report",
             "continueOnFailure": false,
@@ -1823,221 +3183,586 @@
             },
             "defaultOutputJSONSchema": {
               "definitions": {
-                "detected_url": {
+                "authority_key_identifier": {
                   "properties": {
-                    "positives": {
-                      "description": "Positives",
-                      "order": 2,
-                      "title": "Positives",
-                      "type": "integer"
-                    },
-                    "scan_date": {
-                      "description": "Date the URL was scanned",
-                      "order": 4,
-                      "title": "Scan Date",
+                    "keyid": {
+                      "description": "Key hexdump",
+                      "order": 1,
+                      "title": "Key ID",
                       "type": "string"
                     },
-                    "total": {
-                      "description": "Total scan engines that found the URL malicious",
-                      "order": 3,
-                      "title": "Total",
-                      "type": "integer"
-                    },
-                    "url": {
-                      "description": "URL",
-                      "order": 1,
-                      "title": "URL",
+                    "serial_number": {
+                      "description": "Serial number hexdump",
+                      "order": 2,
+                      "title": "Serial Number",
                       "type": "string"
                     }
                   },
-                  "title": "Detected Url",
+                  "title": "Authority Key Identifier",
+                  "type": "object"
+                },
+                "cert_signature": {
+                  "properties": {
+                    "signature": {
+                      "description": "Signature hexdump",
+                      "order": 1,
+                      "title": "Signature",
+                      "type": "string"
+                    },
+                    "signature_algorithm": {
+                      "description": "Used algorithm",
+                      "order": 2,
+                      "title": "Signature Algorithm",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Cert Signature",
+                  "type": "object"
+                },
+                "dsa": {
+                  "properties": {
+                    "g": {
+                      "description": "G component hexdump",
+                      "order": 3,
+                      "title": "G",
+                      "type": "string"
+                    },
+                    "p": {
+                      "description": "P component hexdump",
+                      "order": 1,
+                      "title": "P",
+                      "type": "string"
+                    },
+                    "pub": {
+                      "description": "Public key hexdump",
+                      "order": 4,
+                      "title": "Public",
+                      "type": "string"
+                    },
+                    "q": {
+                      "description": "Q component hexdump",
+                      "order": 2,
+                      "title": "Q",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Dsa",
+                  "type": "object"
+                },
+                "ec": {
+                  "properties": {
+                    "oid": {
+                      "description": "Curve name",
+                      "order": 1,
+                      "title": "OID",
+                      "type": "string"
+                    },
+                    "pub": {
+                      "description": "Public key hexdump",
+                      "order": 2,
+                      "title": "Public",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ec",
                   "type": "object"
                 },
                 "ip_report": {
                   "properties": {
                     "as_owner": {
-                      "description": "As owner",
-                      "order": 9,
+                      "description": "Owner of the Autonomous System to which the IP belongs",
+                      "order": 1,
                       "title": "As Owner",
                       "type": "string"
                     },
                     "asn": {
-                      "description": "Autonomous system number",
-                      "order": 5,
+                      "description": "Autonomous System Number to which the IP belongs",
+                      "order": 2,
                       "title": "ASN",
+                      "type": "integer"
+                    },
+                    "continent": {
+                      "description": "Continent where the IP is placed (ISO-3166 continent code)",
+                      "order": 3,
+                      "title": "Continent",
                       "type": "string"
                     },
                     "country": {
-                      "description": "Country",
-                      "order": 11,
+                      "description": "Country where the IP is placed (ISO-3166 country code)",
+                      "order": 4,
                       "title": "Country",
                       "type": "string"
                     },
-                    "detected_communicating_samples": {
-                      "description": "Detected communicating samples",
+                    "last_analysis_results": {
+                      "description": "Result from URL scanners. Object with scanner name as key and an object with notes/result from that scanner as value",
                       "items": {
-                        "$ref": "#/definitions/samples"
+                        "$ref": "#/definitions/last_analysis_result"
                       },
-                      "order": 13,
-                      "title": "Detected Communicating Samples",
+                      "order": 5,
+                      "title": "Last Analysis Results",
                       "type": "array"
                     },
-                    "detected_downloaded_samples": {
-                      "description": "Detected downloaded samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
+                    "last_analysis_stats": {
+                      "$ref": "#/definitions/last_analysis_stats",
+                      "description": "Number of different results from this scans",
+                      "order": 6,
+                      "title": "Last Analysis Statistics"
+                    },
+                    "last_https_certificate": {
+                      "$ref": "#/definitions/ssl_certificate",
+                      "description": "SSL Certificate object retrieved last time the domain was analyzed",
+                      "order": 7,
+                      "title": "Last HTTPS Certificate"
+                    },
+                    "last_https_certificate_date": {
+                      "description": "Date when the certificate was retrieved by VirusTotal (UTC timestamp)",
                       "order": 8,
-                      "title": "Detected Downloaded Samples",
-                      "type": "array"
-                    },
-                    "detected_referrer_samples": {
-                      "description": "Detected referrer samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
-                      "order": 10,
-                      "title": "Detected Referrer Samples",
-                      "type": "array"
-                    },
-                    "detected_urls": {
-                      "description": "Collection of detected URLs and information about them",
-                      "items": {
-                        "$ref": "#/definitions/detected_url"
-                      },
-                      "order": 4,
-                      "title": "Detected URLs",
-                      "type": "array"
-                    },
-                    "resolutions": {
-                      "description": "Collection of historical hostnames resolved to the IP being reported on",
-                      "items": {
-                        "$ref": "#/definitions/ip_resolution"
-                      },
-                      "order": 3,
-                      "title": "Resolutions",
-                      "type": "array"
-                    },
-                    "response_code": {
-                      "description": "Response code from the request",
-                      "order": 1,
-                      "title": "Response Code",
+                      "title": "Last HTTPS Certificate Date",
                       "type": "integer"
                     },
-                    "undetected_communicating_samples": {
-                      "description": "Undetected communication samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
-                      "order": 14,
-                      "title": "Undetected Communication Samples",
-                      "type": "array"
+                    "last_modification_date": {
+                      "description": "Date when any of the IP's information was last updated (UTC timestamp)",
+                      "order": 9,
+                      "title": "Last Modification Date",
+                      "type": "integer"
                     },
-                    "undetected_downloaded_samples": {
-                      "description": "Undetected downloaded samples",
-                      "items": {
-                        "$ref": "#/definitions/samples"
-                      },
-                      "order": 7,
-                      "title": "Undetected Downloaded Samples",
-                      "type": "array"
-                    },
-                    "undetected_referrer_samples": {
-                      "description": "Undetected referrer samples",
-                      "items": {
-                        "$ref": "#/definitions/referrer_samples"
-                      },
-                      "order": 12,
-                      "title": "Undetected Referrer Samples",
-                      "type": "array"
-                    },
-                    "undetected_urls": {
-                      "description": "Undetected URLs",
-                      "items": {},
-                      "order": 6,
-                      "title": "Undetected URLs",
-                      "type": "array"
-                    },
-                    "verbose_msg": {
-                      "description": "Verbose message from the request",
-                      "order": 2,
-                      "title": "Verbose Message",
+                    "network": {
+                      "description": "IPv4 network range to which the IP belongs",
+                      "order": 10,
+                      "title": "Network",
                       "type": "string"
+                    },
+                    "regional_internet_registry": {
+                      "description": "RIR (one of the current RIRs: AFRINIC, ARIN, APNIC, LACNIC or RIPE NCC)",
+                      "order": 11,
+                      "title": "Regional Internet Registry",
+                      "type": "string"
+                    },
+                    "reputation": {
+                      "description": "IP's score calculated from the votes of the VirusTotal's community",
+                      "order": 12,
+                      "title": "Reputation",
+                      "type": "integer"
+                    },
+                    "tags": {
+                      "description": "Identificative attributes",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 13,
+                      "title": "Tags",
+                      "type": "array"
+                    },
+                    "total_votes": {
+                      "$ref": "#/definitions/total_votes",
+                      "description": "Unweighted number of total votes from the community, divided in harmless and malicious",
+                      "order": 14,
+                      "title": "Total Votes"
+                    },
+                    "whois": {
+                      "description": "WHOIS information as returned from the pertinent WHOIS server",
+                      "order": 15,
+                      "title": "WHOIS",
+                      "type": "string"
+                    },
+                    "whois_date": {
+                      "description": "Date of the last update of the WHOIS record in VirusTotal",
+                      "order": 16,
+                      "title": "WHOIS Date",
+                      "type": "integer"
                     }
                   },
                   "title": "Ip Report",
                   "type": "object"
                 },
-                "ip_resolution": {
+                "last_analysis_result": {
                   "properties": {
-                    "hostname": {
-                      "description": "Hostname of the IP at the time it was resolved",
+                    "category": {
+                      "description": "Category",
                       "order": 2,
-                      "title": "Hostname",
+                      "title": "Category",
                       "type": "string"
                     },
-                    "last_resolved": {
-                      "description": "Datetime of when the IP was last resolved",
+                    "engine_name": {
+                      "description": "Engine name",
                       "order": 1,
-                      "title": "Last Resolved",
-                      "type": "string"
-                    }
-                  },
-                  "title": "Ip Resolution",
-                  "type": "object"
-                },
-                "referrer_samples": {
-                  "properties": {
-                    "positives": {
-                      "description": "Positives",
-                      "order": 1,
-                      "title": "Positives",
-                      "type": "integer"
-                    },
-                    "sha256": {
-                      "description": "SHA256 hash",
-                      "order": 2,
-                      "title": "SHA256",
+                      "title": "Engine Name",
                       "type": "string"
                     },
-                    "total": {
-                      "description": "Total",
+                    "engine_update": {
+                      "description": "Engine's last update date",
                       "order": 3,
-                      "title": "Total",
-                      "type": "integer"
-                    }
-                  },
-                  "title": "Referrer Samples",
-                  "type": "object"
-                },
-                "samples": {
-                  "properties": {
-                    "date": {
-                      "description": "Date",
-                      "order": 1,
-                      "title": "Date",
+                      "title": "Engine Update",
                       "type": "string"
                     },
-                    "positives": {
-                      "description": "Positives",
-                      "order": 2,
-                      "title": "Positives",
-                      "type": "integer"
-                    },
-                    "sha256": {
-                      "description": "SHA256 hash",
+                    "engine_version": {
+                      "description": "Engine's version",
                       "order": 4,
-                      "title": "SHA256",
+                      "title": "Engine Version",
                       "type": "string"
                     },
-                    "total": {
-                      "description": "Total",
+                    "method": {
+                      "description": "Detection method",
+                      "order": 5,
+                      "title": "Method",
+                      "type": "string"
+                    },
+                    "result": {
+                      "description": "Result",
+                      "order": 6,
+                      "title": "Result",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Last Analysis Result",
+                  "type": "object"
+                },
+                "last_analysis_stats": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of reports indicating harmless",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of reports indicating malicious",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    },
+                    "suspicious": {
+                      "description": "Number of reports indicating suspicious",
                       "order": 3,
-                      "title": "Total",
+                      "title": "Suspicious",
+                      "type": "integer"
+                    },
+                    "timeout": {
+                      "description": "Number of reports indicating timeout",
+                      "order": 4,
+                      "title": "Timeout",
+                      "type": "integer"
+                    },
+                    "undetected": {
+                      "description": "Number of reports indicating undetected",
+                      "order": 5,
+                      "title": "Undetected",
                       "type": "integer"
                     }
                   },
-                  "title": "Samples",
+                  "title": "Last Analysis Stats",
+                  "type": "object"
+                },
+                "public_key": {
+                  "properties": {
+                    "algorithm": {
+                      "description": "Indicates the algorithm used to generate the certificate",
+                      "order": 1,
+                      "title": "Algorithm",
+                      "type": "string"
+                    },
+                    "dsa": {
+                      "$ref": "#/definitions/dsa",
+                      "description": "DSA public key information",
+                      "order": 3,
+                      "title": "DSA"
+                    },
+                    "ec": {
+                      "$ref": "#/definitions/ec",
+                      "description": "EC public key information",
+                      "order": 4,
+                      "title": "EC"
+                    },
+                    "rsa": {
+                      "$ref": "#/definitions/rsa",
+                      "description": "RSA public key information",
+                      "order": 2,
+                      "title": "RSA"
+                    }
+                  },
+                  "title": "Public Key",
+                  "type": "object"
+                },
+                "rsa": {
+                  "properties": {
+                    "exponent": {
+                      "description": "Key exponent hexdump",
+                      "order": 3,
+                      "title": "Exponent",
+                      "type": "string"
+                    },
+                    "key_size": {
+                      "description": "Key size",
+                      "order": 1,
+                      "title": "Key Size",
+                      "type": "integer"
+                    },
+                    "modulus": {
+                      "description": "Key modulus hexdump",
+                      "order": 2,
+                      "title": "Modulus",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Rsa",
+                  "type": "object"
+                },
+                "ssl_certificate": {
+                  "properties": {
+                    "cert_signature": {
+                      "$ref": "#/definitions/cert_signature",
+                      "description": "Dictionary containing certificate's signature and algorithm",
+                      "order": 1,
+                      "title": "Certificate Signature"
+                    },
+                    "extensions": {
+                      "$ref": "#/definitions/ssl_extensions",
+                      "description": "Dictionary containing all certificate's extensions",
+                      "order": 2,
+                      "title": "Extensions"
+                    },
+                    "first_seen_date": {
+                      "description": "Date the certificate was first retrieved by VirusTotal",
+                      "order": 3,
+                      "title": "First Seen Date",
+                      "type": "integer"
+                    },
+                    "issuer": {
+                      "$ref": "#/definitions/ssl_data",
+                      "description": "Dictionary containing the certificate's issuer data",
+                      "order": 4,
+                      "title": "Issuer"
+                    },
+                    "public_key": {
+                      "$ref": "#/definitions/public_key",
+                      "description": "Subject public key info",
+                      "order": 5,
+                      "title": "Public Key"
+                    },
+                    "serial_number": {
+                      "description": "Certificate's serial number hexdump",
+                      "order": 6,
+                      "title": "Serial Number",
+                      "type": "string"
+                    },
+                    "signature_algorithm": {
+                      "description": "Algorithm used for the signature",
+                      "order": 7,
+                      "title": "Signature Algorithm",
+                      "type": "string"
+                    },
+                    "size": {
+                      "description": "Certificate content length",
+                      "order": 8,
+                      "title": "Size",
+                      "type": "integer"
+                    },
+                    "subject": {
+                      "$ref": "#/definitions/ssl_data",
+                      "description": "Dictionary containing the certificate's subject data",
+                      "order": 9,
+                      "title": "Subject"
+                    },
+                    "thumbprint": {
+                      "description": "Certificate's content SHA1 hash",
+                      "order": 10,
+                      "title": "Thumbprint",
+                      "type": "string"
+                    },
+                    "thumbprint_sha256": {
+                      "description": "Certificate's content SHA256 hash",
+                      "order": 11,
+                      "title": "Thumbprint SHA256",
+                      "type": "string"
+                    },
+                    "validity": {
+                      "$ref": "#/definitions/validity",
+                      "description": "Defines certificate's validity period",
+                      "order": 12,
+                      "title": "Validity"
+                    },
+                    "version": {
+                      "description": "Certificate version",
+                      "order": 13,
+                      "title": "Version",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ssl Certificate",
+                  "type": "object"
+                },
+                "ssl_data": {
+                  "properties": {
+                    "C": {
+                      "description": "Country name",
+                      "order": 1,
+                      "title": "Country Name",
+                      "type": "string"
+                    },
+                    "CN": {
+                      "description": "Common name",
+                      "order": 2,
+                      "title": "Common Name",
+                      "type": "string"
+                    },
+                    "L": {
+                      "description": "Locality",
+                      "order": 3,
+                      "title": "Locality",
+                      "type": "string"
+                    },
+                    "O": {
+                      "description": "Organization",
+                      "order": 4,
+                      "title": "Organization",
+                      "type": "string"
+                    },
+                    "OU": {
+                      "description": "Organizational unit",
+                      "order": 5,
+                      "title": "Organizational Unit",
+                      "type": "string"
+                    },
+                    "ST": {
+                      "description": "State or province name",
+                      "order": 6,
+                      "title": "State or Province Name",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ssl Data",
+                  "type": "object"
+                },
+                "ssl_extensions": {
+                  "properties": {
+                    "authority_key_identifier": {
+                      "$ref": "#/definitions/authority_key_identifier",
+                      "description": "Identifies the public key to be used to verify the signature on this certificate or CRL",
+                      "order": 3,
+                      "title": "Authority Key Identifier"
+                    },
+                    "ca": {
+                      "description": "Whether the subject acts as a CA or not",
+                      "order": 1,
+                      "title": "CA",
+                      "type": "boolean"
+                    },
+                    "ca_information_access": {
+                      "description": "Authority information access locations are URLs that are added to a certificate in its authority information access extension",
+                      "order": 5,
+                      "title": "CA Information Access",
+                      "type": "object"
+                    },
+                    "cert_template_name_dc": {
+                      "description": "BMP data value DomainController, see MS Q291010",
+                      "order": 10,
+                      "title": "Certificate Template Name DC",
+                      "type": "string"
+                    },
+                    "certificate_policies": {
+                      "description": "Different certificate policies will relate to different applications which may use the certified key",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 8,
+                      "title": "Certificate Policies",
+                      "type": "array"
+                    },
+                    "crl_distribution_points": {
+                      "description": "Identifies the CRL distribution points to which a certificate user should refer to ascertain if the certificate has been revoked",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 6,
+                      "title": "CRL Distribution Points",
+                      "type": "array"
+                    },
+                    "key_usage": {
+                      "description": "Indicates the purpose for which the certified public key is used",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 4,
+                      "title": "Key Usage",
+                      "type": "array"
+                    },
+                    "netscape_cert_comment": {
+                      "description": "Used to include free-form text comments inside certificates",
+                      "order": 9,
+                      "title": "Netscape Certificate Comment",
+                      "type": "string"
+                    },
+                    "netscape_certificate": {
+                      "description": "Identify whether the certificate subject is an SSL client, an SSL server, or a CA",
+                      "order": 11,
+                      "title": "Netscape Certificate",
+                      "type": "boolean"
+                    },
+                    "old_authority_key_identifier": {
+                      "description": "Whether the certificate has an old authority key identifier extension",
+                      "order": 13,
+                      "title": "Old Authority Key Identifier",
+                      "type": "boolean"
+                    },
+                    "pe_logotype": {
+                      "description": "Whether the certificate includes a logotype",
+                      "order": 12,
+                      "title": "PE Logotype",
+                      "type": "boolean"
+                    },
+                    "subject_alternative_name": {
+                      "description": "Contains one or more alternative names, using any of a variety of name forms, for the entity that is bound by the CA to the certified public key",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 7,
+                      "title": "Subject Alternative Name",
+                      "type": "array"
+                    },
+                    "subject_key_identifier": {
+                      "description": "Identifies the public key being certified",
+                      "order": 2,
+                      "title": "Subject Key Identifier",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ssl Extensions",
+                  "type": "object"
+                },
+                "total_votes": {
+                  "properties": {
+                    "harmless": {
+                      "description": "Number of positive votes",
+                      "order": 1,
+                      "title": "Harmless",
+                      "type": "integer"
+                    },
+                    "malicious": {
+                      "description": "Number of negative votes",
+                      "order": 2,
+                      "title": "Malicious",
+                      "type": "integer"
+                    }
+                  },
+                  "title": "Total Votes",
+                  "type": "object"
+                },
+                "validity": {
+                  "properties": {
+                    "not_after": {
+                      "description": "Expiry date in %Y-%m-%d %H:%M:%S format",
+                      "order": 1,
+                      "title": "Not After",
+                      "type": "string"
+                    },
+                    "not_before": {
+                      "description": "Issue date in %Y-%m-%d %H:%M:%S format",
+                      "order": 2,
+                      "title": "Not Before",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Validity",
                   "type": "object"
                 }
               },
@@ -2178,7 +3903,7 @@
                   "input": {
                     "expression": {
                       "left": {
-                        "name": "71e2da52-8f0c-4366-8ed4-6f13a23bb533.response_code",
+                        "name": "71e2da52-8f0c-4366-8ed4-6f13a23bb533.report.last_http_response_code",
                         "type": "variable"
                       },
                       "op": "!=",
@@ -2188,8 +3913,8 @@
                       },
                       "type": "binary"
                     },
-                    "expressionText": "{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[response_code]}}!=0",
-                    "value": "{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[scans]}}",
+                    "expressionText": "{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report].[last_http_response_code]}}!=0",
+                    "value": "{{[71e2da52-8f0c-4366-8ed4-6f13a23bb533].[report]}}",
                     "valueType": "object"
                   },
                   "name": "URL Reports",
@@ -2246,7 +3971,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "## IP Addresses Report\n\n*Report for {{[476a46e4-4928-46e0-8ee3-0aeb20e2bf1a].[$item]}}*\n* Hosting country: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[country]}}\n* Network: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[network]}}\n* ASN: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[asn]}}\n* Number of engines that detected malicious URLs associated with this IP: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[detected_urls].[0].[positives]}}\n* Total number of engines in `detected_URLs` dataset: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[detected_urls].[0].[total]}}\n* Number of engines that detected malicious download samples from this IP: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[detected_downloaded_samples].[0].[positive]}}\n* Total number of engines in `detected_downloaded_samples` dataset: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[detected_downloaded_samples].[0].[total]}}\n* Number of engines that detected malicious referrer samples from this IP: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[detected_referrer_samples].[0].[positives]}}\n* Total number of engines in `detected_referrer_samples` dataset: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[detected_referrer_samples].[0].[total]}}\n* Complete VirusTotal Report: [https://www.virustotal.com/gui/ip-address/{{[476a46e4-4928-46e0-8ee3-0aeb20e2bf1a].[$item]}}](https://www.virustotal.com/gui/ip-address/{{[476a46e4-4928-46e0-8ee3-0aeb20e2bf1a].[$item]}})\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
+                "content": "## IP Addresses Report\n\n*Report for {{[476a46e4-4928-46e0-8ee3-0aeb20e2bf1a].[$item]}}*\n{{#if [c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[country]}}\n* Hosting country: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[country]}}\n{{/if}}\n{{#if [c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[network]}}\n* Network: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[network]}}\n{{/if}}\n{{#if [c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[asn]}}\n* ASN: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[asn]}}\n{{/if}}\n{{#if [c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[reputation]}}\n* Reputation: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[reputation]}}\n{{/if}}\n* Number of engines that detected malicious URLs associated with this IP: {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[last_analysis_stats].[malicious]}}\n* Total number of engines in `detected_URLs` dataset: {{[fbeff396-2b7c-4e40-ac13-7d298e088eeb].[result]}}\n\n* Complete VirusTotal Report: [https://www.virustotal.com/gui/ip-address/{{[476a46e4-4928-46e0-8ee3-0aeb20e2bf1a].[$item]}}](https://www.virustotal.com/gui/ip-address/{{[476a46e4-4928-46e0-8ee3-0aeb20e2bf1a].[$item]}})\n\n## Up Next\n1. Browse the **[Extension Library](https://extensions.rapid7.com/?sort=alphabetical&types=workflow&view=grid)** and the **[Discover tab](#/home?Discover=1)** to find, import, and use more automation use cases!\n2. Browse our **[Help Documentation](https://insightconnect.help.rapid7.com/docs)** and **[Discuss Forum](https://discuss.rapid7.com/c/insightconnect)** to learn more about building your own custom workflows\n3. Check out our **[InsightConnect Certified Specialist course](https://www.rapid7.com/services/training-certification/training/insightconnect-certified-specialist/)** to learn about more advanced workflow building concepts!"
               },
               "type": "markdown"
             },
@@ -2255,16 +3980,74 @@
             "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
+          },
+          "fbeff396-2b7c-4e40-ac13-7d298e088eeb": {
+            "nodeId": "fbeff396-2b7c-4e40-ac13-7d298e088eeb",
+            "name": "Calculate Total IP Reports",
+            "type": "action",
+            "plugin": {
+              "name": "Math",
+              "slugVendor": "rapid7",
+              "slugName": "math",
+              "slugVersion": "1.2.1",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/math/1.2.1/icon.png"
+            },
+            "identifier": "calculate",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "isCloud": false,
+            "parameters": {
+              "input": {
+                "equation": "{{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[last_analysis_stats].[malicious]}} + {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[last_analysis_stats].[harmless]}} + {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[last_analysis_stats].[suspicious]}} + {{[c82f587a-72fa-4f5a-81a2-edd15173ca7b].[report].[last_analysis_stats].[undetected]}}"
+              }
+            },
+            "defaultInputJSONSchema": {
+              "properties": {
+                "equation": {
+                  "description": "Equation to calculate. Uses Python arithmetic operators (+, -, /, *, **, %)",
+                  "order": 1,
+                  "title": "Equation",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "equation"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "defaultOutputJSONSchema": {
+              "properties": {
+                "result": {
+                  "description": "Result of the arithmetic operation",
+                  "order": 1,
+                  "title": "Result",
+                  "type": "number"
+                }
+              },
+              "required": [
+                "result"
+              ],
+              "title": "Variables",
+              "type": "object"
+            },
+            "outputJSONSchema": null,
+            "defaultImageData": "",
+            "connectionType": "ORCHESTRATOR"
           }
         },
         "tags": null,
         "humanCostSeconds": 600,
-        "humanCostDisplayUnit": "minutes"
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": null
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "59ab0fa1-42b6-43fa-bc64-8b60d95435d4",
+        "id": "bd8fc3e3-cd65-4034-b30e-d0837037595b",
         "name": "IDR Alert",
         "description": "",
         "input": null,

@@ -23,9 +23,16 @@ Sample Slack command:
 
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-Once the workflow has been imported, the `Find DN` step will need the Search Base field to be defined. Edit the workflow, open the `Find DN` step, and provide the appropriate Search Base for your domain. For example, if your domain is `acme.com` then the Search Base would be `DC=acme,DC=com`.
+This workflow leverages InsightConnect's Parameters feature. This feature allows variables used multiple times throughout a workflow to be entered once and then referenced throughout the workflow.
 
-After updating the `Find DN` step, activate the workflow in order to trigger it.
+There are two parameters you will need to configure in order to complete setup of your workflow:
+
+* Channel: The Slack channel name in your environment where the workflow should be triggered
+* Search Base: The base of the Active Directory user search request, eg. DC=example,DC=com
+
+To begin, select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
+
+After configuring the parameters, activate the workflow in order to trigger it.
 
 ### Usage
 
@@ -47,7 +54,7 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Active Directory LDAP|4.0.3|2|
+|Active Directory LDAP|5.2.2|2|
 
 ## Troubleshooting
 
@@ -55,6 +62,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.0 - Leverage Parameters Feature | Update Active Directory LDAP plugin to version 5.2.2
 * 1.1.0 - Use the automatic extraction functionality instead of 'Pattern Match' to extract a username | Update Active Directory LDAP to version 4.0.3 | Improve workflow messaging | Add link to AD LDAP connection configuration in Requirements | Update screenshots
 * 1.0.4 - Update Active Directory LDAP to version 4.0.1
 * 1.0.3 - Updated trigger syntax and documentation

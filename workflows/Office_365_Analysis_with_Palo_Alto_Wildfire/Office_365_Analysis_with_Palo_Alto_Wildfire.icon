@@ -1701,7 +1701,7 @@
           },
           "7174a8e1-0143-4113-a016-99c5d6acff0d": {
             "nodeId": "7174a8e1-0143-4113-a016-99c5d6acff0d",
-            "name": "Sleep for 15",
+            "name": "Sleep for 15 Seconds",
             "type": "action",
             "plugin": {
               "name": "Sleep",

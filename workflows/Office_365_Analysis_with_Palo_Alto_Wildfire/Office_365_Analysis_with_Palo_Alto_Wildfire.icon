@@ -2219,7 +2219,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "## Attached Email Analysis\n\n(This artifact can be removed) \n\nThis loop will analyze any each of the attached emails and look for any malicious indicators - these include any malicious URLs found within these emails, any attached maliciou files to these emails. These will be the best indicators of a suspicious email. If any are found this email will be marked as malicious. "
+                "content": "## Attached Email Analysis\n\n(This artifact can be removed) \n\nThis loop will analyze any each of the attached emails and look for any malicious indicators - these include any malicious URLs found within these emails, any attached malicious files to these emails. These will be the best indicators of a suspicious email. If any are found this email will be marked as malicious. "
               },
               "type": "markdown"
             },

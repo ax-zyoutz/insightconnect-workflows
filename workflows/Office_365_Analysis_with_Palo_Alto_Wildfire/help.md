@@ -10,7 +10,8 @@ This workflow is designed to automatically analyze incoming emails to determine 
 
 # Requirements
 
-API and account credentials for
+API and account credentials for the following:
+
 
 * Microsoft Office365
 * Palo Alto Wildfire
@@ -29,7 +30,8 @@ Additionally, you need to update the `["change_me"]` value in **Send Notificatio
 ["user1@example.com", "user2@example.com", "user3@example.com"]
 ```
 
-The remediation steps are disabled due to their destructive nature. To use them, they must be manually enabled after importing the workflow.
+The remediation steps are disabled due to their destructive nature. To use them, they must be manually enabled after importing the workflow. To enable a step, hover your mouse over the step and click the icon to the left of the trash icon. 
+
 
 ## Technical Details
 

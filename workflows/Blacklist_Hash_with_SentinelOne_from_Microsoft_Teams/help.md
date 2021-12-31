@@ -45,6 +45,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.1 - Update keywords
 * 1.1.0 - Update to use latest SentinelOne and Microsoft Teams plugins | Replace pattern match with indicator extraction | Remove extra HTML step
 * 1.0.0 - Initial workflow
 

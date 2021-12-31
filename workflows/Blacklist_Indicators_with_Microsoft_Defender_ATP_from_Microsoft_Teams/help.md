@@ -58,6 +58,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.0.2 - Update keywords | Update description in .icon file
 * 1.0.1 - Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.0.0 - Initial workflow
 

@@ -55,6 +55,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.0.5 - Update keywords
 * 1.0.4 - Added parameters, removed uneccessary steps, updated plugins
 * 1.0.3 - Updated screenshots, documentation, and plugins to the latest version
 * 1.0.2 - Removed unnecessary type conversion step from workflow

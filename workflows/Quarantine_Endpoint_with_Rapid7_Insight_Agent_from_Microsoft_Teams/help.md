@@ -54,6 +54,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.1 - Update keywords
 * 2.0.0 - Leverage Parameters Feature | Fix issue with the unquarantine action not working | Update Microsoft Teams to version 3.1.3 | Update Rapid7 Insight Agent to version 1.0.3 | Update documentation | Update screenshots
 * 1.0.1 - Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.0.0 - Initial workflow

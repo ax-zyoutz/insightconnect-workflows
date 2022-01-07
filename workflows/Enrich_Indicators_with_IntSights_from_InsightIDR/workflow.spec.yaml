@@ -8,7 +8,7 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [Data Enrichment, Thread Detection & Response]
+  use_cases: ['data_enrichment', 'threat_detection_and_response']
   keywords: [Data Enrichment, Threat Detection & Response, Enrichment, Hash, URL, Domains, IP Address, Rapid7, parameters]
   features: []
 resources:

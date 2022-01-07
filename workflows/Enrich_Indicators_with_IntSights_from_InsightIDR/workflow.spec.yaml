@@ -8,8 +8,8 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: []
-  keywords: [Data Enrichment, Threat Detection & Response, Enrichment, Hash, URL, Domains, IP Address, Rapid7]
+  use_cases: [Data Enrichment, Thread Detection & Response]
+  keywords: [Data Enrichment, Threat Detection & Response, Enrichment, Hash, URL, Domains, IP Address, Rapid7, parameters]
   features: []
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Enrich_Indicators_with_IntSights_from_InsightIDR

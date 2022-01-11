@@ -57,6 +57,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.1 - Update keywords
 * 2.0.0 - Leverage Parameters Feature | Use Workflow Parameters to configure Microsoft Teams team & channel names | Update HTML to version 1.2.2 | Update Rapid7 InsightVM to 4.8.1
 * 1.1.0 - Replace the Settings step with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.0.2 - Fix incorrect variable used in Clean Teams Message

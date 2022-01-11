@@ -8,7 +8,7 @@
         "name": "Blacklist Indicators with Microsoft Defender ATP from Microsoft Teams",
         "type": "runnable",
         "version": "",
-        "description": "",
+        "description": "Blacklist indicators from Microsoft Teams",
         "graph": {
           "edges": {
             "109f03bc-1d9f-4b8b-9287-4ba32f881ebb": {

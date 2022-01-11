@@ -50,6 +50,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.1 - Update keywords
 * 1.1.0 - Replace the preset text of "change_me" with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.0.0 - Initial workflow
 

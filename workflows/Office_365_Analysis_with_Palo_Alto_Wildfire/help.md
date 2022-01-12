@@ -10,7 +10,8 @@ This workflow is designed to automatically analyze incoming emails to determine 
 
 # Requirements
 
-API and account credentials for
+API and account credentials for the following:
+
 
 * Microsoft Office365
 * Palo Alto Wildfire
@@ -19,9 +20,18 @@ API and account credentials for
 
 ## Setup
 
-Once the workflow has been downloaded, login to InsightConnect and "Import" it into the workflow builder.  Once imported, you will initially be prompted to configure the connections for each of the plugins.
+Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-The remediation steps are disabled due to their destructive nature. To use them, they must be manually enabled after importing the workflow.
+Once the workflow has been imported, on the workflow overview page, provide values for the workflow parameters. 
+
+Additionally, you need to update the `["change_me"]` value in **Send Notification Email** step (within the Remediate Malicious Emails loop), it accepts a list of email addresses in _JSON format_, for example:
+
+```json
+["user1@example.com", "user2@example.com", "user3@example.com"]
+```
+
+The remediation steps are disabled due to their destructive nature. To use them, they must be manually enabled after importing the workflow. To enable a step, hover your mouse over the step and click the icon to the left of the trash icon. 
+
 
 ## Technical Details
 
@@ -29,13 +39,12 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Basename|1.0.0|1|
-|ExtractIt|1.1.6|1|
-|Microsoft Office 365 Email|4.0.0|2|
-|Microsoft Office 365 Email Security|2.1.0|2|
-|Palo Alto Wildfire|1.0.2|4|
-|Sleep|1.0.0|2|
-|Storage|1.0.0|6|
+|ExtractIt|2.2.1|1|
+|Microsoft Office 365 Email|4.0.0|1|
+|Microsoft Office 365 Email|5.1.0|1|
+|Microsoft Office365 Email Security|2.3.5|2|
+|Palo Alto Wildfire|1.2.0|4|
+|Sleep|1.0.2|2|
 
 ## Troubleshooting
 
@@ -43,6 +52,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.0 - Workflow improvements | Support for nested EML attachments
 * 1.0.1 - Update workflow title to enrichment
 * 1.0.0 - Initial workflow
 
@@ -51,3 +61,4 @@ _There is no troubleshooting information at this time_
 ## References
 
 * [Microsoft Office365](https://www.office.com)
+* [Palo Alto Wildfire](https://www.paloaltonetworks.com/products/secure-the-network/wildfire)

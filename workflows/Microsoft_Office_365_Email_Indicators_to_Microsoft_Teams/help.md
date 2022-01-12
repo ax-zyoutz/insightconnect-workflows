@@ -40,6 +40,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.1 - Update keywords
 * 1.1.0 - Update step `Nested Headers` and `Top Level Headers` inputs | Update Microsoft Teams version to 3.1.2 | Update String Operations version to 1.3.1 | Update Python 3 Script version to 2.0.2 | Update Microsoft Office 365 Email version to 5.0.1 | Update HashIt version to 2.0.4
 * 1.0.7 - Update Microsoft Teams to version 3.1.0
 * 1.0.6 - Update to make Microsoft Teams plugin the latest version

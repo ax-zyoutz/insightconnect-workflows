@@ -43,6 +43,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.0.4 - Update keywords
 * 1.0.3 - Update Microsoft Teams to version 3.1.0
 * 1.0.2 - Update to make Microsoft Teams plugin the latest version
 * 1.0.1 - Change Microsoft Teams input fields to match new standards

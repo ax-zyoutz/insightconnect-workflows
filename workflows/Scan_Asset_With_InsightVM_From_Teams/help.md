@@ -83,6 +83,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.2.1 - Update keywords
 * 1.2.0 - Add workflow parameters | Update Microsoft Teams to version 3.1.3 | Update HTML to version 1.2.2 | Update Rapid7 InsightVM Console to version 4.9.1 | Update Type Converter to version 1.8.0 | Update Timers to version 2.0.5 | Update documentation
 * 1.1.0 - Replace the Settings step with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.0.0 - Initial workflow

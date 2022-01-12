@@ -56,6 +56,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 1.1.1 - Update keywords
 * 1.1.0 - Add Enable User functionality | Use the automatic extraction functionality instead of ExtractIt step to extract an email address | Remove HTML step | Improve workflow messaging | Improve documentation | Update screenshots | Update Azure AD Admin to version 2.2.3 | Update Microsoft Teams to version 3.1.0
 * 1.0.4 - Update to make Microsoft Teams plugin the latest version
 * 1.0.3 - Updated trigger syntax and documentation

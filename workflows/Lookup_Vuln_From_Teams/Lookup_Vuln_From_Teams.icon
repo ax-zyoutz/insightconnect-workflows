@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.95.4-0-gb1a57",
+    "komandVersion": "1.95.10-0-g6f80f",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2021-12-02T16:00:32.961714504Z",
+    "exportedAt": "2022-01-13T18:29:39.942768019Z",
     "workflowVersions": [
       {
         "name": "Lookup Vulnerability from Microsoft Teams",
@@ -252,8 +252,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_message",
             "continueOnFailure": false,
@@ -471,8 +471,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -514,9 +514,9 @@
                 }
               },
               "required": [
-                "channel_name",
                 "message_content",
-                "team_name"
+                "team_name",
+                "channel_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -668,8 +668,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_message",
             "continueOnFailure": false,
@@ -865,8 +865,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_message",
             "continueOnFailure": false,
@@ -1062,8 +1062,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_message",
             "continueOnFailure": false,
@@ -1501,8 +1501,8 @@
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.4",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "new_message_received",
             "continueOnFailure": false,
@@ -1514,7 +1514,7 @@
                 "team_name": "{{[$workflow].[Team Name]}}"
               }
             },
-            "triggerId": "b2f2ea5b-d548-4d0c-985f-f89cc63852d9",
+            "triggerId": "498b13a2-e551-4ef4-9eee-509687799a8d",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -1771,8 +1771,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2146,7 +2146,7 @@
     ],
     "triggers": [
       {
-        "id": "b2f2ea5b-d548-4d0c-985f-f89cc63852d9",
+        "id": "498b13a2-e551-4ef4-9eee-509687799a8d",
         "identifier": "new_message_received",
         "name": "Lookup Vuln Trigger",
         "description": "Trigger this workflow by using the !lookup-vuln command.\n\nExamples:\n!lookup-vuln CVE-2020-0674\n!lookup-vuln heartbleed\n!lookup-vuln heartbleed vmware",
@@ -2411,8 +2411,8 @@
                 }
               },
               "required": [
-                "words",
-                "first_word"
+                "first_word",
+                "words"
               ],
               "title": "Message",
               "type": "object"
@@ -2471,8 +2471,8 @@
           "name": "Microsoft Teams",
           "slugVendor": "rapid7",
           "slugName": "microsoft_teams",
-          "slugVersion": "3.1.4",
-          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.4/icon.png"
+          "slugVersion": "3.1.5",
+          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
         }
       }
     ]

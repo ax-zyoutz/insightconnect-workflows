@@ -57,7 +57,7 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Microsoft Teams|3.1.4|6|
+|Microsoft Teams|3.1.5|6|
 |HTML|1.2.2|1|
 |Rapid7 Vulnerability & Exploit Database|2.1.0|2|
 |Basename|1.1.0|1|
@@ -68,7 +68,8 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
-* 2.0.1 - Update Microsoft Teams to version 3.1.4 | Update Rapid7 Vulnerability & Exploit Database to version 2.1.0 | Update documentation
+* 2.0.2 - Update Microsoft Teams to version 3.1.4 | Update Rapid7 Vulnerability & Exploit Database to version 2.1.0 | Update documentation
+* 2.0.1 - Update keywords
 * 2.0.0 - Improved workflow logic, added parameters, updated plugins to run on cloud
 * 1.1.0 - Replace the Settings step with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update sample trigger commands in description | Update documentation
 * 1.0.2 - Fix to correct invalid version of Rapid7 Vulnerability & Exploit Database

@@ -6,11 +6,11 @@ Multiple indicators can be specified within one command.
 
 Sample Teams Trigger Commands:
 
-`!blacklist-indicators 198.51.100.100 bd3b8dbb50fbd58e1bc2cc82effb9d81a2ea0aa6be235ff58ec7eb997deea1ab`
+`!block-indicators 198.51.100.100 bd3b8dbb50fbd58e1bc2cc82effb9d81a2ea0aa6be235ff58ec7eb997deea1ab`
 
-`!blacklist-indicators 198.51.100.100 example.com 2001:db8:8:4::2`
+`!block-indicators 198.51.100.100 example.com 2001:db8:8:4::2`
 
-`!blacklist-indicators 9de5069c5afe602b2ea0a04b66beb2c0`
+`!block-indicators 9de5069c5afe602b2ea0a04b66beb2c0`
 
 # Key Features
 
@@ -45,7 +45,7 @@ After configuring the parameters, activate the workflow in order to trigger it.
 *This workflow will only trigger in the channel specified in the Microsoft Teams parameters.*
 
 For example:
-* `!blacklist-indicators 198.51.100.100`
+* `!block-indicators 198.51.100.100`
 
 The workflow will reply when it completes.
 

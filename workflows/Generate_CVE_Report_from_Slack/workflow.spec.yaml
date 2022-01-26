@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect"]
 name: Generate_CVE_Report_from_Slack
 title: "Generate CVE Report from Slack"
-description: This workflow helps a user find information about a given CVE and identify all hosts affected by that vulnerability.
+description: "This workflow helps a user find information about a given CVE and identify all hosts affected by that vulnerability."
 version: 1.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
   use_cases: [vulnerability_management]
-  keywords: [slack, chat, chatops, work_from_home]
+  keywords: [chat, chatops, work_from_home]
   features: []
+  vendors: [rapid7, slack]
+  products: [insightvm, attackerkb, slack]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Generate_CVE_Report_from_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

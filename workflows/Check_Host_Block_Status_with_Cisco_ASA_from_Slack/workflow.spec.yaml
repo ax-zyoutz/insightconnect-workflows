@@ -1,16 +1,18 @@
 extension: workflow
 products: ["insightconnect"]
 name: Check_Host_Block_Status_with_Cisco_ASA_from_Slack
-title: Check Host Block Status with Cisco ASA from Slack
-description: Check if a host is blocked in Cisco ASA from Slack.
+title: "Check Host Block Status with Cisco ASA from Slack"
+description: "Check if a host is blocked in Cisco ASA from Slack."
 version: 1.0.1
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [remediation_management,threat_detection_and_response]
-  keywords: [cisco_asa, firewall, slack, chatops]
+  use_cases: [network_firewall]
+  keywords: [firewall, chatops]
   features: []
+  vendors: [slack, cisco]
+  products: [slack, cisco_asa]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Check_Host_Block_Status_with_Cisco_ASA_from_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

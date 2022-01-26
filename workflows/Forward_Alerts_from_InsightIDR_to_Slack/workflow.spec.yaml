@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect", "insightidr"]
 name: Forward_Alerts_from_InsightIDR_to_Slack
 title: "Forward Alerts from InsightIDR to Slack"
-description: This workflow forwards IDR alerts to a Slack channel.
+description: "This workflow forwards IDR alerts to a Slack channel."
 version: 1.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response]
-  keywords: [slack, chat, chatops, work_from_home, cloud_enabled]
+  use_cases: [alerting_and_notifications]
+  keywords: [chat, chatops, work_from_home, cloud_enabled]
   features: []
+  vendors: [rapid7, slack]
+  products: [insightidr, slack]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Forward_Alerts_from_InsightIDR_to_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

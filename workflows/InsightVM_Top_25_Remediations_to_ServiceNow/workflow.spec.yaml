@@ -8,9 +8,11 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [vulnerability_management]
-  keywords: [insightvm, servicenow, vulnerability_management]
+  use_cases: [ticketing, vulnerability_management]
+  keywords: []
   features: []
+  vendors: [rapid7, servicenow]
+  products: [insightvm, servicenow]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/InsightVM_Top_25_Remediations_to_ServiceNOW
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

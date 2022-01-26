@@ -1,16 +1,18 @@
 extension: workflow
 products: ["insightconnect"]
 name: IDR_Alert_Routing_with_Microsoft_Teams
-title: IDR Alert Routing with Microsoft Teams
-description: This workflow delivers InsightIDR alerts to the appropriate Microsoft Teams channel based on whether the user involved in the alert belongs to the specified Active Directory group.
+title: "IDR Alert Routing with Microsoft Teams"
+description: "This workflow delivers InsightIDR alerts to the appropriate Microsoft Teams channel based on whether the user involved in the alert belongs to the specified Active Directory group."
 version: 1.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response, alerting_and_notifications]
-  keywords: [active_directory, microsoft_teams, insightidr, parameters]
+  use_cases: [iam, threat_intel, alerting_and_notifications]
+  keywords: [active_directory, parameters]
   features: []
+  vendors: [rapid7, microsoft]
+  products: [insightidr, microsoft_teams, active_directory_ldap]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/IDR_Alert_Routing_with_Microsoft_Teams
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
@@ -26,6 +28,6 @@ resources:
   - name: workflow.png
     title: Workflow View Part One
   - name: workflow2.png
-    title: Workflow Users Loop View 
+    title: Workflow Users Loop View
   - name: workflow3.png
     title: Workflow AD Users Loop View

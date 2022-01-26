@@ -1,5 +1,5 @@
 extension: workflow
-products: [insightconnect, insightidr]
+products: ["insightconnect", "insightidr"]
 name: Look_Up_Domains_with_Recorded_Future
 title: "Look Up Domains with Recorded Future"
 description: "This workflow enriches an IDR alert by performing a lookup on all domains in the investigation with Recorded Future."
@@ -8,9 +8,11 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response]
-  keywords: [enrichment, recorded_future, domains]
+  use_cases: [threat_intel]
+  keywords: [enrichment, domains]
   features: []
+  vendors: [rapid7, recorded_future]
+  products: [insightidr, recorded_future]
 resources:
   screenshots:
   - name: workflow_view.png

@@ -8,26 +8,28 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response]
-  keywords: [phishing, email, office365, parameters]
+  use_cases: [threat_intel, phishing]
+  keywords: [email, office365, parameters]
   features: []
+  vendors: [microsoft, palo_alto]
+  products: [microsoft_office365, palo_alto_wildfire]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Office_365_Analysis_with_Palo_Alto_Wildfire
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
   screenshots:
-    - name: artifacts1.png
-      title: Artifact Example 1
-    - name: artifacts2.png
-      title: Artifact Example 2
-    - name: artifacts3.png
-      title: Artifact Example 3
-    - name: workflow_overview.png
-      title: Workflow View
-    - name: workflow_analysis_loop.png
-      title: Workflow Analysis Loop View
-    - name: workflow_url_loop.png
-      title: Workflow URL Loop View
-    - name: workflow_file_loop.png
-      title: Workflow File Loop View
-    - name: workflow_remediation_loop.png
-      title: Workflow Remediation Loop View
+  - name: artifacts1.png
+    title: Artifact Example 1
+  - name: artifacts2.png
+    title: Artifact Example 2
+  - name: artifacts3.png
+    title: Artifact Example 3
+  - name: workflow_overview.png
+    title: Workflow View
+  - name: workflow_analysis_loop.png
+    title: Workflow Analysis Loop View
+  - name: workflow_url_loop.png
+    title: Workflow URL Loop View
+  - name: workflow_file_loop.png
+    title: Workflow File Loop View
+  - name: workflow_remediation_loop.png
+    title: Workflow Remediation Loop View

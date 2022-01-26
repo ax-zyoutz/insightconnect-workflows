@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect", "insightidr"]
 name: Suspicious_User_Login_with_IDR_and_Slack_Chatops
 title: "Suspicious User Login with IDR and Slack Chatops"
-description: This workflow automates the process of confirming if a user is traveling in other office location using global artifacts before escalating to security via Slack chatbot.
+description: "This workflow automates the process of confirming if a user is traveling in other office location using global artifacts before escalating to security via Slack chatbot."
 version: 1.0.2
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response]
-  keywords: [insightidr, enrichment, slack, chat, chatops]
+  use_cases: [alerting_and_notifications, threat_intel]
+  keywords: [enrichment, chat, chatops]
   features: []
+  vendors: [slack, rapid7, attlassian, microsoft]
+  products: [slack, insightidr, jira, active_directory_ldap]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Suspicious_User_Login_with_IDR_and_Slack_Chatops
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

@@ -8,9 +8,11 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [vulnerability_management]
-  keywords: [insightvm, vulnerability_management, slack, chatops]
+  use_cases: [asset_management, vulnerability_management]
+  keywords: [chatops]
   features: []
+  vendors: [slack, rapid7]
+  products: [slack, insightvm]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/InsightVM_Top_10_Vuln_Assets_to_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect"]
 name: Deploy_Patch_With_BigFix_From_Slack
 title: "Deploy Patch with HCL BigFix from Slack"
-description: Deploys a specific patch to a specific host with HCL BigFix from a Slack message trigger.
+description: "Deploys a specific patch to a specific host with HCL BigFix from a Slack message trigger."
 version: 2.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [remediation_management]
+  use_cases: [vulnerability_management]
   keywords: [work_from_home, bigfix, patch_management, slack, chat]
   features: []
+  vendors: [microsoft, hcl]
+  products: [microsoft_teams, hcl_bigfix]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Deploy_Patch_With_BigFix_From_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

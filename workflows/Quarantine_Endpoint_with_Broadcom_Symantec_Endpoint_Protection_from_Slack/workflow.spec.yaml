@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect"]
 name: Quarantine_Endpoint_with_Broadcom_Symantec_Endpoint_Protection_from_Slack
 title: "Quarantine Endpoint with Broadcom Symantec Endpoint Protection from Slack"
-description: Manage the quarantine state of an endpoint with Broadcom Symantec Endpoint Protection from Slack.
+description: "Manage the quarantine state of an endpoint with Broadcom Symantec Endpoint Protection from Slack."
 version: 1.0.1
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response]
-  keywords: [chat, chatops, edr, blacklist, containment, quarantine, work_from_home, slack]
+  use_cases: [endpoint_detection_response]
+  keywords: [chat, chatops, edr, blacklist, containment, quarantine, work_from_home]
   features: []
+  vendors: [slack, broadcom, symantec]
+  products: [slack, symantec_endpoint]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Quarantine_Endpoint_with_Broadcom_Symantec_Endpoint_Protection_from_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
@@ -21,4 +23,3 @@ resources:
     title: Successful Unquarantine
   - name: workflow.png
     title: Workflow Overview
-

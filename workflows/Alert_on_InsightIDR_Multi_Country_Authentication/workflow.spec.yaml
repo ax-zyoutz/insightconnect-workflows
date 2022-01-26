@@ -1,23 +1,25 @@
 extension: workflow
 products: ["insightconnect", "insightidr"]
 name: Alert_on_InsightIDR_Multi_Country_Authentication
-title: Alert on InsightIDR Multi Country Authentication
-description: Send email alerts when multi-country authentications are detected for user group members.
+title: "Alert on InsightIDR Multi Country Authentication"
+description: "Send email alerts when multi-country authentications are detected for user group members."
 version: 1.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response, alerting_and_notifications]
+  use_cases: [alerting_and_notifications]
   keywords: [active_directory, ldap, parameters]
   features: []
+  vendors: [rapid7, microsoft]
+  products: [insightidr, active_directory_ldap, microsoft_exchange, ipstack]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Alert_on_InsightIDR_Multi_Country_Authentication
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
   screenshots:
-    - name: workflow1.png
-      title: Workflow View
-    - name: email1.png
-      title: Email View
-    - name: job1.png
-      title: Job View
+  - name: workflow1.png
+    title: Workflow View
+  - name: email1.png
+    title: Email View
+  - name: job1.png
+    title: Job View

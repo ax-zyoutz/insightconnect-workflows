@@ -8,9 +8,11 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [alerting_and_notifications, threat_detection_and_response]
-  keywords: [enrichment, slack, url, parameters]
+  use_cases: [threat_intel]
+  keywords: [enrichment, url, parameters]
   features: []
+  vendors: [slack, virustotal]
+  products: [slack, abuseipdb, ipstack, virustotal, whois]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Automated_Indicator_Enrichment
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

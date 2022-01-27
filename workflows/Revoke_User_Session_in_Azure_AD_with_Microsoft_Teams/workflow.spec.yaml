@@ -7,7 +7,7 @@ version: 1.1.1
 vendor: rapid7
 support: rapid7
 status: []
-hub_tags:
+extension_library: 
   use_cases: [iam]
   keywords: [phishing, email, office365, chat, azure]
   features: []

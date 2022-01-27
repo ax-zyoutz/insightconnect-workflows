@@ -7,7 +7,7 @@ version: 2.0.0
 vendor: rapid7
 support: rapid7
 status: []
-hub_tags:
+extension_library: 
   use_cases: [asset_management, vulnerability_management]
   keywords: [chat, chatops, parameters]
   features: []

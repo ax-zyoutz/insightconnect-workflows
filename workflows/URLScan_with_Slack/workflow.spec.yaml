@@ -2,12 +2,12 @@ extension: workflow
 products: ["insightconnect"]
 name: URLScan_with_Slack
 title: "Enrich URL with urlscan.io from Slack"
-description: "This workflow enrichs a URL given via Slack command in urlscan.io and reports information back to Slack"
+description: "This workflow enriches a URL given via Slack command in urlscan.io and reports information back to Slack"
 version: 1.0.2
 vendor: rapid7
 support: rapid7
 status: []
-hub_tags:
+extension_library: 
   use_cases: [threat_intel]
   keywords: [chat, chatops, phishing, work_from_home]
   features: []

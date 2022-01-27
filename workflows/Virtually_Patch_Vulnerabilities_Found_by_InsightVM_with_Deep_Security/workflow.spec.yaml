@@ -7,7 +7,7 @@ version: 1.1.0
 vendor: rapid7
 support: rapid7
 status: []
-hub_tags:
+extension_library: 
   use_cases: [Patch Management]
   keywords: [trend_micro, deep_security, virtual_patching, intrusion_prevention]
   features: []
@@ -32,6 +32,6 @@ resources:
   - name: workflow7.png
     title: Workflow 7
   - name: artifact01.png
-    title: Report Artifact Sucessful Assignment of One Rule
+    title: Report Artifact Successful Assignment of One Rule
   - name: artifact02.png
-    title: Report Artifact Sucessful Assignment of Multiple Rules
+    title: Report Artifact Successful Assignment of Multiple Rules

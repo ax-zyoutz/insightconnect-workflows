@@ -7,7 +7,7 @@ version: 2.0.0
 vendor: rapid7
 support: rapid7
 status: []
-hub_tags:
+extension_library: 
   use_cases: [phishing]
   keywords: [email, exchange, teams, work_from_home, office365, phishing, parameters]
   features: []

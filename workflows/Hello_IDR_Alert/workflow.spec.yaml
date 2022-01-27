@@ -7,7 +7,7 @@ version: 1.0.1
 vendor: rapid7
 support: rapid7
 status: [hidden]
-hub_tags:
+extension_library: 
   use_cases: [utility, alerting_and_notifications]
   keywords: [cloud_enabled]
   features: []

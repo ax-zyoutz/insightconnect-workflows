@@ -7,7 +7,7 @@ version: 1.1.1
 vendor: rapid7
 support: rapid7
 status: []
-hub_tags:
+extension_library: 
   use_cases: [alerting_and_notifications, phishing, threat_intel]
   keywords: [email, office365, parameters]
   features: []

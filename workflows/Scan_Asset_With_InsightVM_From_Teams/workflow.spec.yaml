@@ -7,7 +7,7 @@ version: 1.2.1
 vendor: rapid7
 support: community
 status: []
-hub_tags:
+extension_library: 
   use_cases: [asset_management, vulnerability_management]
   keywords: [vulnerability_scanner, remediation, chat, workflow, parameters]
   features: []

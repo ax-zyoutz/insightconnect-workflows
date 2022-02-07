@@ -1,14 +1,14 @@
 {
   "kom": {
-    "komandVersion": "1.63.0-0-g466c4",
+    "komandVersion": "1.96.4-0-g2fd81",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-09-30T17:21:24.601003369Z",
+    "exportedAt": "2022-02-04T15:24:25.579218989Z",
     "workflowVersions": [
       {
         "name": "Check Host Block Status with Fortinet Firewall from Slack",
         "type": "runnable",
         "version": "",
-        "description": "",
+        "description": "# Description\n\nThis workflow accepts a Slack command containing an IP address. This IP address will be checked against a pre-defined address group in Fortinet to determine if the IP address is present or not. It is assumed that this address group will be used to store IP addresses for a block policy. A message with the results will be returned.\n\nSample Slack Trigger Commands:\n\n`@Rapid7 InsightConnect block-status 198.51.100.100`\n`@Rapid7 InsightConnect block-status example.com`\n\n# Key Features\n\n* The ability to see if an IP is currently blocked by the firewall\n\n\n# Requirements\n\n* Slack connection\n* Admin API key to a Fortinet FortiGate firewall\n\n# Documentation\n\n## Setup\n\nImport the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.\n\nOnce the workflow has been imported, **Update the first step with the channel name to suit your Slack environment!** by editing the input with the preset text of `change_me` to match the channel to monitor.\nAnd in the _Check for IP_ step edit the Address Group Name input from `change_me` to an appropriate address group to monitor.\n\nTo run the workflow, @ your Slackbot in the chosen channel or in a direct message along with the command \"block-status <IP>\". The workflow will post responses in a thread.\n\n## Technical Details\n\nPlugins utilized by workflow:\n\n|Plugin|Version|Count|\n|----|----|--------|\n|Fortinet FortiGate|5.0.0|1|\n\n## Troubleshooting\n\n_There is no troubleshooting information at this time_\n\n# Version History\n\n* 2.0.0 - Update workflow to fix issue where addresses were not being correctly parsed | Update to version 5.0.0 of FortiGate\n* 1.1.3 - Update Fortinet FortiGate to latest version\n* 1.1.2 - Update Fortinet FortiGate to latest version | Added a new message if Fortinet FortiGate action fails\n* 1.1.1 - Pass channel name from trigger to all subsequent steps so user only has to configure channel once\n* 1.1.0 - Update Fortinet FortiGate to latest version\n* 1.0.0 - Initial workflow\n\n# Links\n\n## References\n\n* [Fortinet](https://www.fortinet.com/)\n* [Slack](https://slack.com)\n",
         "graph": {
           "edges": {
             "09a27550-6a65-4cad-93f5-ebe35f54f46f": {
@@ -41,7 +41,7 @@
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "eb45a27e-1a93-4580-b5dc-f48c252db9f3",
-              "toNodeId": "58ef804c-7f4b-4787-be69-39eed3e92016"
+              "toNodeId": "3afc85cf-1e97-4afb-9e93-ca9fc617e62f"
             },
             "5f1ccc19-18d6-4bfb-bca7-73655f23387c": {
               "id": "5f1ccc19-18d6-4bfb-bca7-73655f23387c",
@@ -66,14 +66,6 @@
               "parentNodeId": "",
               "fromNodeId": "60772325-689a-485b-b66b-e6898e071d8a",
               "toNodeId": "a3d5b7fb-2a0d-419e-bb41-461213fd5df1"
-            },
-            "8cbd05b6-170e-43fd-bd22-5205c2140957": {
-              "id": "8cbd05b6-170e-43fd-bd22-5205c2140957",
-              "name": "",
-              "description": "",
-              "parentNodeId": "",
-              "fromNodeId": "58ef804c-7f4b-4787-be69-39eed3e92016",
-              "toNodeId": "3afc85cf-1e97-4afb-9e93-ca9fc617e62f"
             },
             "9eeced1a-b1ac-46f2-9e61-a5babdbfad0e": {
               "id": "9eeced1a-b1ac-46f2-9e61-a5babdbfad0e",
@@ -121,10 +113,6 @@
               "id": "3afc85cf-1e97-4afb-9e93-ca9fc617e62f",
               "parentNodeId": ""
             },
-            "58ef804c-7f4b-4787-be69-39eed3e92016": {
-              "id": "58ef804c-7f4b-4787-be69-39eed3e92016",
-              "parentNodeId": ""
-            },
             "60772325-689a-485b-b66b-e6898e071d8a": {
               "id": "60772325-689a-485b-b66b-e6898e071d8a",
               "parentNodeId": ""
@@ -154,14 +142,14 @@
         "steps": {
           "19b6001e-4d5a-4550-95e7-344e26e2941e": {
             "nodeId": "19b6001e-4d5a-4550-95e7-344e26e2941e",
-            "name": "FortiGate Failure Message",
+            "name": "Check for Address Failed Message",
             "type": "action_chatops",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "⚠️ There was an error with the workflow. FortiGate did not return results correctly. Check This URL for more information. ⚠️\n{{[$job].[URL]}}",
+                "message": "⚠️ There was an error with the workflow. FortiGate did not return results correctly. Check this URL for more information.\n\n{{[$job].[URL]}}",
                 "recipient": "{{[eb45a27e-1a93-4580-b5dc-f48c252db9f3].[message].[channel]}}",
                 "thread_ts": "{{[eb45a27e-1a93-4580-b5dc-f48c252db9f3].[timestamp]}}"
               }
@@ -169,7 +157,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -210,6 +198,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -234,7 +228,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "🚫 🚧 The Address {{[58ef804c-7f4b-4787-be69-39eed3e92016].[address]}} is blocked. 🚧🚫\n"
+                "content": "🚫 🚧 The address {{[eb45a27e-1a93-4580-b5dc-f48c252db9f3].[message].[words].[1]}} is blocked. 🚧 🚫\n"
               },
               "type": "markdown"
             },
@@ -246,14 +240,14 @@
           },
           "3afc85cf-1e97-4afb-9e93-ca9fc617e62f": {
             "nodeId": "3afc85cf-1e97-4afb-9e93-ca9fc617e62f",
-            "name": "Check for Address",
+            "name": "Check if Address is in Group",
             "type": "action",
             "plugin": {
               "name": "Fortinet FortiGate",
               "slugVendor": "rapid7",
               "slugName": "fortinet_fortigate",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/5.0.0/icon.png"
+              "slugVersion": "6.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/6.0.0/icon.png"
             },
             "identifier": "check_if_address_in_group",
             "continueOnFailure": true,
@@ -261,23 +255,24 @@
             "isCloud": false,
             "parameters": {
               "input": {
-                "address": "{{[58ef804c-7f4b-4787-be69-39eed3e92016].[address]}}",
+                "address": "{{[eb45a27e-1a93-4580-b5dc-f48c252db9f3].[message].[words].[1]}}",
                 "enable_search": true,
-                "group": "change_me"
+                "group": "{{$workflow.[Group Name]}}",
+                "ipv6_group": "{{$workflow.[IPv6 Group Name]}}"
               }
             },
             "defaultInputJSONSchema": {
               "properties": {
                 "address": {
                   "description": "The Address Object name to check. If Enable Search is set to true then we search the addresses (IP, CIDR, domain) within the address object instead of matching the name",
-                  "order": 2,
+                  "order": 3,
                   "title": "Address",
                   "type": "string"
                 },
                 "enable_search": {
                   "default": false,
                   "description": "When enabled, the Address input will accept a IP, CIDR, or domain name to search across the available Address Objects in the system. This is useful when you don't know the Address Object by its name",
-                  "order": 3,
+                  "order": 4,
                   "title": "Enable Search",
                   "type": "boolean"
                 },
@@ -286,12 +281,19 @@
                   "order": 1,
                   "title": "Group",
                   "type": "string"
+                },
+                "ipv6_group": {
+                  "description": "The name of the IPv6 address group",
+                  "order": 2,
+                  "title": "IPv6 Group",
+                  "type": "string"
                 }
               },
               "required": [
-                "group",
                 "address",
-                "enable_search"
+                "enable_search",
+                "group",
+                "ipv6_group"
               ],
               "title": "Variables",
               "type": "object"
@@ -325,37 +327,6 @@
             "defaultImageData": "",
             "connectionType": "CONNECTION"
           },
-          "58ef804c-7f4b-4787-be69-39eed3e92016": {
-            "nodeId": "58ef804c-7f4b-4787-be69-39eed3e92016",
-            "name": "Extract Address",
-            "type": "pattern_match",
-            "continueOnFailure": false,
-            "isDisabled": false,
-            "parameters": {
-              "captureAll": false,
-              "expressionText": "block-status {{address:/.*/}}",
-              "expressions": [
-                {
-                  "type": "text",
-                  "value": "block-status "
-                },
-                {
-                  "type": "variable",
-                  "value": {
-                    "ident": "address",
-                    "regex": ".*"
-                  }
-                }
-              ],
-              "ignoreCase": true,
-              "input": "{{[eb45a27e-1a93-4580-b5dc-f48c252db9f3].[message].[text]}}"
-            },
-            "defaultInputJSONSchema": null,
-            "defaultOutputJSONSchema": null,
-            "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/pattern-match.svg",
-            "connectionType": "NONE"
-          },
           "60772325-689a-485b-b66b-e6898e071d8a": {
             "nodeId": "60772325-689a-485b-b66b-e6898e071d8a",
             "name": "Address Not Blocked ",
@@ -364,7 +335,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "✅🚧The Address {{[58ef804c-7f4b-4787-be69-39eed3e92016].[address]}} is not blocked. 🚧✅"
+                "content": "✅🚧 The address {{[eb45a27e-1a93-4580-b5dc-f48c252db9f3].[message].[words].[1]}} is not blocked. 🚧✅"
               },
               "type": "markdown"
             },
@@ -391,7 +362,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -432,6 +403,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -450,13 +427,18 @@
           },
           "d6b90580-c2f0-4fbd-95e5-8e4a3cfea225": {
             "nodeId": "d6b90580-c2f0-4fbd-95e5-8e4a3cfea225",
-            "name": "FortiGate Failure",
+            "name": "Check if Address is in Group Failed?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "defaultEdgeId": "6744bd2e-7286-418c-b49f-19606dd23cff",
               "stepControlParams": [
+                {
+                  "edgeId": "6744bd2e-7286-418c-b49f-19606dd23cff",
+                  "expression": {},
+                  "expressionText": ""
+                },
                 {
                   "edgeId": "bd56fb33-4063-44a5-bd4e-0e7e6cd39d49",
                   "expression": {
@@ -472,11 +454,6 @@
                     "type": "binary"
                   },
                   "expressionText": "{{[3afc85cf-1e97-4afb-9e93-ca9fc617e62f].[$success]}} == true"
-                },
-                {
-                  "edgeId": "6744bd2e-7286-418c-b49f-19606dd23cff",
-                  "expression": {},
-                  "expressionText": ""
                 }
               ]
             },
@@ -488,18 +465,18 @@
           },
           "eb45a27e-1a93-4580-b5dc-f48c252db9f3": {
             "nodeId": "eb45a27e-1a93-4580-b5dc-f48c252db9f3",
-            "name": "Check for Address Message",
+            "name": "Check Address Block Status",
             "type": "trigger",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "matchChannel": "change_me",
+                "matchChannel": "{{$workflow.[Channel]}}",
                 "matchText": "block-status",
                 "type": "any"
               }
             },
-            "triggerId": "b5d22100-7fa0-415d-90f7-69370c25643a",
+            "triggerId": "1579a2f7-b669-4211-bc5c-7ea24ca675d1",
             "defaultInputJSONSchema": {
               "properties": {
                 "matchChannel": {
@@ -584,20 +561,20 @@
                       "items": {
                         "type": "string"
                       },
-                      "order": 3,
+                      "order": 4,
                       "title": "Email Addresses",
                       "type": "array"
                     },
                     "hashes": {
                       "$ref": "#/definitions/hashes",
                       "description": "Hashes found within the message",
-                      "order": 4,
+                      "order": 5,
                       "title": "Hashes"
                     },
                     "ip_addresses": {
                       "$ref": "#/definitions/ip_addresses",
                       "description": "IP addresses found within the message",
-                      "order": 6,
+                      "order": 7,
                       "title": "IP Addresses"
                     },
                     "mac_addresses": {
@@ -605,8 +582,17 @@
                       "items": {
                         "type": "string"
                       },
-                      "order": 5,
+                      "order": 6,
                       "title": "MAC Addresses",
+                      "type": "array"
+                    },
+                    "parent_domains": {
+                      "description": "Parent domains found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 2,
+                      "title": "Parent Domains",
                       "type": "array"
                     },
                     "urls": {
@@ -614,7 +600,7 @@
                       "items": {
                         "type": "string"
                       },
-                      "order": 2,
+                      "order": 3,
                       "title": "URLs",
                       "type": "array"
                     }
@@ -669,7 +655,7 @@
                     "indicators": {
                       "$ref": "#/definitions/indicators",
                       "description": "Potential threat indicators found within the message",
-                      "order": 6,
+                      "order": 7,
                       "title": "Indicators"
                     },
                     "text": {
@@ -695,6 +681,15 @@
                       "order": 2,
                       "title": "User ID",
                       "type": "string"
+                    },
+                    "words": {
+                      "description": "The message split by spaces into a list of words. This list makes finding and using parameters in chat commands easier",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 6,
+                      "title": "Words",
+                      "type": "array"
                     }
                   },
                   "title": "Message",
@@ -738,7 +733,7 @@
           },
           "f96f5847-f0f7-490c-8554-4e4559c7b243": {
             "nodeId": "f96f5847-f0f7-490c-8554-4e4559c7b243",
-            "name": "Address Found",
+            "name": "Address Found?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -791,7 +786,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -832,6 +827,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -851,16 +852,38 @@
         },
         "tags": null,
         "humanCostSeconds": 300,
-        "humanCostDisplayUnit": "minutes"
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": {
+            "type": "object",
+            "required": [],
+            "properties": {
+              "Channel": {
+                "type": "string",
+                "description": "The Slack channel name in your environment where the workflow should be triggered.\n"
+              },
+              "Group Name": {
+                "type": "string",
+                "description": "The group name for blocked IPv4 addresses and domains."
+              },
+              "IPv6 Group Name": {
+                "type": "string",
+                "description": "The group name for blocked IPv6 addresses."
+              }
+            },
+            "definitions": {}
+          }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "b5d22100-7fa0-415d-90f7-69370c25643a",
-        "name": "Check for Address Message",
+        "id": "1579a2f7-b669-4211-bc5c-7ea24ca675d1",
+        "name": "Check Address Block Status",
         "description": "",
         "input": {
-          "matchChannel": "change_me",
+          "matchChannel": "{{$workflow.[Channel]}}",
           "matchText": "block-status",
           "type": "any"
         },
@@ -948,20 +971,20 @@
                   "items": {
                     "type": "string"
                   },
-                  "order": 3,
+                  "order": 4,
                   "title": "Email Addresses",
                   "type": "array"
                 },
                 "hashes": {
                   "$ref": "#/definitions/hashes",
                   "description": "Hashes found within the message",
-                  "order": 4,
+                  "order": 5,
                   "title": "Hashes"
                 },
                 "ip_addresses": {
                   "$ref": "#/definitions/ip_addresses",
                   "description": "IP addresses found within the message",
-                  "order": 6,
+                  "order": 7,
                   "title": "IP Addresses"
                 },
                 "mac_addresses": {
@@ -969,8 +992,17 @@
                   "items": {
                     "type": "string"
                   },
-                  "order": 5,
+                  "order": 6,
                   "title": "MAC Addresses",
+                  "type": "array"
+                },
+                "parent_domains": {
+                  "description": "Parent domains found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 2,
+                  "title": "Parent Domains",
                   "type": "array"
                 },
                 "urls": {
@@ -978,7 +1010,7 @@
                   "items": {
                     "type": "string"
                   },
-                  "order": 2,
+                  "order": 3,
                   "title": "URLs",
                   "type": "array"
                 }
@@ -1033,7 +1065,7 @@
                 "indicators": {
                   "$ref": "#/definitions/indicators",
                   "description": "Potential threat indicators found within the message",
-                  "order": 6,
+                  "order": 7,
                   "title": "Indicators"
                 },
                 "text": {
@@ -1059,6 +1091,15 @@
                   "order": 2,
                   "title": "User ID",
                   "type": "string"
+                },
+                "words": {
+                  "description": "The message split by spaces into a list of words. This list makes finding and using parameters in chat commands easier",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 6,
+                  "title": "Words",
+                  "type": "array"
                 }
               },
               "title": "Message",

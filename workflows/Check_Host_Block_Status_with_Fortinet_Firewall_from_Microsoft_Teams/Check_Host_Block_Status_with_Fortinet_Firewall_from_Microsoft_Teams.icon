@@ -2,7 +2,7 @@
   "kom": {
     "komandVersion": "1.96.4-0-g2fd81",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2022-02-07T14:33:36.430962492Z",
+    "exportedAt": "2022-02-07T14:44:20.400800897Z",
     "workflowVersions": [
       {
         "name": "Check Host Block Status with Fortinet Firewall from Microsoft Teams",
@@ -242,7 +242,7 @@
           },
           "3ae0cb53-09df-47dc-b8db-fb11a28f15ae": {
             "nodeId": "3ae0cb53-09df-47dc-b8db-fb11a28f15ae",
-            "name": "Check if Address Is in Group",
+            "name": "Check if Address is in Group",
             "type": "action",
             "plugin": {
               "name": "Fortinet FortiGate",
@@ -597,7 +597,7 @@
           },
           "87196bc2-e1e2-428a-a60c-fd3a62974f7a": {
             "nodeId": "87196bc2-e1e2-428a-a60c-fd3a62974f7a",
-            "name": "Check if Address Is in Group Failed?",
+            "name": "Check if Address is in Group Failed?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,

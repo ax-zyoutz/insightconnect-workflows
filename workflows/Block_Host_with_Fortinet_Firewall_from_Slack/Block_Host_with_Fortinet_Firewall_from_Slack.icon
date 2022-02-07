@@ -1,16 +1,24 @@
 {
   "kom": {
-    "komandVersion": "1.62.0-0-g716d3",
+    "komandVersion": "1.96.4-0-g2fd81",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-09-24T18:43:12.74853237Z",
+    "exportedAt": "2022-02-07T14:06:26.11712875Z",
     "workflowVersions": [
       {
         "name": "Block Host with Fortinet Firewall from Slack",
         "type": "runnable",
         "version": "",
-        "description": "This workflow blocks or unblocks a host with Fortinet Firewall via Slack command and reports information back to Slack.",
+        "description": "# Description\n\nThis workflow blocks or unblocks a host with Fortinet Firewall via Slack command and reports information back to Slack.\n\nSample Slack Trigger Commands:\n\n`@Rapid7 InsightConnect block-host 198.51.100.100/32`\n\n`@Rapid7 InsightConnect block-host 198.51.100.0/24`\n\n`@Rapid7 InsightConnect block-host example.com`\n\n`@Rapid7 InsightConnect unblock-host 198.51.100.100/32`\n\n`@Rapid7 InsightConnect unblock-host 198.51.100.0/24`\n\n`@Rapid7 InsightConnect unblock-host example.com`\n\n# Key Features\n\n* Block and unblock hosts \n\n# Requirements\n\n\n* [Slack](https://insightconnect.help.rapid7.com/docs/configure-slack-for-chatops)\n* A Fortigate firewall\n\n# Documentation\n\n## Setup\n\nImport the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.\n\nOnce the workflow has been imported, **Update the first step with the channel name to suit your Slack environment!** by editing the input with the preset text of `change_me` to match the channel to monitor.\n\nAfter configuring the Slack steps, activate the workflow in order to trigger it.\n \nAn optional whitelist can be added to the Fortigate Add Host to be Blocked action. To add this list add IP's or domains in the following format `[\"198.51.100.100\", \"example.com\", \"198.51.100.1\"]` and they will not be blocked.\n\nBy default, this workflow will automatically skip blocking private IP addresses, if you’d like to block these as well, set `Skip RFC 1918` option to false in the \"Add Host to be Blocked\" step.\n\n### Usage\n\n*This workflow will only trigger in the channel specified in the Slack workflow steps.*\n\nTo run the workflow, send a message to the specified Slack channel starting with the command `@Rapid7 InsightConnect block-host`.\n\n\nYour chat bot will reply when the workflow completes.\n\n## Technical Details\n\nPlugins utilized by workflow:\n\n|Plugin|Version|Count|\n|----|----|--------|\n|Fortinet FortiGate|5.0.0|4|\n\n\n## Troubleshooting\n\n_There is no troubleshooting information at this time_\n\n# Version History\n\n* 1.1.1 - Update plugins to latest version\n* 1.1.0 - Update workflow to handle block requests for address that already exists | Update workflow to send Slack message when a job failure has occurred\n* 1.0.2 - Pass channel name from trigger to all subsequent steps so user only has to configure channel once\n* 1.0.1 - Help amendments\n* 1.0.0 - Initial workflow\n\n# Links\n\n## References\n\n* [Fortigate](https://www.fortinet.com/products/next-generation-firewall.html)\n* [Rapid7 Slack Chatbot](https://insightconnect.help.rapid7.com/docs/configure-slack-for-chatops)\n",
         "graph": {
           "edges": {
+            "064f5acb-9581-4618-bb58-145547b4a515": {
+              "id": "064f5acb-9581-4618-bb58-145547b4a515",
+              "name": "",
+              "description": "",
+              "parentNodeId": "",
+              "fromNodeId": "4b8fd8fd-a4fe-4d8f-a190-e844b4d5fb77",
+              "toNodeId": "936ed547-527b-4184-85ea-f3ccfb4466b1"
+            },
             "1005a369-061f-45fd-b405-2a323bfb2973": {
               "id": "1005a369-061f-45fd-b405-2a323bfb2973",
               "name": "",
@@ -25,7 +33,7 @@
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "769171ab-e338-49db-9057-53f6da19c37a",
-              "toNodeId": "1ffdf0eb-caa2-44fc-81c5-eeea3960369b"
+              "toNodeId": "d3ce49c3-79ee-4a9d-bec2-ddf62866a359"
             },
             "17ef140b-006f-4490-ae2a-eecaf17d344d": {
               "id": "17ef140b-006f-4490-ae2a-eecaf17d344d",
@@ -33,7 +41,7 @@
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "4cff4374-3354-4e3a-9143-dbf60966c341",
-              "toNodeId": "328f4452-07ab-4569-b53e-38c7ad3ccba6"
+              "toNodeId": "f555d0c4-ff83-4210-bc11-97fa8720b790"
             },
             "18feee59-c202-4aa2-a5fc-977c4e7ded83": {
               "id": "18feee59-c202-4aa2-a5fc-977c4e7ded83",
@@ -89,7 +97,7 @@
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "26a9a0e4-3375-4229-b698-81f045ae8af8",
-              "toNodeId": "936ed547-527b-4184-85ea-f3ccfb4466b1"
+              "toNodeId": "4b8fd8fd-a4fe-4d8f-a190-e844b4d5fb77"
             },
             "3b4b51f8-ceab-44e1-ab40-be277b85c25c": {
               "id": "3b4b51f8-ceab-44e1-ab40-be277b85c25c",
@@ -147,14 +155,6 @@
               "fromNodeId": "f555d0c4-ff83-4210-bc11-97fa8720b790",
               "toNodeId": "b6be898d-28ee-4ead-93a1-ac177ced8973"
             },
-            "5845c846-0cf4-4304-9949-bc03fe7dbd57": {
-              "id": "5845c846-0cf4-4304-9949-bc03fe7dbd57",
-              "name": "",
-              "description": "",
-              "parentNodeId": "",
-              "fromNodeId": "8e8fadef-5163-47c3-a329-bfd6c15e9f1d",
-              "toNodeId": "41e91ba2-a546-46c0-9244-a3799bd9d216"
-            },
             "5dc92b17-6a99-4578-bf9c-b3bf165d9c17": {
               "id": "5dc92b17-6a99-4578-bf9c-b3bf165d9c17",
               "name": "",
@@ -162,6 +162,14 @@
               "parentNodeId": "",
               "fromNodeId": "c807b0a0-c0d3-4fc6-889a-536eaa9554d5",
               "toNodeId": ""
+            },
+            "6f153571-4280-4f1c-b00d-2f721a933d2d": {
+              "id": "6f153571-4280-4f1c-b00d-2f721a933d2d",
+              "name": "",
+              "description": "",
+              "parentNodeId": "",
+              "fromNodeId": "6e0a1c6d-0654-4b94-9e19-fcbe1a0092e1",
+              "toNodeId": "3a7c97aa-2324-4a41-9fc8-d9ea0f4c0dc3"
             },
             "7c0314cb-ed10-459a-b42b-0f74b5f386d6": {
               "id": "7c0314cb-ed10-459a-b42b-0f74b5f386d6",
@@ -171,21 +179,13 @@
               "fromNodeId": "a7b191c4-5e2f-4246-9adc-0b06e5a3ec6d",
               "toNodeId": ""
             },
-            "7c0c51da-84a4-49cf-9931-b36fc11f3066": {
-              "id": "7c0c51da-84a4-49cf-9931-b36fc11f3066",
-              "name": "",
-              "description": "",
-              "parentNodeId": "",
-              "fromNodeId": "328f4452-07ab-4569-b53e-38c7ad3ccba6",
-              "toNodeId": "f555d0c4-ff83-4210-bc11-97fa8720b790"
-            },
             "89aabfc5-e9be-46cc-81a2-a12e4a9bdf7d": {
               "id": "89aabfc5-e9be-46cc-81a2-a12e4a9bdf7d",
               "name": "Not Found",
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "41e91ba2-a546-46c0-9244-a3799bd9d216",
-              "toNodeId": "e9b1856c-bb86-4f4d-9de5-5a2802ff526d"
+              "toNodeId": "900b55f4-e7ed-4489-a46c-743e57b4aa66"
             },
             "8d4e218f-ade9-421a-8a4c-db41d9186a09": {
               "id": "8d4e218f-ade9-421a-8a4c-db41d9186a09",
@@ -210,6 +210,14 @@
               "parentNodeId": "",
               "fromNodeId": "fcc8fb43-cddf-4e7d-9a33-89e6f78240f8",
               "toNodeId": "769171ab-e338-49db-9057-53f6da19c37a"
+            },
+            "9adc2d03-ee02-4e44-a4ae-b74133e9d35b": {
+              "id": "9adc2d03-ee02-4e44-a4ae-b74133e9d35b",
+              "name": "",
+              "description": "",
+              "parentNodeId": "",
+              "fromNodeId": "900b55f4-e7ed-4489-a46c-743e57b4aa66",
+              "toNodeId": "e9b1856c-bb86-4f4d-9de5-5a2802ff526d"
             },
             "9d0e1be0-5d26-4f35-b14a-ff6a5d0054a9": {
               "id": "9d0e1be0-5d26-4f35-b14a-ff6a5d0054a9",
@@ -243,13 +251,21 @@
               "fromNodeId": "936ed547-527b-4184-85ea-f3ccfb4466b1",
               "toNodeId": ""
             },
+            "be51ea0f-e65e-4aa6-beb6-a75165dd2d58": {
+              "id": "be51ea0f-e65e-4aa6-beb6-a75165dd2d58",
+              "name": "",
+              "description": "",
+              "parentNodeId": "",
+              "fromNodeId": "d3ce49c3-79ee-4a9d-bec2-ddf62866a359",
+              "toNodeId": "1ffdf0eb-caa2-44fc-81c5-eeea3960369b"
+            },
             "c11d683b-1bcb-4f53-b4af-467a26d0a129": {
               "id": "c11d683b-1bcb-4f53-b4af-467a26d0a129",
               "name": "Yes",
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "7d17e566-e05c-449e-8c6c-7c20ccae3455",
-              "toNodeId": "3a7c97aa-2324-4a41-9fc8-d9ea0f4c0dc3"
+              "toNodeId": "6e0a1c6d-0654-4b94-9e19-fcbe1a0092e1"
             },
             "c4ce4909-04b0-482b-a753-2f5ef12c0a40": {
               "id": "c4ce4909-04b0-482b-a753-2f5ef12c0a40",
@@ -257,7 +273,7 @@
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd",
-              "toNodeId": "8e8fadef-5163-47c3-a329-bfd6c15e9f1d"
+              "toNodeId": "41e91ba2-a546-46c0-9244-a3799bd9d216"
             },
             "cfcce393-3f89-44b6-b952-e67fa0d0ccca": {
               "id": "cfcce393-3f89-44b6-b952-e67fa0d0ccca",
@@ -313,16 +329,16 @@
               "id": "26a9a0e4-3375-4229-b698-81f045ae8af8",
               "parentNodeId": ""
             },
-            "328f4452-07ab-4569-b53e-38c7ad3ccba6": {
-              "id": "328f4452-07ab-4569-b53e-38c7ad3ccba6",
-              "parentNodeId": ""
-            },
             "3a7c97aa-2324-4a41-9fc8-d9ea0f4c0dc3": {
               "id": "3a7c97aa-2324-4a41-9fc8-d9ea0f4c0dc3",
               "parentNodeId": ""
             },
             "41e91ba2-a546-46c0-9244-a3799bd9d216": {
               "id": "41e91ba2-a546-46c0-9244-a3799bd9d216",
+              "parentNodeId": ""
+            },
+            "4b8fd8fd-a4fe-4d8f-a190-e844b4d5fb77": {
+              "id": "4b8fd8fd-a4fe-4d8f-a190-e844b4d5fb77",
               "parentNodeId": ""
             },
             "4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd": {
@@ -337,6 +353,10 @@
               "id": "5dc60d63-ed88-4691-a548-59021b2c6171",
               "parentNodeId": ""
             },
+            "6e0a1c6d-0654-4b94-9e19-fcbe1a0092e1": {
+              "id": "6e0a1c6d-0654-4b94-9e19-fcbe1a0092e1",
+              "parentNodeId": ""
+            },
             "769171ab-e338-49db-9057-53f6da19c37a": {
               "id": "769171ab-e338-49db-9057-53f6da19c37a",
               "parentNodeId": ""
@@ -345,8 +365,8 @@
               "id": "7d17e566-e05c-449e-8c6c-7c20ccae3455",
               "parentNodeId": ""
             },
-            "8e8fadef-5163-47c3-a329-bfd6c15e9f1d": {
-              "id": "8e8fadef-5163-47c3-a329-bfd6c15e9f1d",
+            "900b55f4-e7ed-4489-a46c-743e57b4aa66": {
+              "id": "900b55f4-e7ed-4489-a46c-743e57b4aa66",
               "parentNodeId": ""
             },
             "936ed547-527b-4184-85ea-f3ccfb4466b1": {
@@ -385,6 +405,10 @@
               "id": "d00d5c3b-0e54-468b-977b-cbbb21960ca1",
               "parentNodeId": ""
             },
+            "d3ce49c3-79ee-4a9d-bec2-ddf62866a359": {
+              "id": "d3ce49c3-79ee-4a9d-bec2-ddf62866a359",
+              "parentNodeId": ""
+            },
             "dbaf4fba-860b-470a-8cab-b778152fd609": {
               "id": "dbaf4fba-860b-470a-8cab-b778152fd609",
               "parentNodeId": ""
@@ -418,7 +442,7 @@
         "steps": {
           "0fecc5a7-267e-4fc1-a6d4-759caefc7345": {
             "nodeId": "0fecc5a7-267e-4fc1-a6d4-759caefc7345",
-            "name": "Which Action",
+            "name": "Which Action?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -434,17 +458,17 @@
                   "edgeId": "95713a37-e1b9-4ae7-a1c7-45188a2971a6",
                   "expression": {
                     "left": {
-                      "name": "8e8fadef-5163-47c3-a329-bfd6c15e9f1d.action",
+                      "name": "4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd.message.first_word",
                       "type": "variable"
                     },
                     "op": "==",
                     "right": {
                       "type": "literal",
-                      "value": "unblock-host "
+                      "value": "unblock-host"
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[action]}} == \"unblock-host \""
+                  "expressionText": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[first_word]}} == \"unblock-host\""
                 }
               ]
             },
@@ -456,14 +480,14 @@
           },
           "1ffdf0eb-caa2-44fc-81c5-eeea3960369b": {
             "nodeId": "1ffdf0eb-caa2-44fc-81c5-eeea3960369b",
-            "name": "Add Host to be Blocked Failed Message",
+            "name": "Add Host to Be Blocked Failed Message",
             "type": "action_chatops",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "⚠️Unable to add the host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} to the blocking group. ⚠️\n\nThis is often caused by trying to add a host to the list that is already on the list.\n\nSee {{[$job].[URL]}} for more information",
+                "message": "⚠️ {{[d3ce49c3-79ee-4a9d-bec2-ddf62866a359].[content]}}\n\nSee {{[$job].[URL]}} for more information",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel_id]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[timestamp]}}"
               }
@@ -471,7 +495,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -512,6 +536,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -530,7 +560,7 @@
           },
           "26a9a0e4-3375-4229-b698-81f045ae8af8": {
             "nodeId": "26a9a0e4-3375-4229-b698-81f045ae8af8",
-            "name": "Add Host Failed",
+            "name": "Create Address Object Failed?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -566,24 +596,6 @@
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
-          "328f4452-07ab-4569-b53e-38c7ad3ccba6": {
-            "nodeId": "328f4452-07ab-4569-b53e-38c7ad3ccba6",
-            "name": "Check if Host Exists Artifact",
-            "type": "artifact",
-            "continueOnFailure": false,
-            "isDisabled": false,
-            "parameters": {
-              "input": {
-                "content": "{{#each [4cff4374-3354-4e3a-9143-dbf60966c341].[address_objects]}}\n{{#equal name [8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}}\ntrue\n   {{/equal}}\n{{/each}}"
-              },
-              "type": "markdown"
-            },
-            "defaultInputJSONSchema": null,
-            "defaultOutputJSONSchema": null,
-            "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
-            "connectionType": "NONE"
-          },
           "3a7c97aa-2324-4a41-9fc8-d9ea0f4c0dc3": {
             "nodeId": "3a7c97aa-2324-4a41-9fc8-d9ea0f4c0dc3",
             "name": "Remove Host Failed Message",
@@ -593,7 +605,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "⚠️The host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} was not removed from the blocking group. ⚠️\n\nThis is often caused by trying to remove a host to the list that is not on the list.\n\nSee {{[$job].[URL]}} for more information.",
+                "message": "⚠️ {{[6e0a1c6d-0654-4b94-9e19-fcbe1a0092e1].[content]}}\n\nSee {{[$job].[URL]}} for more information.",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel_id]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[timestamp]}}"
               }
@@ -601,7 +613,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -642,6 +654,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -660,7 +678,7 @@
           },
           "41e91ba2-a546-46c0-9244-a3799bd9d216": {
             "nodeId": "41e91ba2-a546-46c0-9244-a3799bd9d216",
-            "name": "Host Found",
+            "name": "Host Found?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -668,25 +686,17 @@
               "defaultEdgeId": "89aabfc5-e9be-46cc-81a2-a12e4a9bdf7d",
               "stepControlParams": [
                 {
-                  "edgeId": "aecbf470-f9a0-4fe1-b265-73ac8c00d0f0",
-                  "expression": {
-                    "left": {
-                      "name": "8e8fadef-5163-47c3-a329-bfd6c15e9f1d.$matched",
-                      "type": "variable"
-                    },
-                    "op": "=",
-                    "right": {
-                      "type": "literal",
-                      "value": true
-                    },
-                    "type": "binary"
-                  },
-                  "expressionText": "{{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[$matched]}} = true"
-                },
-                {
                   "edgeId": "89aabfc5-e9be-46cc-81a2-a12e4a9bdf7d",
                   "expression": {},
                   "expressionText": ""
+                },
+                {
+                  "edgeId": "aecbf470-f9a0-4fe1-b265-73ac8c00d0f0",
+                  "expression": {
+                    "name": "4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd.message.words.1",
+                    "type": "variable"
+                  },
+                  "expressionText": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}}"
                 }
               ]
             },
@@ -694,6 +704,24 @@
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "connectionType": "NONE"
+          },
+          "4b8fd8fd-a4fe-4d8f-a190-e844b4d5fb77": {
+            "nodeId": "4b8fd8fd-a4fe-4d8f-a190-e844b4d5fb77",
+            "name": "Create Address Object Failed Artifact",
+            "type": "artifact",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "parameters": {
+              "input": {
+                "content": "Unable to create an address object for the host {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}} in the FortiGate firewall."
+              },
+              "type": "markdown"
+            },
+            "defaultInputJSONSchema": null,
+            "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd": {
@@ -704,12 +732,12 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "matchChannel": "change_me",
+                "matchChannel": "{{$workflow.[Channel]}}",
                 "matchText": "(block-host.*|unblock-host.*)",
                 "type": "any"
               }
             },
-            "triggerId": "8fce11d1-d3d7-476a-b32d-f7504121489e",
+            "triggerId": "4a23eeca-8199-4a47-b08a-0aa237972b4d",
             "defaultInputJSONSchema": {
               "properties": {
                 "matchChannel": {
@@ -794,20 +822,20 @@
                       "items": {
                         "type": "string"
                       },
-                      "order": 3,
+                      "order": 4,
                       "title": "Email Addresses",
                       "type": "array"
                     },
                     "hashes": {
                       "$ref": "#/definitions/hashes",
                       "description": "Hashes found within the message",
-                      "order": 4,
+                      "order": 5,
                       "title": "Hashes"
                     },
                     "ip_addresses": {
                       "$ref": "#/definitions/ip_addresses",
                       "description": "IP addresses found within the message",
-                      "order": 6,
+                      "order": 7,
                       "title": "IP Addresses"
                     },
                     "mac_addresses": {
@@ -815,8 +843,17 @@
                       "items": {
                         "type": "string"
                       },
-                      "order": 5,
+                      "order": 6,
                       "title": "MAC Addresses",
+                      "type": "array"
+                    },
+                    "parent_domains": {
+                      "description": "Parent domains found within the message",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 2,
+                      "title": "Parent Domains",
                       "type": "array"
                     },
                     "urls": {
@@ -824,7 +861,7 @@
                       "items": {
                         "type": "string"
                       },
-                      "order": 2,
+                      "order": 3,
                       "title": "URLs",
                       "type": "array"
                     }
@@ -879,7 +916,7 @@
                     "indicators": {
                       "$ref": "#/definitions/indicators",
                       "description": "Potential threat indicators found within the message",
-                      "order": 6,
+                      "order": 7,
                       "title": "Indicators"
                     },
                     "text": {
@@ -905,6 +942,15 @@
                       "order": 2,
                       "title": "User ID",
                       "type": "string"
+                    },
+                    "words": {
+                      "description": "The message split by spaces into a list of words. This list makes finding and using parameters in chat commands easier",
+                      "items": {
+                        "type": "string"
+                      },
+                      "order": 6,
+                      "title": "Words",
+                      "type": "array"
                     }
                   },
                   "title": "Message",
@@ -948,14 +994,14 @@
           },
           "4cff4374-3354-4e3a-9143-dbf60966c341": {
             "nodeId": "4cff4374-3354-4e3a-9143-dbf60966c341",
-            "name": "Check if Host Exists",
+            "name": "Check if Address Object Exists",
             "type": "action",
             "plugin": {
               "name": "Fortinet FortiGate",
               "slugVendor": "rapid7",
               "slugName": "fortinet_fortigate",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/5.0.0/icon.png"
+              "slugVersion": "6.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/6.0.0/icon.png"
             },
             "identifier": "get_address_objects",
             "continueOnFailure": false,
@@ -964,8 +1010,9 @@
             "parameters": {
               "input": {
                 "fqdn_filter": "",
-                "name_filter": "{{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}}",
-                "subnet_filter": "{{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}}"
+                "ipv6_subnet_filter": "",
+                "name_filter": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}}",
+                "subnet_filter": ""
               }
             },
             "defaultInputJSONSchema": {
@@ -974,6 +1021,12 @@
                   "description": "Optional FQDN to filter on",
                   "order": 3,
                   "title": "FQDN Filter",
+                  "type": "string"
+                },
+                "ipv6_subnet_filter": {
+                  "description": "Optional IPv6 subnet to filter on",
+                  "order": 4,
+                  "title": "IPv6 Subnet Filter",
                   "type": "string"
                 },
                 "name_filter": {
@@ -998,7 +1051,7 @@
                   "properties": {
                     "allow-routing": {
                       "description": "Allow-routing",
-                      "order": 14,
+                      "order": 15,
                       "title": "Allow-Routing",
                       "type": "string"
                     },
@@ -1010,13 +1063,13 @@
                     },
                     "clearpass-spt": {
                       "description": "Clear Pass-spt",
-                      "order": 16,
+                      "order": 17,
                       "title": "Clear Pass-Spt",
                       "type": "string"
                     },
                     "color": {
                       "description": "Color",
-                      "order": 7,
+                      "order": 8,
                       "title": "Color",
                       "type": "integer"
                     },
@@ -1028,8 +1081,14 @@
                     },
                     "end-mac": {
                       "description": "End-MAC",
-                      "order": 11,
+                      "order": 12,
                       "title": "End-MAC",
+                      "type": "string"
+                    },
+                    "fqdn": {
+                      "description": "FQDN",
+                      "order": 7,
+                      "title": "FQDN",
                       "type": "string"
                     },
                     "fsso-group": {
@@ -1046,7 +1105,7 @@
                       "items": {
                         "type": "object"
                       },
-                      "order": 9,
+                      "order": 10,
                       "title": "List",
                       "type": "array"
                     },
@@ -1064,19 +1123,19 @@
                     },
                     "sdn-addr-type": {
                       "description": "Sdn-addr-type",
-                      "order": 8,
+                      "order": 9,
                       "title": "Sdn-Addr-Type",
                       "type": "string"
                     },
                     "start-mac": {
                       "description": "Start-MAC",
-                      "order": 10,
+                      "order": 11,
                       "title": "Start-MAC",
                       "type": "string"
                     },
                     "sub-type": {
                       "description": "Sub-type",
-                      "order": 12,
+                      "order": 13,
                       "title": "Sub-Type",
                       "type": "string"
                     },
@@ -1091,30 +1150,246 @@
                       "items": {
                         "type": "object"
                       },
-                      "order": 17,
+                      "order": 18,
                       "title": "Tagging",
                       "type": "array"
                     },
                     "type": {
                       "description": "Type",
-                      "order": 15,
+                      "order": 16,
                       "title": "Type",
                       "type": "string"
                     },
                     "uuid": {
                       "description": "UUID",
-                      "order": 18,
+                      "order": 19,
                       "title": "UUID",
                       "type": "string"
                     },
                     "visibility": {
                       "description": "Visibility",
-                      "order": 13,
+                      "order": 14,
                       "title": "Visibility",
                       "type": "string"
                     }
                   },
                   "title": "Address Object",
+                  "type": "object"
+                },
+                "ipv6_address_object": {
+                  "properties": {
+                    "cache-ttl": {
+                      "description": "Cache-TTL",
+                      "order": 8,
+                      "title": "Cache-TTL",
+                      "type": "integer"
+                    },
+                    "color": {
+                      "description": "Color",
+                      "order": 10,
+                      "title": "Color",
+                      "type": "integer"
+                    },
+                    "comment": {
+                      "description": "Comment",
+                      "order": 14,
+                      "title": "Comment",
+                      "type": "string"
+                    },
+                    "end-ip": {
+                      "description": "End IP",
+                      "order": 7,
+                      "title": "End-IP",
+                      "type": "string"
+                    },
+                    "host": {
+                      "description": "Host",
+                      "order": 19,
+                      "title": "Host",
+                      "type": "string"
+                    },
+                    "host-type": {
+                      "description": "Host type",
+                      "order": 18,
+                      "title": "Host-type",
+                      "type": "string"
+                    },
+                    "ip6": {
+                      "description": "IPv6 address",
+                      "order": 5,
+                      "title": "IPv6 Address",
+                      "type": "string"
+                    },
+                    "list": {
+                      "description": "List",
+                      "items": {
+                        "$ref": "#/definitions/list"
+                      },
+                      "order": 12,
+                      "title": "List",
+                      "type": "array"
+                    },
+                    "name": {
+                      "description": "Name",
+                      "order": 1,
+                      "title": "Name",
+                      "type": "string"
+                    },
+                    "obj-id": {
+                      "description": "Object ID for NSX",
+                      "order": 11,
+                      "title": "Obj-ID",
+                      "type": "string"
+                    },
+                    "q_origin_key": {
+                      "description": "Q origin key",
+                      "order": 17,
+                      "title": "Q Origin Key",
+                      "type": "string"
+                    },
+                    "sdn": {
+                      "description": "SDN",
+                      "order": 4,
+                      "title": "SDN",
+                      "type": "string"
+                    },
+                    "start-ip": {
+                      "description": "Start IP",
+                      "order": 6,
+                      "title": "Start-IP",
+                      "type": "string"
+                    },
+                    "subnet-segment": {
+                      "description": "Subnet segment",
+                      "items": {
+                        "$ref": "#/definitions/segments"
+                      },
+                      "order": 16,
+                      "title": "Subnet-segment",
+                      "type": "array"
+                    },
+                    "tagging": {
+                      "description": "Tagging",
+                      "items": {
+                        "$ref": "#/definitions/tagging"
+                      },
+                      "order": 13,
+                      "title": "Tagging",
+                      "type": "array"
+                    },
+                    "template": {
+                      "description": "Template",
+                      "order": 15,
+                      "title": "Template",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "Type",
+                      "order": 3,
+                      "title": "Type",
+                      "type": "string"
+                    },
+                    "uuid": {
+                      "description": "UUID",
+                      "order": 2,
+                      "title": "UUID",
+                      "type": "string"
+                    },
+                    "visibility": {
+                      "description": "Visibility",
+                      "order": 9,
+                      "title": "Visibility",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Ipv6 Address Object",
+                  "type": "object"
+                },
+                "list": {
+                  "properties": {
+                    "ip": {
+                      "description": "IP address",
+                      "order": 1,
+                      "title": "IP Address",
+                      "type": "string"
+                    },
+                    "net-id": {
+                      "description": "Network ID",
+                      "order": 3,
+                      "title": "Net-ID",
+                      "type": "string"
+                    },
+                    "obj-id": {
+                      "description": "Object ID",
+                      "order": 2,
+                      "title": "Obj-ID",
+                      "type": "string"
+                    }
+                  },
+                  "title": "List",
+                  "type": "object"
+                },
+                "segments": {
+                  "properties": {
+                    "name": {
+                      "description": "Name",
+                      "order": 1,
+                      "title": "Name",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "Type",
+                      "order": 2,
+                      "title": "Type",
+                      "type": "string"
+                    },
+                    "value": {
+                      "description": "Value",
+                      "order": 3,
+                      "title": "Value",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Segments",
+                  "type": "object"
+                },
+                "tagging": {
+                  "properties": {
+                    "category": {
+                      "description": "Category",
+                      "order": 2,
+                      "title": "Category",
+                      "type": "string"
+                    },
+                    "name": {
+                      "description": "Name",
+                      "order": 1,
+                      "title": "Name",
+                      "type": "string"
+                    },
+                    "tags": {
+                      "description": "Tags",
+                      "items": {
+                        "$ref": "#/definitions/tags"
+                      },
+                      "order": 3,
+                      "title": "Tags",
+                      "type": "array"
+                    }
+                  },
+                  "title": "Tagging",
+                  "type": "object"
+                },
+                "tags": {
+                  "properties": {
+                    "name": {
+                      "description": "Name",
+                      "order": 1,
+                      "title": "Name",
+                      "type": "string"
+                    }
+                  },
+                  "title": "Tags",
                   "type": "object"
                 }
               },
@@ -1127,10 +1402,20 @@
                   "order": 1,
                   "title": "Address Objects",
                   "type": "array"
+                },
+                "ipv6_address_objects": {
+                  "description": "A list of IPv6 address objects",
+                  "items": {
+                    "$ref": "#/definitions/ipv6_address_object"
+                  },
+                  "order": 2,
+                  "title": "IPv6 Address Objects",
+                  "type": "array"
                 }
               },
               "required": [
-                "address_objects"
+                "address_objects",
+                "ipv6_address_objects"
               ],
               "title": "Variables",
               "type": "object"
@@ -1141,14 +1426,14 @@
           },
           "5dc60d63-ed88-4691-a548-59021b2c6171": {
             "nodeId": "5dc60d63-ed88-4691-a548-59021b2c6171",
-            "name": "Host was Found in Whitelist Message",
+            "name": "Host is Whitelisted or Private Message",
             "type": "action_chatops",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "🔎Host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} was found in whitelist 🔎\n\nBecause the host was found in the whitelist it was not added to the block list.",
+                "message": "⚠️ {{[af855b2c-0b66-4d0d-961f-06e32a91d591].[content]}}",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel_id]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[timestamp]}}"
               }
@@ -1156,7 +1441,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -1197,6 +1482,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1213,15 +1504,38 @@
             "chatOpsAppName": "slack",
             "chatOpsIdentifier": "post_message"
           },
+          "6e0a1c6d-0654-4b94-9e19-fcbe1a0092e1": {
+            "nodeId": "6e0a1c6d-0654-4b94-9e19-fcbe1a0092e1",
+            "name": "Remove Host Failed Artifact",
+            "type": "artifact",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "parameters": {
+              "input": {
+                "content": "The host {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}} was not removed from the blocking group.\n\nThis is often caused by an attempt to remove a host from a group it does not belong to."
+              },
+              "type": "markdown"
+            },
+            "defaultInputJSONSchema": null,
+            "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "connectionType": "NONE"
+          },
           "769171ab-e338-49db-9057-53f6da19c37a": {
             "nodeId": "769171ab-e338-49db-9057-53f6da19c37a",
-            "name": "Add Host To List Failed",
+            "name": "Add Host to Group Failed?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "defaultEdgeId": "11ec5444-eceb-47b5-b4e0-20b31c9eaa42",
               "stepControlParams": [
+                {
+                  "edgeId": "11ec5444-eceb-47b5-b4e0-20b31c9eaa42",
+                  "expression": {},
+                  "expressionText": ""
+                },
                 {
                   "edgeId": "4990bb16-eefb-45cc-8258-492a877bef69",
                   "expression": {
@@ -1237,11 +1551,6 @@
                     "type": "binary"
                   },
                   "expressionText": "{{[fcc8fb43-cddf-4e7d-9a33-89e6f78240f8].[$success]}} == true"
-                },
-                {
-                  "edgeId": "11ec5444-eceb-47b5-b4e0-20b31c9eaa42",
-                  "expression": {},
-                  "expressionText": ""
                 }
               ]
             },
@@ -1253,7 +1562,7 @@
           },
           "7d17e566-e05c-449e-8c6c-7c20ccae3455": {
             "nodeId": "7d17e566-e05c-449e-8c6c-7c20ccae3455",
-            "name": "Remove Host From List Failed",
+            "name": "Remove Host from Group Failed?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -1289,54 +1598,34 @@
             "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
-          "8e8fadef-5163-47c3-a329-bfd6c15e9f1d": {
-            "nodeId": "8e8fadef-5163-47c3-a329-bfd6c15e9f1d",
-            "name": "Extract Action and Host",
-            "type": "pattern_match",
+          "900b55f4-e7ed-4489-a46c-743e57b4aa66": {
+            "nodeId": "900b55f4-e7ed-4489-a46c-743e57b4aa66",
+            "name": "Host Not Found Artifact",
+            "type": "artifact",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
-              "captureAll": false,
-              "expressionText": "<.*> {{action:/.* /}}{{host:/.*/}}",
-              "expressions": [
-                {
-                  "type": "text",
-                  "value": "<.*> "
-                },
-                {
-                  "type": "variable",
-                  "value": {
-                    "ident": "action",
-                    "regex": ".* "
-                  }
-                },
-                {
-                  "type": "variable",
-                  "value": {
-                    "ident": "host",
-                    "regex": ".*"
-                  }
-                }
-              ],
-              "ignoreCase": true,
-              "input": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[text]}}"
+              "input": {
+                "content": "The input could not be correctly parsed.\n\nYour input was {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[text]}}"
+              },
+              "type": "markdown"
             },
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/pattern-match.svg",
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "936ed547-527b-4184-85ea-f3ccfb4466b1": {
             "nodeId": "936ed547-527b-4184-85ea-f3ccfb4466b1",
-            "name": "Add Host Action Failed Message",
+            "name": "Create Address Object Failed Message",
             "type": "action_chatops",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "⚠️ Unable to create the host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} In the FortiGate firewall. ⚠️\n\nSee {{[$job].[URL]}} for more information.",
+                "message": "⚠️ {{[4b8fd8fd-a4fe-4d8f-a190-e844b4d5fb77].[content]}}\n\nSee {{[$job].[URL]}} for more information.",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel_id]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[timestamp]}}"
               }
@@ -1344,7 +1633,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -1385,6 +1674,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1403,7 +1698,7 @@
           },
           "9fed5588-2be5-4114-928e-1eb0f8843c4e": {
             "nodeId": "9fed5588-2be5-4114-928e-1eb0f8843c4e",
-            "name": "Host in Whitelist",
+            "name": "Is Host Whitelisted or Private?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -1448,7 +1743,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "⚠️{{[d00d5c3b-0e54-468b-977b-cbbb21960ca1].[content]}} ⚠️",
+                "message": "⚠️ {{[d00d5c3b-0e54-468b-977b-cbbb21960ca1].[content]}}",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[timestamp]}}"
               }
@@ -1456,7 +1751,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -1495,6 +1790,12 @@
                   "description": "ChannelID of successful message",
                   "order": 1,
                   "title": "Channel ID",
+                  "type": "string"
+                },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
                   "type": "string"
                 },
                 "timestamp": {
@@ -1522,7 +1823,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "✅{{[b3aeb54a-4919-48dd-907b-a97947f0fa4c].[content]}} ✅",
+                "message": "✅ {{[b3aeb54a-4919-48dd-907b-a97947f0fa4c].[content]}}",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[timestamp]}}"
               }
@@ -1530,7 +1831,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -1571,6 +1872,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1589,13 +1896,13 @@
           },
           "af855b2c-0b66-4d0d-961f-06e32a91d591": {
             "nodeId": "af855b2c-0b66-4d0d-961f-06e32a91d591",
-            "name": "Host in Whitelist Artifact",
+            "name": "Host is Whitelisted or Private Artifact",
             "type": "artifact",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "The host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} was found in the whitelist. {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} not added to block list."
+                "content": "{{[b6be898d-28ee-4ead-93a1-ac177ced8973].[response_object].[message]}}\n\nThe host {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}} was not added to the blocked group."
               },
               "type": "markdown"
             },
@@ -1613,7 +1920,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "The host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} was removed to the address group {{[dbaf4fba-860b-470a-8cab-b778152fd609].[result_object].[mkey]}}"
+                "content": "The host {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}} was removed from the address group {{[dbaf4fba-860b-470a-8cab-b778152fd609].[result_object].[mkey]}}"
               },
               "type": "markdown"
             },
@@ -1625,14 +1932,14 @@
           },
           "b6be898d-28ee-4ead-93a1-ac177ced8973": {
             "nodeId": "b6be898d-28ee-4ead-93a1-ac177ced8973",
-            "name": "Add Host to be Blocked",
+            "name": "Create Address Object",
             "type": "action",
             "plugin": {
               "name": "Fortinet FortiGate",
               "slugVendor": "rapid7",
               "slugName": "fortinet_fortigate",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/5.0.0/icon.png"
+              "slugVersion": "6.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/6.0.0/icon.png"
             },
             "identifier": "create_address_object",
             "continueOnFailure": true,
@@ -1640,8 +1947,8 @@
             "isCloud": false,
             "parameters": {
               "input": {
-                "address": "{{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}}",
-                "address_object": "",
+                "address": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}}",
+                "address_object": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}}",
                 "skip_rfc1918": true,
                 "whitelist": []
               }
@@ -1678,8 +1985,8 @@
                 }
               },
               "required": [
-                "address",
-                "skip_rfc1918"
+                "skip_rfc1918",
+                "address"
               ],
               "title": "Variables",
               "type": "object"
@@ -1719,7 +2026,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "✅{{[ebaa672f-650f-41f0-bb16-e3f6c56c0aca].[content]}} ✅",
+                "message": "✅ {{[ebaa672f-650f-41f0-bb16-e3f6c56c0aca].[content]}}",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[timestamp]}}"
               }
@@ -1727,7 +2034,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -1768,6 +2075,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1792,7 +2105,25 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "The host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} was not added to the address group {{[fcc8fb43-cddf-4e7d-9a33-89e6f78240f8].[result_object].[mkey]}}"
+                "content": "The host {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}} was not added to the address group {{[fcc8fb43-cddf-4e7d-9a33-89e6f78240f8].[result_object].[mkey]}}"
+              },
+              "type": "markdown"
+            },
+            "defaultInputJSONSchema": null,
+            "defaultOutputJSONSchema": null,
+            "outputJSONSchema": null,
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "connectionType": "NONE"
+          },
+          "d3ce49c3-79ee-4a9d-bec2-ddf62866a359": {
+            "nodeId": "d3ce49c3-79ee-4a9d-bec2-ddf62866a359",
+            "name": "Add Host to Be Blocked Failed Artifact",
+            "type": "artifact",
+            "continueOnFailure": false,
+            "isDisabled": false,
+            "parameters": {
+              "input": {
+                "content": "Unable to add the host {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}} to the blocking group.\n\nThis is often caused by trying to add a host to a group it already belongs to."
               },
               "type": "markdown"
             },
@@ -1804,14 +2135,14 @@
           },
           "dbaf4fba-860b-470a-8cab-b778152fd609": {
             "nodeId": "dbaf4fba-860b-470a-8cab-b778152fd609",
-            "name": "Remove Host From Block Group",
+            "name": "Remove Host from Group",
             "type": "action",
             "plugin": {
               "name": "Fortinet FortiGate",
               "slugVendor": "rapid7",
               "slugName": "fortinet_fortigate",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/5.0.0/icon.png"
+              "slugVersion": "6.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/6.0.0/icon.png"
             },
             "identifier": "remove_address_object_from_group",
             "continueOnFailure": true,
@@ -1819,15 +2150,16 @@
             "isCloud": false,
             "parameters": {
               "input": {
-                "address_object": "{{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}}",
-                "group": "change_me"
+                "address_object": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}}",
+                "group": "{{$workflow.[Group Name]}}",
+                "ipv6_group": "{{$workflow.[IPv6 Group Name]}}"
               }
             },
             "defaultInputJSONSchema": {
               "properties": {
                 "address_object": {
                   "description": "Address object",
-                  "order": 2,
+                  "order": 3,
                   "title": "Address Object",
                   "type": "string"
                 },
@@ -1836,11 +2168,18 @@
                   "order": 1,
                   "title": "Group",
                   "type": "string"
+                },
+                "ipv6_group": {
+                  "description": "The name of the IPv6 address group",
+                  "order": 2,
+                  "title": "IPv6 Group",
+                  "type": "string"
                 }
               },
               "required": [
-                "group",
-                "address_object"
+                "ipv6_group",
+                "address_object",
+                "group"
               ],
               "title": "Variables",
               "type": "object"
@@ -1873,7 +2212,7 @@
           },
           "decb42d6-f84f-4d7a-9fb4-990e955b7c5e": {
             "nodeId": "decb42d6-f84f-4d7a-9fb4-990e955b7c5e",
-            "name": "Check if Added",
+            "name": "Host Added?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -1911,7 +2250,7 @@
           },
           "e1214265-784e-4df2-85c6-43a20adf5ccc": {
             "nodeId": "e1214265-784e-4df2-85c6-43a20adf5ccc",
-            "name": "Host Already in FotiGate",
+            "name": "Host Already in FortiGate",
             "type": "join",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -1945,7 +2284,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "⚠️The input could not be correctly parsed  ⚠️\n\nYour input was {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[text]}}",
+                "message": "⚠️ {{[900b55f4-e7ed-4489-a46c-743e57b4aa66].[content]}}",
                 "recipient": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[channel]}}",
                 "thread_ts": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[timestamp]}}"
               }
@@ -1953,7 +2292,7 @@
             "defaultInputJSONSchema": {
               "properties": {
                 "attachments": {
-                  "description": "JSON array of attachments - see https://api.slack.com/docs/message-attachments (Advanced)",
+                  "description": "JSON array of attachments - see Help for documentation",
                   "items": {
                     "type": "object"
                   },
@@ -1994,6 +2333,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -2018,7 +2363,7 @@
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "The host {{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}} was added to the address group {{[fcc8fb43-cddf-4e7d-9a33-89e6f78240f8].[result_object].[mkey]}}"
+                "content": "The host {{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}} was added to the address group {{[fcc8fb43-cddf-4e7d-9a33-89e6f78240f8].[result_object].[mkey]}}"
               },
               "type": "markdown"
             },
@@ -2030,7 +2375,7 @@
           },
           "f555d0c4-ff83-4210-bc11-97fa8720b790": {
             "nodeId": "f555d0c4-ff83-4210-bc11-97fa8720b790",
-            "name": "Host Already Exists",
+            "name": "Address Object Already Exists?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -2041,17 +2386,17 @@
                   "edgeId": "1d891611-5a5e-45e0-8f42-cf19aa7cc95c",
                   "expression": {
                     "left": {
-                      "name": "328f4452-07ab-4569-b53e-38c7ad3ccba6.content",
+                      "name": "4cff4374-3354-4e3a-9143-dbf60966c341.address_objects",
                       "type": "variable"
                     },
-                    "op": "!=",
+                    "op": "OR",
                     "right": {
-                      "type": "literal",
-                      "value": ""
+                      "name": "4cff4374-3354-4e3a-9143-dbf60966c341.ipv6_address_objects",
+                      "type": "variable"
                     },
                     "type": "binary"
                   },
-                  "expressionText": "{{[328f4452-07ab-4569-b53e-38c7ad3ccba6].[content]}} != \"\""
+                  "expressionText": "{{[4cff4374-3354-4e3a-9143-dbf60966c341].[address_objects]}} or {{[4cff4374-3354-4e3a-9143-dbf60966c341].[ipv6_address_objects]}}"
                 },
                 {
                   "edgeId": "544960fe-1d9d-42a1-8b02-4d44dc614a46",
@@ -2074,8 +2419,8 @@
               "name": "Fortinet FortiGate",
               "slugVendor": "rapid7",
               "slugName": "fortinet_fortigate",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/5.0.0/icon.png"
+              "slugVersion": "6.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/6.0.0/icon.png"
             },
             "identifier": "add_address_object_to_address_group",
             "continueOnFailure": true,
@@ -2083,15 +2428,16 @@
             "isCloud": false,
             "parameters": {
               "input": {
-                "address_object": "{{[8e8fadef-5163-47c3-a329-bfd6c15e9f1d].[host]}}",
-                "group": "change_me"
+                "address_object": "{{[4bacdaed-cdf2-42dc-b24a-ccbef8dce9bd].[message].[words].[1]}}",
+                "group": "{{$workflow.[Group Name]}}",
+                "ipv6_group": "{{$workflow.[IPv6 Group Name]}}"
               }
             },
             "defaultInputJSONSchema": {
               "properties": {
                 "address_object": {
                   "description": "Address object",
-                  "order": 2,
+                  "order": 3,
                   "title": "Address Object",
                   "type": "string"
                 },
@@ -2100,10 +2446,17 @@
                   "order": 1,
                   "title": "Group",
                   "type": "string"
+                },
+                "ipv6_group": {
+                  "description": "The name of the IPv6 address group",
+                  "order": 2,
+                  "title": "IPv6 Group",
+                  "type": "string"
                 }
               },
               "required": [
                 "group",
+                "ipv6_group",
                 "address_object"
               ],
               "title": "Variables",
@@ -2138,16 +2491,38 @@
         },
         "tags": null,
         "humanCostSeconds": 300,
-        "humanCostDisplayUnit": "minutes"
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": {
+            "type": "object",
+            "required": [],
+            "properties": {
+              "Channel": {
+                "type": "string",
+                "description": "The Slack channel name in your environment where the workflow should be triggered."
+              },
+              "Group Name": {
+                "type": "string",
+                "description": "The group name for blocked IPv4 addresses and domains."
+              },
+              "IPv6 Group Name": {
+                "type": "string",
+                "description": "The group name for blocked IPv6 addresses."
+              }
+            },
+            "definitions": {}
+          }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "8fce11d1-d3d7-476a-b32d-f7504121489e",
+        "id": "4a23eeca-8199-4a47-b08a-0aa237972b4d",
         "name": "Block Request",
         "description": "Slack message received trigger",
         "input": {
-          "matchChannel": "change_me",
+          "matchChannel": "{{$workflow.[Channel]}}",
           "matchText": "(block-host.*|unblock-host.*)",
           "type": "any"
         },
@@ -2235,20 +2610,20 @@
                   "items": {
                     "type": "string"
                   },
-                  "order": 3,
+                  "order": 4,
                   "title": "Email Addresses",
                   "type": "array"
                 },
                 "hashes": {
                   "$ref": "#/definitions/hashes",
                   "description": "Hashes found within the message",
-                  "order": 4,
+                  "order": 5,
                   "title": "Hashes"
                 },
                 "ip_addresses": {
                   "$ref": "#/definitions/ip_addresses",
                   "description": "IP addresses found within the message",
-                  "order": 6,
+                  "order": 7,
                   "title": "IP Addresses"
                 },
                 "mac_addresses": {
@@ -2256,8 +2631,17 @@
                   "items": {
                     "type": "string"
                   },
-                  "order": 5,
+                  "order": 6,
                   "title": "MAC Addresses",
+                  "type": "array"
+                },
+                "parent_domains": {
+                  "description": "Parent domains found within the message",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 2,
+                  "title": "Parent Domains",
                   "type": "array"
                 },
                 "urls": {
@@ -2265,7 +2649,7 @@
                   "items": {
                     "type": "string"
                   },
-                  "order": 2,
+                  "order": 3,
                   "title": "URLs",
                   "type": "array"
                 }
@@ -2320,7 +2704,7 @@
                 "indicators": {
                   "$ref": "#/definitions/indicators",
                   "description": "Potential threat indicators found within the message",
-                  "order": 6,
+                  "order": 7,
                   "title": "Indicators"
                 },
                 "text": {
@@ -2346,6 +2730,15 @@
                   "order": 2,
                   "title": "User ID",
                   "type": "string"
+                },
+                "words": {
+                  "description": "The message split by spaces into a list of words. This list makes finding and using parameters in chat commands easier",
+                  "items": {
+                    "type": "string"
+                  },
+                  "order": 6,
+                  "title": "Words",
+                  "type": "array"
                 }
               },
               "title": "Message",

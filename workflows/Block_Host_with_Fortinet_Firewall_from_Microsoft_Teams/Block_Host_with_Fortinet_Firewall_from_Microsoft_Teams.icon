@@ -2,7 +2,7 @@
   "kom": {
     "komandVersion": "1.96.4-0-g2fd81",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2022-02-04T15:44:41.419022713Z",
+    "exportedAt": "2022-02-07T13:52:00.422511113Z",
     "workflowVersions": [
       {
         "name": "Block Host with Fortinet Firewall from Microsoft Teams",
@@ -778,7 +778,7 @@
           },
           "19163cd1-69cf-487c-812a-d1aa6f1badd4": {
             "nodeId": "19163cd1-69cf-487c-812a-d1aa6f1badd4",
-            "name": "Add Host to be Blocked Address Group",
+            "name": "Add Host to Be Blocked Address Group",
             "type": "action",
             "plugin": {
               "name": "Fortinet FortiGate",
@@ -2927,7 +2927,7 @@
           },
           "b51a5d2c-5dfa-4402-9350-2d19fdfd6554": {
             "nodeId": "b51a5d2c-5dfa-4402-9350-2d19fdfd6554",
-            "name": "Add Host to be Blocked Failed Artifact",
+            "name": "Add Host to Be Blocked Failed Artifact",
             "type": "artifact",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -3160,7 +3160,7 @@
           },
           "decb42d6-f84f-4d7a-9fb4-990e955b7c5e": {
             "nodeId": "decb42d6-f84f-4d7a-9fb4-990e955b7c5e",
-            "name": "Check if Added",
+            "name": "Host Added?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -3413,7 +3413,7 @@
           },
           "efc0e7bd-692b-43fd-9018-dbdc1695f7e1": {
             "nodeId": "efc0e7bd-692b-43fd-9018-dbdc1695f7e1",
-            "name": "Add Host to be Blocked Failed Message",
+            "name": "Add Host to Be Blocked Failed Message",
             "type": "action",
             "plugin": {
               "name": "Microsoft Teams",

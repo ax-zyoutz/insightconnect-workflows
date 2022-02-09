@@ -7,7 +7,7 @@ version: 1.0.2
 vendor: rapid7
 support: rapid7
 status: []
-extension_library: 
+hub_tags:
   use_cases: [vulnerability_management, threat_intel]
   keywords: [enrichment, cve, parameters]
   features: []

@@ -7,7 +7,7 @@ version: 1.0.0
 vendor: rapid7
 support: rapid7
 status: []
-extension_library: 
+hub_tags:
   use_cases: [threat_intel]
   keywords: [chat, work_from_home]
   features: []

@@ -7,7 +7,7 @@ version: 1.0.3
 vendor: rapid7
 support: rapid7
 status: [hidden]
-extension_library: 
+hub_tags:
   use_cases: ['']
   keywords: [mdr, containment, quarantine, active_response, parameters]
   features: []

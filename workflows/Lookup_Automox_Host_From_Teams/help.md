@@ -23,7 +23,7 @@ system, host status, and patch status details. Lookup can be performed by either
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. 
 Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-There are two workflow parameters you will need to configure in order to complete setup of your workflow:
+There are three workflow parameters you will need to configure in order to complete setup of your workflow:
 * `Automox Organization ID`: The Automox organization used for performing host lookups
 * `Team Name`: The Microsoft Teams team name where the workflow will be triggered and respond 
 * `Channel Name`: The Microsoft Teams channel name where the workflow will be triggered and respond

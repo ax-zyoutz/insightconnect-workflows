@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect"]
 name: Enrich_URL_with_Threat_Crowd_from_Slack
 title: "Enrich URL with Threat Crowd from Slack"
-description: Enrich a potentially malicious web URL with threat intelligence provided by Threat Crowd from Slack.
+description: "Enrich a potentially malicious web URL with threat intelligence provided by Threat Crowd from Slack."
 version: 1.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [data_enrichment, threat_detection_and_response]
-  keywords: [slack, chat, chatops, work_from_home, cloud_enabled]
+  use_cases: [threat_intel]
+  keywords: [chat, chatops, work_from_home, cloud_enabled]
   features: []
+  vendors: [slack, threatcrowd]
+  products: [slack, threatcrowd]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Enrich_URL_with_Threat_Crowd_from_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

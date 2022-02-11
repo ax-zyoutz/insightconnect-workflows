@@ -8,9 +8,11 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response, data_enrichment]
-  keywords: [enrichment, slack, url, ip, hash, ioc, chat, work_from_home, phishing]
+  use_cases: [threat_intel]
+  keywords: [enrichment, url, ip, hash, ioc, chat, work_from_home, phishing]
   features: []
+  vendors: [slack, team_cymru, whois]
+  products: [slack, team_cymru_mhr, whois]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Enrich_Indicators_with_OSINT_from_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

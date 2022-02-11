@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect"]
 name: GeoIP_Lookup_with_Slack
 title: "Enrich IP with IPStack from Slack"
-description: Geolocate an IP address using IPStack's geoip database with a simple Slack command.
+description: "Geolocate an IP address using IPStack's geoip database with a simple Slack command."
 version: 1.0.4
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [data_enrichment, threat_detection_and_response]
-  keywords: [geoip, location, slack, chat, chatops, work_from_home, phishing]
+  use_cases: [threat_intel]
+  keywords: [geoip, location, chat, chatops, work_from_home, phishing]
   features: []
+  vendors: [slack, ipstack]
+  products: [slack, ipstack]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/GeoIP_Lookup_with_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

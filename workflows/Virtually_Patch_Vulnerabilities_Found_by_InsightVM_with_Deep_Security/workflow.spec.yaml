@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect", "insightvm"]
 name: Virtually_Patch_Vulnerabilities_Found_by_InsightVM_with_Deep_Security
 title: "Virtually Patch Vulnerabilities Found by InsightVM with Deep Security"
-description: Automatically protect your assets against exploitation of vulnerabilities found by InsightVM with Deep Security virtual patching.
+description: "Automatically protect your assets against exploitation of vulnerabilities found by InsightVM with Deep Security virtual patching."
 version: 1.1.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [vulnerability_management, remediation_management]
-  keywords: [insightvm, trend_micro, deep_security, virtual_patching, intrusion_prevention]
+  use_cases: [Patch Management]
+  keywords: [trend_micro, deep_security, virtual_patching, intrusion_prevention]
   features: []
+  vendors: [rapid7]
+  products: [insightvm]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Virtually_Patch_Vulnerabilities_Found_by_InsightVM_with_Deep_Security
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
@@ -30,6 +32,6 @@ resources:
   - name: workflow7.png
     title: Workflow 7
   - name: artifact01.png
-    title: Report Artifact Sucessful Assignment of One Rule
+    title: Report Artifact Successful Assignment of One Rule
   - name: artifact02.png
-    title: Report Artifact Sucessful Assignment of Multiple Rules
+    title: Report Artifact Successful Assignment of Multiple Rules

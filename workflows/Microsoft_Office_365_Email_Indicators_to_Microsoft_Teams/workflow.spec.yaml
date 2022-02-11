@@ -8,9 +8,11 @@ vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response]
-  keywords: [email, microsoft_teams, microsoft, office365, phishing, parameters]
+  use_cases: [alerting_and_notifications, phishing, threat_intel]
+  keywords: [email, office365, parameters]
   features: []
+  vendors: [microsoft]
+  products: [microsoft_teams, microsoft_office365]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Microsoft_Office_365_Email_Indicators_to_Microsoft_Teams
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

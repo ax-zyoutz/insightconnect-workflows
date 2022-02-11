@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect"]
 name: Quarantine_Endpoint_with_Broadcom_Symantec_Endpoint_Protection_from_Microsoft_Teams
 title: "Quarantine Endpoint with Broadcom Symantec Endpoint Protection from Microsoft Teams"
-description: Manage the quarantine state of an endpoint with Broadcom Symantec Endpoint Protection from Microsoft Teams.
+description: "Manage the quarantine state of an endpoint with Broadcom Symantec Endpoint Protection from Microsoft Teams."
 version: 1.1.1
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [threat_detection_and_response]
-  keywords: [chat, blacklist, containment, microsoft_teams, symantec]
+  use_cases: [endpoint_detection_response]
+  keywords: [chat, blacklist, containment]
   features: []
+  vendors: [microsoft, broadcom, symantec]
+  products: [microsoft_teams, symantec_endpoint]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Quarantine_Endpoint_with_Broadcom_Symantec_Endpoint_Protection_from_Microsoft_Teams
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
@@ -21,4 +23,3 @@ resources:
     title: Successful Unquarantine
   - name: workflow1.png
     title: Workflow Overview
-

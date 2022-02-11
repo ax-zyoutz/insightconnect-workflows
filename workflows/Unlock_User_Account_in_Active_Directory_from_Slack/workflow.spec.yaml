@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect"]
 name: Unlock_User_Account_in_Active_Directory_from_Slack
 title: "Unlock User Account in Active Directory from Slack"
-description: Unlock an AD/LDAP user with a message in Slack.
+description: "Unlock an AD/LDAP user with a message in Slack."
 version: 1.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [remediation_management, user_management]
-  keywords: [slack, active_directory, ldap, parameters]
+  use_cases: [iam, utility]
+  keywords: [active_directory, ldap, parameters]
   features: []
+  vendors: [slack]
+  products: [slack, active_directory_ldap]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Unlock_User_Account_in_Active_Directory_from_Slack
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

@@ -2,15 +2,17 @@ extension: workflow
 products: ["insightconnect", "insightvm"]
 name: Delete_Inactive_Assets_with_InsightVM_from_Teams
 title: "Delete Inactive Assets with InsightVM from Teams"
-description: Quickly look up inactive assets in Rapid7 InsightVM from Teams, and make a decision to delete them. This workflow helps teams maintain a clean and accurate count of assets in their environment through shared Microsoft Teams channels.
+description: "Quickly look up inactive assets in Rapid7 InsightVM from Teams, and make a decision to delete them. This workflow helps teams maintain a clean and accurate count of assets in their environment through shared Microsoft Teams channels."
 version: 1.0.1
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
-  use_cases: [vulnerability_management]
-  keywords: [microsoft_teams, insightvm, parameters]
+  use_cases: [asset_management, vulnerability_management]
+  keywords: [parameters]
   features: []
+  vendors: [microsoft, rapid7]
+  products: [microsoft_teams, insightvm]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Delete_Inactive_Assets_with_InsightVM_from_Teams
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE

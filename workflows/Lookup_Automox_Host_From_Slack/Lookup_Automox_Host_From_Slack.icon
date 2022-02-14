@@ -2,7 +2,7 @@
   "kom": {
     "komandVersion": "1.97.1-0-gf4ed5",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2022-02-14T16:59:25.414548248Z",
+    "exportedAt": "2022-02-14T17:06:50.442574169Z",
     "workflowVersions": [
       {
         "name": "Lookup Automox Host from Slack",
@@ -185,7 +185,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": "No results matching `{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[message].[words].[1]}}` were found in Automox.\nhttps://media.giphy.com/media/3osxYC89Dw8RHY19OE/giphy.gif",
+                "message": "No results matching `{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[message].[words].[1]}}` were found in Automox.\nhttps://media.giphy.com/media/3osxYC89Dw8RHY19OE/giphy.gif\n\nView your workflow job <{{[$job].[URL]}}|here>.",
                 "recipient": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[message].[channel_id]}}",
                 "thread_ts": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[message].[ts]}}"
               }
@@ -825,7 +825,7 @@
             "parameters": {
               "input": {
                 "attachments": [],
-                "message": ":computer: *Host Info*\nHostname: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[name]}}\nIP Addresses:\n{{#each [32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[ip_addrs]}}\n* {{this}}\n{{/each}}\nOperating System: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[os_family]}} {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[os_name]}}\n\n:mag:*Host Status*\nAgent Status: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[status].[agent_status]}}\nPolicy Status: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[status].[policy_status]}}\nLast Refresh Time: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[last_refresh_time]}}\n\n:adhesive_bandage:*Patch Details*\nNumber of Pending Patches: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[pending_patches]}}\nNext Patch Time: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[next_patch_time]}}\nAssigned Policies:\n{{#each [32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[policy_status]}}\n* {{this.[policy_name]}} [{{this.[policy_type_name]}}]\n{{/each}}",
+                "message": ":computer: *Host Info*\nHostname: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[name]}}\nIP Addresses:\n{{#each [32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[ip_addrs]}}\n* {{this}}\n{{/each}}\nOperating System: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[os_family]}} {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[os_name]}}\n\n:mag:*Host Status*\nAgent Status: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[status].[agent_status]}}\nPolicy Status: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[status].[policy_status]}}\nLast Refresh Time: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[last_refresh_time]}}\n\n:adhesive_bandage:*Patch Details*\nNumber of Pending Patches: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[pending_patches]}}\nNext Patch Time: {{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[next_patch_time]}}\nAssigned Policies:\n{{#each [32e3b64e-a706-4b43-8d70-96c8078a80a0].[host].[policy_status]}}\n* {{this.[policy_name]}} [{{this.[policy_type_name]}}]\n{{/each}}\n\nView your workflow job <{{[$job].[URL]}}|here>.",
                 "recipient": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[message].[channel_id]}}",
                 "thread_ts": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[timestamp]}}"
               }

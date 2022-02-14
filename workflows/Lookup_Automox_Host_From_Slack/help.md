@@ -12,8 +12,8 @@ host status, and patch status details. Lookup can be performed by either hostnam
 
 # Requirements
 
-* Automox API Key
-* InsightConnect License
+* Automox API key
+* InsightConnect license
 * [Slack](https://insightconnect.help.rapid7.com/docs/configure-slack-for-chatops)
 
 # Documentation

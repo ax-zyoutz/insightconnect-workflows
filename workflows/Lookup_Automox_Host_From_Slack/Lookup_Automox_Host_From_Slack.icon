@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.97.0-0-g29c1f",
+    "komandVersion": "1.97.1-0-gf4ed5",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2022-02-11T20:15:45.640301375Z",
+    "exportedAt": "2022-02-14T16:59:25.414548248Z",
     "workflowVersions": [
       {
         "name": "Lookup Automox Host from Slack",
@@ -664,10 +664,18 @@
                 {
                   "edgeId": "c20b633e-f9ed-4a8b-9f11-83e37e42364c",
                   "expression": {
-                    "name": "32e3b64e-a706-4b43-8d70-96c8078a80a0.success",
-                    "type": "variable"
+                    "left": {
+                      "name": "32e3b64e-a706-4b43-8d70-96c8078a80a0.success",
+                      "type": "variable"
+                    },
+                    "op": "=",
+                    "right": {
+                      "type": "literal",
+                      "value": true
+                    },
+                    "type": "binary"
                   },
-                  "expressionText": "{{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[success]}}"
+                  "expressionText": "{{[32e3b64e-a706-4b43-8d70-96c8078a80a0].[success]}} = true"
                 }
               ]
             },

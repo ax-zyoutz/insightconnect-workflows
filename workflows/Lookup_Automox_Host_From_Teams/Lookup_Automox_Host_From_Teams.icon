@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.97.0-0-g29c1f",
+    "komandVersion": "1.97.1-0-gf4ed5",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2022-02-11T20:21:45.031753291Z",
+    "exportedAt": "2022-02-14T16:56:55.276748288Z",
     "workflowVersions": [
       {
         "name": "Lookup Automox Host from Teams",
@@ -1461,10 +1461,18 @@
                 {
                   "edgeId": "c20b633e-f9ed-4a8b-9f11-83e37e42364c",
                   "expression": {
-                    "name": "70efa60e-3b43-4dec-ad63-ec45c1286114.success",
-                    "type": "variable"
+                    "left": {
+                      "name": "70efa60e-3b43-4dec-ad63-ec45c1286114.success",
+                      "type": "variable"
+                    },
+                    "op": "=",
+                    "right": {
+                      "type": "literal",
+                      "value": true
+                    },
+                    "type": "binary"
                   },
-                  "expressionText": "{{[70efa60e-3b43-4dec-ad63-ec45c1286114].[success]}}"
+                  "expressionText": "{{[70efa60e-3b43-4dec-ad63-ec45c1286114].[success]}} = true"
                 }
               ]
             },

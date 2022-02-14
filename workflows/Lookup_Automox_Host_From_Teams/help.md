@@ -12,8 +12,8 @@ system, host status, and patch status details. Lookup can be performed by either
 
 # Requirements
 
-* Automox API Key
-* InsightConnect License
+* Automox API key
+* InsightConnect license
 * [Microsoft Teams](https://docs.rapid7.com/insightconnect/microsoft-teams/)
 
 # Documentation

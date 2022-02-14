@@ -2,7 +2,7 @@
   "kom": {
     "komandVersion": "1.97.1-0-gf4ed5",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2022-02-14T16:56:55.276748288Z",
+    "exportedAt": "2022-02-14T17:26:09.64847466Z",
     "workflowVersions": [
       {
         "name": "Lookup Automox Host from Teams",
@@ -1493,30 +1493,30 @@
               "slugVersion": "3.1.5",
               "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
-            "identifier": "send_message",
+            "identifier": "send_html_message",
             "continueOnFailure": false,
             "isDisabled": false,
             "isCloud": false,
             "parameters": {
               "input": {
-                "channel_name": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[channel_name]}}",
-                "message": "No host matching `{{[61855db7-9d9e-46ab-8176-6e18cd3d8299].[argument]}}` was found in Automox. ",
-                "team_name": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[team_name]}}",
+                "channel_name": "{{$workflow.[Channel Name]}}",
+                "message_content": "<html>\nNo host matching `{{[61855db7-9d9e-46ab-8176-6e18cd3d8299].[argument]}}` was found in Automox. \n\nView your workflow job <a href=\"{{[$job].[URL]}}\">here</a>.\n</html>",
+                "team_name": "{{$workflow.[Team Name]}}",
                 "thread_id": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[message].[id]}}"
               }
             },
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
-                  "description": "Channel",
+                  "description": "Channel name",
                   "order": 2,
                   "title": "Channel Name",
                   "type": "string"
                 },
-                "message": {
-                  "description": "Message to send",
+                "message_content": {
+                  "description": "HTML content to send",
                   "order": 4,
-                  "title": "Message",
+                  "title": "Message Content",
                   "type": "string"
                 },
                 "team_name": {
@@ -1533,9 +1533,9 @@
                 }
               },
               "required": [
-                "team_name",
                 "channel_name",
-                "message"
+                "message_content",
+                "team_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -1697,7 +1697,7 @@
             "parameters": {
               "input": {
                 "channel_name": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[channel_name]}}",
-                "message_content": "<html>\n💻 <b>Host Info</b>\n<blockquote>Hostname: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[name]}}<br>\nIP Addresses:<br>\n<ul>\n{{#each [70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[ip_addrs]}}\n<li>{{this}}</li>\n{{/each}}\n</ul>\nOperating System: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[os_family]}} {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[os_name]}}<br></blockquote>\n\n🔎 <b>Host Status</b>\n<blockquote>Agent Status: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[status].[agent_status]}}<br>\nPolicy Status: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[status].[policy_status]}}<br>\nLast Refresh Time: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[last_refresh_time]}}<br></blockquote>\n\n🩹 <b>Patch Details</b>\n<blockquote>Number of Pending Patches: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[pending_patches]}}<br>\nNext Patch Time: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[next_patch_time]}}<br>\nAssigned Policies:<br>\n<ul>\n{{#each [70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[policy_status]}}\n<li>{{this.[policy_name]}} [{{this.[policy_type_name]}}]</li>\n{{/each}}\n</ul></blockquote>\n</html>",
+                "message_content": "<html>\n💻 <b>Host Info</b>\n<blockquote>Hostname: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[name]}}<br>\nIP Addresses:<br>\n<ul>\n{{#each [70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[ip_addrs]}}\n<li>{{this}}</li>\n{{/each}}\n</ul>\nOperating System: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[os_family]}} {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[os_name]}}<br></blockquote>\n\n🔎 <b>Host Status</b>\n<blockquote>Agent Status: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[status].[agent_status]}}<br>\nPolicy Status: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[status].[policy_status]}}<br>\nLast Refresh Time: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[last_refresh_time]}}<br></blockquote>\n\n🩹 <b>Patch Details</b>\n<blockquote>Number of Pending Patches: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[pending_patches]}}<br>\nNext Patch Time: {{[70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[next_patch_time]}}<br>\nAssigned Policies:<br>\n<ul>\n{{#each [70efa60e-3b43-4dec-ad63-ec45c1286114].[host].[policy_status]}}\n<li>{{this.[policy_name]}} [{{this.[policy_type_name]}}]</li>\n{{/each}}\n</ul></blockquote>\n\nView your workflow job <a href=\"{{[$job].[URL]}}\">here</a>.\n</html>",
                 "team_name": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[team_name]}}",
                 "thread_id": "{{[8b5f067d-03aa-4d9e-a06b-5ad7dda77b99].[message].[id]}}"
               }

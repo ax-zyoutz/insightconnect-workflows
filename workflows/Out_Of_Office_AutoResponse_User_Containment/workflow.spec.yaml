@@ -11,7 +11,7 @@ hub_tags:
   use_cases: [iam, alerting_and_notifications]
   keywords: [chat, chatops]
   features: []
-  vendors: [microsoft, whois, rapid7, slack, attlassian]
+  vendors: [microsoft, whois, rapid7, slack, atlassian]
   products: [active_directory_ldap, whois, insightidr, slack, jira]
 resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Out_Of_Office_AutoResponse_User_Containment

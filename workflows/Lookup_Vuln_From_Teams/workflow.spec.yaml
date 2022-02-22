@@ -3,7 +3,7 @@ products: ["insightconnect", "insightvm"]
 name: Lookup_Vuln_From_Teams
 title: "Lookup Vulnerability from Microsoft Teams"
 description: "Get vulnerability details, severity, and remediation information in a Microsoft Teams message."
-version: 2.0.1
+version: 2.0.2
 vendor: rapid7
 support: rapid7
 status: []
@@ -21,5 +21,9 @@ resources:
     title: Vulnerability Details in Teams
   - name: Teams_MultipleResults.png
     title: Vulnerability Details in Teams (Multiple Results)
+  - name: TeamsNotFound.png
+    title: Vulnerability Not Found
   - name: WorkflowBuilder.png
     title: Workflow View
+  - name: WorkflowBuilderLoop.png
+    title: Workflow Loop View

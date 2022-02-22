@@ -10,7 +10,6 @@ Sample Trigger Commands:
 
 `!lookup-vuln MS08-067`
 
-
 # Key Features
 
 * Lookup vulnerability information from a designated Microsoft Teams channel
@@ -27,9 +26,30 @@ Sample Trigger Commands:
 
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-Once the workflow has been imported, set the `Team Name` and `Channel Name` parameters to the Microsoft Teams channel where your workflow may be run from. **Remember to add your Microsoft Teams user to this channel!**
+This workflow leverages InsightConnect's Parameters feature. This feature allows variables used multiple times throughout a workflow to be entered once and then referenced throughout the workflow.
+
+There are two parameters you will need to configure in order to complete setup of your workflow:
+
+* Team Name: The Microsoft Teams team name in your environment where the workflow should be triggered and respond
+* Channel Name: The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team)
+
+To begin, select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
 
 After configuring the Microsoft Teams parameters, activate the workflow in order to trigger it.
+
+### Usage
+
+*This workflow will only trigger in the channel specified in the Microsoft Teams workflow steps.*
+
+To run the workflow, send a message to the specified Microsoft Teams channel starting with the command `!lookup-vuln`.
+
+For example:
+
+`!lookup-vuln CVE-2020-0674`
+
+`!lookup-vuln printnightmare`
+
+The workflow will post status updates in the designated Microsoft Teams channel as it runs.
 
 ## Technical Details
 
@@ -37,9 +57,9 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Microsoft Teams|3.1.2|5|
+|Microsoft Teams|3.1.5|6|
 |HTML|1.2.2|1|
-|Rapid7 Vulnerability & Exploit Database|2.0.3|2|
+|Rapid7 Vulnerability & Exploit Database|2.1.0|2|
 |Basename|1.1.0|1|
 
 ## Troubleshooting
@@ -48,6 +68,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.2 - Update Microsoft Teams to version 3.1.5 | Update Rapid7 Vulnerability & Exploit Database to version 2.1.0 | Update documentation
 * 2.0.1 - Update keywords
 * 2.0.0 - Improved workflow logic, added parameters, updated plugins to run on cloud
 * 1.1.0 - Replace the Settings step with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update sample trigger commands in description | Update documentation

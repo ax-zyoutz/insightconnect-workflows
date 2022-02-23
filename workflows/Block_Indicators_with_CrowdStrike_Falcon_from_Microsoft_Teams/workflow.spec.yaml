@@ -1,0 +1,29 @@
+extension: workflow
+products: ["insightconnect"]
+name: Block_Indicators_with_CrowdStrike_Falcon_from_Microsoft_Teams
+title: Block Indicators with CrowdStrike Falcon from Microsoft Teams
+description: This workflow uses a Microsoft Teams command to block an indicator using CrowdStrike Falcon.
+version: 1.0.0
+vendor: rapid7
+support: rapid7
+status: []
+hub_tags:
+  use_cases: [threat_detection_and_response]
+  keywords:  [containment, chat, parameters]
+  features: []
+  vendors: [microsoft, crowdstrike]
+  products: [microsoft_teams, crowdstrike_falcon]
+resources:
+  source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Block_Indicators_with_CrowdStrike_Falcon_from_Microsoft_Teams
+  license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
+  screenshots:
+  - name: workflow1.png
+    title: Workflow View
+  - name: workflow2.png
+    title: Workflow Loop View
+  - name: teams1.png
+    title: Block Success in Teams
+  - name: teams2.png
+    title: Block Success in Teams
+  - name: teams3.png
+    title: Bad Indicator Type in Teams

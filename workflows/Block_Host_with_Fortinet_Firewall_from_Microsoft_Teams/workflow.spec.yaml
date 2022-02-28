@@ -29,8 +29,6 @@ resources:
     title: Host Found in Whitelist
   - name: block_private_ip.png
     title: Blocking Private IP Address
-  - name: teams_message3.png
-    title: Failed to Block Host Message
   - name: unblock_domain.png
     title: Successfully Unblocked Domain
   - name: unblock_ipv4.png

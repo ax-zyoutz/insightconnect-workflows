@@ -1,19 +1,19 @@
 {
   "kom": {
-    "komandVersion": "1.72.0-0-ge9d34",
+    "komandVersion": "1.96.4-0-g2fd81",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2020-12-10T20:38:21.935339749Z",
+    "exportedAt": "2022-02-07T14:44:20.400800897Z",
     "workflowVersions": [
       {
         "name": "Check Host Block Status with Fortinet Firewall from Microsoft Teams",
         "type": "runnable",
         "version": "",
-        "description": "Check if an IP address is blocked in Fortinet FortiGate from Microsoft Teams.",
+        "description": "# Description\n\nThis workflow accepts a Microsoft Teams command containing an IP address. This IP address will be checked against a pre-defined address group in Fortinet to determine whether or not the IP address is present. It is assumed that this address group will be used to store IP addresses for a block policy. A message with the results will be returned.\n\nSample Microsoft Teams Trigger Commands:\n\n`!block-status 198.51.100.100`\n`!block-status example.com`\n\n# Key Features\n\n* The ability to see if an IP address is currently blocked by the firewall\n\n# Requirements\n\n* Microsoft Teams connection\n* Admin API key to a Fortinet FortiGate firewall\n\n# Documentation\n\n## Setup\n\nImport the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.\n\nOnce the workflow has been imported, **the first Microsoft Teams step will need the team name and channel name updated to suit your Microsoft Teams environment!** Edit the input with the preset text of `change_me` in the first Microsoft Teams step in the workflow.\n\nIn the _Check for IP_ step edit the Address Group Name input from `change_me` to an appropriate address group.\n\nTo run the workflow,  Use the command `!block-status <IP>`. The workflow will post responses in the channel.\n\n## Technical Details\n\nPlugins utilized by workflow:\n\n|Plugin|Version|Count|\n|----|----|--------|\n|Fortinet FortiGate|5.0.0|1|\n|HTML|1.2.2|1|\n|Microsoft Teams|3.1.0|4|\n\n## Troubleshooting\n\n_There is no troubleshooting information at this time_\n\n# Version History\n\n* 1.2.0 - Replace the preset text of \"change_me\" with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update documentation\n* 1.1.3 - Update Fortinet FortiGate, Microsoft Teams, and HTML plugins to latest versions\n* 1.1.2 - Update Fortinet FortiGate and Microsoft Teams plugins to the latest versions | Added a new message if Fortinet FortiGate action fails\n* 1.1.1 - Update to make Microsoft Teams plugin the latest version\n* 1.1.0 - Update Fortinet FortiGate to latest version\n* 1.0.0 - Initial workflow\n\n# Links\n\n## References\n\n* [Fortinet](https://www.fortinet.com/)\n* [Microsoft Teams](https://teams.microsoft.com)\n",
         "graph": {
           "edges": {
             "1b7c51fe-7bfa-4809-83d0-1c2de309dd81": {
               "id": "1b7c51fe-7bfa-4809-83d0-1c2de309dd81",
-              "name": "IP is in Address Group",
+              "name": "Address is in Address Group",
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "792ba23e-401f-4a04-b65a-396f849de558",
@@ -109,7 +109,7 @@
             },
             "f57db6b9-85c0-4229-bc5e-b81295ef0060": {
               "id": "f57db6b9-85c0-4229-bc5e-b81295ef0060",
-              "name": "IP is not in Address Group",
+              "name": "Address is not in Address Group",
               "description": "",
               "parentNodeId": "",
               "fromNodeId": "792ba23e-401f-4a04-b65a-396f849de558",
@@ -166,13 +166,13 @@
         "steps": {
           "0291a406-7bfa-4ca2-9de5-c2e635541d11": {
             "nodeId": "0291a406-7bfa-4ca2-9de5-c2e635541d11",
-            "name": "IP Not Blocked ",
+            "name": "Address Not Blocked ",
             "type": "artifact",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "✅🚧The IP {{[67025537-07fb-49c8-95ce-d12c9e8e8842].[ip]}} is not blocked. 🚧✅"
+                "content": "✅🚧 The address {{[67025537-07fb-49c8-95ce-d12c9e8e8842].[address]}} is not blocked. 🚧✅"
               },
               "type": "markdown"
             },
@@ -242,38 +242,39 @@
           },
           "3ae0cb53-09df-47dc-b8db-fb11a28f15ae": {
             "nodeId": "3ae0cb53-09df-47dc-b8db-fb11a28f15ae",
-            "name": "Check for IP",
+            "name": "Check if Address is in Group",
             "type": "action",
             "plugin": {
               "name": "Fortinet FortiGate",
               "slugVendor": "rapid7",
               "slugName": "fortinet_fortigate",
-              "slugVersion": "5.0.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/5.0.0/icon.png"
+              "slugVersion": "6.0.0",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/fortinet_fortigate/6.0.0/icon.png"
             },
             "identifier": "check_if_address_in_group",
-            "continueOnFailure": false,
+            "continueOnFailure": true,
             "isDisabled": false,
             "isCloud": false,
             "parameters": {
               "input": {
-                "address": "{{[67025537-07fb-49c8-95ce-d12c9e8e8842].[ip]}}",
+                "address": "{{[67025537-07fb-49c8-95ce-d12c9e8e8842].[address]}}",
                 "enable_search": true,
-                "group": "change_me"
+                "group": "{{$workflow.[Group Name]}}",
+                "ipv6_group": "{{$workflow.[IPv6 Group Name]}}"
               }
             },
             "defaultInputJSONSchema": {
               "properties": {
                 "address": {
                   "description": "The Address Object name to check. If Enable Search is set to true then we search the addresses (IP, CIDR, domain) within the address object instead of matching the name",
-                  "order": 2,
+                  "order": 3,
                   "title": "Address",
                   "type": "string"
                 },
                 "enable_search": {
                   "default": false,
                   "description": "When enabled, the Address input will accept a IP, CIDR, or domain name to search across the available Address Objects in the system. This is useful when you don't know the Address Object by its name",
-                  "order": 3,
+                  "order": 4,
                   "title": "Enable Search",
                   "type": "boolean"
                 },
@@ -282,12 +283,19 @@
                   "order": 1,
                   "title": "Group",
                   "type": "string"
+                },
+                "ipv6_group": {
+                  "description": "The name of the IPv6 address group",
+                  "order": 2,
+                  "title": "IPv6 Group",
+                  "type": "string"
                 }
               },
               "required": [
-                "group",
                 "address",
-                "enable_search"
+                "enable_search",
+                "group",
+                "ipv6_group"
               ],
               "title": "Variables",
               "type": "object"
@@ -323,14 +331,14 @@
           },
           "4d7f15d0-4973-4430-8cd8-60221a0d49a4": {
             "nodeId": "4d7f15d0-4973-4430-8cd8-60221a0d49a4",
-            "name": "IP Not Blocked Message",
+            "name": "Address Not Blocked Message",
             "type": "action",
             "plugin": {
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -372,9 +380,9 @@
                 }
               },
               "required": [
+                "message_content",
                 "team_name",
-                "channel_name",
-                "message_content"
+                "channel_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -478,8 +486,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -520,13 +528,13 @@
           },
           "67025537-07fb-49c8-95ce-d12c9e8e8842": {
             "nodeId": "67025537-07fb-49c8-95ce-d12c9e8e8842",
-            "name": "Extract IP",
+            "name": "Extract Address",
             "type": "pattern_match",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "captureAll": false,
-              "expressionText": "block-status {{ip:/.*/}}",
+              "expressionText": "block-status {{address:/.*/}}",
               "expressions": [
                 {
                   "type": "text",
@@ -535,7 +543,7 @@
                 {
                   "type": "variable",
                   "value": {
-                    "ident": "ip",
+                    "ident": "address",
                     "regex": ".*"
                   }
                 }
@@ -551,7 +559,7 @@
           },
           "792ba23e-401f-4a04-b65a-396f849de558": {
             "nodeId": "792ba23e-401f-4a04-b65a-396f849de558",
-            "name": "IP Found",
+            "name": "Address Found?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -589,7 +597,7 @@
           },
           "87196bc2-e1e2-428a-a60c-fd3a62974f7a": {
             "nodeId": "87196bc2-e1e2-428a-a60c-fd3a62974f7a",
-            "name": "FortiGate failure",
+            "name": "Check if Address is in Group Failed?",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -627,13 +635,13 @@
           },
           "8d73f510-1fb3-4cec-8611-edd9c2394056": {
             "nodeId": "8d73f510-1fb3-4cec-8611-edd9c2394056",
-            "name": "IP Blocked ",
+            "name": "Address Blocked ",
             "type": "artifact",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "content": "🚫 🚧 The IP {{[67025537-07fb-49c8-95ce-d12c9e8e8842].[ip]}} is blocked. 🚧🚫"
+                "content": "🚫 🚧 The address {{[67025537-07fb-49c8-95ce-d12c9e8e8842].[address]}} is blocked. 🚧 🚫"
               },
               "type": "markdown"
             },
@@ -645,14 +653,14 @@
           },
           "e92ffb3c-b18e-46b6-9815-52437dcc1ef4": {
             "nodeId": "e92ffb3c-b18e-46b6-9815-52437dcc1ef4",
-            "name": "IP Blocked Message",
+            "name": "Address Blocked Message",
             "type": "action",
             "plugin": {
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -694,9 +702,9 @@
                 }
               },
               "required": [
+                "message_content",
                 "team_name",
-                "channel_name",
-                "message_content"
+                "channel_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -800,8 +808,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -842,14 +850,14 @@
           },
           "f699b372-fca8-49c3-90b3-68001b3b1cec": {
             "nodeId": "f699b372-fca8-49c3-90b3-68001b3b1cec",
-            "name": "FortiGate Failure Message",
+            "name": "Check for Address Failed Message",
             "type": "action",
             "plugin": {
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -858,7 +866,7 @@
             "parameters": {
               "input": {
                 "channel_name": "{{[f8671c10-b8f2-441d-b6e3-c98d10469fda].[channel_name]}}",
-                "message_content": "⚠️ There was an error with the workflow. FortiGate did not return results correctly. Check This URL for more information. ⚠️\n<br>{{[$job].[URL]}}\"",
+                "message_content": "⚠️ There was an error with the workflow. FortiGate did not return results correctly. Check this URL for more information. <br>\n<br>\n{{[$job].[URL]}}",
                 "team_name": "{{[f8671c10-b8f2-441d-b6e3-c98d10469fda].[team_name]}}",
                 "thread_id": "{{[f8671c10-b8f2-441d-b6e3-c98d10469fda].[message].[id]}}"
               }
@@ -891,9 +899,9 @@
                 }
               },
               "required": [
+                "message_content",
                 "team_name",
-                "channel_name",
-                "message_content"
+                "channel_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -997,8 +1005,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1039,26 +1047,26 @@
           },
           "f8671c10-b8f2-441d-b6e3-c98d10469fda": {
             "nodeId": "f8671c10-b8f2-441d-b6e3-c98d10469fda",
-            "name": "Check for IP Message",
+            "name": "Check Address Block Status",
             "type": "trigger",
             "plugin": {
               "name": "Microsoft Teams",
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
-              "slugVersion": "3.1.0",
-              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+              "slugVersion": "3.1.5",
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "new_message_received",
             "continueOnFailure": false,
             "isDisabled": false,
             "parameters": {
               "input": {
-                "channel_name": "change_me",
+                "channel_name": "{{$workflow.[Channel Name]}}",
                 "message_content": "^!block-status",
-                "team_name": "change_me"
+                "team_name": "{{$workflow.[Team Name]}}"
               }
             },
-            "triggerId": "a16c1ff6-6669-4190-975b-8df42b00eaba",
+            "triggerId": "60a5f76f-c6ce-43a1-8023-eb566368eb74",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -1315,8 +1323,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1374,21 +1382,47 @@
             "connectionType": "CONNECTION"
           }
         },
-        "tags": null,
-        "humanCostSeconds": 0,
-        "humanCostDisplayUnit": ""
+        "tags": [],
+        "humanCostSeconds": 300,
+        "humanCostDisplayUnit": "minutes",
+        "parameters": {
+          "definitionSchema": {
+            "type": "object",
+            "required": [],
+            "properties": {
+              "Team Name": {
+                "type": "string",
+                "description": "The Microsoft Teams team name in your environment where the workflow should be triggered and respond."
+              },
+              "Group Name": {
+                "type": "string",
+                "description": "The group name for blocked IPv4 addresses."
+              },
+              "Channel Name": {
+                "type": "string",
+                "description": "The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team)."
+              },
+              "IPv6 Group Name": {
+                "type": "string",
+                "description": "The group name for blocked IPv6 addresses."
+              }
+            },
+            "definitions": {}
+          }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "a16c1ff6-6669-4190-975b-8df42b00eaba",
+        "id": "60a5f76f-c6ce-43a1-8023-eb566368eb74",
         "identifier": "new_message_received",
-        "name": "Check for IP Message",
+        "name": "Check Address Block Status",
         "description": "",
         "input": {
-          "channel_name": "change_me",
+          "channel_name": "{{$workflow.[Channel Name]}}",
           "message_content": "^!block-status",
-          "team_name": "change_me"
+          "team_name": "{{$workflow.[Team Name]}}"
         },
         "inputJsonSchema": {
           "properties": {
@@ -1646,8 +1680,8 @@
                 }
               },
               "required": [
-                "words",
-                "first_word"
+                "first_word",
+                "words"
               ],
               "title": "Message",
               "type": "object"
@@ -1706,8 +1740,8 @@
           "name": "Microsoft Teams",
           "slugVendor": "rapid7",
           "slugName": "microsoft_teams",
-          "slugVersion": "3.1.0",
-          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.0/icon.png"
+          "slugVersion": "3.1.5",
+          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
         }
       }
     ]

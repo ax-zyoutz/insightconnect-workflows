@@ -3,13 +3,13 @@ products: ["insightconnect"]
 name: Check_Host_Block_Status_with_Fortinet_Firewall_from_Microsoft_Teams
 title: "Check Host Block Status with Fortinet Firewall from Microsoft Teams"
 description: "Check if an IP address is blocked in Fortinet FortiGate from Microsoft Teams."
-version: 1.2.0
+version: 2.0.0
 vendor: rapid7
 support: rapid7
 status: []
 hub_tags:
   use_cases: [network_firewall]
-  keywords: [firewall, chatops, work_from_home]
+  keywords: [firewall, chatops, work_from_home, parameters]
   features: []
   vendors: [microsoft, fortinet]
   products: [microsoft_teams, fortinet_fortigate]
@@ -17,13 +17,13 @@ resources:
   source_url: https://github.com/rapid7/insightconnect-workflows/tree/master/workflows/Check_Host_Block_Status_with_Fortinet_Firewall_from_Microsoft_Teams
   license_url: https://github.com/rapid7/insightconnect-workflows/blob/master/LICENSE
   screenshots:
-  - name: workflow1.png
+  - name: workflow.png
     title: Workflow View
-  - name: teams_message1.png
-    title: Microsoft Teams Message for IP Blocked
-  - name: teams_message2.png
-    title: Microsoft Teams Message for IP Not Blocked
-  - name: artifact1.png
-    title: Artifact for IP Blocked
-  - name: artifact2.png
-    title: Artifact for IP Not Blocked
+  - name: check_block_status_domain.png
+    title: Microsoft Teams Message for Blocked Domain
+  - name: check_block_status_ipv4.png
+    title: Microsoft Teams Message for Blocked IPv4
+  - name: check_block_status_ipv6.png
+    title: Microsoft Teams Message for Blocked IPv6
+  - name: check_block_status_not_blocked.png
+    title: Microsoft Teams Message for Not Blocked Address

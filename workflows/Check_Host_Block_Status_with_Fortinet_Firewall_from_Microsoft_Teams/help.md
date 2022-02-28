@@ -5,6 +5,7 @@ This workflow accepts a Microsoft Teams command containing an IP address. This I
 Sample Microsoft Teams Trigger Commands:
 
 `!block-status 198.51.100.100`
+
 `!block-status example.com`
 
 # Key Features
@@ -22,11 +23,26 @@ Sample Microsoft Teams Trigger Commands:
 
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-Once the workflow has been imported, **the first Microsoft Teams step will need the team name and channel name updated to suit your Microsoft Teams environment!** Edit the input with the preset text of `change_me` in the first Microsoft Teams step in the workflow.
+This workflow leverages InsightConnect's Parameters feature. This feature allows variables used multiple times throughout a workflow to be entered once and then referenced throughout the workflow.
 
-In the _Check for IP_ step edit the Address Group Name input from `change_me` to an appropriate address group.
+There are four parameters you will need to configure in order to complete setup of your workflow:
 
-To run the workflow,  Use the command `!block-status <IP>`. The workflow will post responses in the channel.
+* Team Name: The Microsoft Teams team name in your environment where the workflow should be triggered and respond
+* Channel Name: The Microsoft Teams channel name in your environment where the workflow should be triggered and respond (the channel should exist in the aforementioned team)
+* Group Name: The group name for blocked IPv4 addresses and domains
+* IPv6 Group Name: The group name for blocked IPv6 addresses
+
+To begin, select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
+
+After configuring the parameters, activate the workflow in order to trigger it.
+
+### Usage
+
+*This workflow will only trigger in the channel specified in the workflow parameters.*
+
+To run the workflow, send a message to the specified Microsoft Teams channel starting with the command `!block-status`.
+
+The workflow will post status updates in the designated Microsoft Teams channel as it runs.
 
 ## Technical Details
 
@@ -34,9 +50,9 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Fortinet FortiGate|5.0.0|1|
+|Fortinet FortiGate|6.0.0|1|
 |HTML|1.2.2|1|
-|Microsoft Teams|3.1.0|4|
+|Microsoft Teams|3.1.5|4|
 
 ## Troubleshooting
 
@@ -44,6 +60,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.0 - Leverage workflow parameters feature | Update documentation | Update Fortinet FortiGate plugin to version 6.0.0 | Update Microsoft Teams plugin to version 3.1.5
 * 1.2.0 - Replace the preset text of "change_me" with automatic team and channel name extraction in all Microsoft Teams steps except the first one | Update Microsoft Teams to version 3.1.0 | Update documentation
 * 1.1.3 - Update Fortinet FortiGate, Microsoft Teams, and HTML plugins to latest versions
 * 1.1.2 - Update Fortinet FortiGate and Microsoft Teams plugins to the latest versions | Added a new message if Fortinet FortiGate action fails

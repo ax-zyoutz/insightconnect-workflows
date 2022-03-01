@@ -1,8 +1,8 @@
 {
   "kom": {
-    "komandVersion": "1.75.0-0-g0b8f4",
+    "komandVersion": "1.97.1-0-gf4ed5",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2021-01-20T21:16:05.759491597Z",
+    "exportedAt": "2022-02-18T14:36:30.45529475Z",
     "workflowVersions": [
       {
         "name": "Delete Inactive Assets with InsightVM from Slack",
@@ -262,6 +262,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -280,7 +286,7 @@
           },
           "2d3edac4-6cb2-4ff9-bcf0-a2a0631ae9dd": {
             "nodeId": "2d3edac4-6cb2-4ff9-bcf0-a2a0631ae9dd",
-            "name": "Were there inactive assets",
+            "name": "Were There Inactive Assets",
             "type": "automated_decision",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -290,24 +296,16 @@
                 {
                   "edgeId": "17e49dbb-cf85-4761-8c93-afb9dd6ca824",
                   "expression": {
-                    "left": {
-                      "args": [
-                        {
-                          "name": "59f32be5-be23-4fcc-91c8-b9c51b863245.content",
-                          "type": "variable"
-                        }
-                      ],
-                      "name": "length",
-                      "type": "function"
-                    },
-                    "op": ">",
-                    "right": {
-                      "type": "literal",
-                      "value": 0
-                    },
-                    "type": "binary"
+                    "args": [
+                      {
+                        "name": "f705ff97-9222-4879-8fbc-1b3e7f00bfa5.Count of Assets",
+                        "type": "variable"
+                      }
+                    ],
+                    "name": "is_defined",
+                    "type": "function"
                   },
-                  "expressionText": "length({{[59f32be5-be23-4fcc-91c8-b9c51b863245].[content]}}) > 0"
+                  "expressionText": "is_defined({{[f705ff97-9222-4879-8fbc-1b3e7f00bfa5].[Count of Assets]}})"
                 },
                 {
                   "edgeId": "ebb6ba4c-eba4-4b2a-a9e4-7ee92f81ac72",
@@ -1258,7 +1256,7 @@
             "isDisabled": false,
             "parameters": {
               "attachments": null,
-              "message": "❗  Inactive Assets Found  ❗\n\nAssets to Delete: {{[59f32be5-be23-4fcc-91c8-b9c51b863245].[content]}}",
+              "message": "❗  Inactive Assets Found  ❗\n\nTotal Number of Assets to Delete {{[f705ff97-9222-4879-8fbc-1b3e7f00bfa5].[Count of Assets]}}\n\nHostnames of Assets to Delete: {{[59f32be5-be23-4fcc-91c8-b9c51b863245].[content]}}\n\nNumber of Assets without a Hostname to Delete: {{[f705ff97-9222-4879-8fbc-1b3e7f00bfa5].[Count of Assets without Hostname]}}",
               "messageType": "button",
               "options": [
                 {
@@ -1436,6 +1434,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1455,6 +1459,7 @@
           "bda394ea-280d-4382-98d4-a4e8d29bca57": {
             "nodeId": "bda394ea-280d-4382-98d4-a4e8d29bca57",
             "name": "Delete Inactive Assets Trigger",
+            "description": "A message was received from a Slack user matching the declared channel and message content",
             "type": "trigger",
             "continueOnFailure": false,
             "isDisabled": false,
@@ -1465,7 +1470,7 @@
                 "type": "any"
               }
             },
-            "triggerId": "eaf49d01-47a0-4b6d-8da4-32ce68612506",
+            "triggerId": "71f10d9c-fb57-4f6e-be89-a04cd22e7cc1",
             "defaultInputJSONSchema": {
               "properties": {
                 "matchChannel": {
@@ -1868,6 +1873,12 @@
                   "title": "Channel ID",
                   "type": "string"
                 },
+                "parent_message_timestamp": {
+                  "description": "The timestamp of the parent message or of the current message if there is no parent. Used to post messages to a thread.",
+                  "order": 3,
+                  "title": "Parent Message Timestamp",
+                  "type": "string"
+                },
                 "timestamp": {
                   "description": "Timestamp of successful message",
                   "order": 2,
@@ -1980,7 +1991,17 @@
               "customOutput": [
                 {
                   "input": {
-                    "expression": null,
+                    "expression": {
+                      "args": [
+                        {
+                          "name": "4f26c935-2673-4da9-b14b-235080081cd7.asset.hostName",
+                          "type": "variable"
+                        }
+                      ],
+                      "name": "is_defined",
+                      "type": "function"
+                    },
+                    "expressionText": "is_defined({{[4f26c935-2673-4da9-b14b-235080081cd7].asset.[hostName]}})",
                     "value": "{{[4f26c935-2673-4da9-b14b-235080081cd7].[asset].[hostName]}}",
                     "valueType": "string"
                   },
@@ -2005,6 +2026,44 @@
                   },
                   "name": "Count of Assets",
                   "outputType": "count"
+                },
+                {
+                  "input": {
+                    "expression": {
+                      "args": [
+                        {
+                          "name": "4f26c935-2673-4da9-b14b-235080081cd7.asset.hostName",
+                          "type": "variable"
+                        }
+                      ],
+                      "name": "is_defined",
+                      "type": "function"
+                    },
+                    "expressionText": "is_defined({{[4f26c935-2673-4da9-b14b-235080081cd7].asset.[hostName]}})"
+                  },
+                  "name": "Count of Assets with Hostname",
+                  "outputType": "count"
+                },
+                {
+                  "input": {
+                    "expression": {
+                      "expr": {
+                        "args": [
+                          {
+                            "name": "4f26c935-2673-4da9-b14b-235080081cd7.asset.hostName",
+                            "type": "variable"
+                          }
+                        ],
+                        "name": "is_defined",
+                        "type": "function"
+                      },
+                      "op": "NOT",
+                      "type": "unary"
+                    },
+                    "expressionText": "NOT is_defined({{[4f26c935-2673-4da9-b14b-235080081cd7].asset.[hostName]}})"
+                  },
+                  "name": "Count of Assets without Hostname",
+                  "outputType": "count"
                 }
               ],
               "innerEdgeId": "07e2ab69-b788-497c-8928-b7087761fe64",
@@ -2018,6 +2077,16 @@
                 "Count of Assets": {
                   "description": "Custom output: \"Count of Assets\"",
                   "title": "Count of Assets",
+                  "type": "integer"
+                },
+                "Count of Assets with Hostname": {
+                  "description": "Custom output: \"Count of Assets with Hostname\"",
+                  "title": "Count of Assets with Hostname",
+                  "type": "integer"
+                },
+                "Count of Assets without Hostname": {
+                  "description": "Custom output: \"Count of Assets without Hostname\"",
+                  "title": "Count of Assets without Hostname",
                   "type": "integer"
                 },
                 "Hostname": {
@@ -2095,14 +2164,15 @@
         "humanCostDisplayUnit": "minutes",
         "parameters": {
           "definitionSchema": null
-        }
+        },
+        "summary": ""
       }
     ],
     "triggers": [
       {
-        "id": "eaf49d01-47a0-4b6d-8da4-32ce68612506",
+        "id": "71f10d9c-fb57-4f6e-be89-a04cd22e7cc1",
         "name": "Delete Inactive Assets Trigger",
-        "description": "",
+        "description": "A message was received from a Slack user matching the declared channel and message content",
         "input": {
           "matchChannel": "#change_me",
           "matchText": "!delete_inactive_assets",

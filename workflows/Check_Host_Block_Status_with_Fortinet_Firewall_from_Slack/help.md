@@ -5,12 +5,12 @@ This workflow accepts a Slack command containing an IP address. This IP address 
 Sample Slack Trigger Commands:
 
 `@Rapid7 InsightConnect block-status 198.51.100.100`
+
 `@Rapid7 InsightConnect block-status example.com`
 
 # Key Features
 
 * The ability to see if an IP is currently blocked by the firewall
-
 
 # Requirements
 
@@ -23,10 +23,25 @@ Sample Slack Trigger Commands:
 
 Import the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. Import plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.
 
-Once the workflow has been imported, **Update the first step with the channel name to suit your Slack environment!** by editing the input with the preset text of `change_me` to match the channel to monitor.
-And in the _Check for IP_ step edit the Address Group Name input from `change_me` to an appropriate address group to monitor.
+This workflow leverages InsightConnect's Parameters feature. This feature allows variables used multiple times throughout a workflow to be entered once and then referenced throughout the workflow.
 
-To run the workflow, @ your Slackbot in the chosen channel or in a direct message along with the command "block-status <IP>". The workflow will post responses in a thread.
+There are three parameters you will need to configure in order to complete setup of your workflow:
+
+* Channel: The Slack channel name in your environment where the workflow should be triggered
+* Group Name: The group name for blocked IPv4 addresses and domains
+* IPv6 Group Name: The group name for blocked IPv6 addresses
+
+To begin, select "Parameters" either from the Workflow Control Panel or from the Builder to begin configuration.
+
+After configuring the parameters, activate the workflow in order to trigger it.
+
+### Usage
+
+*This workflow will only trigger in the channel specified in the workflow parameters.*
+
+To run the workflow, send a message to the specified Slack channel starting with the command `@Rapid7 InsightConnect block-status`.
+
+Your chatbot will reply when the workflow completes.
 
 ## Technical Details
 
@@ -34,7 +49,7 @@ Plugins utilized by workflow:
 
 |Plugin|Version|Count|
 |----|----|--------|
-|Fortinet FortiGate|5.0.0|1|
+|Fortinet FortiGate|6.0.0|1|
 
 ## Troubleshooting
 
@@ -42,6 +57,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 3.0.0 - Leverage workflow parameters feature | Update documentation | Update Fortinet FortiGate plugin to version 6.0.0
 * 2.0.0 - Update workflow to fix issue where addresses were not being correctly parsed | Update to version 5.0.0 of FortiGate
 * 1.1.3 - Update Fortinet FortiGate to latest version
 * 1.1.2 - Update Fortinet FortiGate to latest version | Added a new message if Fortinet FortiGate action fails

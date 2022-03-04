@@ -27,8 +27,11 @@ jobs:
         then
           for d in "${CHANGED_DIRS[@]}"
             do
-              echo "Running validation on: ${d}"
-              /home/runner/.local/bin/icon-validate workflows/${d}
+              if [[ -e "workflows/${d}" ]]
+              then
+                echo "Running validation on: ${d}"
+                /home/runner/.local/bin/icon-validate workflows/${d}
+              fi
             done
         else
           echo "No workflows were changed, skipping validation!"

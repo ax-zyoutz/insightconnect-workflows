@@ -1,14 +1,14 @@
 {
   "kom": {
-    "komandVersion": "1.97.1-0-gf4ed5",
+    "komandVersion": "1.97.2-0-gfa954",
     "komFileVersion": "2.0.0",
-    "exportedAt": "2022-02-14T17:26:09.64847466Z",
+    "exportedAt": "2022-03-04T15:33:08.056449857Z",
     "workflowVersions": [
       {
         "name": "Lookup Automox Host from Teams",
         "type": "runnable",
         "version": "",
-        "description": "# Description\n\nThis workflow provides fast, convenient access to information about a given host from Automox by fetching device details from Automox and posting them in a Microsoft Teams thread. Host information includes hostname, IP address, operating system, and last refresh time. Lookup can be performed by either hostname or IP address.\n\n# Key Features\n\n* Fetch host information from Automox quickly in Teams\n* Determine when the system was last refreshed with the Automox platform\n* Positively identify a system by looking it up by IP address or hostname\n",
+        "description": "# Description\nThis workflow provides fast, convenient access to information about a given host from Automox by fetching device details \nfrom Automox and posting them in a Microsoft Teams thread. Host information includes hostname, IP addresses, operating \nsystem, host status, and patch status details. Lookup can be performed by either hostname or IP address.\n\n# Key Features\n\n* Fetch host information from Automox quickly in Microsoft Teams\n* Determine when the system last checked in with the Automox platform\n* Quickly identify the number of upcoming patch count along with patch time \n* Positively identify a system by looking up it up by IP address or hostname\n\n# Requirements\n\n* Automox API key\n* InsightConnect license\n* [Microsoft Teams](https://docs.rapid7.com/insightconnect/microsoft-teams/)\n\n# Documentation\n\n## Setup\n\nImport the workflow from the Rapid7 Extension Library and proceed through the Import Workflow wizard in InsightConnect. \nImport plugins, create or select connections, and rename the workflow as a part of the Import Workflow wizard as necessary.\n\nThere are three workflow parameters you will need to configure in order to complete setup of your workflow:\n* `Automox Organization ID`: The Automox organization used for performing host lookups\n* `Team Name`: The Microsoft Teams team name where the workflow will be triggered and respond \n* `Channel Name`: The Microsoft Teams channel name where the workflow will be triggered and respond\n\n## Usage\n\n*This workflow will only trigger in the channel specified in the workflow parameters.*\n\nTo run the workflow, send the command `!lookup-automox-host` followed by the IP address or hostname to the Microsoft Teams \nchannel you are monitoring.\n\nFor example:\n\n* `!lookup-automox-host hostname1`\n* `!lookup-automox-host 127.0.0.1`\n\nThe workflow will post responses in a thread of the original message.\n\n## Technical Details\n\nPlugins utilized by workflow:\n\n|Plugin|Version|Count|\n|----|----|--------|\n|Automox|1.1.0|2|\n|HTML|1.2.2|1|\n|Microsoft Teams|3.1.5|4|\n\n## Troubleshooting\n\n_There is no troubleshooting information at this time_\n\n# Version History\n\n* 1.0.0 - Initial workflow\n\n# Links\n\n## References\n\n* [Automox](https://www.automox.com/)\n* [Microsoft Teams](https://docs.rapid7.com/insightconnect/microsoft-teams/)\n",
         "graph": {
           "edges": {
             "0caedb3f-e374-4a1f-95e8-f59f9902e3d1": {
@@ -209,7 +209,7 @@
               "slugVendor": "rapid7",
               "slugName": "html",
               "slugVersion": "1.2.2",
-              "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/rapid7/html/1.2.2/icon.png"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/html/1.2.2/icon.png"
             },
             "identifier": "text",
             "continueOnFailure": false,
@@ -273,7 +273,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us3.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/artifact.svg",
             "connectionType": "NONE"
           },
           "3b809521-b184-4000-9c7e-7ad087612c5d": {
@@ -285,7 +285,7 @@
               "slugVendor": "automox",
               "slugName": "automox",
               "slugVersion": "1.1.0",
-              "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/automox/automox/1.1.0/icon.png"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/automox/automox/1.1.0/icon.png"
             },
             "identifier": "get_device_by_hostname",
             "continueOnFailure": true,
@@ -549,10 +549,10 @@
                     }
                   },
                   "required": [
-                    "organization_id",
-                    "id",
+                    "name",
                     "server_group_id",
-                    "name"
+                    "id",
+                    "organization_id"
                   ],
                   "title": "Device",
                   "type": "object"
@@ -633,7 +633,7 @@
               "slugVendor": "automox",
               "slugName": "automox",
               "slugVersion": "1.1.0",
-              "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/automox/automox/1.1.0/icon.png"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/automox/automox/1.1.0/icon.png"
             },
             "identifier": "get_device_by_ip",
             "continueOnFailure": true,
@@ -897,10 +897,10 @@
                     }
                   },
                   "required": [
-                    "organization_id",
-                    "id",
+                    "name",
                     "server_group_id",
-                    "name"
+                    "id",
+                    "organization_id"
                   ],
                   "title": "Device",
                   "type": "object"
@@ -980,11 +980,11 @@
             "isDisabled": false,
             "parameters": {
               "captureAll": false,
-              "expressionText": "!lookup-host\\s+{{argument:/\\S+/}}",
+              "expressionText": "!lookup-automox-host\\s+{{argument:/\\S+/}}",
               "expressions": [
                 {
                   "type": "text",
-                  "value": "!lookup-host\\s+"
+                  "value": "!lookup-automox-host\\s+"
                 },
                 {
                   "type": "variable",
@@ -1000,7 +1000,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us3.cdn-assets.connect.insight.rapid7.com/step-type-icons/pattern-match.svg",
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/pattern-match.svg",
             "connectionType": "NONE"
           },
           "70efa60e-3b43-4dec-ad63-ec45c1286114": {
@@ -1079,7 +1079,7 @@
           },
           "8b5f067d-03aa-4d9e-a06b-5ad7dda77b99": {
             "nodeId": "8b5f067d-03aa-4d9e-a06b-5ad7dda77b99",
-            "name": "lookup-host Trigger",
+            "name": "Lookup-automox-host Trigger",
             "description": "Trigger this workflow by entering a Teams command in the following format:\n\"!lookup-host workstation123\"\nOR\n\"!lookup-host 192.168.1.2\"",
             "type": "trigger",
             "plugin": {
@@ -1087,7 +1087,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
               "slugVersion": "3.1.5",
-              "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "new_message_received",
             "continueOnFailure": false,
@@ -1095,11 +1095,11 @@
             "parameters": {
               "input": {
                 "channel_name": "{{$workflow.[Channel Name]}}",
-                "message_content": "(?i)!lookup-host",
+                "message_content": "(?i)!lookup-automox-host",
                 "team_name": "{{$workflow.[Team Name]}}"
               }
             },
-            "triggerId": "3359552a-36b5-4b5b-a926-28d7632a67a4",
+            "triggerId": "8c458a2a-3475-42b1-9895-da18a7d4ff2e",
             "defaultInputJSONSchema": {
               "properties": {
                 "channel_name": {
@@ -1356,8 +1356,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1411,7 +1411,7 @@
               "type": "object"
             },
             "outputJSONSchema": null,
-            "defaultImageData": "https://us3.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/default.svg",
             "connectionType": "CONNECTION"
           },
           "8f8d09bd-605a-40e4-b699-cf16a5ba1731": {
@@ -1441,7 +1441,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us3.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
           "931acedc-cff6-4f18-b348-3ff465c997c1": {
@@ -1479,7 +1479,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us3.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/automated-decision.svg",
             "connectionType": "NONE"
           },
           "9fcfe644-6f96-4599-b575-034175ca8f6d": {
@@ -1491,7 +1491,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
               "slugVersion": "3.1.5",
-              "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1533,9 +1533,9 @@
                 }
               },
               "required": [
-                "channel_name",
                 "message_content",
-                "team_name"
+                "team_name",
+                "channel_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -1639,8 +1639,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1688,7 +1688,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
               "slugVersion": "3.1.5",
-              "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_html_message",
             "continueOnFailure": false,
@@ -1730,9 +1730,9 @@
                 }
               },
               "required": [
-                "channel_name",
                 "message_content",
-                "team_name"
+                "team_name",
+                "channel_name"
               ],
               "title": "Variables",
               "type": "object"
@@ -1836,8 +1836,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -1885,7 +1885,7 @@
               "slugVendor": "rapid7",
               "slugName": "microsoft_teams",
               "slugVersion": "3.1.5",
-              "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
+              "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
             },
             "identifier": "send_message",
             "continueOnFailure": false,
@@ -2033,8 +2033,8 @@
                     }
                   },
                   "required": [
-                    "words",
-                    "first_word"
+                    "first_word",
+                    "words"
                   ],
                   "title": "Message",
                   "type": "object"
@@ -2121,7 +2121,7 @@
             "defaultInputJSONSchema": null,
             "defaultOutputJSONSchema": null,
             "outputJSONSchema": null,
-            "defaultImageData": "https://us3.cdn-assets.connect.insight.rapid7.com/step-type-icons/pattern-match.svg",
+            "defaultImageData": "https://us.cdn-assets.connect.insight.rapid7.com/step-type-icons/pattern-match.svg",
             "connectionType": "NONE"
           }
         },
@@ -2160,13 +2160,13 @@
     ],
     "triggers": [
       {
-        "id": "3359552a-36b5-4b5b-a926-28d7632a67a4",
+        "id": "8c458a2a-3475-42b1-9895-da18a7d4ff2e",
         "identifier": "new_message_received",
-        "name": "lookup-host Trigger",
+        "name": "Lookup-automox-host Trigger",
         "description": "Trigger this workflow by entering a Teams command in the following format:\n\"!lookup-host workstation123\"\nOR\n\"!lookup-host 192.168.1.2\"",
         "input": {
           "channel_name": "{{$workflow.[Channel Name]}}",
-          "message_content": "(?i)!lookup-host",
+          "message_content": "(?i)!lookup-automox-host",
           "team_name": "{{$workflow.[Team Name]}}"
         },
         "inputJsonSchema": {
@@ -2425,8 +2425,8 @@
                 }
               },
               "required": [
-                "words",
-                "first_word"
+                "first_word",
+                "words"
               ],
               "title": "Message",
               "type": "object"
@@ -2486,7 +2486,7 @@
           "slugVendor": "rapid7",
           "slugName": "microsoft_teams",
           "slugVersion": "3.1.5",
-          "imageData": "https://us3.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
+          "imageData": "https://us.cdn-assets.connect.insight.rapid7.com/icons/rapid7/microsoft_teams/3.1.5/icon.png"
         }
       }
     ]

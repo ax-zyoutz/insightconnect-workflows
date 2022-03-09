@@ -32,13 +32,13 @@ There are three workflow parameters you will need to configure in order to compl
 
 *This workflow will only trigger in the channel specified in the workflow parameters.*
 
-To run the workflow, send the command `!lookup-host` followed by the IP address or hostname to the Microsoft Teams 
+To run the workflow, send the command `!lookup-automox-host` followed by the IP address or hostname to the Microsoft Teams 
 channel you are monitoring.
 
 For example:
 
-* `!lookup-host hostname1`
-* `!lookup-host 127.0.0.1`
+* `!lookup-automox-host hostname1`
+* `!lookup-automox-host 127.0.0.1`
 
 The workflow will post responses in a thread of the original message.
 
@@ -58,6 +58,7 @@ _There is no troubleshooting information at this time_
 
 # Version History
 
+* 2.0.0 - Changed trigger syntax to lookup-automox-host
 * 1.0.0 - Initial workflow
 
 # Links
